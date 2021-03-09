@@ -1,0 +1,12 @@
+.button{
+width: 284px;
+height: 60px;
+border-radius: 5px;
+font-family: Proxima Nova;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0.15em;
+color: #FFFFFF;
+}

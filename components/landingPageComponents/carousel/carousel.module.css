@@ -1,0 +1,43 @@
+.carousel{
+  /* background-color: red; */
+  width: 100%;
+  height: 800px;
+  display: flex;
+}
+.carousel .left{
+  background-color: green !important;
+  width: 50%;
+  display: grid;
+  grid-template-rows: 200px 100px 100px;
+  place-items: center;
+}
+
+.carousel .right{
+  background-color: red !important;
+  width: 50%;
+  display: grid;
+  place-items: center;
+}
+.carousel h1{
+  font-family: Proxima Novo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 112%;
+  letter-spacing: 0.01em;
+  color: #313131;
+}
+.carousel p{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 181.6%;
+  letter-spacing: 0.01em;
+  color: #313131;
+}
+.carousel img{
+  height: 625px;
+  width: 80%;
+  background: blue;
+}
