@@ -36,6 +36,12 @@
     .navbar .top{
         justify-content: space-between;
     }
+    .navbar .right img{
+        width: 35px;
+    }
+    .navbar{
+        background: #313131;
+    }
 }
 .right{
     /* min-width: 716px; */
@@ -50,4 +56,8 @@
     flex-direction: column;
     /* align-items: flex-end; */
     width: 100%;
+    padding: 20px 0px;
+}
+.navbar .bottom div{
+    padding: 5px;
 }

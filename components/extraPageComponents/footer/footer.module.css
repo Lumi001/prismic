@@ -6,3 +6,10 @@
     color: white;
     padding-top: 25px;
 }
+@media screen and (max-width: 999px) {
+    .footer section{
+    flex-direction: column;
+    padding: 25px;
+    }
+
+}

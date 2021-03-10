@@ -1,21 +1,17 @@
 .scroll {
-    height: 716px;
     background: #d2dae2;
     width: 100%;
-    overflow: scroll;
     margin: 89px 0px;
 }
 .scroll .top {
     display: flex;
     justify-content: space-between;
-    height: 134px;
     align-items: center;
     padding: 120px;
 }
-.scroll .top h1 {
-    font-family: 'Roboto', sans-serif;
+.scroll .top h2 {
+    font-family: "Roboto", sans-serif;
     font-size: 48px;
-    width: 432px;
     font-style: normal;
     font-weight: 700;
     line-height: 67px;
@@ -24,7 +20,7 @@
     margin: 0px;
 }
 .scroll .top a {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -32,9 +28,38 @@
     letter-spacing: 0.15em;
     text-align: right;
 }
-.scroll .top a span{
-    margin: 0px 10px
+.scroll .top a span {
+    margin: 0px 10px;
 }
 .scroll .bottom {
     display: flex;
+    overflow: scroll;
+}
+@media screen and (min-width: 999px) {
+    .scroll .top h2 {
+        width: 432px;
+    }
+    .scroll .top {
+        height: 134px;
+    }
+    .scroll {
+        height: 716px;
+    }
+}
+@media screen and (max-width: 999px) {
+    .scroll .top {
+        /* width: 432px; */
+        flex-direction: column;
+    }
+    .scroll .top h2 {
+        min-width: 300px;
+        margin: 30px;
+    }
+    .scroll .top a {
+        min-width: 300px;
+    }
+    .scroll{
+        padding: 30px 0px;
+        margin: 89px 0px 0px;
+    }
 }

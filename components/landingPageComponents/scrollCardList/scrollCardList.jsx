@@ -4,7 +4,7 @@ const ScrollCardList = () => {
     return (
         <div className={styles.scroll}>
             <section className={styles.top}>
-                <h1>Our projects in pictures and videos</h1>
+                <h2>Our projects in pictures and videos</h2>
                 <a href="#">VIEW MORE PROJECTS<span><img src="/button/arrow.png" alt=""/></span></a>
             </section>
             <section className={styles.bottom}>

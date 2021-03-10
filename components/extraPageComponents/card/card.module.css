@@ -8,7 +8,6 @@
   border: none;
   border-radius: 10px;
   /* height: 650px;  */
-  width: 500px;
   display: grid;
 }
 
@@ -20,27 +19,24 @@
 } */
 
 .card h3 {
-/* Save the Children Initiative powered by Chevron */
-margin: 0px;
-width: 469px;
-/* height: 102px; */
-font-family: 'Roboto';
-font-style: normal;
-font-weight: bold;
-font-size: 48px;
-line-height: 152.6%;
-/* or 46px */
-letter-spacing: 0.01em;
-
-color: #38465E;
+  /* Save the Children Initiative powered by Chevron */
+  margin: 0px;
+  /* height: 102px; */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 152.6%;
+  /* or 46px */
+  letter-spacing: 0.01em;
+  
+  color: #38465E;
 }
 
 .card p {
 /* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit... */
 
 margin: 0px;
-width: 469px;
-height: 88px;
 font-family: 'Ubuntu';
 font-style: normal;
 font-weight: 500;
@@ -55,7 +51,7 @@ color: #38465E;
 .card small{
   margin: 20px 0px;
   /* Event */
-width: 82px;
+  width: 82px;
 /* height: 29px; */
 font-family: 'Ubuntu';
 font-style: normal;
@@ -71,20 +67,40 @@ text-align: center;
 
 .card img{
   
-/* Rectangle 84 */
-
-width: 500px;
-height: 350px;
-background: #C4C4C4;
-border-radius: 15px;
+  /* Rectangle 84 */
+  
+  background: #C4C4C4;
+  border-radius: 15px;
 }
 @media screen and (min-width: 999px) {
-  .card h1{
-    width: 629px;
-    width: 419px;
+  .card h3{
+    width: 469px;
   }
   .card p{
-    font-size: 3rem;
-    height: 144px;
+    /* font-size: 3rem; */
+    width: 469px;
+    height: 88px;
+  }
+  .card img{
+    width: 500px;
+  }
+  .card{
+    width: 500px;
+  }
+}
+@media screen and (max-width: 999px) {
+  
+  .card h3,.card p, .card img{
+    width: 90vw;
+    height: auto;
+  }
+  .card h3{
+    font-size: 36px;
+  }
+  .card p{
+    font-size: 20px;
+  }
+  .card img{
+    height: 350px;
   }
 }
