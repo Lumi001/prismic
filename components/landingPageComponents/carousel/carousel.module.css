@@ -3,10 +3,12 @@
   width: 100%;
   /* height: 800px; */
   display: flex;
-  padding: 0px 100px;
+  padding: 80px 30px 50px;
+  align-items: center;
 }
 .carousel .left {
   /* background-color: green !important; */
+  padding: 0px 20px;
   width: 50%;
   /* display: grid; */
   /* grid-template-rows: 200px 100px 100px; */
@@ -14,6 +16,7 @@
 }
 
 .carousel .right {
+  padding: 0px 20px;
   /* background-color: red !important; */
   width: 50%;
   display: grid;
@@ -34,7 +37,7 @@
   height: 144px;
   width: 629px;
 
-  font-family: Avenir;
+  font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -43,7 +46,7 @@
   color: #313131;
 }
 .carousel a {
-  font-family: Proxima Nova;
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 800;
@@ -53,10 +56,17 @@
   color: #313131;
   border-bottom: 1px solid;
   padding-bottom: 9px;
-
 }
 .carousel img {
-  height: 625px;
+  /* height: 625px; */
   width: 80%;
   /* background: blue; */
+}
+.carousel button {
+  /* position: relative; */
+  width: 57px;
+  height: 78px;
+  background: #313131;
+  font-size: 34px;
+  color: #ffffff;
 }

@@ -3,16 +3,17 @@
     background: #d2dae2;
     width: 100%;
     overflow: scroll;
+    margin: 89px 0px;
 }
 .scroll .top {
     display: flex;
     justify-content: space-between;
     height: 134px;
     align-items: center;
-    padding: 0px 120px;
+    padding: 120px;
 }
 .scroll .top h1 {
-    font-family: Proxima Nova;
+    font-family: 'Roboto', sans-serif;
     font-size: 48px;
     width: 432px;
     font-style: normal;
@@ -23,13 +24,16 @@
     margin: 0px;
 }
 .scroll .top a {
-    font-family: Proxima Nova;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: 22px;
     letter-spacing: 0.15em;
     text-align: right;
+}
+.scroll .top a span{
+    margin: 0px 10px
 }
 .scroll .bottom {
     display: flex;

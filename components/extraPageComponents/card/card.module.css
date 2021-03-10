@@ -7,27 +7,27 @@
   text-decoration: none;
   border: none;
   border-radius: 10px;
-  height: 650px;
+  /* height: 650px;  */
   width: 500px;
   display: grid;
 }
 
-.card:hover,
+/* .card:hover,
 .card:focus,
 .card:active {
   color: #0070f3;
   border-color: #0070f3;
-}
+} */
 
 .card h3 {
 /* Save the Children Initiative powered by Chevron */
-
+margin: 0px;
 width: 469px;
-height: 102px;
-font-family: Proxima Nova;
+/* height: 102px; */
+font-family: 'Roboto';
 font-style: normal;
 font-weight: bold;
-font-size: 30px;
+font-size: 48px;
 line-height: 152.6%;
 /* or 46px */
 letter-spacing: 0.01em;
@@ -38,9 +38,10 @@ color: #38465E;
 .card p {
 /* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit... */
 
+margin: 0px;
 width: 469px;
 height: 88px;
-font-family: Avenir;
+font-family: 'Ubuntu';
 font-style: normal;
 font-weight: 500;
 font-size: 24px;
@@ -52,10 +53,11 @@ color: #38465E;
 }
 
 .card small{
+  margin: 20px 0px;
   /* Event */
-width: 44px;
-height: 29px;
-font-family: Avenir;
+width: 82px;
+/* height: 29px; */
+font-family: 'Ubuntu';
 font-style: normal;
 font-weight: 800;
 font-size: 16px;
@@ -63,6 +65,8 @@ line-height: 181.6%;
 /* identical to box height, or 29px */
 letter-spacing: 0.01em;
 color: #CE648D;
+background: rgba(221, 55, 55, 0.3);
+text-align: center;
 }
 
 .card img{

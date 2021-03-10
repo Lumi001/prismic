@@ -14,6 +14,9 @@
     align-items: center;
     display: flex;
 }
+.right nav{
+    
+}
 .left,.right{
     min-width: 500px;
 }

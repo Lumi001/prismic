@@ -2,7 +2,7 @@ import styles from './heading.module.css';
 
 const Heading = ({title}) => (
   <div className={styles.heading}>
-    <h1>{title}</h1>
+    <h2>{title}</h2>
   </div>
   )
   

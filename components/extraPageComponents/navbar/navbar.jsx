@@ -44,20 +44,33 @@ const Navbar = ({ logo, links }) => {
     ]
     return (
         <div className={styles.navbar}>
-            <section className={styles.left}>
+            <nav className={styles.left}>
                 <Link href="/">
                     <img src="/navbar/logo.png" alt="" />
                 </Link>
-            </section>
-            <section className={styles.right}>
+            </nav>
+            <nav className={styles.right}>
                 {linksTemp.map(link => {
                     return (
                         <div>
-                            {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link} type="button" text={link.text} /> : <NavbarItem href={link.link} type="link" text={link.text} />}
+                            {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link} type="button" key={Math.random()} text={link.text} /> : <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />}
                         </div>
                     )
                 })}
-            </section>
+                <button></button>
+                {rightDropdown && <section className={styles.toggle}>
+                    <nav className={styles.mobile}>
+                        {linksTemp.map(link => {
+                            return (
+                                <div>
+                                    <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />
+                                </div>
+                            )
+                        })}
+
+                    </nav>
+                </section>}
+            </nav>
         </div>
     );
 };

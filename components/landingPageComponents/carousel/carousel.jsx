@@ -11,6 +11,7 @@ const data = {
 const {title, content,link, img} = data;
 const Carousel = () => (
   <div className={styles.carousel}>
+    <button className={styles.buttonleft}>{`<`}</button>
     <section className={styles.left}>
     <h1>{title}</h1>
     <p>{content}</p>
@@ -19,6 +20,7 @@ const Carousel = () => (
     <section className={styles.right}>
       <img src={img} alt="" />
     </section>
+    <button className={styles.buttonright}>{`>`}</button>
   </div>
 )
 export default Carousel
