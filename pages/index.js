@@ -23,7 +23,7 @@ export default function Home() {
             <Card title="Lorem ipsum" tag="event" content="Lorem ipsum"/>
             <Card title="Lorem ipsum" tag="event" content="Lorem ipsum"/>
           </section>
-          <Button text="Load More"/>
+          {/* <Button text="Load More"/> */}
           
       </main>
     </div>

@@ -5,7 +5,7 @@
   display: flex;
 }
 .carousel .left{
-  background-color: green !important;
+  /* background-color: green !important; */
   width: 50%;
   display: grid;
   grid-template-rows: 200px 100px 100px;
@@ -13,7 +13,7 @@
 }
 
 .carousel .right{
-  background-color: red !important;
+  /* background-color: red !important; */
   width: 50%;
   display: grid;
   place-items: center;
