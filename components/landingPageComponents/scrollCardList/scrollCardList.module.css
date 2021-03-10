@@ -33,4 +33,5 @@
 }
 .scroll .bottom {
     display: flex;
+    width: 1000px !important;
 }

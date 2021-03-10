@@ -1,22 +1,4 @@
 import styles from './carousel.module.css';
-import img1 from '../../../public/Group.png'
-const data = [
-  {
-    title: `We are in the business of sustainability`,
-    content:`TCSRN founded in 2006,  is a consulting company that helps organisations to contribute to their societal goals of a philanthropic, activist, or charitable nature by engaging in or supporting volunteering or ethically-oriented practices.`,
-    img: img1
-  },
-  {
-    title: `We are in the business of sustainability`,
-    content:`TCSRN founded in 2006,  is a consulting company that helps organisations to contribute to their societal goals of a philanthropic, activist, or charitable nature by engaging in or supporting volunteering or ethically-oriented practices.`,
-    img: img1
-  },
-  {
-    title: `We are in the business of sustainability`,
-    content:`TCSRN founded in 2006,  is a consulting company that helps organisations to contribute to their societal goals of a philanthropic, activist, or charitable nature by engaging in or supporting volunteering or ethically-oriented practices.`,
-    img: img1
-  }
-]
 
 const data = {
   title: `We are in the
