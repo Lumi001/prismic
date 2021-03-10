@@ -1,0 +1,36 @@
+.scroll {
+    height: 716px;
+    background: #d2dae2;
+    width: 100%;
+    overflow: scroll;
+}
+.scroll .top {
+    display: flex;
+    justify-content: space-between;
+    height: 134px;
+    align-items: center;
+    padding: 0px 120px;
+}
+.scroll .top h1 {
+    font-family: Proxima Nova;
+    font-size: 48px;
+    width: 432px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 67px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    margin: 0px;
+}
+.scroll .top a {
+    font-family: Proxima Nova;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.15em;
+    text-align: right;
+}
+.scroll .bottom {
+    display: flex;
+}

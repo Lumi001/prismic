@@ -1,0 +1,9 @@
+.option p{
+    font-family: Avenir;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}

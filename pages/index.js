@@ -4,6 +4,7 @@ import Carousel from '../components/landingPageComponents/carousel/carousel'
 import Heading from '../components/extraPageComponents/heading/heading'
 import Card from '../components/extraPageComponents/card/card'
 import Button from '../components/extraPageComponents/button/button'
+import ScrollCardList from '../components/landingPageComponents/scrollCardList/scrollCardList'
 
 export default function Home() {
   return (
@@ -14,8 +15,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-          <h1>Temp</h1>
+          {/* <h1>Temp</h1> */}
+          <section className={styles.carousel}>
           <Carousel/>
+          </section>
           <Heading title="Featured Articles"/>
           <section className={styles.articles}>
             <Card title="Lorem ipsum" tag="event" content="Lorem ipsum"/>
@@ -24,6 +27,7 @@ export default function Home() {
             <Card title="Lorem ipsum" tag="event" content="Lorem ipsum"/>
           </section>
           {/* <Button text="Load More"/> */}
+          <ScrollCardList/>
           
       </main>
     </div>
