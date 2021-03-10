@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import styles from './navbar.module.css';
 import NavbarItem from './navbarItem/navbarItem';
+import { useState } from 'react';
 
 const Navbar = ({ logo, links }) => {
+    const [rightDropdown, setRightDropdown] = useState(false);
     const toggleRightDropdown = () => {
         if (rightDropdown) {
-            return rightDropdownDispatch(false)
+            return setRightDropdown(false)
         }
-        return rightDropdownDispatch(true)
+        return setRightDropdown(true)
     }
     // const toggleLeftDropdown = () => {
     //     if (leftDropdown) {
@@ -44,34 +46,37 @@ const Navbar = ({ logo, links }) => {
     ]
     return (
         <div className={styles.navbar}>
-            <nav className={styles.left}>
-                <Link href="/">
-                    <img src="/navbar/logo.png" alt="" />
-                </Link>
-            </nav>
-            <nav className={styles.right}>
-                {linksTemp.map(link => {
-                    return (
-                        <div>
-                            {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link} type="button" key={Math.random()} text={link.text} /> : <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />}
-                        </div>
-                    )
-                })}
-                <button></button>
-                {rightDropdown && <section className={styles.toggle}>
-                    <nav className={styles.mobile}>
-                        {linksTemp.map(link => {
-                            return (
-                                <div>
-                                    <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />
-                                </div>
-                            )
-                        })}
+            <section className={styles.top}>
+                <nav className={styles.left}>
+                    <Link href="/">
+                        <img src="/navbar/logo.png" alt="" />
+                    </Link>
+                </nav>
+                <nav className={styles.right}>
+                    {linksTemp.map(link => {
+                        return (
+                            <div className={styles.pc}>
+                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link} type="button" key={Math.random()} text={link.text} /> : <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />}
+                            </div>
+                        )
+                    })}
+                    <img src="/navbar/dropdown.png" onClick={() => toggleRightDropdown()} alt="" />
 
-                    </nav>
-                </section>}
+                </nav>
+            </section>
+            {rightDropdown && <section className={styles.bottom}>
+                <nav className={styles.mobile}>
+                    {linksTemp.map(link => {
+                        return (
+                            <div>
+                                <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />
+                            </div>
+                        )
+                    })}
+
             </nav>
-        </div>
+                </section>}
+        </div >
     );
 };
 export default Navbar;

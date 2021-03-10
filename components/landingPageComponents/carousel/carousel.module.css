@@ -24,7 +24,6 @@
 }
 .carousel h1 {
   height: 216px;
-  width: 419px;
   font-family: Proxima Novo;
   font-style: normal;
   font-weight: bold;
@@ -34,9 +33,7 @@
   color: #313131;
 }
 .carousel p {
-  height: 144px;
-  width: 629px;
-
+  
   font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 500;
@@ -69,4 +66,29 @@
   background: #313131;
   font-size: 34px;
   color: #ffffff;
+}
+@media screen and (min-width: 999px) {
+  .carousel h1{
+    width: 629px;
+    width: 419px;
+  }
+  .carousel p{
+    font-size: 3rem;
+    height: 144px;
+  }
+}
+@media screen and (max-width: 999px) {
+  .carousel h1{
+    font-size: 3rem;
+    min-width: 250px;
+  }
+  .carousel p{
+    min-width: 250px;
+  }
+  .carousel img{
+    display: none;
+  }
+  .carousel a{
+    min-width: 250px;
+  }
 }
