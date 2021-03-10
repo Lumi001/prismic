@@ -9,13 +9,14 @@
 }
 
 .main {
-  padding: 5rem 0;
+  /* padding: 1rem 0; */
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 1920px;
 }
 
 .footer {
@@ -85,13 +86,18 @@
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
+  place-items: center;
 }
   @media screen and (max-width:990px){
     .articles{
       grid-template-columns: 1;
     }
   }
-
+.carousel{
+  padding-top: 120px;
+  background: #ffc017;
+  width: 100%;
+}
 .logo {
   height: 1em;
 }

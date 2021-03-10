@@ -1,0 +1,19 @@
+.navbar{
+    display: flex;
+    width: 100%;
+    /* margin: auto; */
+    padding: 0px 50px;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: transparent;
+    position: fixed;
+}
+.right{
+    /* min-width: 716px; */
+    align-items: center;
+    display: flex;
+}
+.left,.right{
+    min-width: 500px;
+}

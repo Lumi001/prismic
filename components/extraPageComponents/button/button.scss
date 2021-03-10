@@ -1,0 +1,21 @@
+.btn {
+    background: #208fff;
+    border-radius: 5px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 126.5%;
+    /* or 18px */
+
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #0e82f8;
+
+    color: #ffffff;
+    cursor: pointer;
+
+    &.secondary {
+        background: white;
+        color: #0e82f8;
+    }
+}

@@ -1,0 +1,13 @@
+.social{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background: #F5F5F5;
+}
+.social h1,.social .buttons{
+    min-width: 100px;
+    margin: 0px 25px ;
+}
+.social .buttons{
+    display: flex;
+}

@@ -1,24 +1,27 @@
-.carousel{
+.carousel {
   /* background-color: red; */
   width: 100%;
-  height: 800px;
+  /* height: 800px; */
   display: flex;
+  padding: 0px 100px;
 }
-.carousel .left{
-  background-color: green !important;
+.carousel .left {
+  /* background-color: green !important; */
   width: 50%;
-  display: grid;
-  grid-template-rows: 200px 100px 100px;
-  place-items: center;
+  /* display: grid; */
+  /* grid-template-rows: 200px 100px 100px; */
+  /* place-items: center; */
 }
 
-.carousel .right{
-  background-color: red !important;
+.carousel .right {
+  /* background-color: red !important; */
   width: 50%;
   display: grid;
   place-items: center;
 }
-.carousel h1{
+.carousel h1 {
+  height: 216px;
+  width: 419px;
   font-family: Proxima Novo;
   font-style: normal;
   font-weight: bold;
@@ -27,7 +30,10 @@
   letter-spacing: 0.01em;
   color: #313131;
 }
-.carousel p{
+.carousel p {
+  height: 144px;
+  width: 629px;
+
   font-family: Avenir;
   font-style: normal;
   font-weight: 500;
@@ -36,8 +42,21 @@
   letter-spacing: 0.01em;
   color: #313131;
 }
-.carousel img{
+.carousel a {
+  font-family: Proxima Nova;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 24px;
+  letter-spacing: 0.15em;
+  text-align: left;
+  color: #313131;
+  border-bottom: 1px solid;
+  padding-bottom: 9px;
+
+}
+.carousel img {
   height: 625px;
   width: 80%;
-  background: blue;
+  /* background: blue; */
 }

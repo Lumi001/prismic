@@ -1,0 +1,29 @@
+.item {
+    /* width: 92px; */
+    height: 29px;
+    margin: 42px;
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 181.6%;
+    /* identical to box height, or 29px */
+
+    letter-spacing: 0.01em;
+
+    color: #313131;
+}
+.button {
+    width: 185px;
+    height: 44px;
+    background: #313131;
+    color: #F0F0F0;
+    border-radius: 5px;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0.15em;
+    text-align: center;
+}

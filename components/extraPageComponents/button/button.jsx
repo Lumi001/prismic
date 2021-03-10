@@ -1,9 +1,12 @@
-import styles from './button.module.css';
+import React, { Fragment } from 'react';        
+// import './button.scss';
 
+const Button = ({text, width, height, fontSize, secondary}) => {
+    return (
+        <Fragment>
+            <button className={`btn ${secondary?'secondary':''}`} style={{width:`${width}`, height:`${height}`, fontSize:`${fontSize}`}}>{text}</button>
+        </Fragment>
+    );
+};
 
-const Button = ({text}) =>(
-  <Button className={styles.button}>
-    {text}
-  </Button>
-)
 export default Button;
