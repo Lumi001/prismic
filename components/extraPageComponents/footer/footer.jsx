@@ -61,7 +61,10 @@ const Footer = (links) => {
             title: "",
             links: [
                 {
-                    text: "Footer Text",
+                    text: `LAGOS NIGERIA
+                    30, Shakiru Anjorin Street, Road 39, Off
+                    Admiralty Way,Lekki Phase 1, Lekki, Lagos,
+                    Phone: +234 123 4456`,
                 }
             ]
         },
@@ -73,10 +76,10 @@ const Footer = (links) => {
                     linksTemp.map(link => {
                         return (
                             <div>
-                                <FooterTitle text={link.title} />
+                                <FooterTitle text={link.title} key={linksTemp.indexOf(link)} />
                                 {
                                     link.links.map(each => {
-                                        return <div>
+                                        return <div key={link.links.indexOf(each)}>
                                             <FooterOption text={each.text} href={each.href ? each.href : null} />
                                         </div>
                                     }

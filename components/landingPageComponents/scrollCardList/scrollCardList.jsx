@@ -1,25 +1,6 @@
 import ScrollCard from './scrollCard/scrollCard';
 import styles from './scrollCardList.module.css'
-// const ScrollCardList = () => {
-//     return (
-//         <div className={styles.scroll}>
-//             <section className={styles.top}>
-//                 <h1>Our projects in pictures and videos</h1>
-//                 <a href="#">VIEW MORE PROJECTS</a>
-//             </section>
-//             <section className={styles.bottom}>
-//                 <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>
-//                 <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>
-//                 <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>
-//                 <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>
-//                 <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>
-//                 <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>
-//             </section>
-//         </div>
-//     );
-// };
 
-// export default ScrollCardList;
 
 
 import React, { Component } from "react";
@@ -75,6 +56,11 @@ export default class ScrollCardList extends Component {
     };
     return (
         <React.Fragment>
+             <div className={styles.scroll}>
+      <section className={styles.top}>
+                <h2>Our projects in pictures and videos</h2>
+                <a href="#">VIEW MORE PROJECTS<span><img src="/button/arrow.png" alt=""/></span></a>
+            </section>
       <div className={styles.bottom} style= {{ width: 1300, display: "flex", flexDirection: "column"}}>  
         <Slider ref={c => (this.slider = c)} {...settings}>
           <div key={1}>
@@ -90,7 +76,7 @@ export default class ScrollCardList extends Component {
           <div key={6}>
           <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
         </Slider>
-
+        </div>
         <div className="circle-opt">
     <div className="offer-circle" ><svg onClick={this.previous} width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path id='previous' d="M12 1L2 11.3871L12 24" stroke="#E4E4E4" stroke-width="2"/>
@@ -134,6 +120,7 @@ export default class ScrollCardList extends Component {
 `}
 </style>
 </React.Fragment>
+    
     );
   }
 }

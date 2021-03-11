@@ -7,40 +7,37 @@
   text-decoration: none;
   border: none;
   border-radius: 10px;
-  height: 650px;
-  width: 500px;
+  /* height: 650px;  */
   display: grid;
 }
 
-.card:hover,
+/* .card:hover,
 .card:focus,
 .card:active {
   color: #0070f3;
   border-color: #0070f3;
-}
+} */
 
 .card h3 {
-/* Save the Children Initiative powered by Chevron */
-
-width: 469px;
-height: 102px;
-font-family: Proxima Nova;
-font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 152.6%;
-/* or 46px */
-letter-spacing: 0.01em;
-
-color: #38465E;
+  /* Save the Children Initiative powered by Chevron */
+  margin: 0px;
+  /* height: 102px; */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 152.6%;
+  /* or 46px */
+  letter-spacing: 0.01em;
+  
+  color: #38465E;
 }
 
 .card p {
 /* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit... */
 
-width: 469px;
-height: 88px;
-font-family: Avenir;
+margin: 0px;
+font-family: 'Ubuntu';
 font-style: normal;
 font-weight: 500;
 font-size: 24px;
@@ -52,10 +49,11 @@ color: #38465E;
 }
 
 .card small{
+  margin: 20px 0px;
   /* Event */
-width: 44px;
-height: 29px;
-font-family: Avenir;
+  width: 82px;
+/* height: 29px; */
+font-family: 'Ubuntu';
 font-style: normal;
 font-weight: 800;
 font-size: 16px;
@@ -63,14 +61,55 @@ line-height: 181.6%;
 /* identical to box height, or 29px */
 letter-spacing: 0.01em;
 color: #CE648D;
+background: rgba(221, 55, 55, 0.3);
+text-align: center;
 }
 
 .card img{
   
-/* Rectangle 84 */
-
-width: 500px;
-height: 350px;
-background: #C4C4C4;
-border-radius: 15px;
+  /* Rectangle 84 */
+  
+  background: #C4C4C4;
+  border-radius: 15px;
+}
+@media screen and (min-width: 999px) {
+  .card h3{
+    width: 469px;
+  }
+  .card p{
+    /* font-size: 3rem; */
+    width: 469px;
+    height: 88px;
+  }
+  .card img{
+    width: 500px;
+  }
+  .card{
+    width: 500px;
+  }
+}
+@media screen and (max-width: 999px) {
+  
+  .card h3,.card p{
+   /* width: 90vw;*/
+    height: auto;
+  }
+  .card h3{
+    font-size: 48px;
+  }
+  .card p{
+    font-size: 36px;
+  }
+  .card img{
+    height: 650px;
+    width: 100%;
+  }
+  .card small{
+    font-size: 33px;
+    width: 150px;
+  }
+  .card{
+    margin: 100px 0px;
+    width: 80%;
+  }
 }
