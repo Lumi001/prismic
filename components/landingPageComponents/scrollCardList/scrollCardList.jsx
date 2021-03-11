@@ -61,7 +61,7 @@ export default class ScrollCardList extends Component {
                 <h2>Our projects in pictures and videos</h2>
                 <a href="#">VIEW MORE PROJECTS<span><img src="/button/arrow.png" alt=""/></span></a>
             </section>
-      <div className={styles.bottom} style= {{ width: 1300, display: "flex", flexDirection: "column"}}>  
+      <div >  
         <Slider ref={c => (this.slider = c)} {...settings}>
           <div key={1}>
           <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
