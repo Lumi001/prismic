@@ -24,7 +24,7 @@
   place-items: center;
 }
 .carousel h1 {
-  height: 216px;
+  /*height: 216px;*/
   font-family: Proxima Novo;
   font-style: normal;
   font-weight: bold;
@@ -70,7 +70,7 @@
 @media screen and (min-width: 999px) {
   .carousel h1 {
     width: 629px;
-    width: 419px;
+    height: 419px;
   }
   .carousel p {
     font-size: 3rem;
@@ -79,24 +79,29 @@
 }
 @media screen and (max-width: 999px) {
   .carousel h1 {
-    font-size: 3rem;
+    font-size: 64px;
     /* min-width: 300px; */
   }
   .carousel p {
     /* min-width: 300px; */
+    font-size: 36px;
   }
   .carousel img {
     display: none;
   }
   .carousel a {
     /* min-width: 300px; */
+    font-size: 28px;
   }
   .carousel {
     padding: 0px;
     margin-bottom: 20px;
   }
   .carousel .left {
-    min-width: 300px;
+    min-width: 80%;
     width: 100%;
+  }
+  .carousel .right{
+    display: none;
   }
 }

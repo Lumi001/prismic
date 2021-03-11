@@ -11,3 +11,11 @@
 .option section{
     display: flex;
 }
+@media screen and (max-width: 999px) {
+    .option p{
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    }
+
+}

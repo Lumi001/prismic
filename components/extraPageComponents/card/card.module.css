@@ -90,17 +90,26 @@ text-align: center;
 }
 @media screen and (max-width: 999px) {
   
-  .card h3,.card p, .card img{
-    width: 90vw;
+  .card h3,.card p{
+   /* width: 90vw;*/
     height: auto;
   }
   .card h3{
-    font-size: 36px;
+    font-size: 48px;
   }
   .card p{
-    font-size: 20px;
+    font-size: 36px;
   }
   .card img{
-    height: 350px;
+    height: 650px;
+    width: 100%;
+  }
+  .card small{
+    font-size: 33px;
+    width: 150px;
+  }
+  .card{
+    margin: 100px 0px;
+    width: 80%;
   }
 }
