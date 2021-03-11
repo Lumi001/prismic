@@ -33,7 +33,7 @@
 }
 .scroll .bottom {
     display: flex;
-    width: 1000px !important;
+    /* width: 1000px !important; */
     overflow: scroll;
 }
 @media screen and (min-width: 999px) {
