@@ -75,7 +75,7 @@ export default class ScrollCardList extends Component {
     };
     return (
         <React.Fragment>
-      <div className={styles.bottom} style= {{ width: 1300}}>  
+      <div className={styles.bottom} style= {{ width: 1300, display: "flex", flexDirection: "column"}}>  
         <Slider ref={c => (this.slider = c)} {...settings}>
           <div key={1}>
           <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
