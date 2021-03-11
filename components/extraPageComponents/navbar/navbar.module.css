@@ -15,7 +15,7 @@
     width: 100%;
     /* margin: auto; */
     /* padding: 0px 50px; */
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100px;
     background: transparent;
@@ -25,8 +25,8 @@
     .navbar .right img{
       display: none !important;
     }
-    .left,.right{
-        min-width: 500px;
+    .left{
+        min-width: 100px;
     }
 }
 @media screen and (max-width: 999px) {
@@ -41,6 +41,7 @@
     }
     .navbar{
         background: #313131;
+        padding: 0px 15px;
     }
 }
 .right{

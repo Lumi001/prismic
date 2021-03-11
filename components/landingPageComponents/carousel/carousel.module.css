@@ -37,7 +37,7 @@
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 181.6%;
   letter-spacing: 0.01em;
   color: #313131;
@@ -69,39 +69,44 @@
 }
 @media screen and (min-width: 999px) {
   .carousel h1 {
-    width: 629px;
-    height: 419px;
+    /* width: 629px; */
+    width: 419px;
   }
   .carousel p {
-    font-size: 3rem;
-    height: 144px;
+    /* font-size: 20px; */
+    /* height: 144px; */
   }
 }
 @media screen and (max-width: 999px) {
   .carousel h1 {
-    font-size: 64px;
+    font-size: 3rem;
     /* min-width: 300px; */
   }
   .carousel p {
     /* min-width: 300px; */
-    font-size: 36px;
+    font-size: 1.2rem;
   }
   .carousel img {
     display: none;
   }
   .carousel a {
     /* min-width: 300px; */
-    font-size: 28px;
+    font-size: 1rem;
   }
   .carousel {
     padding: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    /* max-width: 100%; */
+    width: 100%;
   }
   .carousel .left {
-    min-width: 80%;
+    /* min-width: 100%; */
     width: 100%;
   }
   .carousel .right{
+    display: none;
+  }
+  .carousel button{
     display: none;
   }
 }

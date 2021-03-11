@@ -82,6 +82,7 @@ text-align: center;
     height: 88px;
   }
   .card img{
+    height: 400px;
     width: 500px;
   }
   .card{
@@ -95,21 +96,21 @@ text-align: center;
     height: auto;
   }
   .card h3{
-    font-size: 48px;
+    font-size: 2rem;
   }
   .card p{
-    font-size: 36px;
+    font-size: 1.2rem;
   }
   .card img{
-    height: 650px;
+    height: 400px;
     width: 100%;
   }
   .card small{
-    font-size: 33px;
-    width: 150px;
+    font-size: 1reem;
+    /* width: 150px; */
   }
   .card{
-    margin: 100px 0px;
-    width: 80%;
+    margin: 50px 0px;
+    width: 90%;
   }
 }
