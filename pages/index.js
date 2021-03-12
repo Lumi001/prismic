@@ -47,13 +47,16 @@ export default function Home({ footer, card, carousel, connect_with_us, navigati
 
 export async function getServerSideProps() {
   const landing = await Client().query(
+    Prismic.Predicates.at("document.type", 'landing_page')
   )
   let empty = {};
+
+  console.log(landing)
 
   landing.results[0].data.body.map(each => {
     return empty[`${each.slice_type}`] = { items: each.items, primary: each.primary }
   })
-  // console.log(empty)
+  console.log(empty)
   const { card, carousel, connect_with_us, navigation_bar, scrollable_card, footer } = empty;
   return {
     props: {
