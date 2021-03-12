@@ -8,38 +8,10 @@ import Card from '../components/extraPageComponents/card/card'
 import Button from '../components/extraPageComponents/button/button'
 import ScrollCardList from '../components/landingPageComponents/scrollCardList/scrollCardList'
 
-export default function Home() {
+export default function Home({ footer, card, carousel, connect_with_us, navigation_bar, scrollable_card }) {
+
   const data = [
-    {
-      title: "SERAS 13th Edition Recap: A night of glamour",
-      tag: "event",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit..."
-    },
-    {
-      title: "SERAS 13th Edition Recap: A night of glamour",
-      tag: "event",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit..."
-    },
-    {
-      title: "SERAS 13th Edition Recap: A night of glamour",
-      tag: "event",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit..."
-    },
-    {
-      title: "SERAS 13th Edition Recap: A night of glamour",
-      tag: "event",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit..."
-    },
-    {
-      title: "SERAS 13th Edition Recap: A night of glamour",
-      tag: "event",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit..."
-    },
-    {
-      title: "SERAS 13th Edition Recap: A night of glamour",
-      tag: "event",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit..."
-    },
+
   ]
   return (
     <div className={styles.container}>
@@ -52,6 +24,12 @@ export default function Home() {
 
       <main className={styles.main}>
         {/* <h1>Temp</h1> */}
+        {/* {console.log(footer)}
+        {console.log(navigation_bar)}
+        {console.log(card)}
+        {console.log(carousel)}
+        {console.log(scrollable_card)}
+        {console.log(connect_with_us)} */}
         <section className={styles.carousel}>
           <Carousel />
         </section>
@@ -70,13 +48,16 @@ export default function Home() {
 export async function getServerSideProps() {
   const landing = await Client().query(
   )
+  let empty = {};
 
-  console.log(landing.results[0].data.body)
-
-
+  landing.results[0].data.body.map(each => {
+    return empty[`${each.slice_type}`] = { items: each.items, primary: each.primary }
+  })
+  // console.log(empty)
+  const { card, carousel, connect_with_us, navigation_bar, scrollable_card, footer } = empty;
   return {
     props: {
-
+      card, carousel, connect_with_us, navigation_bar, scrollable_card, footer
     }
   }
 }
