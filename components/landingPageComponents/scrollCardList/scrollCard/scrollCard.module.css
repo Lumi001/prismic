@@ -1,6 +1,4 @@
 .card {
-    width: 372px;
-    height: 381px;
     background: #000000;
     opacity: 0.5;
     border-radius: 10px;
@@ -29,7 +27,7 @@
     line-height: 135.6%;
     /* or 33px */
     letter-spacing: 0.01em;
-
+    
     color: #ffffff;
 }
 .card h3 {
@@ -42,4 +40,28 @@
     line-height: 21px;
     letter-spacing: 0.01em;
     text-align: left;    
+}
+@media screen and (min-width: 990px) {
+    .card {
+        width: 400px;
+        /* width: 372px; */
+        height: 381px;        
+    }
+}
+@media screen and (max-width: 990px) {
+    .card {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .card {
+        width: 300px;
+        min-width: 280px;
+        height: 350px;
+        padding: 20px;
+        margin: 10px auto;
+    }
+    .card .bottom {
+        justify-content: space-around;
+    }    
 }
