@@ -30,7 +30,7 @@ export default class ScrollCardList extends Component {
         initialSlide: 0,
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 1000,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
@@ -41,7 +41,7 @@ export default class ScrollCardList extends Component {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 1,
               slidesToScroll: 1,
             }
           },
@@ -78,14 +78,14 @@ export default class ScrollCardList extends Component {
         </Slider>
         </div>
         <div className="circle-opt">
-    <div className="offer-circle" ><svg onClick={this.previous} width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id='previous' d="M12 1L2 11.3871L12 24" stroke="#E4E4E4" stroke-width="2"/>
+    <div className="offer-circle" onClick={this.previous}><svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id='previous' d="M12 1L2 11.3871L12 24" stroke="#E4E4E4" strokeWidth="2"/>
 </svg>
 
 </div>
 
-    <div className="offer-circle"><svg onClick={this.next} width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id='next' d="M0.999998 24L11 13.6129L1 0.999999" stroke="#E4E4E4" stroke-width="2"/>
+    <div className="offer-circle" onClick={this.next}><svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id='next' d="M0.999998 24L11 13.6129L1 0.999999" stroke="#E4E4E4" strokeWidth="2"/>
 </svg>
 </div>
 </div>
@@ -94,7 +94,6 @@ export default class ScrollCardList extends Component {
 {`
 .offer-circle {
     display: flex;
-    margin-left: 15px;
     width: 38px;
     height: 38px;
     justify-content: center;
