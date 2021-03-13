@@ -16,3 +16,19 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
+export async function getServerSideProps() {
+  const landing = await Client().query(
+  )
+  let empty = {};
+
+  landing.results[0].data.body.map(each => {
+    return empty[`${each.slice_type}`] = { items: each.items, primary: each.primary }
+  })
+  console.log(empty)
+  const { card, carousel, connect_with_us, navigation_bar, scrollable_card, footer } = empty;
+  return {
+    props: {
+      card, carousel, connect_with_us, navigation_bar, scrollable_card, footer
+    }
+  }
+}

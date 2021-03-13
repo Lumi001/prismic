@@ -49,7 +49,7 @@ const Navbar = ({ logo, links }) => {
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
-                        <img src="/navbar/logo.png" alt="" />
+                        <img src={logo} alt="" />
                     </Link>
                 </nav>
                 <nav className={styles.right}>

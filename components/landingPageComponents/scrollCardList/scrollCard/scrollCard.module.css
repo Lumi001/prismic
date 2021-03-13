@@ -43,14 +43,17 @@
 }
 @media screen and (min-width: 990px) {
     .card {
-        width: 400px;
+        min-width: 350px;
         /* width: 372px; */
         height: 381px;        
     }
 }
 @media screen and (max-width: 990px) {
     .card {
-        width: 400px;
+        /* width: 350px; */
+        width: 80%;
+        min-width: 300px;
+        padding: 10px;
     }
 }
 @media screen and (max-width: 600px) {
