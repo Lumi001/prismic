@@ -35,7 +35,7 @@ export default class ScrollCardList extends Component {
               slidesToShow: 3,
               slidesToScroll: 1,
               infinite: false,
-              dots: true
+              // dots: true
             }
           },
           {
@@ -44,7 +44,7 @@ export default class ScrollCardList extends Component {
               slidesToShow: 2,
               slidesToScroll: 1,
               infinite: false,
-              dots: true
+              // dots: true
             }
           },
           {
@@ -53,7 +53,7 @@ export default class ScrollCardList extends Component {
               slidesToShow: 2,
               slidesToScroll: 1,
               infinite: false,
-              dots: true
+              // dots: true
             }
           },
           {
