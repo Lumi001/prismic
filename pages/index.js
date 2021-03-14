@@ -10,9 +10,9 @@ import Card from '../components/extraPageComponents/card/card'
 import Button from '../components/extraPageComponents/button/button'
 import ScrollCardList from '../components/landingPageComponents/scrollCardList/scrollCardList'
 
-export default function Home({ footer, card, carousel, connect_with_us, navigation_bar, scrollable_card, landing}) {
-console.log(card)
-const data = [ 
+export default function Home({ footer, button_text, card, carousel, connect_with_us, navigation_bar, scrollable_card, landing}) {
+console.log(carousel)
+const  cards = [ 
   { 
     title: card[0].title[0][0].text,
     image: card[0].image[0].url,
@@ -49,7 +49,7 @@ const data = [
     content: card[0].card_content[5][0].text,
     tag: card[0].tag[5]
     
-  }
+  },
 ]
   return (
     <div className={styles.container}>
@@ -69,13 +69,15 @@ const data = [
         {console.log(scrollable_card)}
         {console.log(connect_with_us)} */}
         <section className={styles.carousel}>
-          <Carousel />
+          <Carousel 
+          title={carousel.heading[0].text} content={carousel.text[0].text} link={carousel['link_text'][0].text} image={carousel.background_image.url}
+           />
         </section>
         <Heading title="Featured Articles" />
         <section className={styles.articles}>
-          {data.map(card => <Card key={Math.random()} title={card.title.text} tag={card.tag} content={card.content} />)}
+          {cards.map(card => <Card key={Math.random()} title={card.title.text} tag={card.tag} content={card.content} />)}
         </section>
-        <Button text="Load More" icon="/button/cross.png" />
+        <Button text={button_text} icon="/button/cross.png" />
         <ScrollCardList />
 
       </main>
@@ -121,6 +123,7 @@ export async function getServerSideProps() {
             tag:  landing.results[0].data.body[2].items.map(card =>
               { return card.tag }),
                   }],
+                  button_text: landing.results[0].data.body[2].primary.button_text
     }
   }
 }

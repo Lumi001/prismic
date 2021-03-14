@@ -1,8 +1,5 @@
 import ScrollCard from './scrollCard/scrollCard';
-import styles from './scrollCardList.module.css'
-
-
-
+import styles from './scrollCardList.module.css';
 import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
