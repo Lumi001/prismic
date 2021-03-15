@@ -69,27 +69,31 @@ export default class ScrollCardList extends Component {
           }
         ]
     };
+    const {scroll_card, scroll_title_text, scroll_link_text} = this.props
+
+    console.log(scroll_card)
     return (
         <React.Fragment>
              <div className={styles.scroll}>
       <section className={styles.top}>
-                <h2>Our projects in pictures and videos</h2>
-                <a href="#">VIEW MORE PROJECTS<span><img src="/button/arrow.png" alt=""/></span></a>
+                <h2>{scroll_title_text}</h2>
+                <a href="#">{scroll_link_text}<span><img src="/button/arrow.png" alt=""/></span></a>
             </section>
       <div >  
         <Slider ref={c => (this.slider = c)} {...settings}>
-          <div key={1}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={2}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={3}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={4}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={5}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={6}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
+        {
+    scroll_card.map((user,i) =>{
+    return (
+     
+           <ScrollCard
+        title={scroll_card[i].title}
+        date={scroll_card[i].date}
+        type={scroll_card[i].card_type}
+        key={scroll_card[i].id} />
+      
+    )
+})
+        }
         </Slider>
         </div>
         <div className="circle-opt">

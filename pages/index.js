@@ -10,9 +10,42 @@ import Card from '../components/extraPageComponents/card/card'
 import Button from '../components/extraPageComponents/button/button'
 import ScrollCardList from '../components/landingPageComponents/scrollCardList/scrollCardList'
 
-export default function Home({ footer, button_text, card, carousel, connect_with_us, navigation_bar, scrollable_card, landing}) {
-console.log(carousel)
-const  cards = [ 
+export default function Home({  scroll_data , card, carousel, scroll_title_text, scroll_link_text}) {
+  // console.log(scroll_data)
+  const scroll1 = [
+  {
+  date: scroll_data[0].date[0],
+  title: scroll_data[0].title[0][0].text,
+  background_image: scroll_data[0].background_image[0],
+  video: scroll_data[0].video[0],
+  card_type: scroll_data[0].cardtype[0]
+},
+{
+  date: scroll_data[0].date[1],
+  title: scroll_data[0].title[1][0].text,
+  background_image: scroll_data[0].background_image[1],
+  video: scroll_data[0].video[1],
+  card_type: scroll_data[0].cardtype[1]
+},
+{
+  date: scroll_data[0].date[2],
+  title: scroll_data[0].title[2][0].text,
+  background_image: scroll_data[0].background_image[2],
+  video: scroll_data[0].video[2],
+  card_type: scroll_data[0].cardtype[2]
+},
+{
+  date: scroll_data[0].date[3],
+  title: scroll_data[0].title[3][0].text,
+  background_image: scroll_data[0].background_image[3],
+  video: scroll_data[0].video[3],
+  card_type: scroll_data[0].cardtype[3]
+}
+]
+
+// console.log(scroll1)
+
+const cards = [ 
   { 
     title: card[0].title[0][0].text,
     image: card[0].image[0].url,
@@ -77,8 +110,8 @@ const  cards = [
         <section className={styles.articles}>
           {cards.map(card => <Card key={Math.random()} title={card.title.text} tag={card.tag} content={card.content} />)}
         </section>
-        <Button text={button_text} icon="/button/cross.png" />
-        <ScrollCardList />
+        <Button text={card[0].button_text} icon="/button/cross.png" />
+        <ScrollCardList scroll_card={scroll1} scroll_title_text={scroll_title_text} scroll_link_text={scroll_link_text} />
 
       </main>
     </div>
@@ -113,6 +146,7 @@ export async function getServerSideProps() {
   return {
     props: {
       carousel: landing.results[0].data.body[1].items[0],
+
       card: [{
         title: landing.results[0].data.body[2].items.map(card =>
          { return card.title }),
@@ -122,8 +156,27 @@ export async function getServerSideProps() {
             { return card.card_content }),
             tag:  landing.results[0].data.body[2].items.map(card =>
               { return card.tag }),
-                  }],
-                  button_text: landing.results[0].data.body[2].primary.button_text
+              button_text: landing.results[0].data.body[2].primary.button_text,
+                  },
+                ],
+
+      
+
+      scroll_data: [{
+        title: landing.results[0].data.body[3].items.map(item =>
+          { return item.title }),
+        date: landing.results[0].data.body[3].items.map(item =>
+          { return item.date }),
+        background_image: landing.results[0].data.body[3].items.map(item =>
+          { return item.background_image }),
+          video: landing.results[0].data.body[3].items.map(item =>
+            { return item.video }),
+         cardtype: landing.results[0].data.body[3].items.map(item =>
+            { return item.cardtype }),
+          }],
+          scroll:  landing.results[0].data.body[3].primary.link_text,
+          scroll_title_text: landing.results[0].data.body[3].primary.title[0].text,
+          scroll_link_text: landing.results[0].data.body[3].primary.link_text
     }
   }
 }
