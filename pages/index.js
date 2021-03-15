@@ -10,80 +10,10 @@ import Card from '../components/extraPageComponents/card/card'
 import Button from '../components/extraPageComponents/button/button'
 import ScrollCardList from '../components/landingPageComponents/scrollCardList/scrollCardList'
 
-export default function Home({  scroll_data , card, carousel, scroll_title_text, scroll_link_text}) {
-  // console.log(scroll_data)
-  const scroll1 = [
-  {
-  date: scroll_data[0].date[0],
-  title: scroll_data[0].title[0][0].text,
-  background_image: scroll_data[0].background_image[0],
-  video: scroll_data[0].video[0],
-  card_type: scroll_data[0].cardtype[0]
-},
-{
-  date: scroll_data[0].date[1],
-  title: scroll_data[0].title[1][0].text,
-  background_image: scroll_data[0].background_image[1],
-  video: scroll_data[0].video[1],
-  card_type: scroll_data[0].cardtype[1]
-},
-{
-  date: scroll_data[0].date[2],
-  title: scroll_data[0].title[2][0].text,
-  background_image: scroll_data[0].background_image[2],
-  video: scroll_data[0].video[2],
-  card_type: scroll_data[0].cardtype[2]
-},
-{
-  date: scroll_data[0].date[3],
-  title: scroll_data[0].title[3][0].text,
-  background_image: scroll_data[0].background_image[3],
-  video: scroll_data[0].video[3],
-  card_type: scroll_data[0].cardtype[3]
-}
-]
+export default function Home({  scroll_data , cards, carousel, scroll_title_text, scroll_link_text, button_text}) {
 
-// console.log(scroll1)
 
-const cards = [ 
-  { 
-    title: card[0].title[0][0].text,
-    image: card[0].image[0].url,
-    content: card[0].card_content[0][0].text,
-    tag: card[0].tag[0]    
-  },
-  { 
-    title: card[0].title[1][0].text,
-    image: card[0].image[1].url,
-    content: card[0].card_content[1][0].text,
-    tag: card[0].tag[1]    
-  },
-  { 
-    title: card[0].title[2][0].text,
-    image: card[0].image[2].url,
-    content: card[0].card_content[2][0].text,
-    tag: card[0].tag[2]    
-  },
-  { 
-    title: card[0].title[3][0].text,
-    image: card[0].image[3].url,
-    content: card[0].card_content[3][0].text,
-    tag: card[0].tag[3]    
-  },
-  { 
-    title: card[0].title[4][0].text,
-    image: card[0].image[4].url,
-    content: card[0].card_content[4][0].text,
-    tag: card[0].tag[4]    
-  },
-  { 
-    title: card[0].title[5][0].text,
-    image: card[0].image[5].url,
-    content: card[0].card_content[5][0].text,
-    tag: card[0].tag[5]
-    
-  },
-]
+
   return (
     <div className={styles.container}>
       <Head>
@@ -108,10 +38,11 @@ const cards = [
         </section>
         <Heading title="Featured Articles" />
         <section className={styles.articles}>
-          {cards.map(card => <Card key={Math.random()} title={card.title.text} tag={card.tag} content={card.content} />)}
+          {cards.map(card => <Card key={Math.random()} title={card.title[0].text} tag={card.tag} content={card.card_content[0].text}  
+              />)} 
         </section>
-        <Button text={card[0].button_text} icon="/button/cross.png" />
-        <ScrollCardList scroll_card={scroll1} scroll_title_text={scroll_title_text} scroll_link_text={scroll_link_text} />
+        <Button text={button_text} icon="/button/cross.png" />
+        <ScrollCardList scroll_data={scroll_data} scroll_title_text={scroll_title_text} scroll_link_text={scroll_link_text} />
 
       </main>
     </div>
@@ -147,36 +78,17 @@ export async function getServerSideProps() {
     props: {
       carousel: landing.results[0].data.body[1].items[0],
 
-      card: [{
-        title: landing.results[0].data.body[2].items.map(card =>
-         { return card.title }),
-         image:  landing.results[0].data.body[2].items.map(card =>
-          { return card.image }),
-          card_content:  landing.results[0].data.body[2].items.map(card =>
-            { return card.card_content }),
-            tag:  landing.results[0].data.body[2].items.map(card =>
-              { return card.tag }),
-              button_text: landing.results[0].data.body[2].primary.button_text,
-                  },
-                ],
+      cards: landing.results[0].data.body[2].items,
+       
+      button_text: landing.results[0].data.body[2].primary.button_text,      
 
-      
+      scroll_data: landing.results[0].data.body[3].items,
 
-      scroll_data: [{
-        title: landing.results[0].data.body[3].items.map(item =>
-          { return item.title }),
-        date: landing.results[0].data.body[3].items.map(item =>
-          { return item.date }),
-        background_image: landing.results[0].data.body[3].items.map(item =>
-          { return item.background_image }),
-          video: landing.results[0].data.body[3].items.map(item =>
-            { return item.video }),
-         cardtype: landing.results[0].data.body[3].items.map(item =>
-            { return item.cardtype }),
-          }],
-          scroll:  landing.results[0].data.body[3].primary.link_text,
-          scroll_title_text: landing.results[0].data.body[3].primary.title[0].text,
-          scroll_link_text: landing.results[0].data.body[3].primary.link_text
+      scroll:  landing.results[0].data.body[3].primary.link_text,
+
+      scroll_title_text: landing.results[0].data.body[3].primary.title[0].text,
+
+      scroll_link_text: landing.results[0].data.body[3].primary.link_text
     }
   }
 }
