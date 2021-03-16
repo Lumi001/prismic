@@ -35,4 +35,19 @@
     letter-spacing: 0.15em;
     text-align: center;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button img {
+    display: block !important;
+    margin-left: 10px;
+    transform: translateX(0px);
+    transition: transform 1s;
+}
+
+.button:hover img {
+    transform: translateX(-8px);
 }

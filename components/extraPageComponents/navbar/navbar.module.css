@@ -23,7 +23,7 @@
 }
 @media screen and (min-width: 999px) {
     .navbar .right img{
-      display: none !important;
+      display: none;
     }
     .left{
         min-width: 100px;
