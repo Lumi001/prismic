@@ -17,6 +17,7 @@ if [ $? -eq 0 ]; then
     echo "First Deployment Failed"
     fi
    fi
+   
 else
    exit 1
    echo Error In Build or Push Process
