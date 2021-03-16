@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 100px 0px;
+}
+.container .what_we_do .card_list {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 44px auto;
+    padding: 44px 0px;
+}
+.container .what_we_do .card_list div {
+    margin: 44px auto;
+}
+.container .what_we_do .card_list_container {
+    background: #d2dae2;
+}
+.container .what_we_do {
+    width: 100%;
+    /* display: flex;
+    justify-content: center; */
+    /* place-items: center; */
+}
