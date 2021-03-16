@@ -69,9 +69,9 @@ export default class ScrollCardList extends Component {
           }
         ]
     };
-    const {scroll_card, scroll_title_text, scroll_link_text} = this.props
+    const {scroll_data, scroll_title_text, scroll_link_text} = this.props
 
-    console.log(scroll_card)
+    
     return (
         <React.Fragment>
              <div className={styles.scroll}>
@@ -82,14 +82,14 @@ export default class ScrollCardList extends Component {
       <div >  
         <Slider ref={c => (this.slider = c)} {...settings}>
         {
-    scroll_card.map((user,i) =>{
+    scroll_data.map((card,i) =>{
     return (
      
            <ScrollCard
-        title={scroll_card[i].title}
-        date={scroll_card[i].date}
-        type={scroll_card[i].card_type}
-        key={scroll_card[i].id} />
+        title={card.title[0].text}
+        date={card.date}
+        type={card.cardtype}
+        key={scroll_data[i].id} />
       
     )
 })
