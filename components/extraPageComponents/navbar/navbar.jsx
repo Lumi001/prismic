@@ -1,19 +1,30 @@
 import Link from 'next/link';
 import styles from './navbar.module.css';
 import NavbarItem from './navbarItem/navbarItem';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Navbar = ({ logo, links }) => {
     const [rightDropdown, setRightDropdown] = useState(false);
+    const [scroll, setScroll] = useState(0);
+    const handleScroll = () => {
+        setScroll(window.pageYOffset);
+        console.log(scroll);
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      });
+
     const toggleRightDropdown = () => {
         if (rightDropdown) {
             return setRightDropdown(false)
         }
         return setRightDropdown(true)
     }
+    
     // const toggleLeftDropdown = () => {
     //     if (leftDropdown) {
-    //         return leftDropdownDispatch(false)
+        //         return leftDropdownDispatch(false)
     //     }
     //     return leftDropdownDispatch(true)
     // }
@@ -45,7 +56,7 @@ const Navbar = ({ logo, links }) => {
 
     ]
     return (
-        <div className={styles.navbar}>
+        <div className={styles.navbar} style={{ background: scroll > 70 ? "#313131" : "transparent" }}>
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
@@ -69,13 +80,13 @@ const Navbar = ({ logo, links }) => {
                     {linksTemp.map(link => {
                         return (
                             <div>
-                                <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />
+                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link} type="button" key={Math.random()} text={link.text} /> : <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />}
                             </div>
                         )
                     })}
 
-            </nav>
-                </section>}
+                </nav>
+            </section>}
         </div >
     );
 };

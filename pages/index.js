@@ -108,7 +108,7 @@ const cards = [
         </section>
         <Heading title="Featured Articles" />
         <section className={styles.articles}>
-          {cards.map(card => <Card key={Math.random()} title={card.title.text} tag={card.tag} content={card.content} />)}
+          {cards.map(card => <Card key={Math.random()} title={card.title} tag={card.tag} content={card.content} />)}
         </section>
         <Button text={card[0].button_text} icon="/button/cross.png" />
         <ScrollCardList scroll_card={scroll1} scroll_title_text={scroll_title_text} scroll_link_text={scroll_link_text} />
