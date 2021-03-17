@@ -39,7 +39,6 @@ export default function Publication() {
     }
   ]
 
-  
     return (
       <div className={styles.container}>
         <Head>
@@ -57,24 +56,22 @@ export default function Publication() {
 
           <div>
           <Heading title="New Publications" />
-          
-
-         <div className={"one"}>
+        <div className={"one"}>
           <div className="two">
-          <Card key={Math.random()} title="TruCSR Academy now taking 
-Software dev courses" date="15 MAR, 2021" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis justo cras faucibus ut felis gravida. Sagittis, ipsum sit habitant quam gravida adipiscing vel. Amet, faucibus sollicitudin egestas convallis sit lectus pellentesque. Justo lectus volutpat commodo bibendum. Consectetur morbi donec in lobortis morbi. Quisque nisi, proin morbi a, faucibus. "/>
+          <Card id="big" key={Math.random()} title="TruCSR Academy now taking 
+Software dev courses" date="15 MAR, 2021" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis justo cras faucibus ut felis gravida. Sagittis, ipsum sit habitant quam gravida adipiscing vel. Amet, faucibus sollicitudin egestas convallis sit lectus pellentesque. Justo lectus volutpat commodo bibendum. Consectetur morbi donec in lobortis morbi. Quisque nisi, proin morbi a, faucibus. " link="READ PUBLICATION"/>
           </div>
           <div className="three">
             <div className="four">
             <Card key={Math.random()} title="TruCSR Academy now taking 
-Software dev courses" date="15 MAR, 2021" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. "/>
+Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. "/>
             </div>
             <div className="five">
             <Card key="" title="TruCSR Academy now taking 
-Software dev courses" date="15 MAR, 2021" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. "/>
+Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. "/>
             </div>
           </div>
-          </div> 
+          </div>
         </div>
         
 
@@ -102,6 +99,7 @@ Software dev courses" date="15 MAR, 2021" content="Lorem ipsum dolor sit amet, c
           }
           .one {
             display: flex;
+            flex-wrap: wrap;
           }
 
           .three{
@@ -111,7 +109,9 @@ Software dev courses" date="15 MAR, 2021" content="Lorem ipsum dolor sit amet, c
           .two img{
             height: 769px
           }
-
+          #big {
+            margin-top: 350px
+          }
           `}
           </style>
       </div>

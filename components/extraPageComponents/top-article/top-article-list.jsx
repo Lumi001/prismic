@@ -23,6 +23,7 @@ const TopArticleList = () => {
             align-items: center;
             width: 100%;
             height: 90%;
+            margin-top: 39px
         }
         }
     `}

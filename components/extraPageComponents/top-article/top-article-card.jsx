@@ -7,7 +7,7 @@ const TopArticleCard = ({number, title, date}) => {
             <h3 className="toparticlecard-number">{number}</h3>
             <div>
             <h3 className="toparticlecard-title">{title}</h3>
-            <small>{date}</small>
+            <small className='date'>{date}</small>
             </div>
             
         </div>
@@ -30,6 +30,12 @@ const TopArticleCard = ({number, title, date}) => {
         }
          h3{
             margin-bottom: 0;   
+            }
+        .date{
+            font-size: 16px;
+            padding: 10px 0px;
+            font-weight: 600;
+            color: #878787;
             }
     `}
     </style>
