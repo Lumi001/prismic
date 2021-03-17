@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './carousel.module.css';
 
 // const data = {
@@ -15,7 +16,9 @@ const Carousel = ({title, content,link, image}) => (
     <section className={styles.left}>
     <h1>{title}</h1>
     <p>{content}</p>
-    <a href="#">{link}</a>
+    <Link href="#">
+    <a>{link}<span><img src="/carousel/Arrow.png" alt=""/></span></a>
+    </Link>
     </section>
     <section className={styles.right}>
       <img src={image} alt="" />

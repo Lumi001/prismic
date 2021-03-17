@@ -6,7 +6,7 @@
   padding: 80px 30px 50px;
   align-items: center;
   margin-bottom: 10px;
-  border:none;
+  border: none;
 }
 .carousel .left {
   /* background-color: green !important; */
@@ -45,15 +45,20 @@
 }
 .carousel a {
   font-family: "Roboto", sans-serif;
-  font-size: 20px;
   font-style: normal;
   font-weight: 800;
+  font-size: 20px;
   line-height: 24px;
   letter-spacing: 0.15em;
-  text-align: left;
+
   color: #313131;
   border-bottom: 1px solid;
   padding-bottom: 9px;
+}
+.carousel a span img {
+  margin: 0px 10px;
+  width: 23px;
+  /* height: 2px; */
 }
 .carousel img {
   /* height: 625px; */
@@ -104,10 +109,10 @@
     /* min-width: 100%; */
     width: 100%;
   }
-  .carousel .right{
+  .carousel .right {
     display: none;
   }
-  .carousel button{
+  .carousel button {
     display: none;
   }
 }

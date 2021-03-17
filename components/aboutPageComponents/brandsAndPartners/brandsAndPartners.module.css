@@ -1,3 +1,73 @@
-.container{
-    
+.container {
+    width: 100%;
+    background: #d2dae2;
+}
+.container .brands_and_partners{
+    display: grid;
+    place-items: center;
+}
+.container .brands_and_partners .cards {
+    width: 1200px;
+    margin: 0px auto 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container .brands_and_partners a {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    /* text-align: center; */
+    color: #313131;
+    border-bottom: 1px solid;
+    padding-bottom: 9px;
+    margin: 0px 0px 40px;
+}
+.container .brands_and_partners a span {
+    margin: 0px 10px;
+}
+
+.container .brands_and_partners .cards section {
+    display: flex;
+}
+.container .brands_and_partners .cards .top {
+    border-bottom: 1px solid #112538;
+}
+.container .brands_and_partners .cards .top,
+.container .brands_and_partners .cards .bottom {
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 65px 0px;
+}
+.container .brands_and_partners .cards .bottom section {
+    flex-direction: column;
+    text-align: center;
+    width: 200px;
+    /* height: 200px; */
+}
+.container .brands_and_partners .cards .bottom section h3 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 152.6%;
+    /* or 85px */
+
+    color: #112538;
+    margin: 0px;
+}
+
+.container .brands_and_partners .cards .bottom section p {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 152.6%;
+    /* or 27px */
+
+    color: #38465e;
 }

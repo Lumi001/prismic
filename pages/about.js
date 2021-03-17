@@ -5,6 +5,7 @@ import MeetTheTeam from '../components/aboutPageComponents/meetTheTeam/meetTheTe
 import WhatWeDo from '../components/aboutPageComponents/whatWeDo/whatWeDo'
 import styles from '../styles/Home.module.css'
 import BeenUpTo from '../components/aboutPageComponents/beenUpTo/beenUpTo';
+import BrandsAndPartners from '../components/aboutPageComponents/brandsAndPartners/brandsAndPartners';
 // import styles from './About.module.css';
 
 const intro = {
@@ -15,7 +16,8 @@ const intro = {
     link: 'WORK WITH US',
     image1: '/introAbout/image1.png',
     image2: '/introAbout/image2.png',
-    image3: '/introAbout/image3.png'
+    image3: '/introAbout/image3.png',
+    href: "/"
 }
 const ourStory = {
     title: `Our Story`,
@@ -39,12 +41,12 @@ const whatWeDo = {
     heading: `Here’s what we do`,
     subHeading: `Our Services`,
     items: [
-        { image: '/whatWeDo/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDo/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDo/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDo/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDo/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDo/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
     ]
 }
 const beenUpTo = {
@@ -77,6 +79,47 @@ const beenUpTo = {
         }
     ]
 }
+const brandsAndPartners = {
+    heading: `We work with top brands`,
+    subHeading: `Some of Our Partners & Customers`,
+    link: "WORK WITH US",
+    href: "/",
+    items1: [
+        {
+            image: '/brandsAndPartnersAbout/gtb.png'
+        },
+        {
+            image: '/brandsAndPartnersAbout/gtb.png'
+        },
+        {
+            image: '/brandsAndPartnersAbout/gtb.png'
+        },
+        {
+            image: '/brandsAndPartnersAbout/gtb.png'
+        },
+        {
+            image: '/brandsAndPartnersAbout/gtb.png'
+        }
+    ],
+    items2: [
+        {
+            title: `2006`,
+            content: 'Founded',
+        },
+        {
+            title: `2006`,
+            content: 'Founded',
+        },
+        {
+            title: `2006`,
+            content: 'Founded',
+        },
+        {
+            title: `2006`,
+            content: 'Founded',
+        }
+    ]
+}
 
 const About = () => {
     return (
@@ -90,11 +133,12 @@ const About = () => {
             </Head>
 
             <main className={styles.main}>
-                <Intro title={intro.title} content={intro.content} link={intro.link} image1={intro.image1} image2={intro.image2} image3={intro.image3} />
+                <Intro title={intro.title} content={intro.content} link={intro.link} image1={intro.image1} image2={intro.image2} image3={intro.image3} href={intro.href} />
                 <OurStory title={ourStory.title} content={ourStory.content} content2={ourStory.content2} image={ourStory.image} />
                 <MeetTheTeam title={meetTheTeam.title} items={meetTheTeam.items} />
                 <WhatWeDo heading={whatWeDo.heading} subHeading={whatWeDo.subHeading} items={whatWeDo.items} />
-                <BeenUpTo heading={beenUpTo.heading} subHeading={beenUpTo.subHeading} items={beenUpTo.items}/>
+                <BeenUpTo heading={beenUpTo.heading} subHeading={beenUpTo.subHeading} items={beenUpTo.items} />
+                <BrandsAndPartners heading={brandsAndPartners.heading} subHeading={brandsAndPartners.subHeading} items1={brandsAndPartners.items1} items2={brandsAndPartners.items2} link={brandsAndPartners.link} href={brandsAndPartners.href} />
             </main>
         </div>
     );

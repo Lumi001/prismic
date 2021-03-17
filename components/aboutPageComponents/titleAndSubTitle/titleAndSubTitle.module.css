@@ -1,6 +1,7 @@
 .title_and_subtitle {
     width: 100%;
     text-align: center;
+    padding: 50px 0px;
 }
 .title_and_subtitle h3 {
     font-family: "Inter";
@@ -24,7 +25,7 @@
     /* text-align: left; */
     color: #38465e;
 }
-.title_and_subtitle h6 span{
+.title_and_subtitle h6 span {
     position: relative;
     top: -4px;
     left: -12.5px;

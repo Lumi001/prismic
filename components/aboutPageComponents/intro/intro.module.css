@@ -63,6 +63,11 @@
     border-bottom: 1px solid;
     padding-bottom: 9px;
 }
+.intro a span img {
+    margin: 0px 10px;
+    width: 23px;
+    /* height: 2px; */
+  }
 .intro img {
     /* height: 625px; */
     width: 243px;
