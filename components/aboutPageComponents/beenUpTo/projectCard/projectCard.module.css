@@ -1,0 +1,68 @@
+.container {
+    width: 100%;
+    /* display: grid; */
+    /* place-items: center; */
+}
+.project_card {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.project_card_flip {
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.project_card section h3,
+.project_card_flip section h3 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 152.6%;
+    /* or 46px */
+
+    letter-spacing: 0.01em;
+
+    color: #38465e;
+}
+
+.project_card section p,
+.project_card_flip section p {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 181.6%;
+    /* or 44px */
+
+    letter-spacing: 0.01em;
+
+    color: #38465e;
+}
+
+.project_card section a,
+.project_card_flip section a {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: #313131;
+    border-bottom: 1px solid;
+    padding-bottom: 9px;
+}
+.project_card section img,
+.project_card_flip section {
+    width: 580px;
+    max-height: 450px;
+}
+.project_card .text, .project_card_flip .text{
+    width: 480px;
+    margin: 0px 100px;
+}

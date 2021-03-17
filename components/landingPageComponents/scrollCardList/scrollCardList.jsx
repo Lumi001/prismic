@@ -1,8 +1,5 @@
 import ScrollCard from './scrollCard/scrollCard';
-import styles from './scrollCardList.module.css'
-
-
-
+import styles from './scrollCardList.module.css';
 import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -25,23 +22,41 @@ export default class ScrollCardList extends Component {
     const settings = {
         infinite: false,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToShow: 4,
+        slidesToScroll: 2,
         initialSlide: 0,
         responsive: [
+          {
+            breakpoint: 1524,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: false,
+              // dots: true
+            }
+          },
+          {
+            breakpoint: 1150,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              infinite: false,
+              // dots: true
+            }
+          },
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
               infinite: false,
-              dots: true
+              // dots: true
             }
           },
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 1,
               slidesToScroll: 1,
             }
           },
@@ -54,38 +69,42 @@ export default class ScrollCardList extends Component {
           }
         ]
     };
+    const {scroll_data, scroll_title_text, scroll_link_text} = this.props
+
+    
     return (
         <React.Fragment>
              <div className={styles.scroll}>
       <section className={styles.top}>
-                <h2>Our projects in pictures and videos</h2>
-                <a href="#">VIEW MORE PROJECTS<span><img src="/button/arrow.png" alt=""/></span></a>
+                <h2>{scroll_title_text}</h2>
+                <a href="#">{scroll_link_text}<span><img src="/button/arrow.png" alt=""/></span></a>
             </section>
       <div >  
         <Slider ref={c => (this.slider = c)} {...settings}>
-          <div key={1}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={2}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={3}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={4}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={5}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
-          <div key={6}>
-          <ScrollCard date="DEC 2020" content="Save the Children Initiative powered by Chevron" type="video"/>          </div>
+        {
+    scroll_data.map((card,i) =>{
+    return (
+     
+           <ScrollCard
+        title={card.title[0].text}
+        date={card.date}
+        type={card.cardtype}
+        key={scroll_data[i].id} />
+      
+    )
+})
+        }
         </Slider>
         </div>
         <div className="circle-opt">
-    <div className="offer-circle" ><svg onClick={this.previous} width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id='previous' d="M12 1L2 11.3871L12 24" stroke="#E4E4E4" stroke-width="2"/>
+    <div className="offer-circle" onClick={this.previous}><svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id='previous' d="M12 1L2 11.3871L12 24" stroke="#E4E4E4" strokeWidth="2"/>
 </svg>
 
 </div>
 
-    <div className="offer-circle"><svg onClick={this.next} width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id='next' d="M0.999998 24L11 13.6129L1 0.999999" stroke="#E4E4E4" stroke-width="2"/>
+    <div className="offer-circle" onClick={this.next}><svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id='next' d="M0.999998 24L11 13.6129L1 0.999999" stroke="#E4E4E4" strokeWidth="2"/>
 </svg>
 </div>
 </div>
@@ -94,7 +113,6 @@ export default class ScrollCardList extends Component {
 {`
 .offer-circle {
     display: flex;
-    margin-left: 15px;
     width: 38px;
     height: 38px;
     justify-content: center;

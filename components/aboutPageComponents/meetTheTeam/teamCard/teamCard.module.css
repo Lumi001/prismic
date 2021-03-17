@@ -1,0 +1,24 @@
+.team_card {
+    width: 355px;
+}
+.team_card img {
+    max-height: 449px;
+}
+.team_card h3 {
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 37px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+.team_card p {
+    font-family: 'Ubuntu';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+}
