@@ -13,7 +13,6 @@ agent any
         checkout scm
     }}
     
-    
 
 // Stage 5: Build Docker Image   
  
