@@ -9,8 +9,21 @@
   border-radius: 10px;
   /* height: 650px;  */
   display: grid;
+  padding: 19px 0px;
 }
-
+.link {
+  display: flex;
+  margin-top: 50px;
+}
+.linktext{
+  border-bottom: 1px solid black;  
+  width: 181px;
+  padding-right: 5px;
+  font-size: 20px
+}
+.linklogo {
+  margin-top: 4.5px;
+}
 /* .card:hover,
 .card:focus,
 .card:active {
