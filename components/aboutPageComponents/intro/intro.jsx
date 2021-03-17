@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './Intro.module.css';
+import styles from './intro.module.css';
 
 
 
