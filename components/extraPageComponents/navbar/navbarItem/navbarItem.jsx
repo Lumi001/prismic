@@ -10,7 +10,8 @@ const NavbarItem = ({ href, text, type }) => {
                 </a>
                 :
                 <button className={styles.button}>
-                    {text}
+                    <span>{text}</span>
+                    <img src="/white-arrow-right.svg" alt="Right white arrow" />
                 </button>
             }
         </Link>

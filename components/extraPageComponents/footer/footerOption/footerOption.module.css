@@ -12,6 +12,15 @@
 .option section{
     display: flex;
 }
+
+.buttons {
+    justify-content: flex-end !important;
+}
+
+.option address {
+    font-style: normal;
+    text-align: right;
+}
 @media screen and (max-width: 999px) {
     .option p{
     font-size: 12px;

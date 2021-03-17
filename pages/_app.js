@@ -1,8 +1,10 @@
+import Prismic from 'prismic-javascript';
 import Social from '../components/extraPageComponents/social/social'
 import '../styles/globals.css';
 import React from 'react'
 import Navbar from '../components/extraPageComponents/navbar/navbar';
 import Footer from '../components/extraPageComponents/footer/footer';
+import { Client } from '../prismic-configuration';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,25 +12,20 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <Component {...pageProps} />
       <Social text="CONNECT WITH US" />
-      <Footer/>
+      <Footer />
     </React.Fragment>
   )
 }
 
 export default MyApp
-export async function getServerSideProps() {
+MyApp.getInitialProps = async () => {
   const landing = await Client().query(
+    Prismic.Predicates.at("document.type", "navigation")
   )
-  let empty = {};
+  console.log(landing, "this is landing")
 
-  landing.results[0].data.body.map(each => {
-    return empty[`${each.slice_type}`] = { items: each.items, primary: each.primary }
-  })
-  console.log(empty)
-  const { card, carousel, connect_with_us, navigation_bar, scrollable_card, footer } = empty;
   return {
     props: {
-      card, carousel, connect_with_us, navigation_bar, scrollable_card, footer
     }
   }
 }

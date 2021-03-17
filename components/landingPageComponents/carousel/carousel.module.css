@@ -3,10 +3,10 @@
   width: 100%;
   /* height: 800px; */
   display: flex;
-  padding: 80px 30px 50px;
+  padding: 80px 0 50px;
   align-items: center;
   margin-bottom: 10px;
-  border:none;
+  border: none;
 }
 .carousel .left {
   /* background-color: green !important; */
@@ -45,15 +45,21 @@
 }
 .carousel a {
   font-family: "Roboto", sans-serif;
-  font-size: 20px;
   font-style: normal;
   font-weight: 800;
+  font-size: 20px;
+  font-weight: bolder;
   line-height: 24px;
   letter-spacing: 0.15em;
-  text-align: left;
+
   color: #313131;
-  border-bottom: 1px solid;
+  border-bottom: 3px solid #313131;
   padding-bottom: 9px;
+}
+.carousel a span img {
+  margin: 0px 10px;
+  width: 23px;
+  /* height: 2px; */
 }
 .carousel img {
   /* height: 625px; */
@@ -67,7 +73,29 @@
   background: #313131;
   font-size: 34px;
   color: #ffffff;
+  border: none;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.linkWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.linkWrapper img {
+  height: 20px;
+  transform: translateX(20px);
+  width: auto;
+  transition: transform 1s;
+}
+
+.carousel a:hover + img {
+  transform: translateX(5px);
+}
+
 @media screen and (min-width: 999px) {
   .carousel h1 {
     /* width: 629px; */
@@ -104,10 +132,10 @@
     /* min-width: 100%; */
     width: 100%;
   }
-  .carousel .right{
+  .carousel .right {
     display: none;
   }
-  .carousel button{
+  .carousel button {
     display: none;
   }
 }
