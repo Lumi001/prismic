@@ -4,7 +4,7 @@ import Social from '../../social/social';
 import SocialButton from '../../social/socialButton/socialButton';
 import styles from './footerOption.module.css';
 
-const FooterOption = ({ text, href }) => {
+const FooterOption = ({ text, href, address }) => {
     const imgs = [
         "twitter", "facebook", "linkedin"
     ]
@@ -17,7 +17,7 @@ const FooterOption = ({ text, href }) => {
                     </Link>
                     :
                     <>
-                        <p>{text}</p>
+                        {address ? <address dangerouslySetInnerHTML={{ __html: text }}></address> : <p>{text}</p>}
                         <section className={styles.buttons}>
                             {imgs.map(img => (
                                 <SocialButton img={`/footer/${img}.png`} />
