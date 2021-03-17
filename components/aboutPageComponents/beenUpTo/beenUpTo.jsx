@@ -1,6 +1,6 @@
 import ProjectCard from './projectCard/projectCard';
 import TitleAndSubTitle from '../titleAndSubTitle/titleAndSubTitle';
-import styles from './BeenUpTo.module.css';
+import styles from './beenUpTo.module.css';
 
 
 
