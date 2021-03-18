@@ -153,7 +153,7 @@ export async function getServerSideProps() {
         Prismic.Predicates.at("document.type", "about_page")
     )
 
-    console.log(about.results[0].data.body[0].items.link_address, "this is about")
+    console.log(about.results[0].data, "this is about")
 
     return {
         props: {
