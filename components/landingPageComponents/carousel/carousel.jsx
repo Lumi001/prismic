@@ -20,10 +20,9 @@ const Carousel = ({title, content,link, image}) => (
     <p>{content}</p>
     {/* <a>{link}<span><img src="/carousel/Arrow.png" alt=""/></span></a> */}
     <Link href="#">
-      <a className={styles.linkWrapper}>{link}
+      <a className={styles.linkWrapper}>
+        <span>{link}</span>
         <img src="/black-arrow-right.svg" alt="Right black arrow" />
-      {/* <span>
-        </span> */}
       </a>
     </Link>
     </section>
