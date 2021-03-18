@@ -1,11 +1,14 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Card from '../components/extraPageComponents/card/card';
-import Heading from '../components/extraPageComponents/heading/heading'
-import TopArticleList from '../components/extraPageComponents/top-article/top-article-list'
-import Searchbar from '../components/extraPageComponents/searchbar/searchbar'
+import Heading from '../components/extraPageComponents/heading/heading';
+import TopArticleList from '../components/extraPageComponents/top-article/top-article-list';
+import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
+import Prismic from 'prismic-javascript';
+import { Client } from '../prismic-configuration';
 
-export default function Publication() {
+export default function Publication(new_pub) {
+  console.log(new_pub)
   const cards = [
     {
       title: "TruCSR Academy now taking Software dev courses",
@@ -54,7 +57,7 @@ export default function Publication() {
           <Searchbar />
           </div>
 
-          <div>
+          <div className="column" >
           <Heading title="New Publications" />
         <div className={"one"}>
           <div className="two">
@@ -75,13 +78,13 @@ Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem
         </div>
         
 
-        <div>
+        <div className="column">
         <Heading title="Other Publications" />
-        <section className={styles.articles}>
+        <div className="other">
           {cards.map(card => <Card key={Math.random()} title={card.title} date={card.tag} content={card.content} link={card.link}  
               />)}         
               <TopArticleList/>      
-              </section>
+              </div>
               </div>
               </div>
         </main>
@@ -93,6 +96,7 @@ Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem
           .publication {
             padding-top: 100px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
             align-items: center
@@ -100,6 +104,17 @@ Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem
           .one {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
+          }
+          .other {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            justify-items: start ;
+            width: 100%;
+          }
+          .column {
+            display: flex;
+            flex-direction: column
           }
 
           .three{
@@ -118,3 +133,17 @@ Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem
     )
   }
   
+
+  export async function getServerSideProps() {
+    const publications = await Client().query(
+        Prismic.Predicates.at("document.type", "publication_page")
+    )
+
+    // console.log(publications)
+
+    return {
+        props: {
+          new_pub: publications.results
+        }
+    }
+}
