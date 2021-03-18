@@ -7,9 +7,19 @@
     letter-spacing: 0.01em;
     text-align: left;
     max-width: 360px;
+    cursor: pointer;
 }
 .option section{
     display: flex;
+}
+
+.buttons {
+    justify-content: flex-end !important;
+}
+
+.option address {
+    font-style: normal;
+    text-align: right;
 }
 @media screen and (max-width: 999px) {
     .option p{
@@ -18,4 +28,12 @@
     font-style: normal;
     }
 
+    .option .buttons {
+        flex-direction: row;
+        justify-content: center !important;
+    }
+
+    .option address {
+        text-align: center;
+    }
 }

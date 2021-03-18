@@ -17,6 +17,7 @@
   align-items: center;
   width: 100%;
   max-width: 1920px;
+  background: #f5f5f5;
 }
 
 .footer {
@@ -86,19 +87,26 @@
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
-  place-items: center;
+  justify-items: center;
 }
 @media screen and (max-width: 990px) {
   .articles {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .carousel {
     height: max-content;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .articles {
+    grid-template-columns: 100%;
+  }
+}
 .carousel {
-  padding-top: 120px;
+  /* padding-top: 120px; */
   background: #ffc017;
   max-width: 100%;
 }

@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     /* height: 100px; */
-    background: transparent;
+    /* background: transparent; */
     position: fixed;
 }
 .navbar .top{
@@ -17,13 +17,13 @@
     /* padding: 0px 50px; */
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 60px;
     background: transparent;
     /* position: fixed; */
 }
 @media screen and (min-width: 999px) {
     .navbar .right img{
-      display: none !important;
+      display: none;
     }
     .left{
         min-width: 100px;
@@ -42,6 +42,7 @@
     .navbar{
         background: #313131;
         padding: 0px 15px;
+        width: calc(100% - 30px);
     }
 }
 .right{

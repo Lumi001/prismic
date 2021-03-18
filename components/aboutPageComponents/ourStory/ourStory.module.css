@@ -1,0 +1,40 @@
+.container {
+}
+.our_story {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+}
+.our_story .left, .our_story .right {
+    width: 50%;
+}
+.our_story .right {
+    display: grid;
+    place-items: center;
+}
+.our_story .left h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 152.6%;
+    /* identical to box height, or 55px */
+    letter-spacing: 0.01em;
+
+    color: #38465e;
+}
+.our_story .left p {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 181.6%;
+    /* or 36px */
+    letter-spacing: 0.01em;
+
+    color: #3a3a3a;
+}
+.our_story .right img{
+    width: 450px;
+    max-height: 540px;
+}
