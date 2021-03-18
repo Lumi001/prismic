@@ -9,7 +9,7 @@ if [ $? -eq 0 ]; then
 
    else
 
-   
+
     echo Fresh Deployment
     sudo docker service create -p 5500:5500 --name prismic_frontend_public 127.0.0.1:5500/prismic_frontend_public:$1 
     if [ $? -eq 0 ]; then
@@ -19,6 +19,7 @@ if [ $? -eq 0 ]; then
     echo "First Deployment Failed"
     fi
    fi
+
 
 else
    exit 1
