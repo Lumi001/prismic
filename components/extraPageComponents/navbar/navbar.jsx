@@ -42,7 +42,7 @@ const Navbar = ({ navigation, links }) => {
                     {linksTemp.map(link => {
                         return (
                             <div className={styles.pc}>
-                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link||"/"} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link||"/"} type="link" text={link.link_text[0].text} />}
+                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link || "/"} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link || "/"} type="link" text={link.link_text[0].text} />}
                             </div>
                         )
                     })}
@@ -55,7 +55,7 @@ const Navbar = ({ navigation, links }) => {
                     {linksTemp.map(link => {
                         return (
                             <div>
-                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link||"/"} type="link" text={link.link_text[0].text} />}
+                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link || "/"} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link || "/"} type="link" text={link.link_text[0].text} />}
                             </div>
                         )
                     })}

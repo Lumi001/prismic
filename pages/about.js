@@ -1,3 +1,5 @@
+import Prismic from 'prismic-javascript';
+import { Client } from '../prismic-configuration';
 import Head from 'next/head';
 import Intro from '../components/aboutPageComponents/intro/intro';
 import OurStory from '../components/aboutPageComponents/ourStory/ourStory';
@@ -151,7 +153,7 @@ export async function getServerSideProps() {
         Prismic.Predicates.at("document.type", "about_page")
     )
 
-    console.log(navigation.results[0].data.body[0].items.link_address, "this is about")
+    console.log(about.results[0].data.body[0].items.link_address, "this is about")
 
     return {
         props: {

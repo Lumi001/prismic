@@ -1,10 +1,10 @@
 import Prismic from 'prismic-javascript';
+import { Client } from '../prismic-configuration';
 import Social from '../components/extraPageComponents/social/social'
 import '../styles/globals.css';
 import React from 'react'
 import Navbar from '../components/extraPageComponents/navbar/navbar';
 import Footer from '../components/extraPageComponents/footer/footer';
-import { Client } from '../prismic-configuration';
 
 function MyApp({ Component, pageProps,navigation }) {
   return (
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps,navigation }) {
       <Component {...pageProps} />
       <Social text="CONNECT WITH US" />
       <Footer />
-      {console.log(navigation,'navigation')}
+      {/* {console.log(navigation,'navigation')} */}
     </React.Fragment>
   )
 }

@@ -10,22 +10,22 @@ import styles from './carousel.module.css';
 //   img: "/carousel/Frame.png"
 // }
 // const {title, content,link, img} = data;
-const Carousel = ({title, content,link, image}) => (
+const Carousel = ({ title, content, link, image }) => (
   <div className={styles.carousel}>
     <button className={styles.buttonleft}>
       <img src="/carousel/chevron-left.svg" alt="Left chevron icon" />
     </button>
     <section className={styles.left}>
-    <h1>{title}</h1>
-    <p>{content}</p>
-    {/* <a>{link}<span><img src="/carousel/Arrow.png" alt=""/></span></a> */}
-    <Link href="#">
-      <a className={styles.linkWrapper}>{link}
-        <img src="/black-arrow-right.svg" alt="Right black arrow" />
-      {/* <span>
+      <h1>{title}</h1>
+      <p>{content}</p>
+      <Link href="#">
+        <a>{link}<span><img src="/carousel/Arrow.png" alt="" /></span></a>
+        {/* <a className={styles.linkWrapper}>{link}
+      <img src="/black-arrow-right.svg" alt="Right black arrow" />
+    </a> */}
+        {/* <span>
         </span> */}
-      </a>
-    </Link>
+      </Link>
     </section>
     <section className={styles.right}>
       <img src={image} alt="" />
