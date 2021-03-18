@@ -145,3 +145,17 @@ const About = () => {
 };
 
 export default About;
+
+export async function getServerSideProps() {
+    const about = await Client().query(
+        Prismic.Predicates.at("document.type", "about_page")
+    )
+
+    console.log(navigation.results[0].data.body[0].items.link_address, "this is about")
+
+    return {
+        props: {
+
+        }
+    }
+}

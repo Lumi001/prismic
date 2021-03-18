@@ -3,7 +3,7 @@ import styles from './navbar.module.css';
 import NavbarItem from './navbarItem/navbarItem';
 import { useEffect, useState } from 'react';
 
-const Navbar = ({ logo, links }) => {
+const Navbar = ({ navigation, links }) => {
     const [rightDropdown, setRightDropdown] = useState(false);
     // const [scroll, setScroll] = useState(0);
     // const handleScroll = () => {
@@ -28,46 +28,21 @@ const Navbar = ({ logo, links }) => {
     //     }
     //     return leftDropdownDispatch(true)
     // }
-    let linksTemp = [
-        {
-            link: "/",
-            text: "Services"
-        },
-        {
-            link: "/",
-            text: "About Us"
-        },
-        {
-            link: "/",
-            text: "CSR Academy"
-        },
-        {
-            link: "/",
-            text: "Publications"
-        },
-        {
-            link: "/",
-            text: "Events"
-        },
-        {
-            link: "/",
-            text: "CONTACT US"
-        },
+    let linksTemp = navigation.items
 
-    ]
     return (
-        <div className={styles.navbar} style={{ background:"transparent" }}>
+        <div className={styles.navbar} style={{ background: "transparent" }}>
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
-                        <img src={logo} alt="" />
+                        <img src={navigation.primary.logo.url} alt="" />
                     </Link>
                 </nav>
                 <nav className={styles.right}>
                     {linksTemp.map(link => {
                         return (
                             <div className={styles.pc}>
-                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link} type="button" key={Math.random()} text={link.text} /> : <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />}
+                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link||"/"} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link||"/"} type="link" text={link.link_text[0].text} />}
                             </div>
                         )
                     })}
@@ -80,7 +55,7 @@ const Navbar = ({ logo, links }) => {
                     {linksTemp.map(link => {
                         return (
                             <div>
-                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link} type="button" key={Math.random()} text={link.text} /> : <NavbarItem key={Math.random()} href={link.link} type="link" text={link.text} />}
+                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link||"/"} type="link" text={link.link_text[0].text} />}
                             </div>
                         )
                     })}
