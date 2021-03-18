@@ -3,7 +3,6 @@ pipeline {
 agent any
   
 
-
   stages {
    
 // Stage 1: Checkout Code from Git
@@ -17,9 +16,11 @@ agent any
 // Stage 5: Build Docker Image   
  
     stage('Ssh into Virtual Machine') {
+
       when{
         branch 'dev-pipeline'
       }
+
       steps{
           script {
           try {
