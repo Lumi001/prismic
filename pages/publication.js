@@ -109,9 +109,6 @@ Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem
           .two img{
             height: 769px
           }
-          #big {
-            margin-top: 350px
-          }
           `}
           </style>
       </div>
