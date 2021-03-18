@@ -3,7 +3,6 @@ pipeline {
 agent any
   
 
-
   stages {
    
 // Stage 1: Checkout Code from Git
@@ -21,7 +20,7 @@ agent any
       when{
         branch 'dev-pipeline'
       }
-      
+
       steps{
           script {
           try {
