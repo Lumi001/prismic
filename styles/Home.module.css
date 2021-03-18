@@ -90,13 +90,15 @@
   justify-items: center;
 }
 @media screen and (max-width: 990px) {
-  .articles {
-    display: flex;
-    flex-direction: column;
-  }
   .carousel {
     height: max-content;
     }
+}
+
+@media only screen and (max-width: 768px) {
+  .articles {
+    grid-template-columns: 100%;
+  }
 }
 .carousel {
   /* padding-top: 120px; */
