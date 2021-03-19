@@ -7,46 +7,13 @@ import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 
-export default function Publication(new_pub) {
-  console.log(new_pub)
-  const cards = [
-    {
-      title: "TruCSR Academy now taking Software dev courses",
-      tag: "15 MAR, 2021",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. ",
-      link: "READ PUBLICATION"
-    },
-    {
-      title: "TruCSR Academy now taking Software dev courses",
-      tag: "15 MAR, 2021",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. ",
-      link: "READ PUBLICATION"
-    },
-    {
-      title: "TruCSR Academy now taking Software dev courses",
-      tag: "15 MAR, 2021",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. ",
-      link: "READ PUBLICATION"
-    },
-    {
-      title: "TruCSR Academy now taking Software dev courses",
-      tag: "15 MAR, 2021",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. ",
-      link: "READ PUBLICATION"
-    },
-    {
-      title: "TruCSR Academy now taking Software dev courses",
-      tag: "15 MAR, 2021",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. ",
-      link: "READ PUBLICATION"
-    }
-  ]
+export default function Publication({new_pub, other_pub, top_3_article}) {
 
     return (
       <div className={styles.container}>
         <Head>
         <title>TruCSR</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
@@ -58,20 +25,24 @@ export default function Publication(new_pub) {
           </div>
 
           <div className="column" >
-          <Heading title="New Publications" />
+          <Heading className="pub_heading_size" title="New Publications" />
         <div className={"one"}>
           <div className="two">
-          <Card id="big" key={Math.random()} title="TruCSR Academy now taking 
-Software dev courses" date="15 MAR, 2021" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis justo cras faucibus ut felis gravida. Sagittis, ipsum sit habitant quam gravida adipiscing vel. Amet, faucibus sollicitudin egestas convallis sit lectus pellentesque. Justo lectus volutpat commodo bibendum. Consectetur morbi donec in lobortis morbi. Quisque nisi, proin morbi a, faucibus. " link="READ PUBLICATION"/>
+          <Card id="big" key={Math.random()} 
+          title={new_pub[0].pub_title[0].text} 
+          date={new_pub[0].pub_date} content={new_pub[0].pub_content[0].text} link={new_pub[0].link_text}/>
           </div>
           <div className="three">
             <div className="four">
-            <Card key={Math.random()} title="TruCSR Academy now taking 
-Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. "/>
+            <Card key={Math.random()} 
+            title={new_pub[1].pub_title[0].text} 
+            date={new_pub[1].pub_date} content={new_pub[1].pub_content[0].text} link={new_pub[1].link_text}/>
             </div>
             <div className="five">
-            <Card key="" title="TruCSR Academy now taking 
-Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin turpis sit ac lobortis volutpat. "/>
+            <Card 
+            key={Math.random()} 
+            title={new_pub[2].pub_title[0].text} 
+            date={new_pub[2].pub_date} content={new_pub[2].pub_content[0].text} link={new_pub[2].link_text}/>
             </div>
           </div>
           </div>
@@ -81,9 +52,9 @@ Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem
         <div className="column">
         <Heading title="Other Publications" />
         <div className="other">
-          {cards.map(card => <Card key={Math.random()} title={card.title} date={card.tag} content={card.content} link={card.link}  
-              />)}         
-              <TopArticleList/>      
+          {other_pub.map(card => <Card title={other_pub[2].pub_title[0].text} 
+            date={other_pub[2].pub_date} content={other_pub[2].pub_content[0].text} link={other_pub[2].link_text}/>)}         
+              <TopArticleList top_3_article={top_3_article}/>      
               </div>
               </div>
               </div>
@@ -133,14 +104,16 @@ Software dev courses" date="15 MAR, 2021" link="READ PUBLICATION" content="Lorem
 
   export async function getServerSideProps() {
     const publications = await Client().query(
-        Prismic.Predicates.at("document.type", "publication_page")
+        Prismic.Predicates.at("document.type", "publication")
     )
 
     // console.log(publications)
 
     return {
         props: {
-          new_pub: publications.results
+          new_pub: publications.results[0].data.body[0].items,
+          other_pub: publications.results[0].data.body[1].items,
+          top_3_article: publications.results[0].data.body[2].items
         }
     }
 }
