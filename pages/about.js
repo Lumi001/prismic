@@ -10,35 +10,35 @@ import BeenUpTo from '../components/aboutPageComponents/beenUpTo/beenUpTo';
 import BrandsAndPartners from '../components/aboutPageComponents/brandsAndPartners/brandsAndPartners';
 // import styles from './About.module.css';
 
-const intro = {
-    title: `We are a 
-    results-driven
-    company`,
-    content: `Nothing excites us like an opportunity to help our clients make those key decisions that marries their business ideals and sustainability in a way helps them innovate in the areas of new products, ideas and service that keeps them ahead of competition.`,
-    link: 'WORK WITH US',
-    image1: '/introAbout/image1.png',
-    image2: '/introAbout/image2.png',
-    image3: '/introAbout/image3.png',
-    href: "/"
-}
-const ourStory = {
-    title: `Our Story`,
-    content: `The TruContact CSR Nigeria seed was sown long before the founder; Kenneth Egbas would even conceive the dream of starting a company. Life didn’t always hand him a fair deal. From his early days and upon graduation from university he always dreamed of running a business based on the idea that outcomes from his business activities would promote innovation, equitable distribution of resources, justice, reduce wastage and help eradicate poverty in Africa. This gave wings to the dream that became TruContact CSR Nigeria.`,
-    content2: `TCSRN was founded in 2006, and carried out what many have come to acknowledge as trail blazing spadework that led to a rapid growth of what has become a vibrant and viable corporate social responsibility and sustainability industry in Nigeria, and Africa.`,
-    image: '/ourStoryAbout/founder.png',
-}
+// const intro = {
+//     title: `We are a 
+//     results-driven
+//     company`,
+//     content: `Nothing excites us like an opportunity to help our clients make those key decisions that marries their business ideals and sustainability in a way helps them innovate in the areas of new products, ideas and service that keeps them ahead of competition.`,
+//     link: 'WORK WITH US',
+//     image1: '/introAbout/image1.png',
+//     image2: '/introAbout/image2.png',
+//     image3: '/introAbout/image3.png',
+//     href: "/"
+// }
+// const ourStory = {
+//     title: `Our Story`,
+//     content: `The TruContact CSR Nigeria seed was sown long before the founder; Kenneth Egbas would even conceive the dream of starting a company. Life didn’t always hand him a fair deal. From his early days and upon graduation from university he always dreamed of running a business based on the idea that outcomes from his business activities would promote innovation, equitable distribution of resources, justice, reduce wastage and help eradicate poverty in Africa. This gave wings to the dream that became TruContact CSR Nigeria.`,
+//     content2: `TCSRN was founded in 2006, and carried out what many have come to acknowledge as trail blazing spadework that led to a rapid growth of what has become a vibrant and viable corporate social responsibility and sustainability industry in Nigeria, and Africa.`,
+//     image: '/ourStoryAbout/founder.png',
+// }
 
-const meetTheTeam = {
-    title: `Meet the team`,
-    items: [
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' }
-    ]
-}
+// const meetTheTeam = {
+//     title: `Meet the team`,
+//     items: [
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' }
+//     ]
+// }
 const whatWeDo = {
     heading: `Here’s what we do`,
     subHeading: `Our Services`,
@@ -123,21 +123,22 @@ const brandsAndPartners = {
     ]
 }
 
-const About = () => {
+const About = ({ about, intro, ourStory,meetTheTeam }) => {
     return (
         <div className={styles.container}>
             <Head>
                 <title>TruCSR - About Us</title>
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
             </Head>
 
             <main className={styles.main}>
-                <Intro title={intro.title} content={intro.content} link={intro.link} image1={intro.image1} image2={intro.image2} image3={intro.image3} href={intro.href} />
-                <OurStory title={ourStory.title} content={ourStory.content} content2={ourStory.content2} image={ourStory.image} />
-                <MeetTheTeam title={meetTheTeam.title} items={meetTheTeam.items} />
+                {console.log(about)}
+                <Intro title={intro.primary.heading[0].text} content={intro.primary.text[0].text} link={intro.primary.link_text} image1={intro.items[0].image.url || '/introAbout/image1.png'} image2={intro.items[1].image.url || '/introAbout/image1.png'} image3={intro.items[2].image.url || '/introAbout/image1.png'} href={intro.primary.link_address} />
+                <OurStory title={ourStory.primary.heading[0].text} content={ourStory.primary.sub_text[0].text} content2={ourStory.content2} image={ourStory.primary.image.url} />
+                <MeetTheTeam title={meetTheTeam.primary.heading[0].text} items={meetTheTeam.items} />
                 <WhatWeDo heading={whatWeDo.heading} subHeading={whatWeDo.subHeading} items={whatWeDo.items} />
                 <BeenUpTo heading={beenUpTo.heading} subHeading={beenUpTo.subHeading} items={beenUpTo.items} />
                 <BrandsAndPartners heading={brandsAndPartners.heading} subHeading={brandsAndPartners.subHeading} items1={brandsAndPartners.items1} items2={brandsAndPartners.items2} link={brandsAndPartners.link} href={brandsAndPartners.href} />
@@ -149,15 +150,28 @@ const About = () => {
 export default About;
 
 export async function getServerSideProps() {
-    const about = await Client().query(
+    let about = await Client().query(
         Prismic.Predicates.at("document.type", "about_page")
     )
 
-    console.log(about.results[0].data.body[0].items.link_address, "this is about")
+    let about1 = {}
 
+    about.results[0].data.body.map(each => {
+        return about1[each.slice_type] = { items: each.items, primary: each.primary }
+    })
+    about = about1;
+
+    console.table(about.card.primary)
+    console.log(about.card.items[0])
     return {
         props: {
-
+            about,
+            intro: about.carousel,
+            ourStory: about.heading___subtext,
+            meetTheTeam: about.card,
+            whatWeDo: about.our_services,
+            beenUpTo: about.our_services1,
+            brandsAndPartners: { top: about.our_services2, bottom: about.heading___photos___text___link }
         }
     }
 }
