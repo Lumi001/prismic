@@ -5,15 +5,15 @@ import { useEffect, useState } from 'react';
 
 const Navbar = ({ navigation, links }) => {
     const [rightDropdown, setRightDropdown] = useState(false);
-    // const [scroll, setScroll] = useState(0);
-    // const handleScroll = () => {
-    //     setScroll(window.pageYOffset);
-    //     console.log(scroll);
-    // }
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // });
+    const [scroll, setScroll] = useState(0);
+    const handleScroll = () => {
+        setScroll(window.pageYOffset);
+        console.log(scroll);
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    });
 
     const toggleRightDropdown = () => {
         if (rightDropdown) {
@@ -31,7 +31,7 @@ const Navbar = ({ navigation, links }) => {
     let linksTemp = navigation.items
 
     return (
-        <div className={styles.navbar} style={{ background: "transparent" }}>
+        <div className={styles.navbar} style={{ background: scroll > 70 ? "white" : "transparent" }}>
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
