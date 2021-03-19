@@ -28,17 +28,17 @@ import BrandsAndPartners from '../components/aboutPageComponents/brandsAndPartne
 //     image: '/ourStoryAbout/founder.png',
 // }
 
-const meetTheTeam = {
-    title: `Meet the team`,
-    items: [
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
-        { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' }
-    ]
-}
+// const meetTheTeam = {
+//     title: `Meet the team`,
+//     items: [
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' },
+//         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' }
+//     ]
+// }
 const whatWeDo = {
     heading: `Here’s what we do`,
     subHeading: `Our Services`,
@@ -123,7 +123,7 @@ const brandsAndPartners = {
     ]
 }
 
-const About = ({ about, intro, ourStory }) => {
+const About = ({ about, intro, ourStory,meetTheTeam }) => {
     return (
         <div className={styles.container}>
             <Head>
@@ -136,9 +136,9 @@ const About = ({ about, intro, ourStory }) => {
 
             <main className={styles.main}>
                 {console.log(about)}
-                <Intro title={intro.primary.heading[0].text} content={intro.primary.text[0].text} link={intro.primary.link_text} image1={intro.items[1 - 1].image.url || '/introAbout/image1.png'} image2={intro.items[1 - 1].image.url || '/introAbout/image1.png'} image3={intro.items[1 - 1].image.url || '/introAbout/image1.png'} href={intro.primary.link_address} />
-                <OurStory title={ourStory.primary.heading[0].text} content={ourStory.primary.sub_text[0].text} content2={ourStory.content2} image={ourStory.image} />
-                <MeetTheTeam title={meetTheTeam.title} items={meetTheTeam.items} />
+                <Intro title={intro.primary.heading[0].text} content={intro.primary.text[0].text} link={intro.primary.link_text} image1={intro.items[0].image.url || '/introAbout/image1.png'} image2={intro.items[1].image.url || '/introAbout/image1.png'} image3={intro.items[2].image.url || '/introAbout/image1.png'} href={intro.primary.link_address} />
+                <OurStory title={ourStory.primary.heading[0].text} content={ourStory.primary.sub_text[0].text} content2={ourStory.content2} image={ourStory.primary.image.url} />
+                <MeetTheTeam title={meetTheTeam.primary.heading[0].text} items={meetTheTeam.items} />
                 <WhatWeDo heading={whatWeDo.heading} subHeading={whatWeDo.subHeading} items={whatWeDo.items} />
                 <BeenUpTo heading={beenUpTo.heading} subHeading={beenUpTo.subHeading} items={beenUpTo.items} />
                 <BrandsAndPartners heading={brandsAndPartners.heading} subHeading={brandsAndPartners.subHeading} items1={brandsAndPartners.items1} items2={brandsAndPartners.items2} link={brandsAndPartners.link} href={brandsAndPartners.href} />
@@ -161,7 +161,8 @@ export async function getServerSideProps() {
     })
     about = about1;
 
-    console.log(about.heading___subtext.primary)
+    console.table(about.card.primary)
+    console.log(about.card.items[0])
     return {
         props: {
             about,
