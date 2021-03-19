@@ -15,16 +15,16 @@
   display: flex;
   margin-top: 50px;
 }
-.linktext{
-  border-bottom: 1px solid black;  
+.linktext {
+  border-bottom: 1px solid black;
   width: 181px;
   padding-right: 5px;
-  font-size: 20px
+  font-size: 20px;
 }
 .linklogo {
   margin-top: 4.5px;
 }
-.date{
+.date {
   font-size: 16px;
   padding: 10px 0px;
   font-weight: 600;
@@ -41,94 +41,93 @@
   /* Save the Children Initiative powered by Chevron */
   margin: 0px;
   /* height: 102px; */
-  font-family: 'Roboto';
+  font-family: "Inter";
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
   line-height: 152.6%;
   /* or 46px */
   letter-spacing: 0.01em;
-  
-  color: #38465E;
+
+  color: #38465e;
 }
 
 .card p {
-/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit... */
+  /* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit... */
 
-margin: 0px;
-font-family: 'Ubuntu';
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 181.6%;
-/* or 44px */
-letter-spacing: 0.01em;
+  margin: 0px;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 181.6%;
+  /* or 44px */
+  letter-spacing: 0.01em;
 
-color: #38465E;
+  color: #38465e;
 }
 
-.card small{
+.card small {
   margin: 20px 0px;
   /* Event */
   width: 82px;
-/* height: 29px; */
-font-family: 'Ubuntu';
-font-style: normal;
-font-weight: 800;
-font-size: 16px;
-line-height: 181.6%;
-/* identical to box height, or 29px */
-letter-spacing: 0.01em;
-color: #CE648D;
-background: rgba(221, 55, 55, 0.3);
-text-align: center;
+  height: 29px;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 181.6%;
+  /* identical to box height, or 29px */
+  letter-spacing: 0.01em;
+  color: #ce648d;
+  background: rgba(221, 55, 55, 0.3);
+  text-align: center;
 }
 
-.card img{
-  
+.card img {
   /* Rectangle 84 */
-  
-  background: #C4C4C4;
+
+  background: #c4c4c4;
   border-radius: 15px;
 }
 @media screen and (min-width: 999px) {
-  .card h3{
+  .card h3 {
     width: 469px;
   }
-  .card p{
+  .card p {
     /* font-size: 3rem; */
     width: 419px;
     /* height: 88px; */
   }
-  .card img{
+  .card img {
     height: 350px;
     width: 450px;
   }
-  .card{
+  .card {
     width: 450px;
   }
 }
 @media screen and (max-width: 999px) {
-  
-  .card h3,.card p{
-   /* width: 90vw;*/
+  .card h3,
+  .card p {
+    /* width: 90vw;*/
     height: auto;
   }
-  .card h3{
+  .card h3 {
     font-size: 1.6rem;
   }
-  .card p{
+  .card p {
     font-size: 1.1rem;
   }
-  .card img{
+  .card img {
     height: 400px;
     width: 100%;
   }
-  .card small{
+  .card small {
     font-size: 1reem;
     /* width: 150px; */
   }
-  .card{
+  .card {
     margin: 50px 0px;
     width: 90%;
   }

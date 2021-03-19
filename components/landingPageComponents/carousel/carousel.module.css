@@ -26,7 +26,7 @@
 }
 .carousel h1 {
   /*height: 216px;*/
-  font-family: Proxima Novo;
+  font-family: 'Inter';
   font-style: normal;
   font-weight: bold;
   font-size: 64px;
@@ -35,10 +35,10 @@
   color: #313131;
 }
 .carousel p {
-  font-family: "Ubuntu";
+  font-family: "Avenir";
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 181.6%;
   letter-spacing: 0.01em;
   color: #313131;
