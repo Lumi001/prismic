@@ -11,7 +11,7 @@ const MeetTheTeam = ({items,title}) => {
                     <section>
                         {items.map(item=>{
                             return(
-                                <TeamCard image={item.image} content={item.content} title={item.title}/>
+                                <TeamCard image={item.image.url} content={item.member_role[0].text} title={item.member_name[0].text}/>
                             )
                         })}
                     </section>

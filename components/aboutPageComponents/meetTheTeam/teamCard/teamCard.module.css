@@ -2,7 +2,8 @@
     width: 355px;
 }
 .team_card img {
-    max-height: 449px;
+    max-width: 355px;
+    min-height: 449px;
 }
 .team_card h3 {
     font-family: "Inter";
@@ -14,7 +15,7 @@
     text-align: left;
 }
 .team_card p {
-    font-family: 'Avenir';
+    font-family: "Avenir";
     font-size: 18px;
     font-style: normal;
     font-weight: 800;
