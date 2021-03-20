@@ -39,91 +39,91 @@ import BrandsAndPartners from '../components/aboutPageComponents/brandsAndPartne
 //         { image: '/ourStoryAbout/founder.png', title: 'Ken Egbas', content: 'President TruCRS' }
 //     ]
 // }
-const whatWeDo = {
-    heading: `Here’s what we do`,
-    subHeading: `Our Services`,
-    items: [
-        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-        { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
-    ]
-}
-const beenUpTo = {
-    heading: `What we’ve been up to`,
-    subHeading: `Our Recent Projects`,
-    items: [
-        {
-            image: '/projectCard/background.png', title: `TruCSR offers online counselling services`,
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.',
-            link: 'VIEW CASE STUDY',
-            href: '/'
-        },
-        {
-            image: '/projectCard/background.png', title: `TruCSR offers online counselling services`,
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.',
-            link: 'VIEW CASE STUDY',
-            href: '/'
-        },
-        {
-            image: '/projectCard/background.png', title: `TruCSR offers online counselling services`,
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.',
-            link: 'VIEW CASE STUDY',
-            href: '/'
-        },
-        {
-            image: '/projectCard/background.png', title: `TruCSR offers online counselling services`,
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.',
-            link: 'VIEW CASE STUDY',
-            href: '/'
-        }
-    ]
-}
-const brandsAndPartners = {
-    heading: `We work with top brands`,
-    subHeading: `Some of Our Partners & Customers`,
-    link: "WORK WITH US",
-    href: "/",
-    items1: [
-        {
-            image: '/brandsAndPartnersAbout/gtb.png'
-        },
-        {
-            image: '/brandsAndPartnersAbout/gtb.png'
-        },
-        {
-            image: '/brandsAndPartnersAbout/gtb.png'
-        },
-        {
-            image: '/brandsAndPartnersAbout/gtb.png'
-        },
-        {
-            image: '/brandsAndPartnersAbout/gtb.png'
-        }
-    ],
-    items2: [
-        {
-            title: `2006`,
-            content: 'Founded',
-        },
-        {
-            title: `2006`,
-            content: 'Founded',
-        },
-        {
-            title: `2006`,
-            content: 'Founded',
-        },
-        {
-            title: `2006`,
-            content: 'Founded',
-        }
-    ]
-}
+// const whatWeDo = {
+//     heading: `Here’s what we do`,
+//     subHeading: `Our Services`,
+//     items: [
+//         { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+//         { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+//         { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+//         { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+//         { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+//         { image: '/whatWeDoAbout/image.png', title: 'Consulting', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.' },
+//     ]
+// }
+// const beenUpTo = {
+//     heading: `What we’ve been up to`,
+//     subHeading: `Our Recent Projects`,
+//     items: [
+//         {
+//             image: '/projectCard/background.png', title: `TruCSR offers online counselling services`,
+//             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.',
+//             link: 'VIEW CASE STUDY',
+//             href: '/'
+//         },
+//         {
+//             image: '/projectCard/background.png', title: `TruCSR offers online counselling services`,
+//             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.',
+//             link: 'VIEW CASE STUDY',
+//             href: '/'
+//         },
+//         {
+//             image: '/projectCard/background.png', title: `TruCSR offers online counselling services`,
+//             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.',
+//             link: 'VIEW CASE STUDY',
+//             href: '/'
+//         },
+//         {
+//             image: '/projectCard/background.png', title: `TruCSR offers online counselling services`,
+//             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non venenatis morbi nisl.',
+//             link: 'VIEW CASE STUDY',
+//             href: '/'
+//         }
+//     ]
+// }
+// const brandsAndPartners = {
+//     heading: `We work with top brands`,
+//     subHeading: `Some of Our Partners & Customers`,
+//     link: "WORK WITH US",
+//     href: "/",
+//     items1: [
+//         {
+//             image: '/brandsAndPartnersAbout/gtb.png'
+//         },
+//         {
+//             image: '/brandsAndPartnersAbout/gtb.png'
+//         },
+//         {
+//             image: '/brandsAndPartnersAbout/gtb.png'
+//         },
+//         {
+//             image: '/brandsAndPartnersAbout/gtb.png'
+//         },
+//         {
+//             image: '/brandsAndPartnersAbout/gtb.png'
+//         }
+//     ],
+//     items2: [
+//         {
+//             title: `2006`,
+//             content: 'Founded',
+//         },
+//         {
+//             title: `2006`,
+//             content: 'Founded',
+//         },
+//         {
+//             title: `2006`,
+//             content: 'Founded',
+//         },
+//         {
+//             title: `2006`,
+//             content: 'Founded',
+//         }
+//     ]
+// }
 
-const About = ({ about, intro, ourStory,meetTheTeam }) => {
+const About = ({ about, intro, ourStory,meetTheTeam,whatWeDo,beenUpTo,brandsAndPartners }) => {
     return (
         <div className={styles.container}>
             <Head>
@@ -139,9 +139,9 @@ const About = ({ about, intro, ourStory,meetTheTeam }) => {
                 <Intro title={intro.primary.heading[0].text} content={intro.primary.text[0].text} link={intro.primary.link_text} image1={intro.items[0].image.url || '/introAbout/image1.png'} image2={intro.items[1].image.url || '/introAbout/image1.png'} image3={intro.items[2].image.url || '/introAbout/image1.png'} href={intro.primary.link_address} />
                 <OurStory title={ourStory.primary.heading[0].text} content={ourStory.primary.sub_text[0].text} content2={ourStory.content2} image={ourStory.primary.image.url} />
                 <MeetTheTeam title={meetTheTeam.primary.heading[0].text} items={meetTheTeam.items} />
-                <WhatWeDo heading={whatWeDo.heading} subHeading={whatWeDo.subHeading} items={whatWeDo.items} />
-                <BeenUpTo heading={beenUpTo.heading} subHeading={beenUpTo.subHeading} items={beenUpTo.items} />
-                <BrandsAndPartners heading={brandsAndPartners.heading} subHeading={brandsAndPartners.subHeading} items1={brandsAndPartners.items1} items2={brandsAndPartners.items2} link={brandsAndPartners.link} href={brandsAndPartners.href} />
+                <WhatWeDo heading={whatWeDo.primary.heading[0].text} subHeading={whatWeDo.primary['sub-heading'][0].text} items={whatWeDo.items} />
+                <BeenUpTo heading={beenUpTo.primary.heading[0].text} subHeading={beenUpTo.primary['sub-heading'][0].text} items={beenUpTo.items} />
+                <BrandsAndPartners heading={brandsAndPartners.top.primary.heading[0].text} subHeading={brandsAndPartners.top.primary['sub-heading'][0].text} items1={brandsAndPartners.top.items} items2={brandsAndPartners.bottom.items} link={brandsAndPartners.bottom.primary.link_text} href={brandsAndPartners.bottom.primary.link_address['url']} />
             </main>
         </div>
     );
@@ -161,8 +161,9 @@ export async function getServerSideProps() {
     })
     about = about1;
 
-    console.table(about.card.primary)
-    console.log(about.card.items[0])
+    // console.table(about.card.primary)
+    console.log(about.heading___photos___text___link.items[0])
+    console.log(about.our_services2.primary)
     return {
         props: {
             about,
