@@ -14,7 +14,7 @@ const BrandsAndPartners = ({heading, subHeading, items1,items2,link, href}) => {
                         {items1.map(item => {
                             return (
                                 <section>
-                                <img src={item.image} alt=""/>
+                                <img src={item.partner_image.url} alt=""/>
                                 </section>
                             )
                         })}
@@ -23,8 +23,8 @@ const BrandsAndPartners = ({heading, subHeading, items1,items2,link, href}) => {
                         {items2.map(item => {
                             return (
                                 <section>
-                                <h3>{item.title}</h3>
-                                <p>{item.content}</p>
+                                <h3>{item.heading[0].text}</h3>
+                                <p>{item.sub_text[0].text}</p>
                                 </section>
                             )
                         })}

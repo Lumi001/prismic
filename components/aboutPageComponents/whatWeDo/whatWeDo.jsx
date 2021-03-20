@@ -13,7 +13,7 @@ const WhatWeDo = ({ heading, subHeading, items }) => {
                     <section className={styles.card_list}>
                         {items.map(item => {
                             return (
-                                <TeamCard key={Math.random()} image={item.image} content={item.content} title={item.title} />
+                                <TeamCard services key={Math.random()} image={item.service_image.url||"/whatWeDoAbout/image.png"} content={item.service_description[0].text} title={item.service_title[0].text} />
                             )
                         })}
                     </section>
