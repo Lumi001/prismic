@@ -1,9 +1,9 @@
 import styles from './heading.module.css';
 
 const Heading = ({title}) => (
-  <div className={styles.heading}>
+ <div className={styles.heading}>
     <h2>{title}</h2>
-  </div>
+  </div> 
   )
   
   export default Heading;

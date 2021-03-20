@@ -23,10 +23,13 @@ const TopArticleCard = ({number, title, date}) => {
             font-size: 48px;
             width: 20%;
             color: #38465E;
+            opacity: 0.2;
         }
         .toparticlecard-title{
             font-size: 30px;
-            width: 70%
+            width: 70%;
+            color: #38465E;
+
         }
          h3{
             margin-bottom: 0;   
