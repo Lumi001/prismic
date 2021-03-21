@@ -3,9 +3,14 @@
 }
 .team_card img {
     max-width: 355px;
-    min-height: 449px;
+    height: fit-content;
+    /* min-height: 449px; */
+}
+.team_card .services_h3 {
+    min-height: 80px;
 }
 .team_card h3 {
+    margin: 10px 0px;
     font-family: "Inter";
     font-size: 24px;
     font-style: normal;
@@ -13,8 +18,10 @@
     line-height: 37px;
     letter-spacing: 0.01em;
     text-align: left;
+    /* height: max-content; */
 }
 .team_card p {
+    margin: 10px 0px;
     font-family: "Avenir";
     font-size: 18px;
     font-style: normal;

@@ -15,7 +15,7 @@
     justify-content: center;
 }
 .container .brands_and_partners a {
-    font-family: "Roboto", sans-serif;
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 20px;
@@ -68,6 +68,15 @@
     font-size: 18px;
     line-height: 152.6%;
     /* or 27px */
-
+    
     color: #38465e;
+}
+
+.container .brands_and_partners .cards .top section {
+    display: flex;
+    align-items: center;
+}
+.container .brands_and_partners .cards .top section img {
+    width: 75px;
+    height: fit-content;
 }
