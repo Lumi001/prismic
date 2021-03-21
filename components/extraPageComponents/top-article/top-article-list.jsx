@@ -9,6 +9,7 @@ const TopArticleList = ({top_3_article}) => {
         <div className="toparticlelist">
             <Heading title="Top 3 articles"/>
         {top_3_article.map((topArticle, i) => <TopArticleCard 
+        key={Math.random()} 
         number={i+1} 
         title={top_3_article[0].article_title[0].text} 
         date={top_3_article[0].article_date[0].text}/>)}
