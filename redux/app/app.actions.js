@@ -10,3 +10,9 @@ export function navbarContentAction(navbarColours) {
         payload: {navbarColours}
     };
 }
+export function modalStatusAction(modal) {
+    return {
+        type: 'MODAL_STATUS',
+        payload: {...modal}
+    };
+}

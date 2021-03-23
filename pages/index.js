@@ -9,11 +9,14 @@ import Heading from '../components/extraPageComponents/heading/heading'
 import Card from '../components/extraPageComponents/card/card'
 import Button from '../components/extraPageComponents/button/button'
 import ScrollCardList from '../components/landingPageComponents/scrollCardList/scrollCardList'
+import { connect } from 'react-redux';
+import Modal from '../components/extraPageComponents/modal/modal';
 
-export default function Home({  scroll_data , cards, carousel, scroll_title_text, scroll_link_text, button_text}) {
-
-
-
+function Home({ scroll_data, cards, carousel, scroll_title_text, scroll_link_text, button_text, isActive, modalContent, modalType }) {
+  // const [modalStatus, setModalStatus] = useState(false)
+  
+  
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -25,6 +28,7 @@ export default function Home({  scroll_data , cards, carousel, scroll_title_text
       </Head>
 
       <main className={styles.main}>
+        {console.log(isActive,modalContent,modalType)}
         {/* <h1>Temp</h1> */}
         {/* {console.log(footer)}
         {console.log(navigation_bar)}
@@ -33,23 +37,33 @@ export default function Home({  scroll_data , cards, carousel, scroll_title_text
         {console.log(scrollable_card)}
         {console.log(connect_with_us)} */}
         <section className={styles.carousel}>
-          <Carousel 
-          title={carousel.heading[0].text} content={carousel.text[0].text} link={carousel['link_text'][0].text} image={carousel.background_image.url}
-           />
+          <Carousel
+            title={carousel.heading[0].text} content={carousel.text[0].text} link={carousel['link_text'][0].text} image={carousel.background_image.url}
+          />
         </section>
         <Heading title="Featured Articles" />
         <section className={styles.articles}>
-          {cards.map(card => <Card key={Math.random()} title={card.title[0].text} tag={card.tag} content={card.card_content[0].text}  
-              />)} 
+          {cards.map(card => <Card key={Math.random()} title={card.title[0].text} tag={card.tag} content={card.card_content[0].text}
+          />)}
         </section>
         <Button text={button_text} icon="/button/cross.png" />
         <ScrollCardList scroll_data={scroll_data} scroll_title_text={scroll_title_text} scroll_link_text={scroll_link_text} />
+        {isActive ?
+          <div>
+            <Modal content={{ link: modalContent, type: modalType }} />
+          </div>
+          : null}
 
       </main>
     </div>
   )
 }
-
+const mapStateToProps = state => ({
+  isActive: state.app.modalIsActive,
+  modalContent: state.app.modalContent,
+  modalType: state.app.type
+})
+export default connect(mapStateToProps)(Home);
 // export async function getServerSideProps() {
 //   const landing = await Client().query(
 //     Prismic.Predicates.at("document.type", 'landing_page')
@@ -74,18 +88,18 @@ export async function getServerSideProps() {
   const landing = await Client().query(
     Prismic.Predicates.at("document.type", "landing_page")
   )
-  
+
   return {
     props: {
       carousel: landing.results[0].data.body[1].items[0],
 
       cards: landing.results[0].data.body[2].items,
-       
-      button_text: landing.results[0].data.body[2].primary.button_text,      
+
+      button_text: landing.results[0].data.body[2].primary.button_text,
 
       scroll_data: landing.results[0].data.body[3].items,
 
-      scroll:  landing.results[0].data.body[3].primary.link_text,
+      scroll: landing.results[0].data.body[3].primary.link_text,
 
       scroll_title_text: landing.results[0].data.body[3].primary.title[0].text,
 

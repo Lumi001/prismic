@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from 'next/link';
 
 export default class ScrollCardList extends Component {
   constructor(props) {
@@ -84,13 +85,11 @@ export default class ScrollCardList extends Component {
               {
                 scroll_data.map((card, i) => {
                   return (
-
                     <ScrollCard
-                      title={card.title[0].text}
-                      date={card.date}
-                      type={card.cardtype}
-                      key={scroll_data[i].id} />
-
+                        title={card.title[0].text}
+                        date={card.date}
+                        type={card.cardtype}
+                        key={scroll_data[i].id} />
                   )
                 })
               }

@@ -1,4 +1,4 @@
-const INITIAL_STATE = { navbarColours: "primary" };
+const INITIAL_STATE = { navbarColours: "primary", modalIsActive: false, modalContent: '', type: '' };
 
 const appReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -8,6 +8,11 @@ const appReducer = (state = INITIAL_STATE, action) => {
                 ...action.payload
             };
         case 'NAVBAR_CONTENT':
+            return {
+                ...state,
+                ...action.payload
+            };
+        case 'MODAL_STATUS':
             return {
                 ...state,
                 ...action.payload
