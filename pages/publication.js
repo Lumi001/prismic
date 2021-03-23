@@ -52,7 +52,7 @@ export default function Publication({new_pub, other_pub, top_3_article}) {
         <div className="column">
         <Heading title="Other Publications" />
         <div className="other">
-          {other_pub.map(card => <Card title={other_pub[2].pub_title[0].text} 
+          {other_pub.map(card => <Card key={Math.random()}  title={other_pub[2].pub_title[0].text} 
             date={other_pub[2].pub_date} content={other_pub[2].pub_content[0].text} link={other_pub[2].link_text}/>)}         
               <TopArticleList top_3_article={top_3_article}/>      
               </div>
@@ -95,6 +95,11 @@ export default function Publication({new_pub, other_pub, top_3_article}) {
           .two img{
             height: 769px
           }
+          @media only screen and (max-width: 768px) {
+            .other{
+                  grid-template-columns: 100%;
+                }
+}
           `}
           </style>
       </div>

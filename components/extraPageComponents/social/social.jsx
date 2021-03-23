@@ -11,7 +11,7 @@ const Social = ({ text }) => {
             <h1>{text}</h1>
             <section className={styles.buttons}>
                 {imgs.map(img=>(
-                    <SocialButton img={`/socials/${img}.png`}/>
+                    <SocialButton key={Math.random()}  img={`/socials/${img}.png`}/>
                 ))}
             </section>
         </div>

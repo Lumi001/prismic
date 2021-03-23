@@ -1,9 +1,13 @@
 import React from 'react';
+import Prismic from 'prismic-javascript';
+import { Client } from '../../../prismic-configuration';
+
 import FooterOption from './footerOption/footerOption';
 import FooterTitle from './footerTitle/footerTitle';
 import styles from './footer.module.css'
 // import './footer.scss'
-const Footer = (links) => {
+const Footer = (links, footer_items) => {
+    console.log(footer_items)
 
     let linksTemp = [
         {
@@ -99,3 +103,16 @@ const Footer = (links) => {
 };
 
 export default Footer;
+
+export async function getServerSideProps() {
+    const footer = await Client().query(
+        Prismic.Predicates.at("document.type", "footer")
+    )
+
+    return {
+        props: {
+          footer_items: footer.results,
+         
+        }
+    }
+}
