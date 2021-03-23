@@ -41,7 +41,7 @@ const Navbar = ({ navigation, links }) => {
                 <nav className={styles.right}>
                     {linksTemp.map(link => {
                         return (
-                            <div className={styles.pc}>
+                            <div className={styles.pc} key={Math.random()} >
                                 {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link || "/"} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link || "/"} type="link" text={link.link_text[0].text} />}
                             </div>
                         )
@@ -54,7 +54,7 @@ const Navbar = ({ navigation, links }) => {
                 <nav className={styles.mobile}>
                     {linksTemp.map(link => {
                         return (
-                            <div>
+                            <div key={Math.random()} >
                                 {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link || "/"} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link || "/"} type="link" text={link.link_text[0].text} />}
                             </div>
                         )
