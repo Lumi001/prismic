@@ -123,7 +123,7 @@ import BrandsAndPartners from '../components/aboutPageComponents/brandsAndPartne
 //     ]
 // }
 
-const About = ({ about, intro, ourStory,meetTheTeam,whatWeDo,beenUpTo,brandsAndPartners }) => {
+const About = ({ about, intro, ourStory, meetTheTeam, whatWeDo, beenUpTo, brandsAndPartners }) => {
     return (
         <div className={styles.container}>
             <Head>
@@ -162,8 +162,8 @@ export async function getServerSideProps() {
     about = about1;
 
     // console.table(about.card.primary)
-    console.log(about.heading___photos___text___link.items[0])
-    console.log(about.our_services2.primary)
+    // console.log(about.heading___photos___text___link.items[0])
+    // console.log(about.our_services2.primary)
     return {
         props: {
             about,
