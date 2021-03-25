@@ -17,11 +17,15 @@ export default function Event ({new_pub, other_pub, top_3_article}) {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
         <main className={styles.main}>
-          <div className="heading">
+          <div className="wrapper2">
           <Heading title="Our Events" />
-          <Heading title="Upcoming Events" />
+          <h3 className="title">Upcoming Events</h3>
+          </div>
+          <div className="wrapper1">
           <Carousel/>
-          <Heading title="Recent Events" />
+          </div>
+          <div className="wrapper2">
+          <h3 className="title">Recent Events</h3>
           <div className="grid">
           <EventCard date="March 28, 2021" title="The 10th Edition
           of  SERAS"  />
@@ -39,7 +43,12 @@ export default function Event ({new_pub, other_pub, top_3_article}) {
         
         <style jsx global>
           {`
-          .heading {
+          .wrapper1 {
+           margin-top: 5%;
+           text-align: left;
+           width: 95%;
+          }
+          .wrapper2 {
            margin-top: 5%;
            text-align: left;
            width: 80%;
@@ -47,9 +56,15 @@ export default function Event ({new_pub, other_pub, top_3_article}) {
           .grid {
             display: grid;
             grid-template-columns: 50% 50%;
-            grid-gap: 40px;
+            grid-gap: 15px 15px;
             justify-items: start ;
             width: 100%;
+          }
+          .title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px;
+            color: #313131;
           }
           `}
           </style>

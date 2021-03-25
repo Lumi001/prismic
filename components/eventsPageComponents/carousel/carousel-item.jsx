@@ -36,16 +36,18 @@ const CarouselItem = ({ date, title, location, link }) => {
               display: flex;
               align-items: flex-start;
               justify-content: center;
-              width: 100%;
+              width: 92%;
               color: #FCFCFC;
+              margin: auto
           }
           .carousel-text {
             background-color: #5E25FE;
             padding: 10px 35px;
             width: 40%;
+            height: 494px;
           }
           .carousel-vid {
-            width: 60%
+            width: 52%
           }
           .date {
             font-size: 20px;
@@ -58,7 +60,7 @@ const CarouselItem = ({ date, title, location, link }) => {
         display: flex;
         font-weight: 800;
         font-size: 20px;
-        margin-top: 173px;
+        margin-top: 120px;
         }
         .linktext {
         border-bottom: 1px solid #FCFCFC;
