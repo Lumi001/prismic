@@ -6,8 +6,8 @@ import EventCard from '../components/eventsPageComponents/event-card/event-card'
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 
-export default function Event ({new_pub, other_pub, top_3_article}) {
-
+export default function Event ({upcomingEvents, recentEvents}) {
+console.log(recentEvents)
     return (
       <div className={styles.container}>
         <Head>
@@ -27,14 +27,15 @@ export default function Event ({new_pub, other_pub, top_3_article}) {
           <div className="wrapper2">
           <h3 className="title">Recent Events</h3>
           <div className="grid">
-          <EventCard date="March 28, 2021" title="The 10th Edition
+          {recentEvents.map( event => <EventCard key={Math.random()} date={event.date} title={event.title} color={event.color}/>)}
+          {/* <EventCard date="March 28, 2021" title="The 10th Edition
           of  SERAS"  />
           <EventCard date="March 28, 2021" title="The 10th Edition
           of  SERAS"  />
           <EventCard date="March 28, 2021" title="The 10th Edition
           of  SERAS"  />
           <EventCard date="March 28, 2021" title="The 10th Edition
-          of  SERAS"  />
+          of  SERAS"  /> */}
           </div>
           
           </div>
@@ -70,4 +71,16 @@ export default function Event ({new_pub, other_pub, top_3_article}) {
           </style>
           </div>
     )
+}
+
+export async function getServerSideProps() {
+  const events = await Client().query(
+      Prismic.Predicates.at("document.type", "events")
+  )
+  return {
+      props: {
+        upcomingEvents: events.results[0].data.body[0].items,
+        recentEvents: events.results[0].data.body[1].items
+      }
+  }
 }

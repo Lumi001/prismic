@@ -42,12 +42,14 @@ export default class Carousel extends Component {
 
   render() {
     const settings = {
-      infinite: false,
+      infinite: true,
       dots: true,
+      autoplay: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       initialSlide: 0,
+      dotsClass: "button__bar",
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
       responsive: [
@@ -153,6 +155,49 @@ export default class Carousel extends Component {
   .circle-opt :hover {
     fill: #0E82F8;
   }
+
+
+  .button__bar {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.button__bar li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 3px;
+  padding: 0;
+}
+
+.button__bar li button {
+  border: none;
+  background: #D9D9D9;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 8px;
+  width: 25px;
+  transition: width 1s;
+}
+
+.button__bar li.slick-active button {
+  background-color: #313131;
+  width: 40px
+}
+
+.button__bar li button:hover,
+.button__bar li button:focus {
+  background: #313131;
+  outline: 0;
+}
+
 `}
         </style>
       </React.Fragment>
