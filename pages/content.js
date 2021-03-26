@@ -2,6 +2,7 @@ import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css'
+import Share from '../components/contentPageComponents/share/share'
 
 
 const Content = ({  }) => {
@@ -16,7 +17,7 @@ const Content = ({  }) => {
             </Head>
 
             <main className={styles.main}>
-                
+                <Share text="Share" />
             </main>
         </div>
     );

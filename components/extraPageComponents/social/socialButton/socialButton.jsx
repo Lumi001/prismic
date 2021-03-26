@@ -4,7 +4,7 @@ import Image from 'next/image';
 const SocialButton = ({img}) => {
     // data
     return (
-        <button className={styles.button}>
+        <button className="{styles.button}">
             {
                 <img src={img} alt=""/>
             }
