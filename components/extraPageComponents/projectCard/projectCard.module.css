@@ -66,3 +66,7 @@
     width: 480px;
     margin: 0px 100px;
 }
+.project_card .text img, .project_card_flip .text img{
+    max-width: 80px;
+    max-height: 80px;
+}
