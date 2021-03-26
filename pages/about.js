@@ -1,7 +1,7 @@
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 import Head from 'next/head';
-import Intro from '../components/aboutPageComponents/intro/intro';
+import Intro from '../components/extraPageComponents/intro/intro';
 import OurStory from '../components/aboutPageComponents/ourStory/ourStory';
 import MeetTheTeam from '../components/aboutPageComponents/meetTheTeam/meetTheTeam'
 import WhatWeDo from '../components/aboutPageComponents/whatWeDo/whatWeDo'

@@ -1,4 +1,4 @@
-import ProjectCard from './projectCard/projectCard';
+import ProjectCard from '../../extraPageComponents/projectCard/projectCard';
 import TitleAndSubTitle from '../titleAndSubTitle/titleAndSubTitle';
 import styles from './beenUpTo.module.css';
 
