@@ -139,7 +139,6 @@ export default class Carousel extends Component {
     background-color: #313131;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
   }
-  
   .offer-circle svg {
     cursor: pointer;
   }

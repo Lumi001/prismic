@@ -2,10 +2,9 @@ import Image from 'next/image';
 import React from 'react';
 
 const ShareButton = ({img}) => {
-    // data
     return (
         <React.Fragment>
-        <button className="styles.button">
+        <button className="button">
             {
                 <img src={img} alt=""/>
             }
