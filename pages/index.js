@@ -12,10 +12,11 @@ import ScrollCardList from '../components/landingPageComponents/scrollCardList/s
 import { connect } from 'react-redux';
 import Modal from '../components/extraPageComponents/modal/modal';
 
-function Home({ scroll_data, cards, carousel, scroll_title_text, scroll_link_text, button_text, isActive, modalContent, modalType }) {
+
+
+function Home({nav, scroll_data, cards, carousel, scroll_title_text, scroll_link_text, button_text, isActive, modalContent, modalType }) {
   // const [modalStatus, setModalStatus] = useState(false)
-  
-  
+
   
   return (
     <div className={styles.container}>
@@ -91,6 +92,8 @@ export async function getServerSideProps() {
 
   return {
     props: {
+      nav: landing.results[0].data.body[0].items,
+
       carousel: landing.results[0].data.body[1].items[0],
 
       cards: landing.results[0].data.body[2].items,

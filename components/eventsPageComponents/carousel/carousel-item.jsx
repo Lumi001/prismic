@@ -1,8 +1,11 @@
-import React from 'react';
-
-
+import React, {useRef} from 'react';
 
 const CarouselItem = ({ date, title, location, link }) => {
+  const video = useRef(null);
+  function play () {
+    video.current.play()  
+
+  }
     return (
         <React.Fragment> 
             <div className="carousel">   
@@ -25,9 +28,17 @@ const CarouselItem = ({ date, title, location, link }) => {
 </div>
       </div>
                 </div>
-                <div className="carousel-vid">
-                    <img src="/events/Rec.png" alt="" srcset="" width="100%" height="100%"/>
-                </div>
+                <div class="video-container">
+    <video autoplay muted id="vid" ref={video}>
+    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+    </video>
+    <div class="caption" onClick={play} >
+      <svg width="46" height="52" viewBox="0 0 46 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M44.5 24.268C45.8333 25.0378 45.8333 26.9623 44.5 27.7321L3.25001 51.5478C1.91667 52.3175 0.250001 51.3553 0.250001 49.8157L0.250003 2.1843C0.250004 0.644698 1.91667 -0.317552 3.25 0.452249L44.5 24.268Z" fill="#38465E"/>
+</svg>
+
+    </div>
+</div>
         </div>    
         
         <style jsx global>
@@ -36,7 +47,7 @@ const CarouselItem = ({ date, title, location, link }) => {
               display: flex;
               align-items: flex-start;
               justify-content: center;
-              width: 92%;
+              width: 85%;
               color: #FCFCFC;
               margin: auto
           }
@@ -72,7 +83,7 @@ const CarouselItem = ({ date, title, location, link }) => {
         }
         .location {
         display: flex;
-        font-weight: 800;
+        font-weight: 600;
         font-size: 20px;
         line-height: 24px;
         }
@@ -83,6 +94,35 @@ const CarouselItem = ({ date, title, location, link }) => {
         .locationlogo {
        
         }
+        .video-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 494px;
+          width: 100%;
+          position: relative;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+.video-container .caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  border-radius: 50%;
+  position: relative;
+  background-color: white;
+}
           `}
           </style>
         </React.Fragment>
