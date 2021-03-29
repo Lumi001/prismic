@@ -7,7 +7,50 @@
   align-items: center;
   width: 100% !important;
 }
+.content {
+  max-width: 1200px;
+  width: 100%;
+  min-height: 700px;
+  height: 100%;
+}
+.content .layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 50px 0px;
+}
+.content  .layout .layout_right{
+  width: 80%;
+}
+.content img {
+  width: 100%;
+  height: fit-content;
+}
+.content h1 {
+  margin: 0px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 152.6%;
+  /* or 98px */
 
+  letter-spacing: 0.01em;
+
+  color: #38465e;
+}
+.content p {
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 204.6%;
+  /* or 61px */
+
+  letter-spacing: 0.01em;
+
+  color: #38465e;
+}
 .main {
   /* padding: 1rem 0; */
   flex: 1;

@@ -35,6 +35,13 @@ export async function getServerSideProps() {
     let services1 = {}
     console.log(services.results[0].data.body)
 
+    let post = await Client().query(
+        Prismic.Predicates.at("document.type", `post`)
+    )
+
+    // let services1 = {}
+    console.log("post", post, "post")
+
     services.results[0].data.body.map(each => {
         return services1[each.slice_type] = { items: each.items, primary: each.primary }
     })
