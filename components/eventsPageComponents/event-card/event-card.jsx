@@ -1,9 +1,9 @@
 import styles from './event-card.module.css';
 
 
-const EventCard = ({ date, title, type, link}) => {
+const EventCard = ({ date, title, color}) => {
     return (
-        <div className={styles.card}>
+        <div className={styles.card} style={{backgroundColor:`${color}`}}>
             <h3>{date}</h3>
                 <h2>{title}</h2>
             <section className={styles.bottom}>
