@@ -46,10 +46,10 @@ export async function getServerSideProps(context) {
     )
 
     let post1 = {}
-    console.log("post", post.results[0].data, "post")
+    // console.log("post", post.results[0].data, "post")
 
     let body = post.results[0].data;
-    console.log("post", body.title[0], "post")
+    // console.log("post", body.title[0], "post")
     // post = post1;
 
     // console.table(services.card.primary)
