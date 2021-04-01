@@ -123,7 +123,7 @@ import BrandsAndPartners from '../components/aboutPageComponents/brandsAndPartne
 //     ]
 // }
 
-const About = ({ about, intro, ourStory, meetTheTeam, whatWeDo, beenUpTo, brandsAndPartners }) => {
+const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo, brandsAndPartners }) => {
     return (
         <div className={styles.container}>
             <Head>
@@ -140,7 +140,7 @@ const About = ({ about, intro, ourStory, meetTheTeam, whatWeDo, beenUpTo, brands
                 <OurStory title={ourStory.primary.heading[0].text} content={ourStory.primary.sub_text[0].text} content2={ourStory.content2} image={ourStory.primary.image.url} />
                 <MeetTheTeam title={meetTheTeam.primary.heading[0].text} items={meetTheTeam.items} />
                 <WhatWeDo heading={whatWeDo.primary.heading[0].text} subHeading={whatWeDo.primary['sub-heading'][0].text} items={whatWeDo.items} />
-                <BeenUpTo heading={beenUpTo.primary.heading[0].text} subHeading={beenUpTo.primary['sub-heading'][0].text} items={beenUpTo.items} />
+                <BeenUpTo heading={beenUpTo.primary.heading[0].text} subHeading={beenUpTo.primary['sub-heading'][0].text} items={cards} />
                 <BrandsAndPartners heading={brandsAndPartners.top.primary.heading[0].text} subHeading={brandsAndPartners.top.primary['sub-heading'][0].text} items1={brandsAndPartners.top.items} items2={brandsAndPartners.bottom.items} link={brandsAndPartners.bottom.primary.link_text} href={brandsAndPartners.bottom.primary.link_address['url']} />
             </main>
         </div>
@@ -160,6 +160,14 @@ export async function getServerSideProps() {
         return about1[each.slice_type] = { items: each.items, primary: each.primary }
     })
     about = about1;
+    const posts = await Client().query(
+        Prismic.Predicates.at('my.post.featured', true)
+    )
+    let empty = {}
+    posts.results.map(article => {
+        return empty[`${article.uid}`] = article.data
+    })
+    console.log(Object.values(empty))
 
     // console.table(about.card.primary)
     // console.log(about.heading___photos___text___link.items[0])
@@ -172,6 +180,7 @@ export async function getServerSideProps() {
             meetTheTeam: about.card,
             whatWeDo: about.our_services,
             beenUpTo: about.our_services1,
+            cards: Object.values(empty),
             brandsAndPartners: { top: about.our_services2, bottom: about.heading___photos___text___link }
         }
     }
