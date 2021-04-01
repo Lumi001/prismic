@@ -2,8 +2,10 @@ import React, {useRef} from 'react';
 
 const CarouselItem = ({ date, title, location, link }) => {
   const video = useRef(null);
+  const playCaption = useRef(null);
   function play () {
     video.current.play()  
+    playCaption.current.style.display = "none"
 
   }
     return (
@@ -30,9 +32,9 @@ const CarouselItem = ({ date, title, location, link }) => {
                 </div>
                 <div class="video-container">
     <video autoplay muted id="vid" ref={video}>
-    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4#t=3" type="video/mp4" />
     </video>
-    <div class="caption" onClick={play} >
+    <div  ref={playCaption} class="caption" onClick={play} >
       <svg width="46" height="52" viewBox="0 0 46 52" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M44.5 24.268C45.8333 25.0378 45.8333 26.9623 44.5 27.7321L3.25001 51.5478C1.91667 52.3175 0.250001 51.3553 0.250001 49.8157L0.250003 2.1843C0.250004 0.644698 1.91667 -0.317552 3.25 0.452249L44.5 24.268Z" fill="#38465E"/>
 </svg>
