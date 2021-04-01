@@ -10,23 +10,47 @@ const Share = ({ text }) => {
         <div className="social">
             <h1>{text}</h1>
             <section className="buttons">
-                {imgs.map(img=>(
-                    <ShareButton key={Math.random()}  img={`/socials/${img}.png`}/>
+                {imgs.map(img => (
+                    <ShareButton key={Math.random()} img={`/socials/${img}.png`} />
                 ))}
             </section>
-             
-        <style jsx global>
-          {`
+
+            <style jsx global>
+                {`
           .social{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px;
+    // padding: 50px;
     background: #F5F5F5;
+    width:150px;
+    align-items:center;
 }
 .social h1,.social .buttons{
-    min-width: 100px;
-    margin: 0px 25px ;
+    // min-width: 100px;
+    margin: 0px auto ;
+    text-align: center;
+}
+.social buttons{
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    width: 44px;
+    height: 44px;
+}
+.social h1{
+    font-family: Avenir;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 204.6%;
+/* or 49px */
+
+letter-spacing: 0.01em;
+
+color: #38465E;
+
+
 }
 .social .buttons{
     display: flex;
@@ -48,7 +72,7 @@ const Share = ({ text }) => {
 }
           
           `}
-          </style>
+            </style>
         </div>
     );
 };

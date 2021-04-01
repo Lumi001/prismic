@@ -18,7 +18,7 @@ const ShareButton = ({img}) => {
             padding: 0%;
             border: 0.5px;
             cursor: pointer;
-            margin: 0px 0px 0px 20px;
+            margin: 25px 0px 25px 20px;
             background: transparent;
 }
           `}

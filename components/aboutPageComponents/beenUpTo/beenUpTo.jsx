@@ -12,7 +12,7 @@ const BeenUpTo = ({heading, subHeading, items}) => {
                     <section>
                         {items.map(item => {
                             return (
-                                <ProjectCard key={Math.random()} image={item.project_image.url} content={item.project_description[0].text} title={item.project_title[0].text} link={item.link_text} href={item.link_address['url']||"/"} flip={items.indexOf(item)%2!==0?true:false} />
+                                <ProjectCard key={Math.random()} image={item.post_image.url} content={item.post_content[0].text} title={item.title[0].text} link={item.link_text} href={item.link_address||"/"} flip={items.indexOf(item)%2!==0?true:false} />
                             )
                         })}
                 </section>
