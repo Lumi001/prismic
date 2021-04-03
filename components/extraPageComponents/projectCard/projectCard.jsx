@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 
 
-const ProjectCard = ({ image, title, content, href, link, flip, icon }) => {
+const ProjectCard = ({ image, title, content, id, link, flip, icon }) => {
     return (
         <div className={styles.container}>
             <div className={flip ? styles.project_card_flip : styles.project_card}>
@@ -14,7 +14,7 @@ const ProjectCard = ({ image, title, content, href, link, flip, icon }) => {
                     {icon ? <img src={icon} alt="icon" /> : null}
                     <h3>{title}</h3>
                     <p>{content}</p>
-                    <Link href={href}>
+                    <Link href={`/content/${id}`}>
                         <a>
                             {link}
                         </a>

@@ -86,22 +86,22 @@ export async function getServerSideProps() {
   const landing = await Client().query(
     Prismic.Predicates.at("document.type", "landing_page")
   )
-  const featuredPostsCards = await Client().query(
-    Prismic.Predicates.at('my.post.featured', true)
-  )
-  let empty = {}
-  featuredArticlesCards.results.map(article => {
-    return empty[`${article.uid}`] = article.data
-  })
   const featuredArticlesCards = await Client().query(
     Prismic.Predicates.at('my.article.featured', true)
   )
+  let empty = {}
+  featuredArticlesCards.results.map(article => {
+    return empty[`${article.uid}`] = { id: article.id, ...article.data }
+  })
+  const featuredPostsCards = await Client().query(
+    Prismic.Predicates.at('my.post.featured', true)
+  )
   let empty1 = {}
   featuredPostsCards.results.map(post => {
-    return empty1[`${post.uid}`] = post.data
+    return empty1[`${post.uid}`] = { id: post.id, ...post.data }
   })
   // console.log(landing.results[0].data.body[0].items[0],"body body body", featuredArticlesCards.results, featuredPostsCards)
-  console.log(Object.values(empty1))
+  console.log(Object.values(empty))
 
   return {
     props: {

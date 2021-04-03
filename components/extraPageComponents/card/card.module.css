@@ -66,6 +66,21 @@
 
   color: #38465e;
 }
+.card p span b {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 181.6%;
+  /* or 44px */
+  letter-spacing: 0.01em;
+  
+  color: #38465e;
+
+}
+.card p span{
+  margin-left: 10px;
+}
 
 .card small {
   margin: 20px 0px;
