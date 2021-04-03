@@ -161,11 +161,11 @@ export async function getServerSideProps() {
     })
     about = about1;
     const posts = await Client().query(
-        Prismic.Predicates.at('my.post.featured', true)
+        Prismic.Predicates.at('my.post.destination_page', 'Services')
     )
     let empty = {}
     posts.results.map(article => {
-        return empty[`${article.uid}`] = article.data
+        return empty[`${article.uid}`] = { id: article.id, ...article.data }
     })
     console.log(Object.values(empty))
 

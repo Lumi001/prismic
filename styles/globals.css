@@ -25,3 +25,8 @@ a {
   src: url("../public/Avenir/AvenirLTStd-Medium.otf");
   font-family: 'Avenir';
 }
+@font-face{
+  src: url("../public/Avenir/AvenirLTStd-Book.otf");
+  font-family: 'Avenir';
+  font-weight: 700;
+}
