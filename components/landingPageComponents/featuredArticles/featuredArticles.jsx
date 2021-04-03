@@ -11,7 +11,7 @@ const FeaturedArticles = ({items,title,button_text}) => {
         <div className={styles1.featured_articles}>
             <Heading title={title} />
             <section className={styles.articles}>
-                {items.map(card => <Card key={Math.random()} title={card.title[0].text} tag={card.tag} content={card.article_content[0].text.substring(0,100)}
+                {items.map(card => <Card key={Math.random()} articleId={card.id} title={card.title[0].text} tag={card.tag} content={card.article_content[0].text.substring(0,100)}
                 />)}
             </section>
             <Button text={button_text} icon="/button/cross.png" />
