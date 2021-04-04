@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Card from '../components/extraPageComponents/card/card';
+import Card1 from '../components/extraPageComponents/card/card1';
 import Heading from '../components/extraPageComponents/heading/heading';
 import TopArticleList from '../components/extraPageComponents/top-article/top-article-list';
 import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
@@ -28,18 +29,18 @@ console.log(other_pub)
           <Heading className="pub_heading_size" title="New Publications" />
         <div className={"one"}>
           <div className="two">
-          <Card id="big" key={Math.random()} 
+          <Card1 id="big" key={Math.random()} 
           title={new_pub[0].pub_title[0].text} 
           date={new_pub[0].pub_date} content={new_pub[0].pub_content[0].text} link={new_pub[0].link_text} img={new_pub[0].pub_image.url} color={new_pub[0].color}/>
           </div>
           <div className="three">
             <div className="four">
-            <Card key={Math.random()} 
+            <Card1 key={Math.random()} 
             title={new_pub[1].pub_title[0].text} 
             date={new_pub[1].pub_date} content={new_pub[1].pub_content[0].text} link={new_pub[1].link_text} img={new_pub[1].pub_image.url} color={new_pub[1].color}/>
             </div>
             <div className="five">
-            <Card 
+            <Card1 
             key={Math.random()} 
             title={new_pub[2].pub_title[0].text} 
             date={new_pub[2].pub_date} content={new_pub[2].pub_content[0].text} link={new_pub[2].link_text} img={new_pub[2].pub_image.url} color={new_pub[2].color}/>
@@ -52,7 +53,7 @@ console.log(other_pub)
         <div className="column">
         <Heading title="Other Publications" />
         <div className="other">
-          {other_pub.map(card => <Card key={Math.random()}  title={card.pub_title[0].text} 
+          {other_pub.map(card => <Card1 key={Math.random()}  title={card.pub_title[0].text} 
             date={card.pub_date} content={card.pub_content[0].text} link={card.link_text} img={other_pub[2].pub_image.url} color={card.color}/>)}         
               <TopArticleList top_3_article={top_3_article}/>      
               </div>
