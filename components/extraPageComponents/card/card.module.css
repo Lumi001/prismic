@@ -99,7 +99,7 @@
   text-align: center;
 }
 
-.card img {
+ .img {
   /* Rectangle 84 */
 
   background: #c4c4c4;
@@ -114,7 +114,7 @@
     width: 419px;
     /* height: 88px; */
   }
-  .card img {
+   .img {
     height: 350px;
     width: 450px;
   }
