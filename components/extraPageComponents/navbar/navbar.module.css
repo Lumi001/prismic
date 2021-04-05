@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -11,7 +11,7 @@
     position: fixed;
     z-index: 9999;
 }
-.navbar .top{
+.navbar .top {
     display: flex;
     width: 100%;
     max-width: 1200px;
@@ -24,44 +24,45 @@
     /* position: fixed; */
 }
 @media screen and (min-width: 999px) {
-    .navbar .right img{
-      display: none;
+    .navbar .right img {
+        display: none;
     }
-    .left{
+    .left {
         min-width: 100px;
     }
 }
 @media screen and (max-width: 999px) {
-    .navbar .top .pc{
-      display: none !important;
+    .navbar .top .pc {
+        display: none !important;
     }
-    .navbar .top{
+    .navbar .top {
         justify-content: space-between;
+        padding: 0px 15px;
     }
-    .navbar .right img{
+    .navbar .right img {
         width: 35px;
     }
-    .navbar{
+    .navbar {
         background: #313131;
-        padding: 0px 15px;
-        width: calc(100% - 30px);
+        /* width: calc(100% - 30px); */
+        padding: 0px;
     }
 }
-.right{
+.right {
     /* min-width: 716px; */
     align-items: center;
     display: flex;
 }
-.right nav{
-    
+.right nav {
 }
-.navbar .bottom{
+.navbar .bottom {
+    padding: 0px 15px;
     display: flex;
     flex-direction: column;
     /* align-items: flex-end; */
     width: 100%;
     padding: 20px 0px;
-}
-.navbar .bottom div{
+    background: #3546AC;}
+.navbar .bottom div {
     padding: 5px;
 }

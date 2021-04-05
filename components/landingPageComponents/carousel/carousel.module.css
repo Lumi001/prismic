@@ -7,6 +7,7 @@
   align-items: center;
   margin-bottom: 10px;
   border: none;
+  min-height: 725px;
 }
 .carousel .left {
   /* background-color: green !important; */
@@ -114,25 +115,26 @@
 }
 @media screen and (max-width: 999px) {
   .carousel h1 {
-    font-size: 3rem;
+    font-size: 38px;
     /* min-width: 300px; */
   }
   .carousel p {
     /* min-width: 300px; */
-    font-size: 1.2rem;
+    font-size: 20px;
   }
   .carousel img {
     display: none;
   }
   .carousel a {
     /* min-width: 300px; */
-    font-size: 1rem;
+    font-size: 16px;
   }
   .carousel {
     padding: 0px;
     margin-bottom: 50px;
     /* max-width: 100%; */
     width: 100%;
+    align-items: center;
   }
   .carousel .left {
     /* min-width: 100%; */

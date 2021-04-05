@@ -94,16 +94,16 @@
 }
 @media screen and (max-width: 999px) {
     .intro h1 {
-        font-size: 3rem;
+        font-size: 38px;
         /* min-width: 300px; */
-    }
-    .intro p {
+      }
+      .intro p {
         /* min-width: 300px; */
-        font-size: 1.2rem;
-    }
-    .intro img {
+        font-size: 20px;
+      }
+      .intro img {
         display: none;
-    }
+      }
     .intro a {
         /* min-width: 300px; */
         font-size: 1rem;
@@ -117,6 +117,7 @@
     .intro .left {
         /* min-width: 100%; */
         width: 100%;
+        padding: 0px 20px;
     }
     .intro .right {
         display: none;
@@ -124,4 +125,7 @@
     .intro button {
         display: none;
     }
+    /* .intro{
+        margin: auto !important;
+    } */
 }
