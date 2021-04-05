@@ -23,7 +23,7 @@
 }
 @media screen and (max-width: 999px) {
     .option p{
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: normal;
     font-style: normal;
     }

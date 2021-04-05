@@ -11,9 +11,16 @@ letter-spacing: 0.15em;
 color: #FFFFFF;
 background: #313131;
 border:none;
+margin: 20px 0px 50px;
 }
 .button span{
     margin: 0px 10px;
     position: relative;
     top: 2px;
+}
+
+@media screen and (max-width: 999px) {
+    .button{
+        font-size: 1.2rem
+    }
 }

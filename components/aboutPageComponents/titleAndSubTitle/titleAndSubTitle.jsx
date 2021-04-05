@@ -5,7 +5,7 @@ import styles from './titleAndSubTitle.module.css';
 const TitleAndSubTitle = ({heading,subHeading}) => {
     return (
         <div className={styles.title_and_subtitle}>
-            <h3>{heading}</h3>
+            <h2>{heading}</h2>
             <h6><span><img src="/titleAndSubTitleAbout/line.png" alt=""/></span>{subHeading}</h6>
         </div>        
     );

@@ -8,7 +8,7 @@ const Navbar = ({ navigation, links }) => {
     const [scroll, setScroll] = useState(0);
     const handleScroll = () => {
         setScroll(window.pageYOffset);
-        console.log(scroll);
+        // console.log(scroll);
     }
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);

@@ -7,7 +7,8 @@
     place-items: center;
 }
 .container .brands_and_partners .cards {
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     margin: 0px auto 60px;
     display: flex;
     flex-direction: column;
@@ -56,7 +57,7 @@
     font-size: 56px;
     line-height: 152.6%;
     /* or 85px */
-
+    
     color: #112538;
     margin: 0px;
 }
@@ -79,4 +80,17 @@
 .container .brands_and_partners .cards .top section img {
     width: 75px;
     height: fit-content;
+}
+@media screen and (max-width: 999px) {
+    .container .brands_and_partners .cards .top section img {
+        margin: 20px;
+    }
+    .container .brands_and_partners .cards .top section {
+        justify-content: center;
+    }
+    .container .brands_and_partners .cards section {
+        flex-wrap: wrap;
+        display: flex;
+    }
+    
 }

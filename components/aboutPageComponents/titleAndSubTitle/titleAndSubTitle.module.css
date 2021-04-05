@@ -3,7 +3,7 @@
     text-align: center;
     padding: 50px 0px;
 }
-.title_and_subtitle h3 {
+.title_and_subtitle h2 {
     font-family: "Inter";
     font-size: 36px;
     font-style: normal;
@@ -29,4 +29,13 @@
     position: relative;
     top: -4px;
     left: -12.5px;
+}
+
+@media screen and (max-width: 999px) {
+    .title_and_subtitle h2 {
+        font-size: 1.6rem !important;
+    }
+    .title_and_subtitle h6 {
+        font-size: 1.2rem !important;
+    }
 }

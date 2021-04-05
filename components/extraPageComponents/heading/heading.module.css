@@ -17,6 +17,6 @@ color: #38465E;
 @media screen and (max-width: 999px) {
   .heading{
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem !important;
   }
 }
