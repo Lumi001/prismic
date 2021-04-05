@@ -7,7 +7,6 @@ import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 
 export default function Event ({upcomingEvents, recentEvents}) {
-console.log(recentEvents)
     return (
       <div className={styles.container}>
         <Head>
@@ -45,7 +44,6 @@ console.log(recentEvents)
         <style jsx global>
           {`
           .wrapper1 {
-           margin-top: 5%;
            text-align: left;
            width: 95%;
           }
@@ -59,7 +57,7 @@ console.log(recentEvents)
             grid-template-columns: 50% 50%;
             grid-gap: 15px 15px;
             justify-items: start ;
-            width: 100%;
+            width: 98%;
           }
           .title {
             font-style: normal;

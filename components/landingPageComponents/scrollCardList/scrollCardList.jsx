@@ -89,7 +89,7 @@ export default class ScrollCardList extends Component {
                         title={card.title[0].text}
                         date={card.date}
                         type={card.cardtype}
-                        key={scroll_data[i].id} />
+                        key={i} />
                   )
                 })
               }
