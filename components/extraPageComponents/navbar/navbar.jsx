@@ -35,30 +35,26 @@ const Navbar = ({ navigation, links }) => {
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
-                        <img src={navigation.primary.logo.url} alt="" />
+                        <img src={navigation.primary.logo.url} alt="TruCSR logo" />
                     </Link>
                 </nav>
                 <nav className={styles.right}>
-                    {linksTemp.map(link => {
-                        return (
-                            <div className={styles.pc} key={Math.random()} >
-                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link || "/"} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link || "/"} type="link" text={link.link_text[0].text} />}
+                    {linksTemp.map((link, index) => (
+                            <div className={styles.pc} key={index} >
+                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link || "/"} type="button" text={link.link_text[0].text} /> : <NavbarItem href={link.link_address.link || "/"} type="link" text={link.link_text[0].text} />}
                             </div>
-                        )
-                    })}
+                        ))}
                     <img src="/navbar/dropdown.png" onClick={() => toggleRightDropdown()} alt="" />
 
                 </nav>
             </section>
             {rightDropdown && <section className={styles.bottom}>
                 <nav className={styles.mobile}>
-                    {linksTemp.map(link => {
-                        return (
-                            <div key={Math.random()} >
-                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link || "/"} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address.link || "/"} type="link" text={link.link_text[0].text} />}
+                    {linksTemp.map((link, index) => (
+                            <div key={index} >
+                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address.link || "/"} type="button" text={link.link_text[0].text} /> : <NavbarItem href={link.link_address.link || "/"} type="link" text={link.link_text[0].text} />}
                             </div>
-                        )
-                    })}
+                        ))}
 
                 </nav>
             </section>}
