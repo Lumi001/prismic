@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Carousel from '../components/eventsPageComponents/carousel/carousel'
+import EventCard from '../components/eventsPageComponents/card/event-card';
+import Carousel from '../components/eventsPageComponents/carousel/carousel-item'
 import Heading from '../components/extraPageComponents/heading/heading';
-import EventCard from '../components/eventsPageComponents/event-card/event-card'
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 
 export default function Event ({upcomingEvents, recentEvents}) {
+  console.log(recentEvents)
     return (
       <div className={styles.container}>
         <Head>
@@ -16,17 +17,13 @@ export default function Event ({upcomingEvents, recentEvents}) {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
         <main className={styles.main}>
-          <div className="wrapper2">
-          <Heading title="Our Events" />
-          <h3 className="title">Upcoming Events</h3>
-          </div>
           <div className="wrapper1">
           <Carousel/>
           </div>
           <div className="wrapper2">
-          <h3 className="title">Recent Events</h3>
+          <h3 className="title">Previous Events</h3>
           <div className="grid">
-          {recentEvents.map( event => <EventCard key={Math.random()} date={event.date} title={event.title} color={event.color}/>)}
+          {recentEvents.map( event => <EventCard img={event.image.url} key={Math.random()} date={event.date} title={event.title} link={event.link}/>)}
           {/* <EventCard date="March 28, 2021" title="The 10th Edition
           of  SERAS"  />
           <EventCard date="March 28, 2021" title="The 10th Edition
@@ -45,7 +42,10 @@ export default function Event ({upcomingEvents, recentEvents}) {
           {`
           .wrapper1 {
            text-align: left;
-           width: 95%;
+           width: 100%;
+           background-color: #251861;
+           z-index: 1;
+           padding-top: 6%
           }
           .wrapper2 {
            margin-top: 5%;
@@ -56,7 +56,7 @@ export default function Event ({upcomingEvents, recentEvents}) {
             display: grid;
             grid-template-columns: 50% 50%;
             grid-gap: 15px 15px;
-            justify-items: start ;
+            justify-items: flex-end ;
             width: 98%;
           }
           .title {
@@ -64,6 +64,7 @@ export default function Event ({upcomingEvents, recentEvents}) {
             font-weight: bold;
             font-size: 36px;
             color: #313131;
+            text-align: center;
           }
           @media only screen and (max-width: 768px) {
             .grid {
