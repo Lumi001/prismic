@@ -53,7 +53,7 @@ export async function getServerSideProps() {
     posts.results.map(article => {
         return empty[`${article.uid}`] = { id: article.id, ...article.data }
     })
-    console.log(Object.values(empty))
+    // console.log(Object.values(empty))
 
     // console.table(services.card.primary)
     // console.log(services.heading___photos___text___link.items[0])

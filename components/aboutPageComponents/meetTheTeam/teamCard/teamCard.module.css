@@ -1,14 +1,18 @@
 .team_card {
     width: 355px;
 }
+
 .team_card img {
     max-width: 355px;
     height: fit-content;
+    /* object-fit: cover; */
     /* min-height: 449px; */
 }
+
 .team_card .services_h3 {
     min-height: 80px;
 }
+
 .team_card h3 {
     margin: 10px 0px;
     font-family: "Inter";
@@ -20,6 +24,7 @@
     text-align: left;
     /* height: max-content; */
 }
+
 .team_card p {
     margin: 10px 0px;
     font-family: "Avenir";
@@ -30,8 +35,10 @@
     letter-spacing: 0em;
     text-align: left;
 }
+
 @media screen and (max-width: 999px) {
-    .team_card img, .team_card{
+    .team_card img,
+    .team_card {
         max-width: 90vw !important;
         margin: auto;
     }
