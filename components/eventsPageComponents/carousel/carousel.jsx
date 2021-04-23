@@ -9,7 +9,7 @@ function SampleNextArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "flex", background: "#E4E4E4", width: "50px", height:"50px", alignItems:"center", justifyContent:"center"}}
+      style={{ ...style, display: "flex", background: "#313131", width: "50px", height:"50px", alignItems:"center", justifyContent:"center"}}
       onClick={onClick}
     />
   );
@@ -20,7 +20,7 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "flex", background: "#E4E4E4", width: "50px", height:"50px", alignItems:"center", justifyContent:"center"}}
+      style={{ ...style, display: "flex", background: "#313131", width: "50px", height:"50px", alignItems:"center", justifyContent:"center"}}
       onClick={onClick}
     />
   );
@@ -45,56 +45,13 @@ export default class Carousel extends Component {
       infinite: true,
       dots: true,
       autoplay: true,
-      speed: 500,
+      speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
-      initialSlide: 0,
+      initialSlide: 1,
       dotsClass: "button__bar",
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
-      responsive: [
-        {
-          breakpoint: 1524,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: false,
-            // dots: true
-          }
-        },
-        {
-          breakpoint: 1150,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: false,
-            // dots: true
-          }
-        },
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: false,
-            // dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
+      prevArrow: <SamplePrevArrow />
     };
 
 

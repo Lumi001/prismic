@@ -65,6 +65,11 @@ export default function Event ({upcomingEvents, recentEvents}) {
             font-size: 36px;
             color: #313131;
           }
+          @media only screen and (max-width: 768px) {
+            .grid {
+            grid-template-columns: 100%;            
+          }
+}
           `}
           </style>
           </div>

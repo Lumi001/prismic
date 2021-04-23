@@ -101,7 +101,7 @@ export async function getServerSideProps() {
     return empty1[`${post.uid}`] = { id: post.id, ...post.data }
   })
   // console.log(landing.results[0].data.body[0].items[0],"body body body", featuredArticlesCards.results, featuredPostsCards)
-  console.log(Object.values(empty))
+  // console.log(Object.values(empty))
 
   return {
     props: {
