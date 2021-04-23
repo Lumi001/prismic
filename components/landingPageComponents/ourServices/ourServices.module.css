@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: #f5f5f5;
+    position: relative;
+    top: 30px;
+    margin: auto;
+    padding: 20px;
+}
+.container section{
+    display: flex;
+    justify-content: space-evenly;
+}
+.container img{
+    object-fit: cover;
+}

@@ -25,6 +25,7 @@
 .content img {
   width: 100%;
   height: fit-content;
+  object-fit: cover;
 }
 .content h1 {
   margin: 0px;

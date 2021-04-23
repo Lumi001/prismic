@@ -10,6 +10,7 @@
   /* height: 650px;  */
   display: grid;
   padding: 19px 0px;
+  height: fit-content;
 }
 .link {
   display: flex;
@@ -66,7 +67,7 @@
 
   color: #38465e;
 }
-.card p span b {
+.card span b {
   font-family: "Avenir";
   font-style: normal;
   font-weight: 700;
@@ -104,6 +105,7 @@
 
   background: #c4c4c4;
   border-radius: 15px;
+  object-fit: cover;
 }
 @media screen and (min-width: 999px) {
   .card h3 {
