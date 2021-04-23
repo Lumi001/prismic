@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import styles from './button.module.css';
 // import './button.scss';
 
-const Button = ({ text, width, height, fontSize, secondary, icon, articleId }) => {
+const Button = ({ text, width, height, fontSize, secondary, icon, articleId,href }) => {
     return (
         <Fragment>
             {
@@ -17,7 +17,7 @@ const Button = ({ text, width, height, fontSize, secondary, icon, articleId }) =
                         }
                     </button> :
                     <button className={styles.secondary_button} style={{ width: `${width}`, height: `${height}`, fontSize: `${fontSize}` }}>
-                        <Link href={`/content/${articleId}`}>
+                        <Link href={articleId?`/content/${articleId}`:href}>
                             <a className={styles.linkWrapper}>
                                 <span>
                                     {text}

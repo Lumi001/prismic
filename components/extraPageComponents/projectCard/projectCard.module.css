@@ -54,7 +54,7 @@
     line-height: 24px;
     letter-spacing: 0.15em;
     color: #313131;
-    border-bottom: 1px solid;
+    /* border-bottom: 1px solid; */
     padding-bottom: 9px;
 }
 .project_card section img,

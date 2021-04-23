@@ -43,7 +43,7 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
           <Carousel
             title={carousel.heading[0].text} content={carousel.text[0].text} link={carousel['link_text'][0].text} image={carousel.background_image.url}
           />
-          <OurServicesIndex items={partners.items} heading={partners.primary.heading.text} />
+          <OurServicesIndex items={partners.items} heading={partners.primary.heading[0].text} />
         </section>
         <FeaturedPosts items={posts} button_text={featuredPosts.button_text} title={featuredPosts.heading[0].text} />
         <FeaturedArticles items={cards} button_text={featuredArticles.button_text} title={featuredArticles.heading[0].text} />

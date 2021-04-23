@@ -6,7 +6,7 @@ import Share from '../../components/contentPageComponents/share/share';
 import { useRouter } from 'next/router';
 import { RichText } from 'prismic-reactjs';
 
-const Content = ({ title, image, content }) => {
+const Content = ({ title, image, content, secondary }) => {
     const router = useRouter();
     const { id } = router.query;
     return (
@@ -23,7 +23,7 @@ const Content = ({ title, image, content }) => {
                 <div className={styles.content}>
                     <img src={image.url}></img>
                     <section className={styles.layout}>
-                        <Share text="Share" />
+                        {!secondary && <Share text="Share" />}
                         <section className={styles.layout_right}>
                             <RichText render={title} />
                             {/* <h3>{title.text}</h3> */}

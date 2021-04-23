@@ -1,5 +1,6 @@
 import styles from './projectCard.module.css';
 import Link from 'next/link'
+import Button from '../button/button';
 
 
 
@@ -14,11 +15,7 @@ const ProjectCard = ({ image, title, content, id, link, flip, icon }) => {
                     {icon ? <img src={icon} alt="icon" /> : null}
                     <h3>{title}</h3>
                     <p>{content}</p>
-                    <Link href={`/content/${id}`}>
-                        <a>
-                            {link}
-                        </a>
-                    </Link>
+                    <Button secondary articleId={id} text={link} />
                 </section>
             </div>
         </div>

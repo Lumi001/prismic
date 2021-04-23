@@ -60,7 +60,7 @@
     letter-spacing: 0.15em;
     text-align: left;
     color: #fcfcfc;
-    border-bottom: 1px solid;
+    /* border-bottom: 1px solid; */
     padding-bottom: 9px;
 }
 .intro a span img {

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Button from '../button/button';
 import styles from './intro.module.css';
 
 
@@ -12,9 +13,7 @@ const Intro = ({ title, content, link, image1, image2, image3, href, background 
                 <section className={styles.left}>
                     <h1>{title}</h1>
                     <p>{content}</p>
-                    <Link href={href}>
-                        <a>{link}<span><img src="/introAbout/arrow.png" alt="" /></span></a>
-                    </Link>
+                        <Button text={link} href={href} secondary />
                 </section>
                 <section className={styles.right}>
                     {image2 ?
@@ -23,7 +22,7 @@ const Intro = ({ title, content, link, image1, image2, image3, href, background 
                             <img src={image2} alt="" />
                         </section>
                         :
-                        <img style={{width:'100%'}} src={image1} alt="" />
+                        <img style={{ width: '100%' }} src={image1} alt="" />
                     }
                     {image3 ?
                         <img src={image3} alt="" />
