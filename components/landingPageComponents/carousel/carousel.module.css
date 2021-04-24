@@ -27,7 +27,7 @@
 }
 .carousel h1 {
   /*height: 216px;*/
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: bold;
   font-size: 64px;
@@ -98,7 +98,7 @@
     /* min-width: 300px; */
     font-size: 20px;
   }
-  .carousel img {
+  .carousel .right img {
     display: none;
   }
   .carousel a {
@@ -119,7 +119,8 @@
   .carousel .right {
     display: none;
   }
-  .carousel button {
+  .carousel .buttonleft,
+  .carousel .buttonright {
     display: none;
   }
 }
