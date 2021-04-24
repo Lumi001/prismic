@@ -48,7 +48,7 @@ const CarouselItem = ({ date, title, location, link }) => {
 </div>
       
                 </div>
-                <div class="video-container">
+                <div className="video-container">
     <video muted id="vid" ref={video}>
     <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4#t=3" type="video/mp4" />
     </video>
@@ -77,7 +77,7 @@ const CarouselItem = ({ date, title, location, link }) => {
               width: 85%;
               color: #FCFCFC;
               margin: auto;
-              z-index: 2;
+              z-index: 1;
               align-items: center;
               height:545px;
           }
@@ -103,6 +103,7 @@ const CarouselItem = ({ date, title, location, link }) => {
         margin-top: 10%;
         padding: 7px;
         border-bottom: 1px solid #FCFCFC;
+        cursor: pointer;
         }
         .link1 {
         display: flex;
@@ -111,6 +112,7 @@ const CarouselItem = ({ date, title, location, link }) => {
         background-color: #F5F5F5;
         padding: 7px;
         border-radius: 5px;
+        cursor: pointer;
         }
         .linktext {
         padding-right: 5px;
@@ -162,7 +164,8 @@ const CarouselItem = ({ date, title, location, link }) => {
   z-index: 1;
   border-radius: 50%;
   position: relative;
-  background-color: white;
+  border: 3px solid white;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {

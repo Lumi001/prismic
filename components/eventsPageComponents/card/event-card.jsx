@@ -1,11 +1,11 @@
-import { Link } from 'prismic-reactjs';
+// import { Link } from 'prismic-reactjs';
 import styles from './card.module.css';
-import Link2 from 'next/link';
+import Link from 'next/link';
 
 
 const EventCard = ({title,tag,content,img,date,link,id, color}) => (
     <div className={styles.card}>
-      <div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`}}> </div>
+       <Link href="/"><div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`}}> </div></Link>
      { date ?
       <div className={styles.date}>{date}</div> :
       <small>{tag}</small>

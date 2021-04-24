@@ -7,7 +7,6 @@ import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 
 export default function Event ({upcomingEvents, recentEvents}) {
-  console.log(recentEvents)
     return (
       <div className={styles.container}>
         <Head>
@@ -44,8 +43,9 @@ export default function Event ({upcomingEvents, recentEvents}) {
            text-align: left;
            width: 100%;
            background-color: #251861;
-           z-index: 1;
-           padding-top: 6%
+           z-index: 0;
+           padding-top: 6%;
+           opacity: 0.7
           }
           .wrapper2 {
            margin-top: 5%;

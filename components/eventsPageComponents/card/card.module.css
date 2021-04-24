@@ -14,6 +14,7 @@
 .link {
   display: flex;
   margin-top: 20px;
+  cursor: pointer;
 }
 .linktext {
   border-bottom: 1px solid black;
@@ -103,6 +104,11 @@
 
   background: #c4c4c4;
   border-radius: 15px;
+}
+
+.img:hover{
+  opacity: 0.8;
+  cursor: pointer;
 }
 @media screen and (min-width: 999px) {
   .card h3 {
