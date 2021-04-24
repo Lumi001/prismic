@@ -1,119 +1,120 @@
 .container {
-    width: 100%;
-    /* display: grid; */
-    /* place-items: center; */
+  width: 100%;
+  /* display: grid; */
+  /* place-items: center; */
 }
 .project_card {
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .project_card_flip {
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .project_card section h3,
 .project_card_flip section h3 {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 152.6%;
-    /* or 46px */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 152.6%;
+  /* or 46px */
 
-    letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
 
-    color: #38465e;
+  color: #38465e;
 }
 
 .project_card section p,
 .project_card_flip section p {
-    font-family: "Avenir";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 181.6%;
-    /* or 44px */
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 181.6%;
+  /* or 44px */
 
-    letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
 
-    color: #38465e;
+  color: #38465e;
 }
 
 .project_card section a,
 .project_card_flip section a {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.15em;
-    color: #313131;
-    /* border-bottom: 1px solid; */
-    padding-bottom: 9px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15em;
+  color: #313131;
+  /* border-bottom: 1px solid; */
+  padding-bottom: 9px;
 }
 .project_card section img,
 .project_card_flip section {
-    width: 580px;
-    max-height: 450px;
+  width: 580px;
+  max-height: 450px;
 }
 .project_card .text,
 .project_card_flip .text {
-    width: 480px;
-    margin: 0px 100px;
+  width: 480px;
+  margin: 0px 100px;
 }
 .project_card .text img,
 .project_card_flip .text img {
-    max-width: 80px;
-    max-height: 80px;
+  max-width: 80px;
+  max-height: 80px;
 }
-.project_card_flip .case{
-    box-shadow: 30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8);
-    margin-bottom: 50px;
+.project_card_flip .case {
+  box-shadow: 30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8);
+  margin-bottom: 50px;
 }
 
-  .project_card .case{
-box-shadow: -30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8);
-  }
+.project_card .case {
+  box-shadow: -30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8);
+  margin-bottom: 50px;
+}
 
 @media screen and (max-width: 990px) {
-    .project_card,
-    .project_card_flip {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0px 0px 50px;
-    }
-    .project_card section img,
-    .project_card_flip section {
-        /* max-width: 80%; */
-        max-width: 90vw;
-        /* height: fit-content; */
-        margin: auto;
-    }
-    .project_card .text,
-    .project_card_flip .text {
-        max-width: 90vw;
-        margin: auto;
-    }
-    .carousel {
-        height: max-content;
-    }
-    .project_card section h3,
-    .project_card_flip section h3 {
-        font-size: 1.6rem;
-    }
-    .project_card section p,
-    .project_card_flip section p {
-        font-size: 1.1rem;
-    }
-    .project_card section a,
-    .project_card_flip section a {
-        font-size: 1rem;
-    }
+  .project_card,
+  .project_card_flip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0px 50px;
+  }
+  .project_card section img,
+  .project_card_flip section {
+    /* max-width: 80%; */
+    max-width: 90vw;
+    /* height: fit-content; */
+    margin: auto;
+  }
+  .project_card .text,
+  .project_card_flip .text {
+    max-width: 90vw;
+    margin: auto;
+  }
+  .carousel {
+    height: max-content;
+  }
+  .project_card section h3,
+  .project_card_flip section h3 {
+    font-size: 1.6rem;
+  }
+  .project_card section p,
+  .project_card_flip section p {
+    font-size: 1.1rem;
+  }
+  .project_card section a,
+  .project_card_flip section a {
+    font-size: 1rem;
+  }
 }
