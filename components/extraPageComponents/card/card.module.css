@@ -100,12 +100,17 @@
   text-align: center;
 }
 
- .img {
+ .card img {
   /* Rectangle 84 */
 
-  background: #c4c4c4;
+  /* background: #c4c4c4; */
   border-radius: 15px;
   object-fit: cover;
+  width: 100%;
+}
+.card .case{
+  box-shadow: 30.634117px 25.9874px 10px rgba(141, 138, 138, 0.8);
+  margin-bottom: 50px;
 }
 @media screen and (min-width: 999px) {
   .card h3 {

@@ -8,15 +8,16 @@ const Card = ({
   tag,
   content,
   img,
-  date,
+  date, 
   link,
   id,
   articleId,
   link_text,
+  isCaseStudy
 }) => (
   <div className={styles.card}>
-    <img src={img} alt="" />
-    {date ? <div className={styles.date}>{date}</div> : <small>{tag}</small>}
+    <img src={img} alt="" className={link_text?styles.case:null}/>
+    {date ? <div className={styles.date}>{date}</div> : !link_text?<small>{tag}</small>:null}
     <h3>{title}</h3>
     <p>
       {content}
@@ -31,7 +32,7 @@ const Card = ({
         </Link2>
       </span>
     ) : (
-        <Button secondary articleId={articleId} text={link_text} />
+        <Button secondary articleId={articleId} isCaseStudy text={link_text} />
         // <Link2 href={`/content/${articleId}`}>
         // </Link2>
       )}

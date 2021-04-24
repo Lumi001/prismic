@@ -72,6 +72,14 @@
     max-width: 80px;
     max-height: 80px;
 }
+.project_card_flip .case{
+    box-shadow: 30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8);
+    /* margin-bottom: 50px; */
+}
+
+  .project_card .case{
+box-shadow: -30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8);
+  }
 
 @media screen and (max-width: 990px) {
     .project_card,

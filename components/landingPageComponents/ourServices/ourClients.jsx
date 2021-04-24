@@ -1,7 +1,7 @@
 import Heading from '../../extraPageComponents/heading/heading';
-import styles from './ourServices.module.css';
+import styles from './ourClients.module.css';
 
-const OurServicesIndex = ({ heading, items }) => {
+const OurClients = ({ heading, items }) => {
     return (
         <section className={styles.container}>
             <Heading title={heading}/>
@@ -16,4 +16,4 @@ const OurServicesIndex = ({ heading, items }) => {
     );
 };
 
-export default OurServicesIndex;
+export default OurClients;

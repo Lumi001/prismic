@@ -68,11 +68,17 @@
     width: 23px;
     /* height: 2px; */
   }
-.intro img {
+.intro .img {
     /* height: 625px; */
     width: 243px;
     /* background: blue; */
     margin: 17px;
+}
+.intro button img{
+    margin: 0px 0px 5px;
+}
+.intro button span{
+    border-bottom: 3px solid #fcfcfc !important;
 }
 .intro button {
     /* position: relative; */

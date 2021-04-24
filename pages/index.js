@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 import Modal from '../components/extraPageComponents/modal/modal';
 import FeaturedArticles from '../components/landingPageComponents/featuredArticles/featuredArticles';
 import FeaturedPosts from '../components/landingPageComponents/featuredPosts/featuredPosts';
-import OurServicesIndex from '../components/landingPageComponents/ourServices/ourServices';
+import OurClients from '../components/landingPageComponents/ourServices/ourClients';
 
 function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType }) {
   // const [modalStatus, setModalStatus] = useState(false)
@@ -43,7 +43,7 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
           <Carousel
             title={carousel.heading[0].text} content={carousel.text[0].text} link={carousel['link_text'][0].text} image={carousel.background_image.url}
           />
-          <OurServicesIndex items={partners.items} heading={partners.primary.heading[0].text} />
+          <OurClients items={partners.items} heading={partners.primary.heading[0].text} />
         </section>
         <FeaturedPosts items={posts} button_text={featuredPosts.button_text} title={featuredPosts.heading[0].text} />
         <FeaturedArticles items={cards} button_text={featuredArticles.button_text} title={featuredArticles.heading[0].text} />
@@ -89,14 +89,14 @@ export async function getServerSideProps() {
     Prismic.Predicates.at("document.type", "landing_page")
   )
   const featuredArticlesCards = await Client().query(
-    Prismic.Predicates.at('my.article.featured', true)
+    Prismic.Predicates.at('my.article.featured', true),{ pageSize : 6 }
   )
   let empty = {}
   featuredArticlesCards.results.map(article => {
     return empty[`${article.uid}`] = { id: article.id, ...article.data }
   })
   const featuredPostsCards = await Client().query(
-    Prismic.Predicates.at('my.post.featured', true)
+    Prismic.Predicates.at('my.post.featured', true),{ pageSize : 6 }
   )
   let empty1 = {}
   featuredPostsCards.results.map(post => {
