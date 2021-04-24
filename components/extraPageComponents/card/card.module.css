@@ -10,6 +10,7 @@
   /* height: 650px;  */
   display: grid;
   padding: 19px 0px;
+  height: fit-content;
 }
 .link {
   display: flex;
@@ -66,7 +67,7 @@
 
   color: #38465e;
 }
-.card p span b {
+.card span b {
   font-family: "Avenir";
   font-style: normal;
   font-weight: 700;
@@ -99,11 +100,17 @@
   text-align: center;
 }
 
- .img {
+ .card img {
   /* Rectangle 84 */
 
-  background: #c4c4c4;
+  /* background: #c4c4c4; */
   border-radius: 15px;
+  object-fit: cover;
+  width: 100%;
+}
+.card .case{
+  box-shadow: 30.634117px 25.9874px 10px rgba(141, 138, 138, 0.8);
+  margin-bottom: 50px;
 }
 @media screen and (min-width: 999px) {
   .card h3 {

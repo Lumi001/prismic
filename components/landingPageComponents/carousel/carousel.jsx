@@ -1,9 +1,10 @@
-import Link from 'next/link';
-import styles from './carousel.module.css';
+import Link from "next/link";
+import Button from "../../extraPageComponents/button/button";
+import styles from "./carousel.module.css";
 
 // const data = {
 //   title: `We are in the
-//   business of 
+//   business of
 //   sustainability`,
 //   content: `TCSRN founded in 2006,  is a consulting company that helps organisations to contribute to their societal goals of a philanthropic, activist, or charitable nature by engaging in or supporting volunteering or ethically-oriented practices.`,
 //   link: 'EXPLORE SITE',
@@ -18,14 +19,10 @@ const Carousel = ({ title, content, link, image }) => (
     <section className={styles.left}>
       <h1>{title}</h1>
       <p>{content}</p>
-      <Link href="#">
-        <a>{link}<span><img src="/carousel/Arrow.png" alt="" /></span></a>
-        {/* <a className={styles.linkWrapper}>{link}
-      <img src="/black-arrow-right.svg" alt="Right black arrow" />
-    </a> */}
-        {/* <span>
+        <Button text={link} secondary href="#" />
+      {/* <a>{link}<span><img src="/carousel/Arrow.png" alt="" /></span></a> */}
+      {/* <span>
         </span> */}
-      </Link>
     </section>
     <section className={styles.right}>
       <img src={image} alt="" />
@@ -34,5 +31,5 @@ const Carousel = ({ title, content, link, image }) => (
       <img src="/carousel/chevron-right.svg" alt="Right chevron icon" />
     </button>
   </div>
-)
-export default Carousel
+);
+export default Carousel;

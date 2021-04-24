@@ -29,7 +29,7 @@ export default Services;
 
 export async function getServerSideProps() {
     let services = await Client().query(
-        Prismic.Predicates.at("document.type", "services_page")
+        Prismic.Predicates.at("document.type", "services_page"),{ pageSize : 6 }
     )
 
     let services1 = {}
@@ -47,13 +47,13 @@ export async function getServerSideProps() {
     })
     services = services1;
     const posts = await Client().query(
-        Prismic.Predicates.at('my.post.destination_page', 'Services')
+        Prismic.Predicates.at('my.post.destination_page', 'Services'),{ pageSize : 6 }
     )
     let empty = {}
     posts.results.map(article => {
         return empty[`${article.uid}`] = { id: article.id, ...article.data }
     })
-    console.log(Object.values(empty))
+    // console.log(Object.values(empty))
 
     // console.table(services.card.primary)
     // console.log(services.heading___photos___text___link.items[0])

@@ -13,8 +13,9 @@ import { connect } from 'react-redux';
 import Modal from '../components/extraPageComponents/modal/modal';
 import FeaturedArticles from '../components/landingPageComponents/featuredArticles/featuredArticles';
 import FeaturedPosts from '../components/landingPageComponents/featuredPosts/featuredPosts';
+import OurClients from '../components/landingPageComponents/ourServices/ourClients';
 
-function Home({ scroll_data, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType }) {
+function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType }) {
   // const [modalStatus, setModalStatus] = useState(false)
 
 
@@ -42,6 +43,7 @@ function Home({ scroll_data, cards, posts, carousel, featuredArticles, featuredP
           <Carousel
             title={carousel.heading[0].text} content={carousel.text[0].text} link={carousel['link_text'][0].text} image={carousel.background_image.url}
           />
+          <OurClients items={partners.items} heading={partners.primary.heading[0].text} />
         </section>
         <FeaturedPosts items={posts} button_text={featuredPosts.button_text} title={featuredPosts.heading[0].text} />
         <FeaturedArticles items={cards} button_text={featuredArticles.button_text} title={featuredArticles.heading[0].text} />
@@ -87,26 +89,26 @@ export async function getServerSideProps() {
     Prismic.Predicates.at("document.type", "landing_page")
   )
   const featuredArticlesCards = await Client().query(
-    Prismic.Predicates.at('my.article.featured', true)
+    Prismic.Predicates.at('my.article.featured', true),{ pageSize : 6 }
   )
   let empty = {}
   featuredArticlesCards.results.map(article => {
     return empty[`${article.uid}`] = { id: article.id, ...article.data }
   })
   const featuredPostsCards = await Client().query(
-    Prismic.Predicates.at('my.post.featured', true)
+    Prismic.Predicates.at('my.post.featured', true),{ pageSize : 6 }
   )
   let empty1 = {}
   featuredPostsCards.results.map(post => {
     return empty1[`${post.uid}`] = { id: post.id, ...post.data }
   })
   // console.log(landing.results[0].data.body[0].items[0],"body body body", featuredArticlesCards.results, featuredPostsCards)
-  console.log(Object.values(empty))
+  // console.log(Object.values(empty))
 
   return {
     props: {
       carousel: landing.results[0].data.body[0].items[0],
-      partners: landing.results[0].data.body[1].items[1],
+      partners: landing.results[0].data.body[1],
       cards: Object.values(empty),
       posts: Object.values(empty1),
       featuredPosts: landing.results[0].data.body[3].primary,

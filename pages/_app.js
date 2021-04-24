@@ -13,7 +13,7 @@ import logger from 'redux-logger';
 
 function MyApp({ Component, pageProps, navigation }) {
   const middleware = [logger]
-  const store = createStore(rootReducer,applyMiddleware(...middleware))
+  const store = createStore(rootReducer, applyMiddleware(...middleware))
   return (
     <React.Fragment>
       <Navbar navigation={navigation} />
@@ -32,9 +32,24 @@ MyApp.getInitialProps = async () => {
   const navigation = await Client().query(
     Prismic.Predicates.at("document.type", "navigation")
   )
-  // console.log(navigation.results[0].data.body[0].items.link_address, "this is landing")
+  // console.log(navigation.results[0].data.body[0], "this is landing")
+  let navLinks = {
+    1: "/about",
+    2: "/academy",
+    3: "/events",
+    4: "/publication",
+    5: "/services",
+    6: "/contact",
+  }
+  let links = []; 
+   navigation.results[0].data.body[0].items.forEach(item => {
+   links.push(
+     { link_text: item.link_text, link_address: navLinks[Number(item.target_page.slice(item.target_page.length - 1))] }
+   ) 
+  })
+  // console.log({ ...navigation.results[0].data.body[0], items: links })
 
   return {
-    navigation: navigation.results[0].data.body[0]
+    navigation: { ...navigation.results[0].data.body[0], items: links }
   }
 }

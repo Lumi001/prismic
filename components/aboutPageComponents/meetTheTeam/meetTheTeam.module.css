@@ -3,9 +3,11 @@
     display: grid;
     place-items: center;
 }
+
 .meet_the_team {
     max-width: 1200px;
 }
+
 .meet_the_team .title {
     font-family: "Inter";
     font-size: 36px;
@@ -16,6 +18,7 @@
     text-align: center;
     color: #38465e;
 }
+
 .meet_the_team section {
     display: flex;
     flex-wrap: wrap;
@@ -25,4 +28,11 @@
 .meet_the_team section h3,
 .meet_the_team section p {
     color: #38465e;
+}
+
+@media screen and (max-width: 999px) {
+    .meet_the_team {
+        max-width: 90vw !important;
+        margin: auto;
+    }
 }

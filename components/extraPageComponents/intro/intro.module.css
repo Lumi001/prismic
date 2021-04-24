@@ -60,7 +60,7 @@
     letter-spacing: 0.15em;
     text-align: left;
     color: #fcfcfc;
-    border-bottom: 1px solid;
+    /* border-bottom: 1px solid; */
     padding-bottom: 9px;
 }
 .intro a span img {
@@ -68,11 +68,17 @@
     width: 23px;
     /* height: 2px; */
   }
-.intro img {
+.intro .img {
     /* height: 625px; */
     width: 243px;
     /* background: blue; */
     margin: 17px;
+}
+.intro button img{
+    margin: 0px 0px 5px;
+}
+.intro button span{
+    border-bottom: 3px solid #fcfcfc !important;
 }
 .intro button {
     /* position: relative; */

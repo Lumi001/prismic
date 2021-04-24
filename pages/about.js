@@ -135,7 +135,7 @@ const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo,
             </Head>
 
             <main className={styles.main}>
-                {console.log(about)}
+                {/* {console.log(about)} */}
                 <Intro title={intro.primary.heading[0].text} content={intro.primary.text[0].text} link={intro.primary.link_text} image1={intro.items[0].image.url || '/introAbout/image1.png'} image2={intro.items[1].image.url || '/introAbout/image1.png'} image3={intro.items[2].image.url || '/introAbout/image1.png'} href={intro.primary.link_address} />
                 <OurStory title={ourStory.primary.heading[0].text} content={ourStory.primary.sub_text[0].text} content2={ourStory.content2} image={ourStory.primary.image.url} />
                 <MeetTheTeam title={meetTheTeam.primary.heading[0].text} items={meetTheTeam.items} />
@@ -161,13 +161,13 @@ export async function getServerSideProps() {
     })
     about = about1;
     const posts = await Client().query(
-        Prismic.Predicates.at('my.post.destination_page', 'Services')
+        Prismic.Predicates.at('my.post.destination_page', 'Services'),{ pageSize : 4 }
     )
     let empty = {}
     posts.results.map(article => {
         return empty[`${article.uid}`] = { id: article.id, ...article.data }
     })
-    console.log(Object.values(empty))
+    // console.log(Object.values(empty))
 
     // console.table(about.card.primary)
     // console.log(about.heading___photos___text___link.items[0])
