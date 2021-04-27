@@ -13,6 +13,8 @@ import logger from 'redux-logger';
 import { persistStore } from 'redux-persist';
 // import persistStore from 'redux-persist/es/persistStore';
 import { PersistGate } from 'redux-persist/integration/react';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
 
 function MyApp({ Component, pageProps, navigation }) {
 
@@ -27,7 +29,7 @@ function MyApp({ Component, pageProps, navigation }) {
     const persistConfig = {
       key: 'root',
       storage,
-      whitelist: ['app']
+      whitelist: ['app'],
     };
 
     store = createStore(

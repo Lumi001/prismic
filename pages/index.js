@@ -15,15 +15,30 @@ import FeaturedArticles from '../components/landingPageComponents/featuredArticl
 import FeaturedPosts from '../components/landingPageComponents/featuredPosts/featuredPosts';
 import OurClients from '../components/landingPageComponents/ourServices/ourClients';
 import { modalStatusAction } from '../redux/app/app.actions';
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+import Cookies from 'universal-cookie';
 
-function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown }) {
+
+function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed }) {
   // const [modalStatus, setModalStatus] = useState(false)
   useEffect(() => {
-    if (!modalHasBeenShown) {
-      setTimeout(() => {
-        setModalContent({ modalIsActive: true, modalHasBeenShown: true })
-      }, 25000);
+    const cookies = new Cookies();
+    setModalContent({ modalIsActive: false })
+    if (!subscribed) {
+      setModalContent({ modalHasBeenShown: false })
+      if (!cookies.get('timeLastShown')) {
+        if (!modalHasBeenShown) {
+          setTimeout(() => {
+            var now = Date.now();
+            cookies.set('timeLastShown', now, { maxAge: 86400 });
+            console.log(cookies.get('timeLastShown'), cookies.get('leggo'))
+            setModalContent({ modalIsActive: true, modalHasBeenShown: true })
+          }, 25000);
+        }
+      }
+    }
+    return function cleanup() {
+      setModalContent({ modalIsActive: false })
     }
   }, [])
 
@@ -74,7 +89,10 @@ const mapStateToProps = state => ({
   isActive: state.app.modalIsActive,
   modalContent: state.app.modalContent,
   modalType: state.app.type,
-  modalHasBeenShown: state.app.modalHasBeenShown
+  modalHasBeenShown: state.app.modalHasBeenShown,
+  timeLastShown: state.app.timeLastShown,
+  subscribed: state.app.subscribed,
+
 })
 const mapDispatchToProps = dispatch => ({
   setModalContent: modal => dispatch(modalStatusAction(modal))

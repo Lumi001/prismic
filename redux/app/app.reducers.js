@@ -1,4 +1,4 @@
-const INITIAL_STATE = { navbarColours: "primary", modalIsActive: false, modalContent: '', type: '', modalHasBeenShown: false };
+const INITIAL_STATE = { navbarColours: "primary", modalIsActive: false, modalHasBeenShown: false, subscribed:false };
 
 const appReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
