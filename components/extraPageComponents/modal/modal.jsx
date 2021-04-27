@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { modalStatusAction } from '../../../redux/app/app.actions';
+import Subscribe from '../subscribe/subscribe';
 import styles from './modal.module.css';
 
 const Modal = ({ isActive, content, setModalContent }) => {
@@ -17,7 +18,9 @@ const Modal = ({ isActive, content, setModalContent }) => {
                             :
                             <video className={styles.modal} src={content.link}></video>
                         :
-                        null
+                        <div className={styles.modal}>
+                        <Subscribe/>
+                        </div>
                 }
             </section>
         </div>

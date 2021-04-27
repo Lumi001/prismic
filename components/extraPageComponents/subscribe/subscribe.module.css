@@ -1,0 +1,67 @@
+.subscribe_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 100px 0px;
+}
+
+.subscribe_container img {
+  width: 264px;
+  height: 246px;
+}
+
+.subscribe_container h3 {
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 152.6%;
+  letter-spacing: 0.01em;
+  color: #38465e;
+}
+
+.subscribe_container .checkboxes div {
+  background: #e8e8e8;
+  border: 0.5px solid #2f4865;
+  border-radius: 10px;
+  margin: 10px;
+  /* min-width: 150px; */
+  padding: 5px;
+}
+.subscribe_container div label {
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 152.6%;
+  letter-spacing: 0.01em;
+  color: #38465e;
+  padding: 5px;
+}
+
+.subscribe_container input[type="checkbox"]::-ms-check {
+  background: #2f4865 !important;
+}
+.subscribe_container input[type="checkbox" i] {
+  width: 24px;
+}
+
+.subscribe_container input[type="text"] {
+  width: 671px;
+  background: #eaeaea;
+  border-radius: 5px;
+}
+
+.subscribe_container .text input,
+.subscribe_container .text button {
+  height: 70px;
+  margin: 0px;
+}
+
+.subscribe_container .checkboxes,
+.subscribe_container .text {
+  margin: 20px 0px;
+  display: flex;
+  justify-content: center;
+}

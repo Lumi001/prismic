@@ -33,10 +33,10 @@
     position: static;
     height: fit-content; 
     top: 30%;
-    width: 50%;
+    width: 100%;
     max-width: 1200px;
     height: fit-content;
     margin: auto;
-    background: white;
+    /* background: white; */
     z-index: 1999;
 }

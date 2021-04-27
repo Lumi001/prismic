@@ -14,9 +14,18 @@ import Modal from '../components/extraPageComponents/modal/modal';
 import FeaturedArticles from '../components/landingPageComponents/featuredArticles/featuredArticles';
 import FeaturedPosts from '../components/landingPageComponents/featuredPosts/featuredPosts';
 import OurClients from '../components/landingPageComponents/ourServices/ourClients';
+import { modalStatusAction } from '../redux/app/app.actions';
+import { useEffect } from 'react'
 
-function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType }) {
+function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown }) {
   // const [modalStatus, setModalStatus] = useState(false)
+  useEffect(() => {
+    if (!modalHasBeenShown) {
+      setTimeout(() => {
+        setModalContent({ modalIsActive: true, modalHasBeenShown: true })
+      }, 25000);
+    }
+  }, [])
 
 
 
@@ -48,12 +57,15 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
         <FeaturedPosts items={posts} button_text={featuredPosts.button_text} title={featuredPosts.heading[0].text} />
         <FeaturedArticles items={cards} button_text={featuredArticles.button_text} title={featuredArticles.heading[0].text} />
         {/* <ScrollCardList scroll_data={scroll_data} scroll_title_text={scroll_title_text} scroll_link_text={scroll_link_text} />
+      */}
+
         {isActive ?
           <div>
-            <Modal content={{ link: modalContent, type: modalType }} />
+            <Modal />
           </div>
-          : null} */}
+          : null}
 
+        {/* <Modal content={{ link: modalContent, type: modalType }} /> */}
       </main>
     </div>
   )
@@ -61,9 +73,13 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
 const mapStateToProps = state => ({
   isActive: state.app.modalIsActive,
   modalContent: state.app.modalContent,
-  modalType: state.app.type
+  modalType: state.app.type,
+  modalHasBeenShown: state.app.modalHasBeenShown
 })
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = dispatch => ({
+  setModalContent: modal => dispatch(modalStatusAction(modal))
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 // export async function getServerSideProps() {
 //   const landing = await Client().query(
 //     Prismic.Predicates.at("document.type", 'landing_page')
@@ -89,14 +105,14 @@ export async function getServerSideProps() {
     Prismic.Predicates.at("document.type", "landing_page")
   )
   const featuredArticlesCards = await Client().query(
-    Prismic.Predicates.at('my.article.featured', true),{ pageSize : 6 }
+    Prismic.Predicates.at('my.article.featured', true), { pageSize: 6 }
   )
   let empty = {}
   featuredArticlesCards.results.map(article => {
     return empty[`${article.uid}`] = { id: article.id, ...article.data }
   })
   const featuredPostsCards = await Client().query(
-    Prismic.Predicates.at('my.post.featured', true),{ pageSize : 6 }
+    Prismic.Predicates.at('my.post.featured', true), { pageSize: 6 }
   )
   let empty1 = {}
   featuredPostsCards.results.map(post => {
