@@ -20,6 +20,7 @@ import Cookies from 'universal-cookie';
 
 
 function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed }) {
+  
   // const [modalStatus, setModalStatus] = useState(false)
   useEffect(() => {
     const cookies = new Cookies();
@@ -64,8 +65,8 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
         {console.log(scrollable_card)}
         {console.log(connect_with_us)} */}
         <section className={styles.carousel}>
-          <Carousel
-            title={carousel.heading[0].text} content={carousel.text[0].text} link={carousel['link_text'][0].text} image={carousel.background_image.url}
+          <Carousel 
+          carousel= {carousel} 
           />
           <OurClients items={partners.items} heading={partners.primary.heading[0].text} />
         </section>
@@ -136,12 +137,12 @@ export async function getServerSideProps() {
   featuredPostsCards.results.map(post => {
     return empty1[`${post.uid}`] = { id: post.id, ...post.data }
   })
-  // console.log(landing.results[0].data.body[0].items[0],"body body body", featuredArticlesCards.results, featuredPostsCards)
+  // console.log(landing.results[0].data.body[0].items,"body body body")
   // console.log(Object.values(empty))
 
   return {
     props: {
-      carousel: landing.results[0].data.body[0].items[0],
+      carousel: landing.results[0].data.body[0].items,
       partners: landing.results[0].data.body[1],
       cards: Object.values(empty),
       posts: Object.values(empty1),

@@ -1,8 +1,11 @@
 .carousel {
   /* background-color: red; */
-  width: 100%;
+  width: 90%;
+  margin: auto;
   /* height: 800px; */
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 80px 0 0px;
   align-items: center;
   margin-bottom: 10px;
@@ -21,7 +24,7 @@
 .carousel .right {
   padding: 0px 20px;
   /* background-color: red !important; */
-  width: 50%;
+  width: 60%;
   display: grid;
   place-items: center;
 }
