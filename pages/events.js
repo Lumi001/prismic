@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import EventCard from '../components/eventsPageComponents/card/event-card';
-import Carousel from '../components/landingPageComponents/carousel/carousel-item'
+import Carousel from '../components/eventsPageComponents/carousel/carousel-item'
 import Heading from '../components/extraPageComponents/heading/heading';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';

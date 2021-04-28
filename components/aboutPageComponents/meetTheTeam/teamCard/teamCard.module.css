@@ -5,7 +5,7 @@
 .team_card img {
     max-width: 355px;
     height: fit-content;
-    /* object-fit: cover; */
+    object-fit: cover;
     /* min-height: 449px; */
 }
 
@@ -39,7 +39,7 @@
 @media screen and (max-width: 999px) {
     .team_card img,
     .team_card {
-        max-width: 90vw !important;
+        max-width: 450px !important;
         /* width:100% !important; */
         width: fit-content;
         

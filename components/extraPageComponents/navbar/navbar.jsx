@@ -7,11 +7,11 @@ const Navbar = ({ navigation, links }) => {
     const [rightDropdown, setRightDropdown] = useState(false);
     const [scroll, setScroll] = useState(0);
     const handleScroll = () => {
-        setScroll(window.pageYOffset);
-        // console.log(scroll);
+        setScroll(window.scrollY);
+        console.log(window.scrollY,window.screenY,window.pageYOffset);
     }
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll,{capture:true,passive:true});
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
