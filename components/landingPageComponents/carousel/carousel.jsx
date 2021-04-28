@@ -8,6 +8,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
+      id= "right"
       className={className}
       style={{ ...style, display: "flex", background: "#313131", width: "80px", height:"50px", alignItems:"center", justifyContent:"center"}}
       onClick={onClick}
@@ -19,8 +20,9 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
+      id="left"
       className={className}
-      style={{ ...style, display: "flex", background: "#313131", width: "80px", height:"50px", alignItems:"center", justifyContent:"center"}}
+      style={{ ...style, display: "flex", zIndex: 1000, background: "#313131", width: "80px", height:"50px", alignItems:"center", justifyContent:"center"}}
       onClick={onClick}
     />
   );
@@ -49,9 +51,8 @@ export default class Carousel extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       initialSlide: 1,
-      // dotsClass: "button__bar",
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />
+      prevArrow: <SamplePrevArrow />,
     };
 
 
@@ -154,7 +155,11 @@ export default class Carousel extends Component {
   background: #313131;
   outline: 0;
 }
-
+@media only screen and (max-width: 768px) {
+  #left, #right{
+    display: none !important;
+  }
+}
 `}
         </style>
       </React.Fragment>

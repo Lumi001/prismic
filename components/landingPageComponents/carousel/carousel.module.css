@@ -15,7 +15,7 @@
 .carousel .left {
   /* background-color: green !important; */
   padding: 0px 20px;
-  width: 50%;
+  width: 45%;
   /* display: grid; */
   /* grid-template-rows: 200px 100px 100px; */
   /* place-items: center; */
@@ -24,7 +24,7 @@
 .carousel .right {
   padding: 0px 20px;
   /* background-color: red !important; */
-  width: 60%;
+  width: 55%;
   display: grid;
   place-items: center;
 }
