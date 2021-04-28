@@ -74,11 +74,11 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
         {/* <ScrollCardList scroll_data={scroll_data} scroll_title_text={scroll_title_text} scroll_link_text={scroll_link_text} />
       */}
 
+        {isActive ?
           <div>
             <Modal />
           </div>
-        {/* {isActive ?
-          : null} */}
+          : null}
 
         {/* <Modal content={{ link: modalContent, type: modalType }} /> */}
       </main>
