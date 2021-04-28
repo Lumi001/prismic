@@ -14,12 +14,12 @@
 .link {
   display: flex;
   margin-top: 20px;
-  cursor: pointer;
 }
 .linktext {
   border-bottom: 1px solid black;
   padding-right: 5px;
   font-size: 20px;
+  cursor: pointer;
 }
 .linklogo {
   margin-top: 4.5px;

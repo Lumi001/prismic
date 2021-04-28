@@ -22,7 +22,7 @@ export default function Event ({upcomingEvents, recentEvents}) {
           <div className="wrapper2">
           <h3 className="title">Previous Events</h3>
           <div className="grid">
-          {recentEvents.map( event => <EventCard img={event.image.url} key={Math.random()} date={event.date} title={event.title} link={event.link}/>)}
+          {recentEvents.map( event => <EventCard img={event.image.url} key={Math.random()} date={event.date} title={event.title} articleId='asdf' link_text={event.link}/>)}
           {/* <EventCard date="March 28, 2021" title="The 10th Edition
           of  SERAS"  />
           <EventCard date="March 28, 2021" title="The 10th Edition

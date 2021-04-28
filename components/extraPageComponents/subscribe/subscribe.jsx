@@ -34,7 +34,7 @@ const Subscribe = () => {
             </section>
 
             <section className={styles.text}>
-                <input type="text" name="email" id=""/>
+                <input className="input" type="text" name="email" id="" placeholder="Enter email address"/>
                 <Button text="SUBSCRIBE"/>
             </section>
         </div>

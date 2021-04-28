@@ -13,7 +13,7 @@ const Card = ({
   id,
   articleId,
   link_text,
-  isCaseStudy
+  isCaseStudy,
 }) => (
   <div className={styles.card}>
     <img src={img} alt="" className={link_text?styles.case:null}/>
@@ -32,7 +32,7 @@ const Card = ({
         </Link2>
       </span>
     ) : (
-        <Button secondary articleId={articleId} isCaseStudy text={link_text} />
+        <Button href='#' secondary articleId={articleId} isCaseStudy text={link_text} />
         // <Link2 href={`/content/${articleId}`}>
         // </Link2>
       )}
