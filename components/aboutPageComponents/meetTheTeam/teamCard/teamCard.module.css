@@ -6,6 +6,7 @@
     max-width: 355px;
     height: fit-content;
     object-fit: cover;
+    width:fit-content;
     /* min-height: 449px; */
 }
 
