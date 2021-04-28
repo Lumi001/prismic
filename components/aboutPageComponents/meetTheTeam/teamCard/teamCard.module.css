@@ -40,6 +40,12 @@
     .team_card img,
     .team_card {
         max-width: 90vw !important;
+        /* width:100% !important; */
+        width: fit-content;
+        
+    }
+    .team_card{
+        /* padding:0px 10px; */
         margin: auto;
     }
 }
