@@ -22,7 +22,7 @@ function SamplePrevArrow(props) {
     <div
       id="left"
       className={className}
-      style={{ ...style, display: "flex", zIndex: 1000, background: "#313131", width: "80px", height:"50px", alignItems:"center", justifyContent:"center"}}
+      style={{ ...style, zIndex:1000, display: "flex", background: "#313131", width: "80px", height:"50px", alignItems:"center", justifyContent:"center"}}
       onClick={onClick}
     />
   );

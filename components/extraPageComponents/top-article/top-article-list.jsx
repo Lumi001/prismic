@@ -22,7 +22,8 @@ const TopArticleList = ({top_3_article}) => {
             flex-direction: column;
             align-items: center;
             width: 100%;
-            margin-top: 39px
+            padding: 15px;
+            margin-top: 34px
         }
         }
     `}

@@ -1,7 +1,7 @@
 import { Link } from 'prismic-reactjs';
 import styles from './card.module.css';
 import Link2 from 'next/link';
-import Button from "../button/button";
+import Button from "../../extraPageComponents/button/button";
 
 
 const Card1 = ({isCaseStudy,title,tag,content,link_text,articleId,img,date,link,id, color}) => (

@@ -18,7 +18,7 @@ const SearchBar = ({keyword,setKeyword}) => {
           @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
           .mainLoginInput{
               height: 40px;
-              padding: 30px 0px;
+              padding: 30px 10px;
               font-size: 30px;
               margin: 5px 0;
               border: 1.5px solid #313131;
@@ -26,13 +26,14 @@ const SearchBar = ({keyword,setKeyword}) => {
             }
 
 .mainLoginInput::-webkit-input-placeholder { 
-font-family: FontAwesome;
+font-family: FontAwesome, Avenir;
 overflow: visible;
 display: flex !important;
 padding-bottom: 10px;
 padding-left: 30px;
-color: black;
+color: #313131;
 font-size: 16px;
+line-height: 181.6%;
 }
           `}
       </style>
