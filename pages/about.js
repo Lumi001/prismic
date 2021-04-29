@@ -128,7 +128,7 @@ import { useEffect } from 'react';
 
 const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo, brandsAndPartners,setNavbarColour }) => {
     useEffect(()=>{
-        setNavbarColour({primary:false})
+        setNavbarColour(false)
     },[])
     return (
         <div className={styles.container}>
@@ -155,7 +155,7 @@ const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo,
 const mapDispatchToProps = dispatch => ({
     setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
   })
-  export default connect(mapStateToProps, mapDispatchToProps) (About);
+  export default connect(null, mapDispatchToProps) (About);
 
 export async function getServerSideProps() {
     let about = await Client().query(

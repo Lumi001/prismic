@@ -1,11 +1,12 @@
 import styles from './navbarItem.module.css';
 import Link from 'next/link'
+import { connect } from 'react-redux';
 
-const NavbarItem = ({ href, text, type }) => {
+const NavbarItem = ({ href, text, type,navbarColour }) => {
     return (
         <Link href={href}>
             {type === "link" ?
-                <a className={styles.item}>
+                <a className={navbarColour?styles.primary_item:styles.secondary_item}>
                     {text}
                 </a>
                 :
@@ -18,4 +19,7 @@ const NavbarItem = ({ href, text, type }) => {
     );
 };
 
-export default NavbarItem;
+const mapStateToProps = state => ({
+    navbarColour: state.navbar.primary
+})
+export default connect(mapStateToProps)(NavbarItem);

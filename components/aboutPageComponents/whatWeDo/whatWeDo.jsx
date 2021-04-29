@@ -1,4 +1,4 @@
-import TeamCard from '../meetTheTeam/teamCard/teamCard';
+import TeamCard from './teamCard/teamCard';
 import TitleAndSubTitle from '../titleAndSubTitle/titleAndSubTitle';
 import styles from './whatWeDo.module.css';
 

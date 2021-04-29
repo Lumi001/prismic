@@ -11,10 +11,10 @@ export function rightDropdownAction(rightDropdown=false) {
     };
 }
 
-export function navbarContentAction(navbarColours) {
+export function navbarContentAction(primary) {
     return {
         type: 'NAVBAR_CONTENT',
-        payload: {navbarColours}
+        payload: {primary}
     };
 }
 // export function resetDropdownAction() {

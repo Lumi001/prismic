@@ -58,9 +58,9 @@ function MyApp({ Component, pageProps, navigation, footer_items }) {
   // const persistor = persistStore(store);
   return (
     <React.Fragment>
-      <Navbar navigation={navigation} />
       <Provider store={store} >
         <PersistGate loading={null} persistor={store.__PERSISTOR}>
+      <Navbar navigation={navigation} />
           <Component {...pageProps} />
         </PersistGate>
       </Provider>

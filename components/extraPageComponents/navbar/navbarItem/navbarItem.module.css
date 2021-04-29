@@ -1,4 +1,4 @@
-.item {
+.primary_item {
     /* width: 92px; */
     height: 29px;
     padding: 12px;
@@ -14,8 +14,21 @@
     color: #313131;
 }
 
+.secondary_item{
+    height: 29px;
+    padding: 12px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 181.6%;
+    /* identical to box height, or 29px */
+    letter-spacing: 0.01em;
+    color: #FCFCFC !important;
+}
+
 @media screen and (max-width: 999px) {
-    .item{
+    .primary_item{
         color: #ffffff;
         margin: 0px;
         font-size: 1.2rem;
@@ -39,6 +52,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin-left: 20px;
 }
 
 .button img {

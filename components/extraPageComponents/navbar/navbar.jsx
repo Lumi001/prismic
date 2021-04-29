@@ -8,10 +8,10 @@ const Navbar = ({ navigation, links }) => {
     const [scroll, setScroll] = useState(0);
     const handleScroll = () => {
         setScroll(window.scrollY);
-        console.log(window.scrollY,window.screenY,window.pageYOffset);
+        console.log(window.scrollY, window.screenY, window.pageYOffset);
     }
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll,{capture:true,passive:true});
+        window.addEventListener('scroll', handleScroll, { capture: true, passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
@@ -31,7 +31,8 @@ const Navbar = ({ navigation, links }) => {
     let linksTemp = navigation.items
 
     return (
-        <div className={styles.navbar} style={{ background: scroll > 70 ? "white" : "transparent" }}>
+        // <div className={styles.navbar} style={{ background: scroll > 70 ? "white" : "transparent" }}>
+        <div className={styles.navbar}>
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
@@ -65,18 +66,6 @@ const Navbar = ({ navigation, links }) => {
         </div >
     );
 };
-const mapStateToProps = state => ({
-    isActive: state.app.modalIsActive,
-    modalContent: state.app.modalContent,
-    modalType: state.app.type,
-    modalHasBeenShown: state.app.modalHasBeenShown,
-    timeLastShown: state.app.timeLastShown,
-    subscribed: state.app.subscribed,
-  
-  })
-  const mapDispatchToProps = dispatch => ({
-    setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
-    setModalContent: modal => dispatch(modalStatusAction(modal))
-  })
-  export default connect(mapStateToProps, mapDispatchToProps) (Navbar);
+
+export default Navbar;
 

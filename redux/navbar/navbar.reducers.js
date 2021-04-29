@@ -2,11 +2,6 @@ const INITIAL_STATE = { leftDropdown: false, rightDropdown: false, primary:true 
 
 const navbarReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'NAVBAR_COLOURS':
-            return {
-                ...state,
-                ...action.payload
-            };
         case 'NAVBAR_CONTENT':
             return {
                 ...state,

@@ -5,7 +5,7 @@
 
 .team_card img {
     max-width: 355px;
-    height: 449px;
+    height: fit-content;
     object-fit: cover;
     width:fit-content;
     /* min-height: 449px; */

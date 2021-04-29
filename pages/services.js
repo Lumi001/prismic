@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Intro from '../components/extraPageComponents/intro/intro';
 import OurServices from '../components/servicesPageComponents/ourServices/ourServices';
 import { Client } from '../prismic-configuration';
@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 
 const Services = ({ cards, intro, ourServices,setNavbarColour }) => {
     useEffect(()=>{
-        setNavbarColour({primary:false})
+        setNavbarColour(false)
     },[])
     return (
         <div className={styles.container}>
@@ -32,7 +32,7 @@ const Services = ({ cards, intro, ourServices,setNavbarColour }) => {
 const mapDispatchToProps = dispatch => ({
     setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
   })
-  export default connect(mapStateToProps, mapDispatchToProps)(Services);
+  export default connect(null, mapDispatchToProps)(Services);
 
 export async function getServerSideProps() {
     let services = await Client().query(
