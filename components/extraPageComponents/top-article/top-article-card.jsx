@@ -29,16 +29,19 @@ const TopArticleCard = ({number, title, date}) => {
             font-size: 30px;
             width: 70%;
             color: #38465E;
-
+            
         }
          h3{
-            margin-bottom: 0;   
+            margin-bottom: 0; 
+            margin-top: 0;  
             }
         .date{
             font-size: 16px;
             padding: 10px 0px;
             font-weight: 600;
             color: #878787;
+            letter-spacing: 0.01em;
+            line-height: 180.6%;
             }
     `}
     </style>

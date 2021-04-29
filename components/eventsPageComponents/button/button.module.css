@@ -1,0 +1,84 @@
+.item {
+    /* width: 92px; */
+    height: 29px;
+    padding: 12px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 181.6%;
+    /* identical to box height, or 29px */
+
+    letter-spacing: 0.01em;
+
+    color: #181818;
+}
+
+@media screen and (max-width: 999px) {
+    .item{
+        color: #181818;
+        margin: 0px;
+        font-size: 1.2rem;
+    }
+}
+.button {
+    width: 185px;
+    height: 44px;
+    color: #181818;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #F5F5F5;
+}
+.button2 {
+    width: 185px;
+    height: 44px;
+    color: #F5F5F5;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.button img {
+    display: block !important;
+    margin-left: 10px;
+    transform: translateX(0px);
+    transition: transform 1s;
+}
+
+.button:hover img {
+    transform: translateX(-8px);
+}
+
+
+.button2 img {
+    display: block !important;
+    margin-left: 10px;
+    transform: translateX(0px);
+    transition: transform 1s;
+}
+
+.button2:hover img {
+    transform: translateX(-8px);
+}

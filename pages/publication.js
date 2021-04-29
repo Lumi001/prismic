@@ -7,30 +7,34 @@ import TopArticleList from '../components/extraPageComponents/top-article/top-ar
 import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
+import React from 'react';
 
 export default function Publication({new_pub, other_pub, top_3_article}) {
-console.log(other_pub)
     return (
-      <div className={styles.container}>
+      // <div className={styles.container}>
+      <React.Fragment>
         <Head>
         <title>TruCSR</title>
         <link rel="icon" href="/favicon.ico"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
-        <main className={styles.main}>
-          <div className="container">
+
+
+          <div className="container">          
+          <h2 className="h2">Publications & News</h2>   
+
+          <div className="column" >
           <div className="publication">
-          <Heading title="Publications & News" />
+          <h3 className="h3">New Publications</h3>        
           <Searchbar />
           </div>
 
-          <div className="column" >
-          <Heading className="pub_heading_size" title="New Publications" />
         <div className={"one"}>
           <div className="two">
             <Card1 
               key={Math.random()} 
+              id="big"
               title={new_pub[0].pub_title[0].text} 
               articleId='asdf'
               date={new_pub[0].pub_date} 
@@ -71,59 +75,101 @@ console.log(other_pub)
         
 
         <div className="column">
-        <Heading title="Other Publications" />
-        <div className="other">
-          {other_pub.map(card => <Card1 key={Math.random()}  articleId='asdf' title={card.pub_title[0].text} 
+          <h3 className="h3-1">Other Publications</h3>
+          <div className="other">
+            {other_pub.map(card => <Card1 key={Math.random()}  articleId='asdf' title={card.pub_title[0].text} 
             date={card.pub_date} content={card.pub_content[0].text} link_text={card.link_text} img={other_pub[2].pub_image.url} color={card.color}/>)}         
-              <TopArticleList top_3_article={top_3_article}/>      
+            <div className="article"><TopArticleList top_3_article={top_3_article}/></div>     
+          </div>
+        </div>
+
               </div>
-              </div>
-              </div>
-        </main>
         <style jsx global>
           {`
           .container {
-            width: 80%
+            display: flex;
+            margin: auto;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            padding-top: 50px;
+            width: 80%;
+          }
+          .container #h2{
+            width: 935px;
+          }
+          .h3{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 28px !important;
+            line-height: 152.6%;
+            letter-spacing: 0.01em;
+            color: #38465E;
+          }
+          .h2{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 50px !important;
+            line-height: 152.6%;
+            letter-spacing: 0.01em;
+            color: #38465E;
+            width: 936px
+          }
+          .h3-1{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 28px !important;
+            line-height: 152.6%;
+            letter-spacing: 0.01em;
+            color: #38465E;
+            width: 936px
           }
           .publication {
-            padding-top: 100px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
-            align-items: center
+            align-items: center;
+            padding: 0 17px;
           }
           .one {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
           }
           .other {
-            display: grid;
-            grid-template-columns: 50% 50%;
-            justify-items: start ;
-            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
           }
           .column {
             display: flex;
-            flex-direction: column
+            flex-direction: column;
+            align-items: center;
           }
 
           .three{
             display: flex;
-            flex-direction: column
+            flex-direction: column;
+            margin-left: 17px;
+          }
+          .article{
+            width: 560px
           }
           #big{
-            height: 769px
+            height: 700px;
+            width: 484px;
           }
           @media only screen and (max-width: 768px) {
-            .other{
-                  grid-template-columns: 100%;
-                }
+            
 }
           `}
           </style>
-      </div>
+          </React.Fragment>
     )
   }
   

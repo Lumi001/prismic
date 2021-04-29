@@ -15,7 +15,7 @@ export default function Event ({upcomingEvents, recentEvents}) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
-        <main className={styles.main}>
+
           <div className="wrapper1">
           <Carousel/>
           </div>
@@ -34,8 +34,6 @@ export default function Event ({upcomingEvents, recentEvents}) {
           </div>
           
           </div>
-           
-        </main>
         
         <style jsx global>
           {`
