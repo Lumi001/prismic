@@ -16,7 +16,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
 
-function MyApp({ Component, pageProps, navigation }) {
+function MyApp({ Component, pageProps, navigation, footer_items }) {
 
   let store;
   const isClient = typeof window !== 'undefined';
@@ -65,7 +65,8 @@ function MyApp({ Component, pageProps, navigation }) {
         </PersistGate>
       </Provider>
       <Social text="CONNECT WITH US" />
-      <Footer />
+      <Footer footer_items={footer_items} />
+      {/* {console.log(footer_items)} */}
       {/* {console.log(navigation,'navigation')} */}
     </React.Fragment>
   )
@@ -91,9 +92,14 @@ MyApp.getInitialProps = async () => {
       { link_text: item.link_text, link_address: navLinks[Number(item.target_page.slice(item.target_page.length - 1))] }
     )
   })
-  // console.log({ ...navigation.results[0].data.body[0], items: links })
+    const footer = await Client().query(
+        Prismic.Predicates.at("document.type", "footer")
+    )
 
-  return {
-    navigation: { ...navigation.results[0].data.body[0], items: links }
+    // console.log(footer.results[0].data.body[0])
+    
+    return {
+      navigation: { ...navigation.results[0].data.body[0], items: links },
+      footer_items: footer.results[0].data.body[0]
   }
 }

@@ -6,9 +6,8 @@ import FooterOption from './footerOption/footerOption';
 import FooterTitle from './footerTitle/footerTitle';
 import styles from './footer.module.css'
 // import './footer.scss'
-const Footer = (links, footer_items) => {
-    console.log(footer_items)
-
+const Footer = ({links, footer_items}) => {
+    
     let linksTemp = [
         {
             title: "CUSTOMER SERVICE",
@@ -76,15 +75,16 @@ const Footer = (links, footer_items) => {
     ]
     return (
         <div className={styles.footer}>
+            {console.log(footer_items,"footer")}
             <section>
                 {
                     linksTemp.map(link => {
                         return (
-                            <div>
-                                <FooterTitle text={link.title} key={linksTemp.indexOf(link)} />
+                            <div key={Math.random()}>
+                                <FooterTitle text={link.title} />
                                 {
                                     link.links.map(each => {
-                                        return <div key={link.links.indexOf(each)}>
+                                        return <div key={Math.random()}>
                                             <FooterOption address={link.address || false} text={each.text} href={each.href ? each.href : null} />
                                         </div>
                                     }
@@ -103,16 +103,3 @@ const Footer = (links, footer_items) => {
 };
 
 export default Footer;
-
-export async function getServerSideProps() {
-    const footer = await Client().query(
-        Prismic.Predicates.at("document.type", "footer")
-    )
-
-    return {
-        props: {
-          footer_items: footer.results,
-         
-        }
-    }
-}

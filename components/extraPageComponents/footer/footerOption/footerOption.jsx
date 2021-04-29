@@ -13,14 +13,14 @@ const FooterOption = ({ text, href, address }) => {
             {
                 href ?
                     <Link href={href}>
-                        <p>{text}</p>
+                        <p className={styles.option_text}>{text}</p>
                     </Link>
                     :
                     <>
                         {address ? <address dangerouslySetInnerHTML={{ __html: text }}></address> : <p>{text}</p>}
                         <section className={styles.buttons}>
                             {imgs.map(img => (
-                                <SocialButton img={`/footer/${img}.png`} />
+                                <SocialButton key={Math.random()} img={`/footer/${img}.png`} />
                             ))}
                         </section>
                     </>

@@ -64,12 +64,12 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
         {console.log(carousel)}
         {console.log(scrollable_card)}
         {console.log(connect_with_us)} */}
-        <section className={styles.carousel}>
+        <section className={styles.carousel_main}>
           <Carousel 
           carousel= {carousel} 
           />
-          <OurClients items={partners.items} heading={partners.primary.heading[0].text} />
         </section>
+          <OurClients items={partners.items} heading={partners.primary.heading[0].text} />
         <FeaturedPosts items={posts} button_text={featuredPosts.button_text} title={featuredPosts.heading[0].text} />
         <FeaturedArticles items={cards} button_text={featuredArticles.button_text} title={featuredArticles.heading[0].text} />
         {/* <ScrollCardList scroll_data={scroll_data} scroll_title_text={scroll_title_text} scroll_link_text={scroll_link_text} />

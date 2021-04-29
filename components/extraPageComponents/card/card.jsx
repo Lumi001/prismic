@@ -26,7 +26,7 @@ const Card = ({
       <span>
         ...
         <Link2 href={`/content/${articleId}`}>
-          <a>
+          <a className={styles.continue_reading}>
             continue reading
             </a>
         </Link2>

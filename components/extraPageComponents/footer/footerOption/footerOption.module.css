@@ -1,4 +1,4 @@
-.option p{
+.option .option_text{
     font-family: 'Avenir';
     font-size: 18px;
     font-style: normal;
@@ -22,7 +22,7 @@
     text-align: right;
 }
 @media screen and (max-width: 999px) {
-    .option p{
+    .option .option_text{
     font-size: 1rem;
     font-weight: normal;
     font-style: normal;
