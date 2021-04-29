@@ -2,8 +2,9 @@ import Link from 'next/link';
 import styles from './navbar.module.css';
 import NavbarItem from './navbarItem/navbarItem';
 import { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
-const Navbar = ({ navigation, links }) => {
+const Navbar = ({ navigation, links, navbarColour }) => {
     const [rightDropdown, setRightDropdown] = useState(false);
     const [scroll, setScroll] = useState(0);
     const handleScroll = () => {
@@ -31,12 +32,12 @@ const Navbar = ({ navigation, links }) => {
     let linksTemp = navigation.items
 
     return (
-        // <div className={styles.navbar} style={{ background: scroll > 70 ? "white" : "transparent" }}>
-        <div className={styles.navbar}>
+        <div className={styles.navbar} style={{ background: scroll > 70 ? navbarColour? "white" : "#38465e":"transparent" }}>
+        {/* <div className={styles.navbar}> */}
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
-                        <img src={navigation.primary.logo.url} alt="" />
+                        <img src={navbarColour?navigation.primary.logo.url:navigation.primary.secondary_logo.url} alt="" />
                     </Link>
                 </nav>
                 <nav className={styles.right}>
@@ -66,6 +67,8 @@ const Navbar = ({ navigation, links }) => {
         </div >
     );
 };
-
-export default Navbar;
+const mapStateToProps = state => ({
+    navbarColour: state.navbar.primary
+})
+export default connect(mapStateToProps)(Navbar);
 

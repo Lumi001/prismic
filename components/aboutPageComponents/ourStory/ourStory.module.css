@@ -1,54 +1,53 @@
 .container {
 }
 .our_story {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
 }
 @media screen and (max-width: 999px) {
-    .our_story .right,
-    .our_story .right img {
-        display: none !important;
-    }
-    .our_story {
-        max-width: 90vw;
-        margin: auto;
-    }
-    .our_story .left {
-        width: 100% !important;
-    }
+  .our_story .right,
+  .our_story .right img {
+    display: none !important;
+  }
+  .our_story {
+    max-width: 90vw;
+    margin: auto;
+  }
+  .our_story .left {
+    width: 100% !important;
+  }
 }
 .our_story .left,
 .our_story .right {
-    width: 50%;
+  width: 50%;
 }
 .our_story .right {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 }
 .our_story .left h3 {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 152.6%;
-    /* identical to box height, or 55px */
-    letter-spacing: 0.01em;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 152.6%;
+  /* identical to box height, or 55px */
+  letter-spacing: 0.01em;
 
-    color: #38465e;
+  color: #38465e;
 }
 .our_story .left p {
-    font-family: "Avenir";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 181.6%;
-    /* or 36px */
-    letter-spacing: 0.01em;
-
-    color: #3a3a3a;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 170.6%;
+  /* or 36px */
+  letter-spacing: 0.01em;
+  color: #38465e;
 }
 .our_story .right img {
-    width: 450px;
-    max-height: 540px;
+  width: 450px;
+  max-height: 540px;
 }
