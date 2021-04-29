@@ -14,15 +14,16 @@ import Modal from '../components/extraPageComponents/modal/modal';
 import FeaturedArticles from '../components/landingPageComponents/featuredArticles/featuredArticles';
 import FeaturedPosts from '../components/landingPageComponents/featuredPosts/featuredPosts';
 import OurClients from '../components/landingPageComponents/ourServices/ourClients';
-import { modalStatusAction } from '../redux/app/app.actions';
+import { modalStatusAction, navbarContentAction } from '../redux/navbar/navbar.actions';
 import { useEffect } from 'react';
 import Cookies from 'universal-cookie';
 
 
-function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed }) {
+function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed,setNavbarColour }) {
   
   // const [modalStatus, setModalStatus] = useState(false)
   useEffect(() => {
+    setNavbarColour({primary:true})
     const cookies = new Cookies();
     setModalContent({ modalIsActive: false })
     if (!subscribed) {
@@ -96,6 +97,7 @@ const mapStateToProps = state => ({
 
 })
 const mapDispatchToProps = dispatch => ({
+  setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
   setModalContent: modal => dispatch(modalStatusAction(modal))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

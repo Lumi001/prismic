@@ -6,8 +6,9 @@
     line-height: 25px;
     letter-spacing: 0.01em;
     text-align: left;
-    max-width: 360px;
+    /* max-width: 360px; */
     cursor: pointer;
+    color:#E9E9E9;
 }
 .option section{
     display: flex;
@@ -18,8 +19,17 @@
 }
 
 .option address {
+    color:#E9E9E9;
     font-style: normal;
-    text-align: right;
+    text-align: right !important;
+    font-family: 'Avenir';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    max-width: 360px;
+    margin: 3px 0px;
 }
 @media screen and (max-width: 999px) {
     .option .option_text{

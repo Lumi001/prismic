@@ -65,5 +65,18 @@ const Navbar = ({ navigation, links }) => {
         </div >
     );
 };
-export default Navbar;
+const mapStateToProps = state => ({
+    isActive: state.app.modalIsActive,
+    modalContent: state.app.modalContent,
+    modalType: state.app.type,
+    modalHasBeenShown: state.app.modalHasBeenShown,
+    timeLastShown: state.app.timeLastShown,
+    subscribed: state.app.subscribed,
+  
+  })
+  const mapDispatchToProps = dispatch => ({
+    setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
+    setModalContent: modal => dispatch(modalStatusAction(modal))
+  })
+  export default connect(mapStateToProps, mapDispatchToProps) (Navbar);
 

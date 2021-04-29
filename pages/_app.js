@@ -100,6 +100,6 @@ MyApp.getInitialProps = async () => {
     
     return {
       navigation: { ...navigation.results[0].data.body[0], items: links },
-      footer_items: footer.results[0].data.body[0]
+      footer_items: footer.results[0].data.body
   }
 }
