@@ -1,15 +1,20 @@
-.footer section{
-    display: flex;
-    /*width: 100%;*/
-    justify-content: space-around;
-    background: #3546AC;
-    color: white;
-    padding-top: 25px;
+.footer section {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  padding-top: 25px;
+  max-width: 1200px;
+  width: 100%;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  background: #3546ac;
+  width: 100%;
 }
 @media screen and (max-width: 999px) {
-    .footer section{
+  .footer section {
     flex-direction: column;
     padding: 25px;
-    }
-
+  }
 }

@@ -10,6 +10,13 @@ export function rightDropdownAction(rightDropdown=false) {
         payload: {rightDropdown}
     };
 }
+
+export function navbarContentAction(navbarColours) {
+    return {
+        type: 'NAVBAR_CONTENT',
+        payload: {navbarColours}
+    };
+}
 // export function resetDropdownAction() {
 //     return {
 //         type: 'RESET_DROPDOWN'

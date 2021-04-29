@@ -2,16 +2,6 @@ const INITIAL_STATE = { navbarColours: "primary", modalIsActive: false, modalHas
 
 const appReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'NAVBAR_COLOURS':
-            return {
-                ...state,
-                ...action.payload
-            };
-        case 'NAVBAR_CONTENT':
-            return {
-                ...state,
-                ...action.payload
-            };
         case 'MODAL_STATUS':
             return {
                 ...state,

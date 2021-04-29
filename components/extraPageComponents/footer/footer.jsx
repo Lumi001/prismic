@@ -6,8 +6,7 @@ import FooterOption from './footerOption/footerOption';
 import FooterTitle from './footerTitle/footerTitle';
 import styles from './footer.module.css'
 // import './footer.scss'
-const Footer = (links, footer_items) => {
-    console.log(footer_items)
+const Footer = ({ links, footer_items }) => {
 
     let linksTemp = [
         {
@@ -76,16 +75,18 @@ const Footer = (links, footer_items) => {
     ]
     return (
         <div className={styles.footer}>
+            {/* {console.log(footer_items, "footer")} */}
             <section>
                 {
-                    linksTemp.map(link => {
+                    footer_items.map(link => {
                         return (
-                            <div>
-                                <FooterTitle text={link.title} key={linksTemp.indexOf(link)} />
+                            <div key={Math.random()}>
+                                <FooterTitle text={link.primary.footer_section_title[0]?link.primary.footer_section_title[0].text:null} />
                                 {
-                                    link.links.map(each => {
-                                        return <div key={link.links.indexOf(each)}>
-                                            <FooterOption address={link.address || false} text={each.text} href={each.href ? each.href : null} />
+                                    link.items.map(each => {
+                                        // console.log(footer_items.indexOf(link), footer_items.length - 1)
+                                        return <div key={Math.random()}>
+                                            <FooterOption address={true} text={each.link_text} last={link.items.indexOf(each) === link.items.length - 1} href={footer_items.indexOf(link) !== footer_items.length - 1 ? each.link_address.url ? each.link_address.url : "#" : null} />
                                         </div>
                                     }
 
@@ -103,16 +104,3 @@ const Footer = (links, footer_items) => {
 };
 
 export default Footer;
-
-export async function getServerSideProps() {
-    const footer = await Client().query(
-        Prismic.Predicates.at("document.type", "footer")
-    )
-
-    return {
-        props: {
-          footer_items: footer.results,
-         
-        }
-    }
-}

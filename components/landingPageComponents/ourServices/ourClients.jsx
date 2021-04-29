@@ -8,7 +8,7 @@ const OurClients = ({ heading, items }) => {
             <section>
                 {items.map(item => {
                     return (
-                        <img src={item.partner_image.url} alt="" />
+                        <img src={item.partner_image.url} alt="" key={Math.random()} />
                     )
                 })}
             </section>

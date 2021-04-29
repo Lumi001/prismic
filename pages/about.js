@@ -8,6 +8,9 @@ import WhatWeDo from '../components/aboutPageComponents/whatWeDo/whatWeDo'
 import styles from '../styles/Home.module.css'
 import BeenUpTo from '../components/aboutPageComponents/beenUpTo/beenUpTo';
 import BrandsAndPartners from '../components/aboutPageComponents/brandsAndPartners/brandsAndPartners';
+import { navbarContentAction } from '../redux/navbar/navbar.actions';
+import { connect } from 'react-redux';
+import { useEffect } from 'react';
 // import styles from './About.module.css';
 
 // const intro = {
@@ -123,7 +126,10 @@ import BrandsAndPartners from '../components/aboutPageComponents/brandsAndPartne
 //     ]
 // }
 
-const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo, brandsAndPartners }) => {
+const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo, brandsAndPartners,setNavbarColour }) => {
+    useEffect(()=>{
+        setNavbarColour({primary:false})
+    },[])
     return (
         <div className={styles.container}>
             <Head>
@@ -146,8 +152,10 @@ const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo,
         </div>
     );
 };
-
-export default About;
+const mapDispatchToProps = dispatch => ({
+    setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
+  })
+  export default connect(mapStateToProps, mapDispatchToProps) (About);
 
 export async function getServerSideProps() {
     let about = await Client().query(
