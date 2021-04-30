@@ -144,11 +144,14 @@
 }
 .card .images .backdrop {
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 5%;
+  left: 5%;
   z-index: 0;
 }
 @media screen and (min-width: 999px) {
+  .card .images .large{
+    width: 100%px !important;
+  }
   .card h3 {
     width: 469px;
   }

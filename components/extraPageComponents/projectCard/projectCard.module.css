@@ -2,7 +2,7 @@
   width: 100%;
   /* display: grid; */
   /* place-items: center; */
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 .project_card {
   max-width: 1200px;
@@ -82,14 +82,14 @@
 }
 .project_card .images .backdrop {
   position: absolute;
-  top: 10%;
-  left: -10%;
+  top: 5%;
+  left: -5%;
   z-index: 0;
 }
 .project_card_flip .images .backdrop {
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 5%;
+  left: 5%;
   z-index: 0;
 }
 .project_card .text,
@@ -112,7 +112,10 @@
     margin: 0px 0px 50px;
   }
   .project_card section img,
-  .project_card_flip section {
+  .project_card section,
+  .project_card_flip section img,
+  .project_card_flip section
+   {
     /* max-width: 80%; */
     max-width: 90vw;
     /* height: fit-content; */

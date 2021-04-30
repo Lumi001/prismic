@@ -7,12 +7,12 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-    z-index: 1000; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 10000; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: scroll
+    overflow: hidden;
 }
 .modal_container .modal_section{
     display: flex;
@@ -35,7 +35,7 @@
     height: fit-content; 
     top: 30%;
     width: 100%;
-    max-width: 1200px;
+    max-width: 950px;
     height: fit-content;
     margin: auto;
     /* background: white; */

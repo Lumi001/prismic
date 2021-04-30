@@ -18,7 +18,7 @@ const Card = ({
   <div className={styles.card}>
     <section className={styles.images}>
       {/* <img src={image} alt="" className={styles.case  } /> */}
-      <img src={img} alt="" className={link_text ? styles.case : null} />
+      <img src={img} alt="" className={link_text ? styles.case : styles.large} />
       {link_text ?<img src="projectCard/backdrop.png" alt="" className={styles.backdrop}/>:null}
     </section>
     {date ? <div className={styles.date}>{date}</div> : !link_text ? <small>{tag}</small> : null}

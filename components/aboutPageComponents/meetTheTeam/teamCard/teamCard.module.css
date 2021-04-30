@@ -38,7 +38,7 @@
 @media screen and (max-width: 999px) {
     .team_card img,
     .team_card {
-        max-width: 450px !important;
+        max-width: 90vw !important;
         /* width:100% !important; */
         width: fit-content;
         

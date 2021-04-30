@@ -1,8 +1,8 @@
 import styles from './heading.module.css';
 
-const Heading = ({title}) => (
+const Heading = ({title,fontSize}) => (
  <div className={styles.heading}>
-    <h2>{title}</h2>
+    <h2 style={fontSize?{fontSize:fontSize}:null}>{title}</h2>
   </div> 
   )
   

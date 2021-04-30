@@ -6,9 +6,9 @@ import styles from './beenUpTo.module.css';
 
 const BeenUpTo = ({heading, subHeading, items}) => {
     return (
-        <div className={styles.container}>
+        <div className={styles.been_up_to_container}>
             <div>
-                <TitleAndSubTitle heading={heading} subHeading={subHeading} />
+                <TitleAndSubTitle heading={heading} subHeading={subHeading} align="left" />
                     <section>
                         {items.map(item => {
                             return (
