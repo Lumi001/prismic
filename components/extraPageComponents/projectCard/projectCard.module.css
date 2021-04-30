@@ -2,6 +2,7 @@
   width: 100%;
   /* display: grid; */
   /* place-items: center; */
+  margin-bottom: 50px;
 }
 .project_card {
   max-width: 1200px;
@@ -57,10 +58,39 @@
   /* border-bottom: 1px solid; */
   padding-bottom: 9px;
 }
-.project_card section img,
-.project_card_flip section {
-  width: 580px;
-  max-height: 450px;
+.project_card_flip .images .case,
+.project_card .images .case,
+.project_card .images .backdrop,
+.project_card_flip .images .backdrop {
+  /* box-shadow: -30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8); */
+  width: 558px;
+  /* max-height: 450px; */
+  object-fit: cover;
+}
+.project_card .images,
+.project_card_flip .images {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.project_card .images .case,
+.project_card_flip .images .case {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.project_card .images .backdrop {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  z-index: 0;
+}
+.project_card_flip .images .backdrop {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: 0;
 }
 .project_card .text,
 .project_card_flip .text {
@@ -71,15 +101,6 @@
 .project_card_flip .text img {
   max-width: 80px;
   max-height: 80px;
-}
-.project_card_flip .case {
-  box-shadow: 30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8);
-  margin-bottom: 50px;
-}
-
-.project_card .case {
-  box-shadow: -30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8);
-  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 990px) {
