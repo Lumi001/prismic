@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import Button from '../button/button'
 
-const CarouselItem = ({ date, title, location, link }) => {
+const CarouselItem = ({ date, title, location, link, img }) => {
   const video = useRef(null);
   const playCaption = useRef(null);
   function play () {
@@ -11,7 +11,7 @@ const CarouselItem = ({ date, title, location, link }) => {
   }
     return (
         <React.Fragment> 
-            <div className="carousel">   
+            <div className="carousel"> 
             <div className='carousel-text'>    
             <p className="date">UPCOMING EVENT</p>
                 <h3  className="head">The SERAS Awards 2021</h3>
@@ -44,7 +44,7 @@ const CarouselItem = ({ date, title, location, link }) => {
     </video>
     <div  ref={playCaption} className="caption" onClick={play} >
       <svg width="46" height="52" viewBox="0 0 46 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M44.5 24.268C45.8333 25.0378 45.8333 26.9623 44.5 27.7321L3.25001 51.5478C1.91667 52.3175 0.250001 51.3553 0.250001 49.8157L0.250003 2.1843C0.250004 0.644698 1.91667 -0.317552 3.25 0.452249L44.5 24.268Z" fill="#38465E"/>
+  <path d="M44.5 24.268C45.8333 25.0378 45.8333 26.9623 44.5 27.7321L3.25001 51.5478C1.91667 52.3175 0.250001 51.3553 0.250001 49.8157L0.250003 2.1843C0.250004 0.644698 1.91667 -0.317552 3.25 0.452249L44.5 24.268Z" fill="#F0F0F0"/>
 </svg>
 
     </div>
@@ -54,21 +54,21 @@ const CarouselItem = ({ date, title, location, link }) => {
         <style jsx global>
           {`
           .link-f{
-            margin-top: 10%;
+            margin-top: 20%;
             display: flex;
-            justify-content: space-between;
           }
           .carousel {
+              position: relative;
               margin-top: 15%;
               display: flex;
               align-items: flex-start;
-              justify-content: center;
-              width: 85%;
+              justify-content: space-between;
+              width: 1200px;
               color: #FCFCFC;
               margin: auto;
-              z-index: 1;
               align-items: center;
-              height:545px;
+              height:572px;
+              z-index: 1000;
           }
           .carousel-text {
             padding: 10px 35px;
@@ -81,11 +81,16 @@ const CarouselItem = ({ date, title, location, link }) => {
           .date {
             font-size: 16px;
             color: #C8962A;
+            font-family: Avenir;
+            letter-spacing: 0.2em;
+        
           }
           .head {
-            font-size: 48px;
-            width: 400px;
-            color: white;
+            font-size: 66px;
+            letter-spacing: 0.01em;
+            margin: 0;
+            color: #FCFCFC;
+            font-weight: bold;
           }
         .link {
         display: flex;
@@ -117,7 +122,7 @@ const CarouselItem = ({ date, title, location, link }) => {
         margin-top: 25px;
         }
         .locationtext {
-        padding-left: 5px;
+        padding-left: 25px;
         font-size: 24px;
         }
         .locationlogo {
@@ -127,7 +132,7 @@ const CarouselItem = ({ date, title, location, link }) => {
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 300px;
+          height: 350px;
           width: 50%;
           position: relative;
           border-radius: 19px;
@@ -153,7 +158,7 @@ const CarouselItem = ({ date, title, location, link }) => {
   z-index: 1;
   border-radius: 50%;
   position: relative;
-  border: 3px solid white;
+  border: 4px solid #F0F0F0;
   cursor: pointer;
 }
 

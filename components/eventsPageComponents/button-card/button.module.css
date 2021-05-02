@@ -1,0 +1,68 @@
+.button{
+  width: 284px;
+  height: 60px;
+  border-radius: 5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  background: #313131;
+  border: none;
+  margin: 20px 0px 50px;
+}
+.secondary_button{
+    height: 60px;
+    /* border-radius: 5px; */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: #313131;
+    width: fit-content !important;
+    border: none;
+    background: transparent !important;
+    border-bottom: 2px solid #313131 !important;
+}
+.secondary_button .linkWrapper {
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+  }
+  
+  .secondary_button .linkWrapper span {
+    /* border-bottom: 3px solid #313131; */
+    padding-bottom: 9px;
+    min-width: fit-content;
+  }
+  .secondary_button .linkWrapper:hover > img {
+    transform: translateX(15px);
+  }
+  .secondary_button .linkWrapper img {
+    height: 20px;
+    transform: translateX(0px);
+    width: auto;
+    transition: transform 1s;
+  }
+  
+  .carousel .secondary_button .linkWrapper img {
+    display: block;
+  }
+
+.button span,
+.secondary_button span {
+  margin: 0px 10px 0px 0px;
+  position: relative;
+  top: 2px;
+}
+
+@media screen and (max-width: 999px) {
+  .button,
+  .secondary_button {
+    font-size: 1.2rem;
+  }
+}

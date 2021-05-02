@@ -1,7 +1,7 @@
 // import { Link } from 'prismic-reactjs';
 import styles from './card.module.css';
 import Link from 'next/link';
-import Button from "../../../components/extraPageComponents/button/button";
+import Button from "../../../components/eventsPageComponents/button-card/button";
 
 
 const EventCard = ({articleId, link_text,title,tag,content,img,date,link,id, color}) => (

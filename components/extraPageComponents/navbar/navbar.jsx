@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import styles from './navbar.module.css';
 import NavbarItem from './navbarItem/navbarItem';
+import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
 
-const Navbar = ({ navigation, links }) => {
+const Navbar = ({ navigation, links }) => { 
     const [rightDropdown, setRightDropdown] = useState(false);
     const [scroll, setScroll] = useState(0);
     const handleScroll = () => {
@@ -78,5 +79,5 @@ const mapStateToProps = state => ({
     setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
     setModalContent: modal => dispatch(modalStatusAction(modal))
   })
-  export default connect(mapStateToProps, mapDispatchToProps) (Navbar);
+  export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
 

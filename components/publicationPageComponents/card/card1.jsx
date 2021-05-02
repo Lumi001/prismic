@@ -6,7 +6,7 @@ import Button from "../../extraPageComponents/button/button";
 
 const Card1 = ({isCaseStudy,title,tag,content,link_text,articleId,img,date,link,id, color}) => (
     <div className={styles.card}>
-      <div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`}}> </div>
+      <div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`, borderRadius: "10px"}}> </div>
      { date ?
       <div className={styles.date}>{date}</div> :
       <small>{tag}</small>
