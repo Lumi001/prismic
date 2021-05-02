@@ -4,10 +4,13 @@ import Button from '../button/button'
 const CarouselItem = ({ date, title, location, link, img }) => {
   const video = useRef(null);
   const playCaption = useRef(null);
-  function play () {
+  function play() {
     video.current.play()  
     playCaption.current.style.display = "none"
 
+  }
+  function end() {
+    playCaption.current.style.display = "flex"
   }
     return (
         <React.Fragment> 
@@ -39,7 +42,7 @@ const CarouselItem = ({ date, title, location, link, img }) => {
       
                 </div>
                 <div className="video-container">
-    <video muted id="vid" ref={video}>
+    <video muted id="vid" onEnded={end} ref={video}>
     <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4#t=3" type="video/mp4" />
     </video>
     <div  ref={playCaption} className="caption" onClick={play} >

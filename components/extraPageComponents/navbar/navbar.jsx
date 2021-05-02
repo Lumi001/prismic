@@ -3,7 +3,6 @@ import styles from './navbar.module.css';
 import NavbarItem from './navbarItem/navbarItem';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
 
 const Navbar = ({ navigation, links, navbarColour }) => {
     const [rightDropdown, setRightDropdown] = useState(false);
