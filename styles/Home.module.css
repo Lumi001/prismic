@@ -128,18 +128,7 @@
   max-width: 800px;
   margin-top: 3rem;
 }
-.articles {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  width: 100%;
-  justify-items: center;
-}
 @media screen and (max-width: 990px) {
-  .articles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .carousel_main {
     height: max-content;
   }
@@ -148,11 +137,6 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .articles {
-    grid-template-columns: 100%;
-  }
-}
 .carousel_main {
   /* padding-top: 120px; */
   background: #ffc017;

@@ -14,7 +14,8 @@ import Modal from '../components/extraPageComponents/modal/modal';
 import FeaturedArticles from '../components/landingPageComponents/featuredArticles/featuredArticles';
 import FeaturedPosts from '../components/landingPageComponents/featuredPosts/featuredPosts';
 import OurClients from '../components/landingPageComponents/ourServices/ourClients';
-import { modalStatusAction, navbarContentAction } from '../redux/navbar/navbar.actions';
+import { modalStatusAction } from '../redux/app/app.actions';
+import { navbarContentAction } from '../redux/navbar/navbar.actions';
 import { useEffect } from 'react';
 import Cookies from 'universal-cookie';
 
@@ -23,7 +24,7 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
   
   // const [modalStatus, setModalStatus] = useState(false)
   useEffect(() => {
-    setNavbarColour({primary:true})
+    setNavbarColour(true);
     const cookies = new Cookies();
     setModalContent({ modalIsActive: false })
     if (!subscribed) {

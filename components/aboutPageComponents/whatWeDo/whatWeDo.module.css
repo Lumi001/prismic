@@ -2,7 +2,7 @@
     width: 100%;
     display: grid;
     place-items: center;
-    margin: 100px 0px;
+    margin: 0px 0px;
 }
 .container .what_we_do .card_list {
     max-width: 1200px;

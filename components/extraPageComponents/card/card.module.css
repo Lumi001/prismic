@@ -69,6 +69,7 @@
 
   color: #38465e;
 }
+
 .card .continue_reading{
   font-family: "Avenir";
   font-style: normal;
@@ -121,10 +122,36 @@
   height: 410px;
 }
 .card .case {
-  box-shadow: 30.634117px 25.9874px 10px rgba(141, 138, 138, 0.8);
+  /* box-shadow: 30.634117px 25.9874px 10px rgba(141, 138, 138, 0.8); */
+}
+.card .images .case,
+.card .images .backdrop {
+  object-fit: cover;
+  width: 100%;
   margin-bottom: 50px;
+  height: 410px;
+}
+.card .images {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.card .images .case {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.card .images .backdrop {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: 0;
 }
 @media screen and (min-width: 999px) {
+  .card .images .large{
+    width: 100%px !important;
+  }
   .card h3 {
     width: 469px;
   }

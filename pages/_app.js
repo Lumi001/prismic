@@ -57,10 +57,11 @@ function MyApp({ Component, pageProps, navigation, footer_items }) {
   // const store = createStore(persistedReducer, applyMiddleware(...middleware))
   // const persistor = persistStore(store);
   return (
-    <React.Fragment> 
+    <React.Fragment>
       <Provider store={store} >
       <Navbar navigation={navigation} />
         <PersistGate loading={null} persistor={store.__PERSISTOR}>
+      <Navbar navigation={navigation} />
           <Component {...pageProps} />
         </PersistGate>
       </Provider>
@@ -79,12 +80,11 @@ MyApp.getInitialProps = async () => {
   )
   // console.log(navigation.results[0].data.body[0], "this is landing")
   let navLinks = {
-    1: "/about",
-    2: "/academy",
-    3: "/events",
-    4: "/publication",
-    5: "/services",
-    6: "/contact",
+    1: "/services",
+    2: "/about",
+    3: "/publication",
+    4: "/events",
+    5: "/contact",
   }
   let links = [];
   navigation.results[0].data.body[0].items.forEach(item => {

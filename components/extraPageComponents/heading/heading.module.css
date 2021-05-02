@@ -1,4 +1,4 @@
-.heading {
+.heading h2 {
   /* Featured articles */
 
 /* width: 286px; */
@@ -6,7 +6,7 @@
 font-family: 'Inter';
 font-style: normal;
 font-weight: bold;
-font-size: 36px !important;
+font-size: 36px;
 line-height: 152.6%;
 /* identical to box height, or 55px */
 letter-spacing: 0.01em;

@@ -8,7 +8,7 @@ const Card = ({
   tag,
   content,
   img,
-  date, 
+  date,
   link,
   id,
   articleId,
@@ -16,8 +16,12 @@ const Card = ({
   isCaseStudy,
 }) => (
   <div className={styles.card}>
-    <img src={img} alt="" className={link_text?styles.case:null}/>
-    {date ? <div className={styles.date}>{date}</div> : !link_text?<small>{tag}</small>:null}
+    <section className={styles.images}>
+      {/* <img src={image} alt="" className={styles.case  } /> */}
+      <img src={img} alt="" className={link_text ? styles.case : styles.large} />
+      {link_text ?<img src="projectCard/backdrop.png" alt="" className={styles.backdrop}/>:null}
+    </section>
+    {date ? <div className={styles.date}>{date}</div> : !link_text ? <small>{tag}</small> : null}
     <h3>{title}</h3>
     <p>
       {content}
@@ -32,10 +36,10 @@ const Card = ({
         </Link2>
       </span>
     ) : (
-        <Button href='#' secondary articleId={articleId} isCaseStudy text={link_text} />
-        // <Link2 href={`/content/${articleId}`}>
-        // </Link2>
-      )}
+      <Button href='#' secondary articleId={articleId} isCaseStudy text={link_text} />
+      // <Link2 href={`/content/${articleId}`}>
+      // </Link2>
+    )}
     {link ? (
       <div id={id} className={styles.link}>
         <div className={styles.linktext}>{link} </div>
@@ -55,8 +59,8 @@ const Card = ({
         </div>
       </div>
     ) : (
-        ""
-      )}
+      ""
+    )}
   </div>
 );
 

@@ -3,16 +3,17 @@ import styles from './navbar.module.css';
 import NavbarItem from './navbarItem/navbarItem';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
-const Navbar = ({ navigation, links }) => { 
+const Navbar = ({ navigation, links, navbarColour }) => {
     const [rightDropdown, setRightDropdown] = useState(false);
     const [scroll, setScroll] = useState(0);
     const handleScroll = () => {
         setScroll(window.scrollY);
-        console.log(window.scrollY,window.screenY,window.pageYOffset);
+        console.log(window.scrollY, window.screenY, window.pageYOffset);
     }
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll,{capture:true,passive:true});
+        window.addEventListener('scroll', handleScroll, { capture: true, passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
@@ -32,11 +33,12 @@ const Navbar = ({ navigation, links }) => {
     let linksTemp = navigation.items
 
     return (
-        <div className={styles.navbar} style={{ background: scroll > 70 ? "white" : "transparent" }}>
+        <div className={styles.navbar} style={{ background: scroll > 70 ? navbarColour? "white" : "#38465e":"transparent" }}>
+        {/* <div className={styles.navbar}> */}
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
-                        <img src={navigation.primary.logo.url} alt="" />
+                        <img src={navbarColour?navigation.primary.logo.url:navigation.primary.secondary_logo.url} alt="" />
                     </Link>
                 </nav>
                 <nav className={styles.right}>
@@ -67,17 +69,7 @@ const Navbar = ({ navigation, links }) => {
     );
 };
 const mapStateToProps = state => ({
-    isActive: state.app.modalIsActive,
-    modalContent: state.app.modalContent,
-    modalType: state.app.type,
-    modalHasBeenShown: state.app.modalHasBeenShown,
-    timeLastShown: state.app.timeLastShown,
-    subscribed: state.app.subscribed,
-  
-  })
-  const mapDispatchToProps = dispatch => ({
-    setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
-    setModalContent: modal => dispatch(modalStatusAction(modal))
-  })
-  export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+    navbarColour: state.navbar.primary
+})
+export default connect(mapStateToProps)(Navbar);
 
