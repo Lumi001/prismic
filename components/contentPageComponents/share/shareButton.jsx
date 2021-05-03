@@ -1,16 +1,22 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
-const ShareButton = ({img}) => {
+const ShareButton = ({ img, href }) => {
     return (
         <React.Fragment>
-        <button className="button">
-            {
-                <img src={img} alt=""/>
-            }
-        </button>
-        <style jsx global>
-          {`
+            <Link href={href}>
+                {
+                    <img
+                        src={img}
+                        className="button"
+                    />
+                }
+            </Link>
+            {/* <button className="button">
+        </button> */}
+            <style jsx global>
+                {`
           .button {
             width: 44px;
             height: 44px;
@@ -22,8 +28,8 @@ const ShareButton = ({img}) => {
             background: transparent;
 }
           `}
-          </style>
-            </React.Fragment>
+            </style>
+        </React.Fragment>
     );
 };
 

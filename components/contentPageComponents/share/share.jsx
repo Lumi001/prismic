@@ -3,15 +3,30 @@ import ShareButton from './shareButton'
 
 
 const Share = ({ text }) => {
-    const imgs = [
-        "linkedin", "twitter", "facebook", "instagram"
+    const socials = [
+        {
+            image: "linkedin",
+            url: ""
+        },
+        {
+            image: "twitter",
+            url: ""
+        },
+        {
+            image: "facebook",
+            url: ""
+        },
+        {
+            image: "instagram",
+            url: ""
+        }
     ]
     return (
         <div className="social">
             <h1>{text}</h1>
             <section className="buttons">
-                {imgs.map(img => (
-                    <ShareButton key={Math.random()} img={`/socials/${img}.png`} />
+                {socials.map(social => (
+                    <ShareButton key={Math.random()} href={social.url} img={`/socials/${social.image}.png`} />
                 ))}
             </section>
 
