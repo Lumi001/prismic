@@ -51,8 +51,8 @@ export default class Carousel extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       initialSlide: 1,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
+      // nextArrow: <SampleNextArrow />,
+      // prevArrow: <SamplePrevArrow />,
     };
 
 
@@ -76,7 +76,7 @@ export default class Carousel extends Component {
               
             </Slider>
         
-          {/* <div className="circle-opt">
+          <div className="circle-opt">
             <div className="offer-circle" onClick={this.previous}><svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path id='previous' d="M12 1L2 11.3871L12 24" stroke="#E4E4E4" strokeWidth="2" />
             </svg>
@@ -86,7 +86,7 @@ export default class Carousel extends Component {
               <path id='next' d="M0.999998 24L11 13.6129L1 0.999999" stroke="#E4E4E4" strokeWidth="2" />
             </svg>
             </div>
-          </div> */}
+          </div>
         <style jsx global>
           {`
        
@@ -98,20 +98,25 @@ export default class Carousel extends Component {
     align-items: center;
     background-color: #313131;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+    z-index: 1;
   }
   .offer-circle svg {
     cursor: pointer;
   }
   
   .circle-opt {
+    position: absolute;
+    top: 50%;
+    left: 0;
     display: flex;
-    z-index: 1;
-    padding: 14px 0px 129px 0px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
     width: 100%
   }
   
   .circle-opt :hover {
-    fill: #0E82F8;
+    fill: #0E82F1;
   }
 
 
