@@ -7,6 +7,7 @@ import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 
 export default function Event ({upcomingEvents, recentEvents}) {
+  console.log(recentEvents)
     return (
       <div className={styles.container}>
         <Head>
@@ -15,53 +16,58 @@ export default function Event ({upcomingEvents, recentEvents}) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
-
-          <div className="wrapper1">
-          <Carousel/>
+        <main className={styles.main}>
+          <div className="wrapper1" style={{backgroundImage:`url(${recentEvents[0].image.url})`}}>
+            <div className="overlay"></div>
+          <Carousel />
           </div>
           <div className="wrapper2">
           <h3 className="title">Previous Events</h3>
           <div className="grid">
           {recentEvents.map( event => <EventCard img={event.image.url} key={Math.random()} date={event.date} title={event.title} articleId='asdf' link_text={event.link}/>)}
-          {/* <EventCard date="March 28, 2021" title="The 10th Edition
-          of  SERAS"  />
-          <EventCard date="March 28, 2021" title="The 10th Edition
-          of  SERAS"  />
-          <EventCard date="March 28, 2021" title="The 10th Edition
-          of  SERAS"  />
-          <EventCard date="March 28, 2021" title="The 10th Edition
-          of  SERAS"  /> */}
           </div>
           
           </div>
+           
+        </main>
         
         <style jsx global>
           {`
+          .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #251861;
+            opacity: 0.9
+          }
           .wrapper1 {
            text-align: left;
-           width: 100%;
-           background-color: #251861;
-           z-index: 0;
-           padding-top: 6%;
-           opacity: 0.7
+           width: 100%;  
+           padding-top: 4%;
+       
           }
           .wrapper2 {
            margin-top: 5%;
            text-align: left;
-           width: 80%;
+           width: 1200px;
+           margin: auto;
+           padding: 0 20px
           }
           .grid {
             display: grid;
             grid-template-columns: 50% 50%;
             grid-gap: 15px 15px;
-            justify-items: flex-end ;
-            width: 98%;
+            width: 100%;
           }
           .title {
+            font-family: Inter;
             font-style: normal;
             font-weight: bold;
-            font-size: 36px;
+            font-size: 48px;
             color: #313131;
+            letter-spacing: 0.01em;
             text-align: center;
           }
           @media only screen and (max-width: 768px) {
@@ -79,6 +85,7 @@ export async function getServerSideProps() {
   const events = await Client().query(
       Prismic.Predicates.at("document.type", "events")
   )
+  console.log(events.results[0].data.body[1].items)
   return {
       props: {
         upcomingEvents: events.results[0].data.body[0].items,

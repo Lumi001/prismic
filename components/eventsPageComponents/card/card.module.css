@@ -107,7 +107,7 @@
 }
 
 .img:hover{
-  opacity: 0.8;
+  box-shadow: 0px 94px 80px rgba(0, 0, 0, 0.07), 0px 60.9259px 46.8519px rgba(0, 0, 0, 0.0531481), 0px 36.2074px 25.4815px rgba(0, 0, 0, 0.0425185), 0px 18.8px 13px rgba(0, 0, 0, 0.035), 0px 7.65926px 6.51852px rgba(0, 0, 0, 0.0274815), 0px 1.74074px 3.14815px rgba(0, 0, 0, 0.0168519);
   cursor: pointer;
 }
 @media screen and (min-width: 999px) {
@@ -120,8 +120,8 @@
     /* height: 88px; */
   }
    .img {
-    height: 445px;
-    width: 450px;
+    height: 600px;
+    width: 550px;
   }
   .card {
     width: 450px;

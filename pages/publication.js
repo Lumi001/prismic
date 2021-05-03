@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Card from '../components/extraPageComponents/card/card';
-import Card1 from '../components/extraPageComponents/card/card1';
+import Card1 from '../components/publicationPageComponents/card/card1';
 import Heading from '../components/extraPageComponents/heading/heading';
 import TopArticleList from '../components/extraPageComponents/top-article/top-article-list';
 import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
@@ -92,9 +92,8 @@ export default function Publication({new_pub, other_pub, top_3_article}) {
             flex-direction: column;
             align-content: center;
             justify-content: center;
-            align-items: center;
             padding-top: 50px;
-            width: 80%;
+            width: 1200px;
           }
           .container #h2{
             width: 935px;
@@ -116,7 +115,7 @@ export default function Publication({new_pub, other_pub, top_3_article}) {
             line-height: 152.6%;
             letter-spacing: 0.01em;
             color: #38465E;
-            width: 936px
+            padding: 0 13px;
           }
           .h3-1{
             font-family: 'Inter';
@@ -126,7 +125,6 @@ export default function Publication({new_pub, other_pub, top_3_article}) {
             line-height: 152.6%;
             letter-spacing: 0.01em;
             color: #38465E;
-            width: 936px
           }
           .publication {
             display: flex;
@@ -139,17 +137,18 @@ export default function Publication({new_pub, other_pub, top_3_article}) {
           .one {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
+            width: 100%;
           }
           .other {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
           }
           .column {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            width: 100%
           }
 
           .three{
@@ -162,7 +161,7 @@ export default function Publication({new_pub, other_pub, top_3_article}) {
           }
           #big{
             height: 700px;
-            width: 484px;
+            width: 642px;
           }
           @media only screen and (max-width: 768px) {
             

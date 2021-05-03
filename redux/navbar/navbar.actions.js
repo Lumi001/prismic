@@ -17,6 +17,13 @@ export function navbarContentAction(primary) {
         payload: {primary}
     };
 }
+
+export function modalStatusAction(navbarColours) {
+    return {
+        type: 'NAVBAR_CONTENT',
+        payload: {navbarColours}
+    };
+}
 // export function resetDropdownAction() {
 //     return {
 //         type: 'RESET_DROPDOWN'
