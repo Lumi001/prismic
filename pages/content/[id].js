@@ -6,7 +6,7 @@ import Share from '../../components/contentPageComponents/share/share';
 import { useRouter } from 'next/router';
 import { RichText } from 'prismic-reactjs';
 
-const Content = ({ title, image, content,  }) => {
+const Content = ({ title, image, content, host }) => {
     const router = useRouter();
     const { id } = router.query;
     return (
@@ -23,7 +23,7 @@ const Content = ({ title, image, content,  }) => {
                 <div className={styles.content}>
                     <img src={image.url}></img>
                     <section className={styles.layout}>
-                        <Share text="Share" />
+                        <Share data={{image:image, title:title, content: content, host: host}} text="Share" />
                         <section className={styles.layout_right}>
                             <RichText render={title} />
                             {/* <h3>{title.text}</h3> */}
@@ -40,6 +40,7 @@ export default Content;
 
 export async function getServerSideProps(context) {
     const { id } = context.params
+
     // console.log("leggo")
     let post = await Client().query(
         Prismic.Predicates.at("document.id", `${id}`)
@@ -59,7 +60,8 @@ export async function getServerSideProps(context) {
         props: {
             image: body.post_image || body.article_image || "",
             title: body.title || "",
-            content: body.post_content || body.article_content || ""
+            content: body.post_content || body.article_content || "",
+            host: context.req.headers.host
         }
     }
 }

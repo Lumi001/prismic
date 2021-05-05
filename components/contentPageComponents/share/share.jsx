@@ -2,19 +2,23 @@ import React from 'react';
 import ShareButton from './shareButton'
 
 
-const Share = ({ text }) => {
+const Share = ({ text, data }) => {
+    const {image, title, host} = data
+
+
     const socials = [
         {
             image: "linkedin",
-            url: ""
+            url: `https://www.linkedin.com/shareArticle?url=${host}&title=${title[0].text}`
         },
         {
             image: "twitter",
-            url: ""
+            url: `https://twitter.com/share?url=${host}&text=${title[0].text}
+            `
         },
         {
             image: "facebook",
-            url: ""
+            url: `https://www.facebook.com/sharer.php?u=${"host"}`
         },
         {
             image: "instagram",
@@ -23,6 +27,8 @@ const Share = ({ text }) => {
     ]
     return (
         <div className="social">
+            {    console.log(title)
+}
             <h1>{text}</h1>
             <section className="buttons">
                 {socials.map(social => (

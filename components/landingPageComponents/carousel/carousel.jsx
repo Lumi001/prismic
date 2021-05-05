@@ -100,7 +100,7 @@ export default class Carousel extends Component {
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
     z-index: 1;
   }
-  .offer-circle svg {
+  .offer-circle {
     cursor: pointer;
   }
   
@@ -115,8 +115,8 @@ export default class Carousel extends Component {
     width: 100%
   }
   
-  .circle-opt :hover {
-    fill: #0E82F1;
+  .offer-circle:hover ~ svg{
+    fill: black;
   }
 
 

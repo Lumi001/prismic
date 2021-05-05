@@ -45,7 +45,7 @@ export async function getServerSideProps(context) {
     let post1 = {}
     // console.log("post", post.results[0].data, "post")
 
-    let body = post.results[0].data;
+    let body = post.results[0].data; 
     // console.log("post", body.title[0], "post")
     // post = post1;
 
@@ -58,5 +58,5 @@ export async function getServerSideProps(context) {
             title: body.title || "",
             content: body.post_content || body.article_content || ""
         }
-    }
+    } 
 }
