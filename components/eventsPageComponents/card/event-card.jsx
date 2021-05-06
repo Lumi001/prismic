@@ -20,7 +20,7 @@ const EventCard = ({articleId, link_text,title,tag,content,img,date,link,id, col
           <a>
             continue reading
             </a>
-        </Link2>
+        </Link2>                                                                                    
       </span>
     ) : (
         <Button secondary articleId={articleId} isCaseStudy text={link_text} />

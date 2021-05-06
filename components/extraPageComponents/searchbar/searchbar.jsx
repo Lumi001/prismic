@@ -10,7 +10,7 @@ const SearchBar = ({keyword,setKeyword}) => {
      key="random1"
      className="mainLoginInput"
      value={keyword}
-     placeholder="&#61442; Search Publications"
+     placeholder="&#61442;          Search Publications"
      onChange={(e) => setKeyword(e.target.value)}
      />
      <style jsx global>
