@@ -38,13 +38,23 @@
 @media screen and (max-width: 999px) {
     .team_card img,
     .team_card {
-        max-width: 450px !important;
-        /* width:100% !important; */
-        width: fit-content;
-        
+      max-width: 300px !important;
+      /* width:100% !important; */
+      width: fit-content;
+      align-items: center;
+      flex-direction: column;
+      display: flex;
     }
-    .team_card{
-        /* padding:0px 10px; */
-        margin: auto;
+    .team_card img {
+        /* border-radius: 4%; */
     }
-}
+    .team_card {
+      /* padding:0px 10px; */
+      margin: 30px auto;
+    }
+  
+    .team_card h3,
+    .team_card p {
+      text-align: center;
+    }
+  }

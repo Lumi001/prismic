@@ -14,3 +14,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 999px) {
+  .posts{
+    flex-direction: column;    
+  }
+  .featured_posts h2{
+    font-size: 36px;
+  }
+}

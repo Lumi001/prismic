@@ -66,8 +66,8 @@
 }
 
 @media screen and (max-width: 999px) {
-  .button,
-  .secondary_button {
-    font-size: 1.2rem;
+  .button a,
+  .secondary_button a {
+    font-size: 1rem;
   }
 }

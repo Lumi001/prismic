@@ -6,13 +6,16 @@
   display: flex;
 }
 @media screen and (max-width: 999px) {
-  .our_story .right,
+  /* .our_story .right */
+
   .our_story .right img {
-    display: none !important;
+    /* display: none !important; */
+    max-width: 300px;
   }
   .our_story {
     max-width: 90vw;
     margin: auto;
+    flex-direction: column;
   }
   .our_story .left {
     width: 100% !important;

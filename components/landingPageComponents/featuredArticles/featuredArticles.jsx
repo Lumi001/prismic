@@ -9,7 +9,7 @@ import styles from './featuredArticles.module.css';
 const FeaturedArticles = ({items,title,button_text}) => {
     return (
         <div className={styles.featured_articles}>
-            <Heading title={title} fontSize="48px" />
+            <Heading title={title} />
             <section className={styles.articles}>
                 {items.map(card => <Card key={Math.random()} articleId={card.id} title={card.title[0].text} tag={card.category} content={card.article_content[0].text.substring(0,100)} img={card.article_image.url}
                 />)}
