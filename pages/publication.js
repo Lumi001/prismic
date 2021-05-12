@@ -164,13 +164,15 @@ export default function Publication({new_pub, other_pub, top_3_article}) {
             width: 642px;
           }
           @media only screen and (max-width: 768px) {
-            
+            .contianer{
+              width: 100%;
+            }
 }
           `}
           </style>
           </React.Fragment>
     )
-  }
+  } 
   
 
   export async function getServerSideProps() {
