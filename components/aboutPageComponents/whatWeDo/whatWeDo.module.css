@@ -25,3 +25,7 @@
     justify-content: center; */
     /* place-items: center; */
 }
+
+@media screen and (max-width: 999px) {
+    
+}

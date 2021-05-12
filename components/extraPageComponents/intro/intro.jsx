@@ -22,7 +22,7 @@ const Intro = ({ title, content, link, image1, image2, image3, href, background 
                             <img src={image2} alt="" className={styles.img} />
                         </section>
                         :
-                        <img style={{ width: '100%' }} src={image1} alt="" />
+                        <img style={{ width: '100%' }} src={image1} alt="" className={styles.big} />
                     }
                     {image3 ?
                         <img src={image3} alt="" className={styles.img}/>

@@ -32,11 +32,18 @@
     margin-right:20px
 }
 
+.title_and_subtitle .left{
+    text-align: left;
+}
+
 @media screen and (max-width: 999px) {
     .title_and_subtitle h2 {
         font-size: 1.6rem !important;
     }
     .title_and_subtitle h6 {
         font-size: 1.2rem !important;
+    }
+    .title_and_subtitle .left{
+        text-align: center;
     }
 }

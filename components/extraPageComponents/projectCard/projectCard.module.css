@@ -117,28 +117,30 @@
   .project_card_flip section
    {
     /* max-width: 80%; */
-    max-width: 90vw;
+    max-width: 80vw;
     /* height: fit-content; */
     margin: auto;
+    width: 419px;
   }
   .project_card .text,
   .project_card_flip .text {
-    max-width: 90vw;
+    max-width: 80vw;
+    width: 419px;
     margin: auto;
   }
   .carousel {
     height: max-content;
   }
-  .project_card section h3,
-  .project_card_flip section h3 {
+  .project_card .text h3,
+  .project_card_flip .text h3 {
     font-size: 1.6rem;
   }
-  .project_card section p,
-  .project_card_flip section p {
-    font-size: 1.1rem;
+  .project_card .text p,
+  .project_card_flip .text p {
+    font-size: 1.3rem;
   }
-  .project_card section a,
-  .project_card_flip section a {
-    font-size: 1rem;
+  .project_card .text a,
+  .project_card_flip .text a {
+    font-size: 1rem !important;
   }
 }

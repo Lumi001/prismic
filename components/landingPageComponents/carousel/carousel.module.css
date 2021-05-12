@@ -98,10 +98,12 @@
   .carousel h1 {
     font-size: 38px;
     /* min-width: 300px; */
+    text-align: center;
   }
   .carousel p {
     /* min-width: 300px; */
     font-size: 20px;
+    text-align: center;
   }
   .carousel .right img {
     display: none;
@@ -109,20 +111,27 @@
   .carousel a {
     /* min-width: 300px; */
     font-size: 16px;
-  }
+  text-align: center;
+}
   .carousel {
     /* padding: 0px; */
     margin-bottom: 50px;
     /* max-width: 100%; */
     width: 100%;
     align-items: center;
+    flex-direction: column;
   }
   .carousel .left {
     /* min-width: 100%; */
+    flex-direction: column;
+    display: flex;
     width: 100%;
+    align-items: center;
+    max-width: 419px;
   }
   .carousel .right {
-    display: none;
+    /* display: none; */
+    max-width: 419px;
   }
   .carousel .buttonleft,
   .carousel .buttonright {
