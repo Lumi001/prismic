@@ -27,7 +27,15 @@ const ShareButton = ({ img, href }) => {
             margin: 25px 0px 25px 20px;
             background: transparent;
 }
+@media screen and (max-width: 999px) {
+    .button{
+        margin:10px;
+        width:35px;
+        height:35px;
+    }
+}
           `}
+
             </style>
         </React.Fragment>
     );

@@ -29,7 +29,7 @@ const Share = ({ text, data }) => {
         <div className="social">
             {    console.log(title)
 }
-            <h1>{text}</h1>
+            <h3>{text}</h3>
             <section className="buttons">
                 {socials.map(social => (
                     <ShareButton key={Math.random()} href={social.url} img={`/socials/${social.image}.png`} />
@@ -43,23 +43,22 @@ const Share = ({ text, data }) => {
     flex-direction: column;
     justify-content: center;
     // padding: 50px;
-    background: #F5F5F5;
+    background: #fff;
     width:150px;
     align-items:center;
 }
-.social h1,.social .buttons{
+.social h3,.social .buttons{
     // min-width: 100px;
     margin: 0px auto ;
     text-align: center;
 }
-.social buttons{
+.social .buttons{
     display:flex;
     align-items:center;
     flex-direction: column;
     width: 44px;
-    height: 44px;
 }
-.social h1{
+.social h3{
     font-family: Avenir;
 font-style: normal;
 font-weight: 500;
@@ -79,15 +78,17 @@ color: #38465E;
 }
 @media screen and (max-width: 999px) {
     .social{
-        padding: 10px;
+        padding: 0px 10px 0px 0px;
         display: flex;
         flex-direction: column;
+        width:fit-content !important;
     }
-    .social h1{
-        font-size: 1.5rem;
+    .social h3{
+        font-size: 18px;
         text-align: center;
     }
-    .social h1,.social .buttons{
+    .social h3,.social .buttons{
+        width:fit-content !important;
         margin: 5px auto;
     }
 }

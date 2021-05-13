@@ -49,7 +49,6 @@ const Navbar = ({ navigation, links, navbarColour }) => {
                         )
                     })}
                     <img src="/navbar/dropdown.png" onClick={() => toggleRightDropdown()} alt="" />
-
                 </nav>
             </section>
             {rightDropdown && <section className={styles.bottom}>

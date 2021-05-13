@@ -1,6 +1,7 @@
 .team_card {
   width: 355px;
-  margin-bottom: 100px;
+  margin: 0px 10px 100px;
+  /* margin-bottom: 100px; */
 }
 
 .team_card img {

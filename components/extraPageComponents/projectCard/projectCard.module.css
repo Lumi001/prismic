@@ -64,6 +64,7 @@
 .project_card_flip .images .backdrop {
   /* box-shadow: -30.634117px 55.9874px 10px rgba(141, 138, 138, 0.8); */
   width: 558px;
+  max-width: 90%;
   /* max-height: 450px; */
   object-fit: cover;
 }
@@ -95,10 +96,10 @@
 .project_card .text,
 .project_card_flip .text {
   width: 480px;
-  margin: 0px 100px;
+  margin: 0px 50px;
 }
-.project_card .text img,
-.project_card_flip .text img {
+.project_card .text .icon,
+.project_card_flip .text .icon {
   max-width: 80px;
   max-height: 80px;
 }
@@ -111,16 +112,16 @@
     align-items: center;
     margin: 0px 0px 50px;
   }
-  .project_card section img,
-  .project_card section,
-  .project_card_flip section img,
-  .project_card_flip section
+  .project_card .images img,
+  .project_card .images,
+  .project_card_flip .images img,
+  .project_card_flip .images
    {
     /* max-width: 80%; */
     max-width: 80vw;
     /* height: fit-content; */
     margin: auto;
-    width: 419px;
+    width: 419px !important;
   }
   .project_card .text,
   .project_card_flip .text {

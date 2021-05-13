@@ -31,6 +31,20 @@
         min-width: 100px;
     }
 }
+@media screen and (max-width: 374px) {
+    .navbar .top .pc:last-of-type {
+        display: none !important;
+    }
+}
+@media screen and (min-width:375px) and (max-width: 999px) {
+    .navbar .bottom div:last-of-type {
+        display:none !important;
+    }
+    .navbar .top .pc:last-of-type {
+        display:block !important;
+        transform: scale(0.7);
+    }
+}
 @media screen and (max-width: 999px) {
     .navbar .top .pc {
         display: none !important;
@@ -65,4 +79,8 @@
     background: #3546AC;}
 .navbar .bottom div {
     padding: 5px;
+}
+.navbar .bottom div button{
+    margin-left: 12px;
+    /* padding: 12px; */
 }
