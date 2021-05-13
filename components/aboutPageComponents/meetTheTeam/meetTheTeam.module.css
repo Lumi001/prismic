@@ -6,6 +6,8 @@
 
 .meet_the_team {
     max-width: 1200px;
+    /* display: flex;
+    justify-content: center; */
 }
 
 .meet_the_team .title {
@@ -22,7 +24,7 @@
 .meet_the_team section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .meet_the_team section h3,

@@ -10,25 +10,34 @@
 }
 .content {
   max-width: 1200px;
-  width: 90%;
+  width: 100%;
   min-height: 700px;
   height: 100%;
+  background: #ffffff;
 }
 .content .layout {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin: 50px 0px;
+  padding: 0px 20px;
 }
-.content .layout .layout_right {
-  width: 80%;
+.content .layout_right {
+  background: #f5f5f5;
+  width: 100%;
 }
-.content img {
+.content .layout_right > p {
+  padding: 10px;
+  width: 100%;
+}
+.content > img {
   width: 100%;
   height: fit-content;
   object-fit: cover;
 }
 .content h1 {
+  background: #fff;
   margin: 0px;
   font-family: Inter;
   font-style: normal;
@@ -36,9 +45,9 @@
   font-size: 64px;
   line-height: 152.6%;
   /* or 98px */
-
+  
   letter-spacing: 0.01em;
-
+  
   color: #38465e;
 }
 .content p {
@@ -132,7 +141,29 @@
   .carousel_main {
     height: max-content;
   }
-  .content .social {
+  .content_case_study .social {
+    display: none;
+  }
+  .content .layout_right > h1, .content .layout_case_study > h1{
+    font-size: 36px;
+  }
+  .content .layout_right>p,.content .layout_case_study > p{
+    font-size: 16px;
+  }
+  .content .layout_case_study > h1,.content .layout_case_study > p{
+    width: 80%;
+    margin: auto;
+  }
+
+  .content .layout_right,.content .layout_case_study {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .content .layout_case_study, .content .layout{
+    padding-top: 100px;
+  }
+  .content >img{
     display: none;
   }
 }

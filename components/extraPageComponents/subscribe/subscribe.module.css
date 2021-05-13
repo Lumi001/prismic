@@ -30,8 +30,8 @@
 }
 
 .subscribe_container h3 {
-  font-family: "Inter";
-  font-weight: bold;
+    font-family: "Inter";
+    font-weight: bold;
   font-size: 2.5rem;
   line-height: 152.6%;
   letter-spacing: 0.01em;
@@ -51,7 +51,7 @@
   padding: 5px;
 }
 .subscribe_container div label {
-  font-family: "Inter";
+    font-family: "Inter";
   font-weight: bold;
   font-size: 1rem;
   letter-spacing: 0.01em;
@@ -112,7 +112,7 @@
 .subscribe_container section button {
   width: 400px;
   justify-content: center;
-  margin: 20px 0px !important;
+  margin: 20px auto !important;
 }
 .subscribe_container section p{
   margin-bottom: 75px;
@@ -129,17 +129,45 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .subscribe_container .checkboxes,
-  .subscribe_container .text {
-    flex-direction: column;
+  .subscribe_container .checkboxes
+  {
+  /* .subscribe_container .text  */
+    /* flex-direction: column; */
+    display: flex;
+    flex-wrap: wrap;
   }
   .subscribe_container .text {
     align-items: center;
   }
   .subscribe_container .checkboxes div {
-    justify-content: end;
+      justify-content: end;
   }
   .subscribe_container img {
-    width: 50%;
+    /* width: 50%; */
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    margin: auto !important;
   }
+  .subscribe_container h3 {
+      font-size: 24px;
+      text-align: center;
+  }
+  .subscribe_container section button{
+      width: 200px;
+      font-size: 18px;
+      transform: scale(0.8);
+      /* margin: auto; */
+  }
+
+  .subscribe_container .checkboxes div:first-of-type{
+      display: none;
+    }
+    .subscribe_container .checkboxes div{
+        background-color: #F5F5F5 !important;
+    }
+
+    .subscribe_container img{
+        /* transform: scale(0.5); */
+    }
 }
