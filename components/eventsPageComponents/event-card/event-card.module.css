@@ -52,32 +52,12 @@
     letter-spacing: 0.01em;
     text-align: left;    
 }
-@media screen and (min-width: 990px) {
+
+@media screen and ( min-width: 990px) {
     .card {
-        min-width: 350px;
-        /* width: 372px; */
-        height: 600px;   
-        margin: 0 !important;     
-    }
-}
-@media screen and (max-width: 990px) {
-    .card {
-        /* width: 350px; */
         width: 80%;
         min-width: 300px;
         padding: 10px;
         height: 350px;
     }
-}
-@media screen and (max-width: 600px) {
-    .card {
-        width: 300px;
-        min-width: 280px;
-        height: 424px;
-        padding: 20px;
-        margin: 10px auto;
-    }
-    .card .bottom {
-        justify-content: space-around;
-    }    
 }

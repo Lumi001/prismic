@@ -2,9 +2,13 @@ import { Link } from 'prismic-reactjs';
 import styles from './card.module.css';
 import Link2 from 'next/link';
 import Button from "../../extraPageComponents/button/button";
+import React from 'react';
 
 
-const Card1 = ({isCaseStudy,title,tag,content,link_text,articleId,img,date,link,id, color}) => (
+const Card1 = ({isCaseStudy,title,tag,content,link_text,articleId,img,date,link,id, color}) =>{
+
+return(
+  <React.Fragment>
     <div className={styles.card}>
       <div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`, borderRadius: "10px"}}> </div>
      { date ?
@@ -47,8 +51,26 @@ const Card1 = ({isCaseStudy,title,tag,content,link_text,articleId,img,date,link,
     ) : (
         ""
       )} */}
-  </div>
-);
+       </div>
+       <style jsx global>
+          {`
+          #big2{
+            height: 700px;
+            width: 642px;
+              }
+              @media only screen and (max-width: 999px) {
+                #big2{
+                    height: 700px;
+                    width: 100%;
+              }
+              }
+          `}
+          </style>
+ 
+  </React.Fragment>
+)
+            }
+            ;
 
 
       export default Card1
