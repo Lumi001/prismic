@@ -183,6 +183,7 @@
   .card img {
     /* min-height: 288px; */
     /* width: 100%; */
+    max-height: 300px;
   }
   .card small {
     font-size: 1rem;
