@@ -16,11 +16,11 @@ const EventCard = ({articleId, link_text,title,tag,content,img,date,link,id, col
       {!link_text ? (
       <span>
         ...
-        <Link2 href={`/content/${articleId}`}>
+        <Link href={`/content/${articleId}`}>
           <a>
             continue reading
             </a>
-        </Link2>                                                                                    
+        </Link>                                                                                    
       </span>
     ) : (
         <Button secondary articleId={articleId} isCaseStudy text={link_text} />

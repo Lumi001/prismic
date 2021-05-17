@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "../heading/heading";
 import TopArticleCard from './top-article-card'
 
-const TopArticleList = ({top_3_article}) => {
+const TopArticleList = ({top_3}) => {
 
     return (
         <React.Fragment>

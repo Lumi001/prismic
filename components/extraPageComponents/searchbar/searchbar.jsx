@@ -35,6 +35,12 @@ color: #313131;
 font-size: 16px;
 line-height: 181.6%;
 }
+
+@media only screen and (max-width: 999px) {
+.mainLoginInput{
+  display: none;
+}
+}
           `}
       </style>
      </React.Fragment>

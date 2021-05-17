@@ -6,8 +6,8 @@ import Heading from '../components/extraPageComponents/heading/heading';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 
-export default function Event ({upcomingEvents, recentEvents}) {
-  console.log(recentEvents)
+export default function Event ({Events,upcomingEvents, recentEvents}) {
+  // console.log(recentEvents)
     return (
       <div className={styles.container}>
         <Head>
@@ -17,14 +17,23 @@ export default function Event ({upcomingEvents, recentEvents}) {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
         <main className={styles.main}>
-          <div className="wrapper1" style={{backgroundImage:`url(${recentEvents[0].image.url})`}}>
+          <div className="wrapper1" style={{backgroundImage:`url(${Events[0].data.post_image.url})`}}>
             <div className="overlay"></div>
           <Carousel />
           </div>
           <div className="wrapper2">
           <h3 className="title">Previous Events</h3>
           <div className="grid">
-          {recentEvents.map( event => <EventCard img={event.image.url} key={Math.random()} date={event.date} title={event.title} articleId='asdf' link_text={event.link}/>)}
+          {Events.map( event => 
+          <EventCard
+           img={event.data.post_image.url} 
+           key={Math.random()}
+           date={event.data.date} 
+           title={event.data.title[0].text} 
+           link_text={event.data.link_text} 
+           articleId={event.id} 
+          //  link_text={event.data.link_text} 
+          />)}
           </div>
           
           </div>
@@ -40,7 +49,7 @@ export default function Event ({upcomingEvents, recentEvents}) {
             height: 100%;
             width: 100%;
             background-color: #251861;
-            opacity: 0.9
+            opacity: 0.9;
           }
           .wrapper1 {
            text-align: left;
@@ -53,13 +62,10 @@ export default function Event ({upcomingEvents, recentEvents}) {
            text-align: left;
            width: 1200px;
            margin: auto;
-           padding: 0 20px
           }
           .grid {
             display: grid;
             grid-template-columns: 50% 50%;
-            grid-gap: 15px 15px;
-            width: 100%;
           }
           .title {
             font-family: Inter;
@@ -72,8 +78,22 @@ export default function Event ({upcomingEvents, recentEvents}) {
           }
           @media only screen and (max-width: 768px) {
             .grid {
-            grid-template-columns: 100%;            
+            grid-template-columns: 100%; 
+            justify-items: center;           
           }
+          .carousel-text {
+            width: 100%;
+        }
+        .video-container {
+          margin-top: 50px;
+          width: 90%;
+        }
+        .wrapper1 {
+          width: 100%
+        }
+        .wrapper2 {
+          width: 100%
+        }
 }
           `}
           </style>
@@ -82,14 +102,16 @@ export default function Event ({upcomingEvents, recentEvents}) {
 }
 
 export async function getServerSideProps() {
-  const events = await Client().query(
-      Prismic.Predicates.at("document.type", "events")
+  const Events = await Client().query(
+      Prismic.Predicates.at("my.post.destination_page", "Events")
   )
-  console.log(events.results[0].data.body[1].items)
+
+  // console.log(Events)
   return {
       props: {
-        upcomingEvents: events.results[0].data.body[0].items,
-        recentEvents: events.results[0].data.body[1].items
+        Events: Events.results,
+        // upcomingEvents: events.results[0].data.body[0].items,
+        // recentEvents: events.results[0].data.body[1].items
       }
   }
 }

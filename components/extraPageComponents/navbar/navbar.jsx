@@ -70,4 +70,3 @@ const mapStateToProps = state => ({
     navbarColour: state.navbar.primary
 })
 export default connect(mapStateToProps)(Navbar);
-

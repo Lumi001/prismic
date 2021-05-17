@@ -21,7 +21,7 @@ import Cookies from 'universal-cookie';
 
 
 function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed,setNavbarColour }) {
-  
+
   // const [modalStatus, setModalStatus] = useState(false)
   useEffect(() => {
     setNavbarColour(true);
@@ -95,7 +95,6 @@ const mapStateToProps = state => ({
   modalHasBeenShown: state.app.modalHasBeenShown,
   timeLastShown: state.app.timeLastShown,
   subscribed: state.app.subscribed,
-
 })
 const mapDispatchToProps = dispatch => ({
   setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
@@ -141,8 +140,8 @@ export async function getServerSideProps() {
     return empty1[`${post.uid}`] = { id: post.id, ...post.data }
   })
   // console.log(landing.results[0].data.body[0].items,"body body body")
-  // console.log(Object.values(empty))
-
+  // console.log(Object.values(empty)
+  // console.log(empty1)
   return {
     props: {
       carousel: landing.results[0].data.body[0].items,
@@ -151,7 +150,6 @@ export async function getServerSideProps() {
       posts: Object.values(empty1),
       featuredPosts: landing.results[0].data.body[3].primary,
       featuredArticles: landing.results[0].data.body[3].primary,
-
     }
   }
 }
