@@ -3,7 +3,7 @@
   margin: 0px 0px 100px;
 }
 .been_up_to_container > div {
-  width: 100%;
+  width: fit-content;
   margin: auto;
 }
 .been_up_to_container > div > section {

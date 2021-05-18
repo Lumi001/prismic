@@ -11,8 +11,12 @@
 }
 .posts {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.posts >div{
+  margin: 1rem 70px !important;
 }
 
 @media screen and (max-width: 999px) {
