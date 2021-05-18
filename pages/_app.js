@@ -15,6 +15,17 @@ import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
+import Router from 'next/router'
+import Head from 'next/head'
+import NProgress from 'nprogress'
+
+Router.events.on('routeChangeStart', (url) => {
+  console.log(`Loading: ${url}`)
+  NProgress.start()
+})
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
+
 
 function MyApp({ Component, pageProps, navigation, footer_items }) {
 
@@ -58,6 +69,10 @@ function MyApp({ Component, pageProps, navigation, footer_items }) {
   // const persistor = persistStore(store);
   return (
     <React.Fragment>
+       <Head>
+        {/* Import CSS for nprogress */}
+        <link rel="stylesheet" type="text/css" href="/nprogress.css" />
+      </Head>
       <Provider store={store} >
       <Navbar navigation={navigation} />
         <PersistGate loading={null} persistor={store.__PERSISTOR}>

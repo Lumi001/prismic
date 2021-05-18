@@ -106,7 +106,9 @@
     text-align: center;
   }
   .carousel .right img {
-    display: none;
+    /* display: none; */
+    width: 100%;
+    margin: 50px 0px;
   }
   .carousel a {
     /* min-width: 300px; */
@@ -132,6 +134,7 @@
   .carousel .right {
     /* display: none; */
     max-width: 419px;
+    width: 100%;
   }
   .carousel .buttonleft,
   .carousel .buttonright {

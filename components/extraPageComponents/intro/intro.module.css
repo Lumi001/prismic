@@ -112,7 +112,7 @@
     /* min-width: 300px; */
     font-size: 20px;
   }
-  .intro  .right img {
+  .intro  .right .img {
     /* display: none; */
     max-width: 35vw !important;
   }
