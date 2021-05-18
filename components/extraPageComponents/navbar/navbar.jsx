@@ -9,7 +9,7 @@ const Navbar = ({ navigation, links, navbarColour }) => {
     const [scroll, setScroll] = useState(0);
     const handleScroll = () => {
         setScroll(window.scrollY);
-        console.log(window.scrollY, window.screenY, window.pageYOffset);
+        // console.log(window.scrollY, window.screenY, window.pageYOffset);
     }
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { capture: true, passive: true });

@@ -12,7 +12,7 @@ const FeaturedArticles = ({items,title,button_text}) => {
             {/* {console.log(items)} */}
             <Heading title={title} />
             <section className={styles.articles}>
-                {items.map(card => <Card key={Math.random()} articleId={card.id} title={card.title?card.title[0].text:""} tag={card.category?card:""} content={card.article_content?card.article_content[0].text.substring(0,100):""} img={card.article_image.url}
+                {items.map(card => <Card key={Math.random()} articleId={card.id} title={card.title?card.title[0].text:""} tag={card.category?card.category:""} content={card.article_content?card.article_content[0].text.substring(0,100):""} img={card.article_image.url}
                 />)}
             </section>
             {/* <Button text={button_text} icon="/button/cross.png" /> */}
