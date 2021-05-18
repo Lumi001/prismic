@@ -142,12 +142,12 @@ const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo,
 
             <main className={styles.main}>
                 {/* {console.log(about)} */}
-                <Intro title={intro.primary.heading[0].text} content={intro.primary.text[0].text} link={intro.primary.link_text} image1={intro.items[0].image.url || '/introAbout/image1.png'} image2={intro.items[1].image.url || '/introAbout/image1.png'} image3={intro.items[2].image.url || '/introAbout/image1.png'} href={intro.primary.link_address} />
-                <OurStory title={ourStory.primary.heading[0].text} content={ourStory.primary.sub_text[0].text} content2={ourStory.content2} image={ourStory.primary.image.url} />
-                <MeetTheTeam title={meetTheTeam.primary.heading[0].text} items={meetTheTeam.items} />
-                <WhatWeDo heading={whatWeDo.primary.heading[0].text} subHeading={whatWeDo.primary['sub-heading'][0].text} items={whatWeDo.items} />
-                <BeenUpTo heading={beenUpTo.primary.heading[0].text} subHeading={beenUpTo.primary['sub-heading'][0].text} items={cards} />
-                <BrandsAndPartners heading={brandsAndPartners.top.primary.heading[0].text} subHeading={brandsAndPartners.top.primary['sub-heading'][0].text} items1={brandsAndPartners.top.items} items2={brandsAndPartners.bottom.items} link={brandsAndPartners.bottom.primary.link_text} href={brandsAndPartners.bottom.primary.link_address['url']} />
+                <Intro title={intro.primary.heading?intro.primary.heading[0].text:""} content={intro.primary.text?intro.primary.text[0].text:""} link={intro.primary.link_text?intro.primary.link_text:""} image1={intro.items&&intro.items[0]?intro.items[0].image.url : '/introAbout/image1.png'} image2={intro.items&&intro.items[1]?intro.items[1].image.url : '/introAbout/image1.png'} image3={intro.items&&intro.items[2]?intro.items[2].image.url : '/introAbout/image1.png'} href={intro.primary.link_address?intro.primary.link_address:"/error"} />
+                <OurStory title={ourStory.primary&&ourStory.primary.heading?ourStory.primary.heading[0].text:""} content={ourStory.primary&&ourStory.primary.sub_text?ourStory.primary.sub_text[0].text:""} content2={ourStory.content2?ourStory.content2:""} image={ourStory.primary.image.url} />
+                <MeetTheTeam title={meetTheTeam.primary&&meetTheTeam.primary.heading?meetTheTeam.primary.heading[0].text:""} items={meetTheTeam.items} />
+                <WhatWeDo heading={whatWeDo.primary&&whatWeDo.primary.heading?whatWeDo.primary.heading[0].text:""} subHeading={whatWeDo.primary&&whatWeDo.primary['sub-heading']?whatWeDo.primary['sub-heading'][0].text:""} items={whatWeDo.items} />
+                <BeenUpTo heading={beenUpTo.primary&&beenUpTo.primary.heading?beenUpTo.primary.heading[0].text:""} subHeading={beenUpTo.primary&&beenUpTo.primary['sub-heading']?beenUpTo.primary['sub-heading'][0].text:""} items={cards} />
+                <BrandsAndPartners heading={brandsAndPartners.top&&brandsAndPartners.top.primary&&brandsAndPartners.top.primary.heading?brandsAndPartners.top.primary.heading[0].text:""} subHeading={brandsAndPartners.top&&brandsAndPartners.top.primary&&brandsAndPartners.top.primary['sub-heading']?brandsAndPartners.top.primary['sub-heading'][0].text:""} items1={brandsAndPartners.top?brandsAndPartners.top.items:[]} items2={brandsAndPartners.bottom?brandsAndPartners.bottom.items:[]} link={brandsAndPartners.bottom&&brandsAndPartners.bottom.primary?brandsAndPartners.bottom.primary.link_text:""} href={brandsAndPartners.bottom&&brandsAndPartners.bottom.primary&&brandsAndPartners.bottom.primary.link_address?brandsAndPartners.bottom.primary.link_address['url']:"/error"} />
             </main>
         </div>
     );
