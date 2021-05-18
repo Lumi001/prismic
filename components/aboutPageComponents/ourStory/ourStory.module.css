@@ -21,13 +21,11 @@
     width: 100% !important;
   }
 }
-.our_story .left,
 .our_story .right {
-  width: 50%;
-}
-.our_story .right {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .our_story .left h3 {
   font-family: "Inter";
