@@ -10,7 +10,7 @@ import React from 'react';
 import Heading from '../components/extraPageComponents/heading/heading'
 
 export default function Publication({pub,new_pub, other_pub, top_3_article}) {
-  console.log(pub)
+  // console.log(pub)
     return (
       // <div className={styles.container}>
       <React.Fragment>
@@ -22,7 +22,9 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
       </Head>
 
 
-          <div className="container">          
+          <div className="container">    
+          <br/>
+          <br/>      
           <h2 className="h2">Publications & News</h2>   
 
           <div className="column" >
@@ -94,7 +96,9 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
           </div>
         </div>
         
-
+              <br/>
+              <br/>
+              <br/>
         <div className="column">
           <h3 className="h3-1">Other Publications</h3>
           <div className="other">

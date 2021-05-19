@@ -164,6 +164,9 @@ export default class Carousel extends Component {
   #left, #right{
     display: none !important;
   }
+  .offer-circle {
+    display: none;
+  }
 }
 `}
         </style>

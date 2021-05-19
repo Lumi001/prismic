@@ -46,14 +46,15 @@ export default function Event ({Events,upcomingEvents, recentEvents}) {
             position: absolute;
             top: 0;
             left: 0;
-            height: 100%;
+            height: 635px;
             width: 100%;
             background-color: #251861;
-            opacity: 0.9;
+            opacity: 0.7;
           }
           .wrapper1 {
            text-align: left;
-           width: 100%;  
+           width: 100%; 
+           height: 100%; 
            padding-top: 4%;
        
           }
