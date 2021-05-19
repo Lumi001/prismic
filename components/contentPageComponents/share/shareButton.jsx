@@ -6,12 +6,14 @@ const ShareButton = ({ img, href }) => {
     return (
         <React.Fragment>
             <Link href={href}>
-                {
-                    <img
-                        src={img}
-                        className="button"
-                    />
-                }
+                <a target="_blank">
+                    {
+                        <img
+                            src={img}
+                            className="button"
+                        />
+                    }
+                </a>
             </Link>
             {/* <button className="button">
         </button> */}

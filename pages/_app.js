@@ -27,7 +27,7 @@ Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
 
-function MyApp({ Component, pageProps, navigation, footer_items }) {
+function MyApp({ Component, pageProps, navigation, footer_items,socials }) {
 
   let store;
   const isClient = typeof window !== 'undefined';
@@ -80,8 +80,8 @@ function MyApp({ Component, pageProps, navigation, footer_items }) {
           <Component {...pageProps} />
         </PersistGate>
       </Provider>
-      <Social text="CONNECT WITH US" />
-      <Footer footer_items={footer_items} />
+      <Social text="CONNECT WITH US" items={socials.items} />
+      <Footer footer_items={footer_items} socials={socials.items} />
       {/* {console.log(footer_items)} */}
       {/* {console.log(navigation,'navigation')} */}
     </React.Fragment>
@@ -110,11 +110,18 @@ MyApp.getInitialProps = async () => {
     const footer = await Client().query(
         Prismic.Predicates.at("document.type", "footer")
     )
+    const socials = await Client().query(
+        Prismic.Predicates.at("document.type", "socials")
+    )
 
-    // console.log(footer.results[0].data.body[0])
+    // console.log(socials.results[0].data.body[0].items[0].link_address)
+    // { link_address: [Object], select_social_type: 'Facebook' },
+    // { link_address: [Object], select_social_type: 'Twitter' },
+    // { link_address: [Object], select_social_type: 'Linkedin' }
     
     return {
       navigation: { ...navigation.results[0].data.body[0], items: links },
-      footer_items: footer.results[0].data.body
+      footer_items: footer.results[0].data.body,
+      socials: socials.results[0].data.body[0]
   }
 }

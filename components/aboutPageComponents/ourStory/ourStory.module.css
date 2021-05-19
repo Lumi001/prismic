@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 1200px;
   display: flex;
+  padding: 30px 0px;
 }
 @media screen and (max-width: 999px) {
   /* .our_story .right */
@@ -38,6 +39,10 @@
 
   color: #38465e;
 }
+.our_story .left {
+width: 90%;
+padding: 0% 5%;
+}
 .our_story .left p {
   font-family: "Avenir";
   font-style: normal;
@@ -48,9 +53,19 @@
   letter-spacing: 0.01em;
   color: #38465e;
 }
+.our_story .right h3,.our_story .right p {
+  color: #38465e;
+}
+.our_story .right > div {
+width: max-content;
+margin: 10px;
+}
 .our_story .right img {
-  width: 450px;
-  max-height: 540px;
+  width: 450px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  height: 540px !important;
+  border-radius: 10px;
   image-rendering: -moz-crisp-edges;         /* Firefox */
   image-rendering:   -o-crisp-edges;         /* Opera */
   image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */

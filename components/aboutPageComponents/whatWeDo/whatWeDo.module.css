@@ -19,6 +19,9 @@
 .container .what_we_do .card_list_container {
     background: #d2dae2;
 }
+.container .what_we_do > div{
+    padding: 0px !important;
+}
 .container .what_we_do {
     width: 100%;
     /* display: flex;

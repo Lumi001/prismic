@@ -139,7 +139,7 @@ export async function getServerSideProps() {
   featuredPostsCards.results.map(post => {
     return empty1[`${post.uid}`] = { id: post.id, ...post.data }
   })
-  // console.log(landing.results[0].data.body[0].items,"body body body")
+  // console.log(landing.results[0].data.body,"body body body")
   // console.log(Object.values(empty)
   // console.log(empty1)
   return {
@@ -148,7 +148,7 @@ export async function getServerSideProps() {
       partners: landing.results[0].data.body[1],
       cards: Object.values(empty),
       posts: Object.values(empty1),
-      featuredPosts: landing.results[0].data.body[3].primary,
+      featuredPosts: landing.results[0].data.body[2].primary,
       featuredArticles: landing.results[0].data.body[3].primary,
     }
   }

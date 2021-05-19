@@ -19,10 +19,6 @@ const Share = ({ text, data }) => {
         {
             image: "facebook",
             url: `https://www.facebook.com/sharer.php?u=${"host"}`
-        },
-        {
-            image: "instagram",
-            url: ""
         }
     ]
     return (

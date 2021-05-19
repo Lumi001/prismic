@@ -4,7 +4,7 @@ import Social from '../../social/social';
 import SocialButton from '../../social/socialButton/socialButton';
 import styles from './footerOption.module.css';
 
-const FooterOption = ({ text, href, address, last }) => {
+const FooterOption = ({ text, href, address, last, socials }) => {
     const imgs = [
         "twitter", "facebook", "linkedin"
     ]
@@ -22,8 +22,12 @@ const FooterOption = ({ text, href, address, last }) => {
                         <>
                             <address>{text}</address>
                             <section className={styles.buttons}>
-                                {imgs.map(img => (
-                                    <SocialButton key={Math.random()} img={`/footer/${img}.png`} />
+                                {socials.map(item => (
+                                    <Link href={item.link_address ? item.link_address.url : "/error"}>
+                                        <a target="_blank">
+                                            <SocialButton key={Math.random()} img={`/footer/${item.select_social_type ? item.select_social_type.toLowerCase() : ""}.png`} />
+                                        </a>
+                                    </Link>
                                 ))}
                             </section>
                         </>

@@ -6,73 +6,73 @@ import FooterOption from './footerOption/footerOption';
 import FooterTitle from './footerTitle/footerTitle';
 import styles from './footer.module.css'
 // import './footer.scss'
-const Footer = ({ links, footer_items }) => {
+const Footer = ({ links, footer_items,socials }) => {
 
-    let linksTemp = [
-        {
-            title: "CUSTOMER SERVICE",
-            links: [
-                {
-                    text: "Footer Text",
-                    href: "/"
-                },
-                {
-                    text: "Footer Text",
-                    href: "/"
-                },
-            ]
-        },
-        {
-            title: "CUSTOMER SERVICE",
-            links: [
-                {
-                    text: "Footer Text",
-                    href: "/"
-                },
-                {
-                    text: "Footer Text",
-                    href: "/"
-                },
-                {
-                    text: "Footer Text",
-                    href: "/"
-                },
-            ]
-        },
-        {
-            title: "CUSTOMER SERVICE",
-            links: [
-                {
-                    text: "Footer Text",
-                    href: "/"
-                },
-                {
-                    text: "Footer Text",
-                    href: "/"
-                },
-                {
-                    text: "Footer Text",
-                    href: "/"
-                },
-                {
-                    text: "Footer Text",
-                    href: "/"
-                },
-            ]
-        },
-        {
-            title: "",
-            address: true,
-            links: [
-                {
-                    text: `LAGOS NIGERIA<br />
-                    30, Shakiru Anjorin Street, Road 39, Off<br />
-                    Admiralty Way,Lekki Phase 1, Lekki, Lagos,<br />
-                    Phone: +234 123 4456`,
-                }
-            ]
-        },
-    ]
+    // let linksTemp = [
+    //     {
+    //         title: "CUSTOMER SERVICE",
+    //         links: [
+    //             {
+    //                 text: "Footer Text",
+    //                 href: "/"
+    //             },
+    //             {
+    //                 text: "Footer Text",
+    //                 href: "/"
+    //             },
+    //         ]
+    //     },
+    //     {
+    //         title: "CUSTOMER SERVICE",
+    //         links: [
+    //             {
+    //                 text: "Footer Text",
+    //                 href: "/"
+    //             },
+    //             {
+    //                 text: "Footer Text",
+    //                 href: "/"
+    //             },
+    //             {
+    //                 text: "Footer Text",
+    //                 href: "/"
+    //             },
+    //         ]
+    //     },
+    //     {
+    //         title: "CUSTOMER SERVICE",
+    //         links: [
+    //             {
+    //                 text: "Footer Text",
+    //                 href: "/"
+    //             },
+    //             {
+    //                 text: "Footer Text",
+    //                 href: "/"
+    //             },
+    //             {
+    //                 text: "Footer Text",
+    //                 href: "/"
+    //             },
+    //             {
+    //                 text: "Footer Text",
+    //                 href: "/"
+    //             },
+    //         ]
+    //     },
+    //     {
+    //         title: "",
+    //         address: true,
+    //         links: [
+    //             {
+    //                 text: `LAGOS NIGERIA<br />
+    //                 30, Shakiru Anjorin Street, Road 39, Off<br />
+    //                 Admiralty Way,Lekki Phase 1, Lekki, Lagos,<br />
+    //                 Phone: +234 123 4456`,
+    //             }
+    //         ]
+    //     },
+    // ]
     return (
         <div className={styles.footer}>
             {/* {console.log(footer_items, "footer")} */}
@@ -86,7 +86,7 @@ const Footer = ({ links, footer_items }) => {
                                     link.items.map(each => {
                                         // console.log(footer_items.indexOf(link), footer_items.length - 1)
                                         return <div key={Math.random()}>
-                                            <FooterOption address={true} text={each.link_text} last={link.items.indexOf(each) === link.items.length - 1} href={footer_items.indexOf(link) !== footer_items.length - 1 ? each.link_address.url ? each.link_address.url : "#" : null} />
+                                            <FooterOption address={true} socials={socials} text={each.link_text} last={link.items.indexOf(each) === link.items.length - 1} href={footer_items.indexOf(link) !== footer_items.length - 1 ? each.link_address.url ? each.link_address.url : "#" : null} />
                                         </div>
                                     }
 
