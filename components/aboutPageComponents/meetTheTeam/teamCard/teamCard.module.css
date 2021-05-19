@@ -5,9 +5,10 @@
 }
 
 .team_card img {
-  max-width: 355px;
-  height: 449px;
-  object-fit: cover;
+  max-width: 100%;
+  /*height: fit-content;*/
+  max-height: 449px;
+  /*object-fit: cover;  */
   width: fit-content;
   image-rendering: -moz-crisp-edges;         /* Firefox */
   image-rendering:   -o-crisp-edges;         /* Opera */
@@ -43,10 +44,10 @@
 @media screen and (max-width: 999px) {
   .team_card img,
   .team_card {
-    width: 300px !important;
     max-width: 80vw !important;
+    object-fit: cover;
     /* width:100% !important; */
-    width: fit-content;
+    
   }
   .team_card img {
       border-radius: 4%;

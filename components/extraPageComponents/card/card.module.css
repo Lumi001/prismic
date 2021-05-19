@@ -40,7 +40,7 @@
 
 .card h3 {
   /* Save the Children Initiative powered by Chevron */
-  margin: 20px 0px 0px;
+  margin: 5px 0px 0px;
   /* height: 102px; */
   font-family: "Inter";
   font-style: normal;
@@ -57,11 +57,11 @@
 .card p {
   /* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit... */
 
-  margin: 20px 0px;
+  margin: 15px 0px;
   font-family: "Avenir";
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 181.6%;
   /* or 44px */
   letter-spacing: 0.01em;
@@ -108,6 +108,7 @@
   letter-spacing: 0.01em;
   color: #ce648d;
   background: rgba(221, 55, 55, 0.3);
+  border-radius: 5px;
   text-align: center;
 }
 
@@ -128,7 +129,7 @@
 .card .images .backdrop {
   object-fit: cover;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   height: 344.59px;
   image-rendering: -moz-crisp-edges;         /* Firefox */
   image-rendering:   -o-crisp-edges;         /* Opera */

@@ -12,3 +12,11 @@
   align-items: center;
   width: fit-content;
 }
+
+.services_container div .card_list > div > div > section > p{
+  font-size: 20px !important;
+}
+
+.services_container div .card_list > div > div > section > h3{
+  font-size: 30px !important;
+}

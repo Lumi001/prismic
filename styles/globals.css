@@ -15,6 +15,7 @@ img{
   image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
+
 }
 button{
   cursor: pointer;

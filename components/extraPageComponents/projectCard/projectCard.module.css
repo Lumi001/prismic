@@ -30,6 +30,7 @@
   letter-spacing: 0.01em;
 
   color: #38465e;
+  margin: 10px 0px;
 }
 
 .project_card section p,
@@ -44,6 +45,7 @@
   letter-spacing: 0.01em;
 
   color: #38465e;
+  margin: 0px 0px 30px;
 }
 
 .project_card section a,
@@ -138,7 +140,7 @@
   }
   .project_card .text p,
   .project_card_flip .text p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .project_card .text a,
   .project_card_flip .text a {
