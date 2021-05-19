@@ -24,7 +24,7 @@ const Services = ({ cards, intro, ourServices,setNavbarColour }) => {
             </Head>
             <main className={styles.main}>
                 <Intro background={'#252efe'} title={intro.primary.heading?intro.primary.heading[0].text:""} content={intro.primary.text?intro.primary.text[0].text:""} link={intro.primary.link_text?intro.primary.link_text:""} image1={intro.primary.image?intro.primary.image.url : '/introAbout/image1.png'} href={intro.primary.link_address?intro.primary.link_address:"/error"} />
-                <OurServices heading={ourServices.primary.heading?ourServices.primary.heading[0].text:""} items={cards} />
+                <OurServices heading={ourServices&&ourServices.primary&&ourServices.primary.heading?ourServices.primary.heading[0].text:""} items={cards} />
             </main>
         </div>
     );
@@ -62,14 +62,14 @@ export async function getServerSideProps() {
     })
     // console.log(Object.values(empty))
 
-    // console.table(services.card.primary)
+    console.table(services.our_services.primary.heading)
     // console.log(services.heading___photos___text___link.items[0])
     // console.log(services.our_services2.primary)
     return {
         props: {
             services,
             intro: services.intro,
-            ourServices: services.our_projects,
+            ourServices: services.our_services,
             cards: Object.values(empty)
         }
     }

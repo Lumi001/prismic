@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+.services_container>div>div>h2{
+font-size: 36px;
+text-align: center;
+margin-bottom: 60px;
+}
+
 .services_container div .card_list {
   display: flex;
   flex-direction: column;

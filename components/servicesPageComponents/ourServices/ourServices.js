@@ -8,7 +8,8 @@ const OurServices = ({ heading, items }) => {
     return (
         <div className={styles.services_container}>
             <div>
-                <Heading heading={heading} />
+                <Heading title={heading} />
+                {console.log(heading)}
                 <section className={styles.card_list}>
                     {items.map(item => {
                         return (

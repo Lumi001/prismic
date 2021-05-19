@@ -15,10 +15,11 @@
   flex-wrap: wrap;
 }
 
+@media screen and (min-width: 1000px) {
 .posts >div{
   margin: 1rem 70px !important;
 }
-
+}
 @media screen and (max-width: 999px) {
   .posts{
     flex-direction: column;    

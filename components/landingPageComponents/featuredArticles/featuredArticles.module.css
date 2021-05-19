@@ -19,9 +19,12 @@
     grid-template-columns: 50% 50%;
     justify-items: center; */
   }
+@media screen and (min-width: 1000px) {
+
   .articles >div{
     margin: 42.5px;
   }
+}
   @media screen and (max-width: 990px) {
     .articles {
       display: flex;
