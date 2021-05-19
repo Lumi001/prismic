@@ -74,7 +74,7 @@ function MyApp({ Component, pageProps, navigation, footer_items,socials }) {
         <link rel="stylesheet" type="text/css" href="/nprogress.css" />
       </Head>
       <Provider store={store} >
-      <Navbar navigation={navigation} />
+      {/* <Navbar navigation={navigation} /> */}
         <PersistGate loading={null} persistor={store.__PERSISTOR}>
       <Navbar navigation={navigation} />
           <Component {...pageProps} />
