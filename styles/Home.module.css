@@ -56,12 +56,37 @@
   font-family: Inter;
   font-size: 48px;
   font-style: normal;
-  font-weight: 700;
-  line-height: 80px;
   letter-spacing: 0.01em;
   text-align: left;
-  color: #313131;
 }
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6
+{
+  line-height: 80px;
+  font-weight: 700;
+  color: #313131;
+  font-family: Inter;  
+}
+.content h3{
+  font-size: 40px;
+}
+.content h4{
+  font-size: 36px;
+}
+.content h5{
+  font-size: 32px;
+}
+.content h6{
+  font-size: 28px;
+}
+.content h2{
+  font-size: 44px;
+}
+
 .content p {
   font-family: Avenir;
   font-style: normal;
