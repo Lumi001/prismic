@@ -34,7 +34,6 @@
   padding: 0px 20px;
 }
 .content .layout_right {
-  background: #f5f5f5;
   width: 100%;
 }
 .content .layout_right > p img,
@@ -42,6 +41,7 @@
   width: 100%;
 }
 .content .layout_right > p {
+  background: #f5f5f5;
   padding: 10px;
   width: 100%;
 }

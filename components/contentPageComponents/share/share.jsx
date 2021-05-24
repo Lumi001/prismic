@@ -23,8 +23,8 @@ const Share = ({ text, data }) => {
     ]
     return (
         <div className="social">
-            {    console.log(title)
-}
+            {/* {    console.log(title)
+} */}
             <h3>{text}</h3>
             <section className="buttons">
                 {socials.map(social => (
@@ -39,7 +39,6 @@ const Share = ({ text, data }) => {
     flex-direction: column;
     justify-content: center;
     // padding: 50px;
-    background: #fff;
     width:150px;
     align-items:center;
 }
@@ -78,6 +77,7 @@ color: #38465E;
         display: flex;
         flex-direction: column;
         width:fit-content !important;
+        background: #fff;
     }
     .social h3{
         font-size: 18px;
