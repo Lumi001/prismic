@@ -90,7 +90,7 @@ const Subscribe = ({ setModalContent }) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: { name: name, email: email, category:categories }
+            body: JSON.stringify({ name: name, email: email, category:categories })
         })
             .then(res => res.json())
             .then(data => {

@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 const Services = ({ cards, intro, ourServices,setNavbarColour }) => {
     useEffect(()=>{
         setNavbarColour(false)
-    },[])
+    })
     return (
         <div className={styles.container}>
             <Head>
@@ -23,8 +23,8 @@ const Services = ({ cards, intro, ourServices,setNavbarColour }) => {
                 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
             </Head>
             <main className={styles.main}>
-                <Intro background={'#252efe'} title={intro.primary.heading?intro.primary.heading[0].text:""} content={intro.primary.text?intro.primary.text[0].text:""} link={intro.primary.link_text?intro.primary.link_text:""} image1={intro.primary.image?intro.primary.image.url : '/introAbout/image1.png'} href={intro.primary.link_address?intro.primary.link_address:"/error"} />
-                <OurServices heading={ourServices&&ourServices.primary&&ourServices.primary.heading?ourServices.primary.heading[0].text:""} items={cards} />
+                <Intro background={'#252efe'} title={intro.primary.heading&&intro.primary.heading[0]?intro.primary.heading[0].text:""} content={intro.primary.text&&intro.primary.text[0]?intro.primary.text[0].text:""} link={intro.primary.link_text?intro.primary.link_text:""} image1={intro.primary.image?intro.primary.image.url : '/introAbout/image1.png'} href={intro.primary.link_address?intro.primary.link_address:"/error"} />
+                <OurServices heading={ourServices&&ourServices.primary&&ourServices.primary.heading&&ourServices.primary.heading[0]?ourServices.primary.heading[0].text:""} items={cards?cards:[]} />
             </main>
         </div>
     );
@@ -57,20 +57,16 @@ export async function getServerSideProps() {
         Prismic.Predicates.at('my.post.destination_page', 'Services'),{ pageSize : 6 }
     )
     let empty = {}
-    posts.results.map(article => {
-        return empty[`${article.uid}`] = { id: article.id, ...article.data }
-    })
-    // console.log(Object.values(empty))
 
-    console.table(services.our_services.primary.heading)
+    // console.table(services)
     // console.log(services.heading___photos___text___link.items[0])
     // console.log(services.our_services2.primary)
     return {
         props: {
             services,
             intro: services.intro,
-            ourServices: services.our_services,
-            cards: Object.values(empty)
+            ourServices: services.our_services1,
+            cards: services.our_services1.items
         }
     }
 }

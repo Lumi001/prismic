@@ -126,14 +126,14 @@ export async function getServerSideProps() {
     Prismic.Predicates.at("document.type", "landing_page")
   )
   const featuredArticlesCards = await Client().query(
-    Prismic.Predicates.at('my.article.featured', true), { pageSize: 6 }
+    Prismic.Predicates.at("document.type", "article"), { pageSize: 6 }
   )
   let empty = {}
   featuredArticlesCards.results.map(article => {
     return empty[`${article.uid}`] = { id: article.id, ...article.data }
   })
   const featuredPostsCards = await Client().query(
-    Prismic.Predicates.at('my.post.featured', true), { pageSize: 6 }
+    Prismic.Predicates.not("my.post.destination_page","Events"), { pageSize: 6 }
   )
   let empty1 = {}
   featuredPostsCards.results.map(post => {
@@ -141,7 +141,7 @@ export async function getServerSideProps() {
   })
   // console.log(landing.results[0].data.body,"body body body")
   // console.log(Object.values(empty)
-  // console.log(empty1)
+  console.log(empty1)
   return {
     props: {
       carousel: landing.results[0].data.body[0].items,

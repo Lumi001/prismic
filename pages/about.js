@@ -129,7 +129,7 @@ import { useEffect } from 'react';
 const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo, brandsAndPartners,setNavbarColour }) => {
     useEffect(()=>{
         setNavbarColour(false)
-    },[])
+    })
     return (
         <div className={styles.container}>
             <Head>
@@ -142,12 +142,49 @@ const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo,
 
             <main className={styles.main}>
                 {/* {console.log(about)} */}
-                <Intro title={intro.primary.heading?intro.primary.heading[0].text:""} content={intro.primary.text?intro.primary.text[0].text:""} link={intro.primary.link_text?intro.primary.link_text:""} image1={intro.items&&intro.items[0]?intro.items[0].image.url : '/introAbout/image1.png'} image2={intro.items&&intro.items[1]?intro.items[1].image.url : '/introAbout/image1.png'} image3={intro.items&&intro.items[2]?intro.items[2].image.url : '/introAbout/image1.png'} href={intro.primary.link_address?intro.primary.link_address:"/error"} />
-                <OurStory title={ourStory.primary&&ourStory.primary.heading?ourStory.primary.heading[0].text:""} content={ourStory.primary&&ourStory.primary.sub_text?ourStory.primary.sub_text:""} image={ourStory.primary.image.url} content2={ourStory.primary.member_role?ourStory.primary.member_role[0].text:""} title2={ourStory.primary.member_name?ourStory.primary.member_name[0].text:""} />
-                <MeetTheTeam title={meetTheTeam.primary&&meetTheTeam.primary.heading?meetTheTeam.primary.heading[0].text:""} items={meetTheTeam.items} />
-                <WhatWeDo heading={whatWeDo.primary&&whatWeDo.primary.heading?whatWeDo.primary.heading[0].text:""} subHeading={whatWeDo.primary&&whatWeDo.primary['sub-heading']?whatWeDo.primary['sub-heading'][0].text:""} items={whatWeDo.items} />
-                <BeenUpTo heading={beenUpTo.primary&&beenUpTo.primary.heading?beenUpTo.primary.heading[0].text:""} subHeading={beenUpTo.primary&&beenUpTo.primary['sub-heading']?beenUpTo.primary['sub-heading'][0].text:""} items={cards} />
-                <BrandsAndPartners heading={brandsAndPartners.top&&brandsAndPartners.top.primary&&brandsAndPartners.top.primary.heading?brandsAndPartners.top.primary.heading[0].text:""} subHeading={brandsAndPartners.top&&brandsAndPartners.top.primary&&brandsAndPartners.top.primary['sub-heading']?brandsAndPartners.top.primary['sub-heading'][0].text:""} items1={brandsAndPartners.top?brandsAndPartners.top.items:[]} items2={brandsAndPartners.bottom?brandsAndPartners.bottom.items:[]} link={brandsAndPartners.bottom&&brandsAndPartners.bottom.primary?brandsAndPartners.bottom.primary.link_text:""} href={brandsAndPartners.bottom&&brandsAndPartners.bottom.primary&&brandsAndPartners.bottom.primary.link_address?brandsAndPartners.bottom.primary.link_address['url']:"/error"} />
+                <Intro 
+                title={intro.primary.heading&&intro.primary.heading[0]?intro.primary.heading[0].text:""} 
+                content={intro.primary.text&&intro.primary.text[0]?intro.primary.text[0].text:""} 
+                link={intro.primary.link_text?intro.primary.link_text:""} 
+                image1={intro.items&&intro.items[0]?intro.items[0].image.url : '/introAbout/image1.png'} 
+                image2={intro.items&&intro.items[1]?intro.items[1].image.url : '/introAbout/image1.png'} 
+                image3={intro.items&&intro.items[2]?intro.items[2].image.url : '/introAbout/image1.png'} 
+                href={intro.primary.link_address?intro.primary.link_address:"/error"} 
+                />
+
+                <OurStory 
+                title={ourStory.primary&&ourStory.primary.heading&&ourStory.primary.heading[0]?ourStory.primary.heading[0].text:""} 
+                content={ourStory.primary&&ourStory.primary.sub_text?ourStory.primary.sub_text:""} 
+                image={ourStory.primary&&ourStory.primary.image?ourStory.primary.image.url:""} 
+                content2={ourStory.primary&&ourStory.primary.member_role&&ourStory.primary.member_role[0]?ourStory.primary.member_role[0].text:""} 
+                title2={ourStory.primary&&ourStory.primary.member_name&&ourStory.primary.member_name[0]?ourStory.primary.member_name[0].text:""} 
+                />
+                
+                <MeetTheTeam 
+                title={meetTheTeam.primary&&meetTheTeam.primary.heading&&meetTheTeam.primary.heading[0]?meetTheTeam.primary.heading[0].text:""} 
+                items={meetTheTeam.items?meetTheTeam.items:[]} 
+                />
+
+                <WhatWeDo
+                 heading={whatWeDo.primary&&whatWeDo.primary.heading&&whatWeDo.primary.heading[0]?whatWeDo.primary.heading[0].text:""} 
+                 subHeading={whatWeDo.primary&&whatWeDo.primary['sub-heading']&&whatWeDo.primary['sub-heading'][0]?whatWeDo.primary['sub-heading'][0].text:""} 
+                 items={whatWeDo.items?whatWeDo.items:[]} 
+                 />
+
+                <BeenUpTo 
+                heading={beenUpTo.primary&&beenUpTo.primary.heading&&beenUpTo.primary.heading[0]?beenUpTo.primary.heading[0].text:""} 
+                subHeading={beenUpTo.primary&&beenUpTo.primary['sub-heading']&&beenUpTo.primary['sub-heading'][0]?beenUpTo.primary['sub-heading'][0].text:""} 
+                items={cards?cards:[]} 
+                />
+
+                <BrandsAndPartners 
+                heading={brandsAndPartners.top&&brandsAndPartners.top.primary&&brandsAndPartners.top.primary.heading&&brandsAndPartners.top.primary.heading[0]?brandsAndPartners.top.primary.heading[0].text:""} 
+                subHeading={brandsAndPartners.top&&brandsAndPartners.top.primary&&brandsAndPartners.top.primary['sub-heading']&&brandsAndPartners.top.primary['sub-heading'][0]?brandsAndPartners.top.primary['sub-heading'][0].text:""} 
+                items1={brandsAndPartners.top?brandsAndPartners.top.items:[]} 
+                items2={brandsAndPartners.bottom?brandsAndPartners.bottom.items:[]} 
+                link={brandsAndPartners.bottom&&brandsAndPartners.bottom.primary?brandsAndPartners.bottom.primary.link_text:""}
+                href={brandsAndPartners.bottom&&brandsAndPartners.bottom.primary&&brandsAndPartners.bottom.primary.link_address?brandsAndPartners.bottom.primary.link_address['url']:"/error"} 
+                />
             </main>
         </div>
     );
