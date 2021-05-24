@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Button from '../../extraPageComponents/button/button';
 import TitleAndSubTitle from '../titleAndSubTitle/titleAndSubTitle';
 import styles from './brandsAndPartners.module.css';
 
@@ -30,7 +31,8 @@ const BrandsAndPartners = ({heading, subHeading, items1,items2,link, href}) => {
                         })}
                     </section>
                 </section>
-                <Link href={href}><a>{link}<span><img src="/button/arrow.png" alt=""/></span></a></Link>
+                {/* <Link href={href}><a>{link}<span><img src="/button/arrow.png" alt=""/></span></a></Link> */}
+                <Button href={href} text={link} secondary/>
             </div>
         </div>
     );
