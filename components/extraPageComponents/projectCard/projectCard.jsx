@@ -15,7 +15,7 @@ const ProjectCard = ({ image, title, content, id, link, flip, icon, isCaseStudy,
                 <section className={styles.text}>
                     {icon ? <img src={icon} alt="icon" className={styles.icon} /> : null}
                     <h3>{title}</h3>
-                    <p>{isNotShort?content:content.substring(0,100)}</p>
+                    <p>{isNotShort?content.length>250?content.substring(0,250):content:content.substring(0,100)}</p>
                     <Button secondary href={href} articleId={id} text={link} isCaseStudy={isCaseStudy} />
                 </section>
             </div>
