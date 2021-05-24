@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
-const SearchBar = ({keyword,setKeyword}) => {
+const SearchBar = () => {
+  const [keyword, setKeyword] = useState("");
   const BarStyling = {};
   return (
     <React.Fragment>
-      
-    <input 
-     key="random1"
-     className="mainLoginInput"
-     value={keyword}
-     placeholder="&#61442;          Search Publications"
-     onChange={(e) => setKeyword(e.target.value)}
-     />
-     <style jsx global>
-          {`
+
+      <input
+        key="random1"
+        className="mainLoginInput"
+        value={keyword}
+        placeholder="&#61442;          Search Publications"
+        onChange={(e) => setKeyword(e.target.value)}
+      />
+      <style jsx global>
+        {`
           @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
           .mainLoginInput{
               height: 40px;
@@ -23,6 +24,7 @@ const SearchBar = ({keyword,setKeyword}) => {
               margin: 5px 0;
               border: 1.5px solid #313131;
               border-radius: 8px;
+              transform: scale(0.8)
             }
 
 .mainLoginInput::-webkit-input-placeholder { 
@@ -43,7 +45,7 @@ line-height: 181.6%;
 }
           `}
       </style>
-     </React.Fragment>
+    </React.Fragment>
   );
 }
 

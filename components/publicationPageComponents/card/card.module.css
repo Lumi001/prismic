@@ -1,4 +1,4 @@
-.card {
+.card1 {
   margin: 1rem 1rem;
   text-align: left;
   color: inherit;
@@ -29,12 +29,14 @@
 }
 .date {
   font-size: 16px;
-  padding: 10px 0px;
+  padding: 15px 0px;
   font-weight: 600;
   color: #878787;
+  padding: 20px 0px;
 }
-.card h3 {
+.card1 h3 {
   margin: 0px;
+  padding: 5px 0px;
   font-family: "Inter";
   font-style: normal;
   font-weight: bold;
@@ -44,7 +46,8 @@
   color: #38465e;
 }
 
-.card p {
+.card1 p {
+  padding: 5px 0px;
   margin: 0px;
   font-family: "Avenir";
   font-style: normal;
@@ -54,7 +57,7 @@
   letter-spacing: 0.01em;
   color: #38465e;
 }
-.card span b {
+.card1 span b {
   font-family: "Avenir";
   font-style: normal;
   font-weight: 700;
@@ -63,11 +66,11 @@
   letter-spacing: 0.01em;
   color: #38465e;
 }
-.card p span{
+.card1 p span{
   margin-left: 10px;
 }
 
-.card small {
+.card1 small {
   margin: 20px 0px;
   width: 82px;
   height: 29px;
@@ -81,35 +84,35 @@
   background: rgba(221, 55, 55, 0.3);
   text-align: center;
 }
- .card img {
+ .card1 img {
   border-radius: 15px;
   object-fit: cover;
   width: 100%;
 }
-.card .case{
+.card1 .case{
   box-shadow: 30.634117px 25.9874px 10px rgba(141, 138, 138, 0.8);
   margin-bottom: 50px;
 }
 
 @media screen and (max-width: 999px) {
-  .card h3,
-  .card p {
+  .card1 h3,
+  .card1 p {
     height: auto;
   }
-  .card h3 {
+  .card1 h3 {
     font-size: 1.6rem;
   }
-  .card p {
+  .card1 p {
     font-size: 1.1rem;
   }
   .img {
   min-height: 288px;
    width: 100%;
   }
-  .card small {
+  .card1 small {
     font-size: 1rem;
   }
-  .card {
+  .card1 {
     margin: 0px 0px 20px;
     max-width: 100%;
   }
