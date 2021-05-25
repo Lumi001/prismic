@@ -21,7 +21,8 @@ const Card = ({
       <img src={img} alt="" className={link_text ? styles.case : styles.large} />
       {link_text ? <img src="projectCard/backdrop.png" alt="" className={styles.backdrop} /> : null}
     </section>
-    {date ? <div className={styles.date}>{date}</div> : !link_text ? <small>{tag}</small> : null}
+    {date ? <div className={styles.date}>{date}</div> : !link_text ? 
+    <small style={tag.toLowerCase()==="academic"?{background:"#5352ED"}:tag.toLowerCase()==="evenys"?{background:"#965DEC"}:nul}>{tag}</small> : null}
     <h3>{title}</h3>
     {!link_text ? (
       <p>
