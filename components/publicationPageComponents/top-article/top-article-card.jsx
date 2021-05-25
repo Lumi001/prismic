@@ -43,6 +43,12 @@ const TopArticleCard = ({number, title, date}) => {
             letter-spacing: 0.01em;
             line-height: 180.6%;
             }
+            .toparticlecard:hover {
+                background-color: #878787;
+                padding: 0 12px ;
+                cursor: pointer;
+                
+            }
     `}
     </style>
         </React.Fragment>

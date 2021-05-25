@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "../heading/heading";
+import Heading from "../../extraPageComponents/heading/heading";
 import TopArticleCard from './top-article-card'
 
 const TopArticleList = ({top_3}) => {

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Card from '../components/extraPageComponents/card/card';
 import Card1 from '../components/publicationPageComponents/card/card1';
-import TopArticleCard from '../components/extraPageComponents/top-article/top-article-card';
+import TopArticleCard from '../components/publicationPageComponents/top-article/top-article-card';
 import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
