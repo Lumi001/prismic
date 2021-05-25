@@ -56,7 +56,7 @@ return(
           {`
           #big2{
             height: 700px;
-            width: 642px;
+            width: 570px;
               }
               @media only screen and (max-width: 999px) {
                 #big2{

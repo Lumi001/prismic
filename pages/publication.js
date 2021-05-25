@@ -44,7 +44,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
               title={card.data.title[0].text}
               content={card.data.post_content[0].text}
               img={card.data.post_image.url} 
-              date={card.data.date}
+              date={card.data.pub_date}
               color={card.data.color}
               link_text={card.data.link_text} 
               id={`${'big' + i}`}
@@ -112,7 +112,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
               key={Math.random()} 
               content={card.data.post_content[0].text}
               img={card.data.post_image.url} 
-              date={card.data.date}
+              date={card.data.pub_date}
               color={card.data.color}
               link_text={card.data.link_text} 
               isCaseStudy={true}
@@ -135,7 +135,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
                 key={Math.random()} 
                 number={i + 1} 
                 title={card.data.title[0].text}  
-                date={card.data.date}
+                date={card.data.pub_date}
                 />)}})}
         </div>
         {/* <TopArticleList title= {card.data.title[0].text}/> */}
@@ -200,19 +200,17 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
+            width: 94%;
             padding: 15px;
-            margin-top: 34px
+            margin-bottom: 26px
           }
           .other {
             display: grid;
             grid-template-columns: 50% 50%;
-            place-items:center;
           }
           .other1 {
             display: grid;
-            grid-template-columns: 60% 40%;
-            grid-template-rows:;
+            grid-template-columns: 55% 45%;
           }
           .column {
             display: flex;
@@ -260,7 +258,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
         Prismic.Predicates.at("my.post.destination_page", "Publications & News")
     )
 
-    console.log(publications.results[0].data)
+    // console.log(publications.results[0].data)
 
     return {
         props: {
