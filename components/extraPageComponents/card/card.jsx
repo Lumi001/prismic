@@ -22,7 +22,7 @@ const Card = ({
       {link_text ? <img src="projectCard/backdrop.png" alt="" className={styles.backdrop} /> : null}
     </section>
     {date ? <div className={styles.date}>{date}</div> : !link_text ? 
-    <small style={tag.toLowerCase()==="academic"?{background:"#5352ED"}:tag.toLowerCase()==="evenys"?{background:"#965DEC"}:nul}>{tag}</small> : null}
+    <small style={tag.toLowerCase()==="academic"?{color:"#3546AC", background:"#CFD2E6"}:tag.toLowerCase()==="events"?{color:"#965DEC", background:"#C9BED8"}:null}>{tag}</small> : null}
     <h3>{title}</h3>
     {!link_text ? (
       <p>
