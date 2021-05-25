@@ -20,7 +20,7 @@ import { useEffect } from 'react';
 import Cookies from 'universal-cookie';
 
 
-function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed,setNavbarColour }) {
+function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed, setNavbarColour }) {
 
   // const [modalStatus, setModalStatus] = useState(false)
   useEffect(() => {
@@ -67,13 +67,13 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
         {console.log(scrollable_card)}
         {console.log(connect_with_us)} */}
         <section className={styles.carousel_main}>
-          <Carousel 
-          carousel= {carousel} 
+          <Carousel
+            carousel={carousel}
           />
         </section>
-          <OurClients items={partners.items} heading={partners.primary.heading?partners.primary.heading[0].text:""} />
-        <FeaturedPosts items={posts} button_text={featuredPosts.button_text?featuredPosts.button_text:""} title={featuredPosts.heading?featuredPosts.heading[0].text:""} />
-        <FeaturedArticles items={cards} button_text={featuredArticles.button_text?featuredArticles.button_text:""} title={featuredArticles.heading?featuredArticles.heading[0].text:""} />
+        <OurClients items={partners.items} heading={partners.primary.heading ? partners.primary.heading[0].text : ""} />
+        <FeaturedPosts items={posts} button_text={featuredPosts.button_text ? featuredPosts.button_text : ""} title={featuredPosts.heading ? featuredPosts.heading[0].text : ""} />
+        <FeaturedArticles items={cards} button_text={featuredArticles.button_text ? featuredArticles.button_text : ""} title={featuredArticles.heading ? featuredArticles.heading[0].text : ""} />
         {/* <ScrollCardList scroll_data={scroll_data} scroll_title_text={scroll_title_text} scroll_link_text={scroll_link_text} />
       */}
 
@@ -97,7 +97,7 @@ const mapStateToProps = state => ({
   subscribed: state.app.subscribed,
 })
 const mapDispatchToProps = dispatch => ({
-  setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
+  setNavbarColour: mode => dispatch(navbarContentAction(mode)),
   setModalContent: modal => dispatch(modalStatusAction(modal))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
@@ -126,14 +126,14 @@ export async function getServerSideProps() {
     Prismic.Predicates.at("document.type", "landing_page")
   )
   const featuredArticlesCards = await Client().query(
-    Prismic.Predicates.at('my.article.featured', true), { pageSize: 6 }
+    Prismic.Predicates.at("document.type", "article"), { pageSize: 6 }
   )
   let empty = {}
   featuredArticlesCards.results.map(article => {
     return empty[`${article.uid}`] = { id: article.id, ...article.data }
   })
   const featuredPostsCards = await Client().query(
-    Prismic.Predicates.at('my.post.featured', true), { pageSize: 6 }
+    Prismic.Predicates.at("my.post.destination_page", "Publications & News"), { orderings: '[document.last_publication_date desc]',pageSize: 6,  }
   )
   let empty1 = {}
   featuredPostsCards.results.map(post => {

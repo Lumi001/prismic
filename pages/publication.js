@@ -18,6 +18,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
         <title>TruCSR</title>
         <link rel="icon" href="/favicon.ico"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
 
@@ -206,6 +207,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
           .other {
             display: grid;
             grid-template-columns: 50% 50%;
+            place-items:center;
           }
           .other1 {
             display: grid;

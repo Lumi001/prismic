@@ -10,9 +10,9 @@ const FeaturedArticles = ({items,title,button_text}) => {
     return (
         <div className={styles.featured_articles}>
             {/* {console.log(items)} */}
-            <Heading title={title} />
+            <Heading title={title?title:""} />
             <section className={styles.articles}>
-                {items.map(card => <Card key={Math.random()} articleId={card.id} title={card.title?card.title[0].text:""} tag={card.category?card.category:""} content={card.article_content?card.article_content[0].text.substring(0,100):""} img={card.article_image.url}
+                {items.map(card => <Card key={Math.random()} articleId={card.id} title={card.title&&card.title[0]?card.title[0].text:""} tag={card.category?card.category:""} content={card.article_content&&card.article_content[0]?card.article_content[0].text.substring(0,100):""} img={card.article_image?card.article_image.url:""}
                 />)}
             </section>
             {/* <Button text={button_text} icon="/button/cross.png" /> */}

@@ -73,6 +73,9 @@
 }
 .right nav {
 }
+.left img{
+cursor: pointer;
+}
 .navbar .bottom {
     padding: 0px 15px;
     display: flex;

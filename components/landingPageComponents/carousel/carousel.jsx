@@ -64,10 +64,10 @@ export default class Carousel extends Component {
     carousel.map((user,i) =>{
     return (     
            <CarouselItem
-           title={carousel[i].heading[0].text} 
-           content={carousel[i].text[0].text} 
-           link={carousel[i]['link_text'][0].text} 
-           image={carousel[i].background_image.url}
+           title={carousel[i].heading&&carousel[i].heading[0]?carousel[i].heading[0].text:""} 
+           content={carousel[i].text&&carousel[i].text[0]?carousel[i].text[0].text:""} 
+           link={carousel[i]['link_text']&&carousel[i]['link_text'][0]?carousel[i]['link_text'][0].text:""} 
+           image={carousel[i].background_image?carousel[i].background_image.url:""}
            key={Math.random()} 
            />      
     )

@@ -1,4 +1,4 @@
-.card {
+.event_card {
   margin: 1rem 1rem;
   flex-basis: 45%;
   text-align: left;
@@ -13,14 +13,14 @@
   height: 600px;
   width: 550px;
 }
-.card h3 {
+.event_card h3 {
   width: 469px;
 }
-.card p {
+.event_card p {
   width: 419px;
 }
 
-.card {
+.event_card {
   /* width: 450px; */
 }
 .link {
@@ -38,23 +38,25 @@
 }
 .date {
   font-size: 16px;
-  padding: 10px 0px;
+  padding: 15px 0px;
   font-weight: 600;
   color: #878787;
 }
 
-.card h3 {
+.event_card h3 {
+  padding: 5px 0px;
   margin: 0px;
   font-family: "Inter";
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
   line-height: 152.6%;
-   letter-spacing: 0.01em;
-   color: #38465e;
+  letter-spacing: 0.01em;
+  color: #38465e;
 }
 
-.card p {
+.event_card p {
+  /* padding: 5px 0px; */
   margin: 0px;
   font-family: "Avenir";
   font-style: normal;
@@ -65,7 +67,7 @@
 
   color: #38465e;
 }
-.card p span b {
+.event_card p span b {
   font-family: "Avenir";
   font-style: normal;
   font-weight: 700;
@@ -75,11 +77,11 @@
   color: #38465e;
 
 }
-.card p span{
+.event_card p span{
   margin-left: 10px;
 }
 
-.card small {
+.event_card small {
   margin: 20px 0px;
   width: 82px;
   height: 29px;
@@ -105,24 +107,24 @@
 }
 
 @media screen and (max-width: 999px) {
-  .card h3,
-  .card p {
+  .event_card h3,
+  .event_card p {
     height: auto;
   }
-  .card h3 {
+  .event_card h3 {
     font-size: 1.6rem;
   }
-  .card p {
+  .event_card p {
     font-size: 1.1rem;
   }
-  .card img {
+  .event_card img {
     /* min-height: 288px; */
     width: 100%;
   }
-  .card small {
+  .event_card small {
     font-size: 1rem;
   }
-  .card {
+  .event_card {
     width: 90%;
     margin: 0px 0px 20px;
     /* max-width: 90vw; */
@@ -131,10 +133,10 @@
    min-height: 288px;
    width: 100%;
   }
-  .card h3 {
+  .event_card h3 {
     width: 100%;
   }
-  .card p {
+  .event_card p {
     width: 100%;
   }
 }

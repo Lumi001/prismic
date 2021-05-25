@@ -5,7 +5,7 @@ import Button from "../../../components/eventsPageComponents/button-card/button"
 
 
 const EventCard = ({articleId, link_text,title,tag,content,img,date,link,id, color}) => (
-    <div className={styles.card}>
+    <div className={styles.event_card}>
        <Link href="/"><div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`}}> </div></Link>
      { date ?
       <div className={styles.date}>{date}</div> :

@@ -4,7 +4,7 @@ import Button from '../button/button';
 
 
 
-const ProjectCard = ({ image, title, content, id, link, flip, icon, isCaseStudy }) => {
+const ProjectCard = ({ image, title, content, id, link, flip, icon, isCaseStudy,href,isNotShort }) => {
     return (
         <div className={styles.container}>
             <div className={flip ? styles.project_card_flip : styles.project_card}>
@@ -15,8 +15,8 @@ const ProjectCard = ({ image, title, content, id, link, flip, icon, isCaseStudy 
                 <section className={styles.text}>
                     {icon ? <img src={icon} alt="icon" className={styles.icon} /> : null}
                     <h3>{title}</h3>
-                    <p>{content.substring(0,100)}</p>
-                    <Button secondary articleId={id} text={link} isCaseStudy={isCaseStudy} />
+                    <p>{isNotShort?content.length>250?content.substring(0,250):content:content.substring(0,100)}</p>
+                    <Button secondary href={href} articleId={id} text={link} isCaseStudy={isCaseStudy} />
                 </section>
             </div>
         </div>
