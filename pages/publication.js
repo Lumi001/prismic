@@ -50,48 +50,15 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
               id={`${'big' + i}`}
               isCaseStudy={true}
               articleId={card.id}
-              // content={card.post_content[0].text.substring(0, 100)}
             />)}            
           }
           ).reverse()}
-            {/* <Card1 
-              key={Math.random()} 
-              id="big"
-              title={new_pub[0].pub_title[0].text} 
-              articleId='asdf'
-              date={new_pub[0].pub_date} 
-              content={new_pub[0].pub_content[0].text} 
-              link_text={new_pub[0].link_text} 
-              img={new_pub[0].pub_image.url} 
-              color={new_pub[0].color}
-              articleId={'asdf'} 
-              isCaseStudy={true}
-            /> */}
+
           </div>
           <div className="three">
             <div className="four">
-              {/* <Card1 
-                key={Math.random()} 
-                title={new_pub[1].pub_title[0].text} 
-                articleId='asdf'
-                date={new_pub[1].pub_date} 
-                content={new_pub[1].pub_content[0].text} 
-                link_text={new_pub[1].link_text} 
-                img={new_pub[1].pub_image.url} 
-                color={new_pub[1].color}
-              /> */}
             </div>
             <div className="five">
-              {/* <Card1 
-                key={Math.random()} 
-                title={new_pub[2].pub_title[0].text} 
-                articleId='asdf' 
-                date={new_pub[2].pub_date} 
-                content={new_pub[2].pub_content[0].text} 
-                link_text={new_pub[2].link_text} 
-                img={new_pub[2].pub_image.url} 
-                color={new_pub[2].color}
-              /> */}
             </div>
           </div>
           </div>
@@ -117,16 +84,12 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
               link_text={card.data.link_text} 
               isCaseStudy={true}
               articleId={card.id}
-              // content={card.post_content[0].text.substring(0, 100)}
             />)}            
           }
           )}
-        
-            {/* {other_pub.map(card => <Card1 key={Math.random()}  articleId='asdf' title={card.pub_title[0].text}  */}
-            {/* date={card.pub_date} content={card.pub_content[0].text} link_text={card.link_text} img={other_pub[2].pub_image.url} color={card.color}/>)}          */}
             <div className="article">
             <div className="toparticlelist">
-            <Heading title="Top 3 articles"/>
+            <h3 className="h3-2">Top 3 articles</h3>
                 {
                 pub.map((card, i) => { 
                   if(pub.indexOf(card) < 3)
@@ -138,7 +101,6 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
                 date={card.data.pub_date}
                 />)}})}
         </div>
-        {/* <TopArticleList title= {card.data.title[0].text}/> */}
                </div>     
           </div>
         </div>
@@ -186,6 +148,16 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
             letter-spacing: 0.01em;
             color: #38465E;
           }
+          .h3-2{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px !important;
+            line-height: 152.6%;
+            letter-spacing: 0.01em;
+            color: #38465E;
+            padding-right: 8rem;
+          }
           .publication {
             display: flex;
             flex-direction: row;
@@ -202,7 +174,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
             align-items: center;
             width: 94%;
             padding: 15px;
-            margin-bottom: 26px
+            margin-top: 34px
           }
           .other {
             display: grid;
@@ -258,14 +230,9 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
         Prismic.Predicates.at("my.post.destination_page", "Publications & News")
     )
 
-    // console.log(publications.results[0].data)
-
     return {
         props: {
           pub: publications.results,
-          // new_pub: publications.results[0].data.body[0].items,
-          // other_pub: publications.results[0].data.body[1].items,
-          // top_3_article: publications.results[0].data.body[2].items 
         }
     }
 }
