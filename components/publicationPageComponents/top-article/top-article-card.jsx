@@ -8,8 +8,7 @@ const TopArticleCard = ({number, title, date}) => {
             <div>
             <h3 className="toparticlecard-title">{title}</h3>
             <small className='date'>{date}</small>
-            </div>
-            
+            </div>            
         </div>
         <style jsx global>
           {`
@@ -17,6 +16,7 @@ const TopArticleCard = ({number, title, date}) => {
             margin: auto;
             display: flex;
             align-item: flex-end !important;
+            margin: 18px 0px;
             width: 90%
         }
         .toparticlecard-number{
