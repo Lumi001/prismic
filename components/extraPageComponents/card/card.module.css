@@ -78,6 +78,7 @@
   line-height: 181.6%;
   /* or 44px */
   letter-spacing: 0.01em;
+  border-bottom: 2px solid #38465e;
 }
 .card span b {
   font-family: "Avenir";

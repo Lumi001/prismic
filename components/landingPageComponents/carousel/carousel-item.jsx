@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import Button from "../../extraPageComponents/button/button";
 import styles from "./carousel.module.css";
 
-const CarouselItem = ({title, content, link, image }) => {
+const CarouselItem = ({title, content, link, image,href }) => {
   const video = useRef(null);
   const playCaption = useRef(null);
   function play () {
@@ -16,7 +16,7 @@ const CarouselItem = ({title, content, link, image }) => {
     <section className={styles.left}>
       <h1>{title}</h1>
       <p>{content}</p>
-        <Button text={link} secondary href="#" />
+        <Button text={link} secondary href={href} />
       {/* <a>{link}<span><img src="/carousel/Arrow.png" alt="" /></span></a> */}
       {/* <span>
         </span> */}

@@ -24,8 +24,11 @@
   padding: 0px 20px;
   margin: 100px 0px 50px;
 }
+/* .content .layout_case_study > p >p{
+  width: 100%;
+  margin: 0px auto;
+} */
 .content .layout {
-  max-width: 1200px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -40,11 +43,13 @@
 .content .layout_case_study > p img {
   width: 100%;
 }
+
 .content .layout_right > p {
+  max-width: 1200px;
   background: #f5f5f5;
-  padding: 10px;
+  padding: 10px 50px;
   width: 100%;
-  margin: 0px;
+  margin: 0px auto;
 }
 .content > img {
   width: 100%;

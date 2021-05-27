@@ -16,16 +16,16 @@ const Button = ({ text, width, height, fontSize, secondary, icon, articleId,href
                                 : null
                         }
                     </button> :
-                    <button className={styles.secondary_button} style={{ width: `${width}`, height: `${height}`, fontSize: `${fontSize}` }}>
                         <Link href={articleId?isCaseStudy?`/caseStudy/${articleId}`:`/content/${articleId}`:href}>
                             <a className={styles.linkWrapper}>
+                    <button className={styles.secondary_button} style={{ width: `${width}`, height: `${height}`, fontSize: `${fontSize}` }}>
                                 <span>
                                     {text}
                                 </span>
                                 <img src={!icon?"/black-arrow-right.svg":icon} alt="Right black arrow" />
+                    </button>
                             </a>
                         </Link>
-                    </button>
             }
         </Fragment>
     );

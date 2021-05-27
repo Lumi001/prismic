@@ -133,7 +133,7 @@ export async function getServerSideProps() {
     return empty[`${article.uid}`] = { id: article.id, ...article.data }
   })
   const featuredPostsCards = await Client().query(
-    Prismic.Predicates.at("my.post.destination_page", "Publications & News"), { orderings: '[document.last_publication_date desc]',pageSize: 6,  }
+    Prismic.Predicates.at("my.post.type", true), { orderings: '[document.last_publication_date desc]',pageSize: 6,  }
   )
   let empty1 = {}
   featuredPostsCards.results.map(post => {

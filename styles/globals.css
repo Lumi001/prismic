@@ -14,6 +14,7 @@ img{
   image-rendering:   -o-crisp-edges;         /* Opera */
   image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
   image-rendering: crisp-edges;
+  /* image-resolution: from-image 300dpi; */
   -ms-interpolation-mode: nearest-neighbor;
 
 }

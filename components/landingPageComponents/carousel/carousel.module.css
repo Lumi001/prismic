@@ -70,7 +70,7 @@
   object-fit: cover;
   /* background: blue; */
 }
-.carousel button {
+.carousel > button {
   /* position: relative; */
   width: 57px;
   height: 78px;

@@ -30,7 +30,7 @@ const Card = ({
         <span>
           <Link2 href={`/content/${articleId}`}>
             <a className={styles.continue_reading}>
-              continue reading
+            continue reading
             </a>
           </Link2>
         </span>
@@ -41,7 +41,7 @@ const Card = ({
           <p>
             {content}...
       </p>
-          <Button href='#' secondary articleId={articleId} isCaseStudy text={link_text} />
+          <Button href={`/content/${articleId}`} secondary articleId={articleId} isCaseStudy text={link_text} />
       {/* <Link2 href={`/content/${articleId}`}>
          </Link2> */}
         </>
