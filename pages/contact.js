@@ -60,7 +60,7 @@ export async function getServerSideProps() {
         Prismic.Predicates.at("document.type", "contact"), { pageSize: 1 }
     )
     const contact= contactObject.results[0].data
-    console.log(contact)
+    // console.log(contact)
     return {
         props: {
             title:contact.title&&contact.title[0]?contact.title[0].text:"Contact.",

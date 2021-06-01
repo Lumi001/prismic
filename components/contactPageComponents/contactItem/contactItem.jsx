@@ -7,7 +7,7 @@ const ContactItems = ({ items }) => {
             {
                 items.map(item =>
                     <div>
-                        {console.log(item)}
+                        {/* {console.log(item)} */}
                         <h3>{item.primary&&item.primary.heading?item.primary.heading:""}</h3>
                         {item.items.map(each => <p>{Object.values(each)[0]}</p>)}
                     </div>
