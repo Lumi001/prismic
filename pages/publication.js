@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Card from '../components/extraPageComponents/card/card';
 import Card1 from '../components/publicationPageComponents/card/card1';
-import TopArticleCard from '../components/publicationPageComponents/top-article/top-article-card';
+import TopArticleCard from '../components/extraPageComponents/top-article/top-article-card';
 import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
@@ -44,21 +44,54 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
               title={card.data.title[0].text}
               content={card.data.post_content[0].text}
               img={card.data.post_image.url} 
-              date={card.data.pub_date}
+              date={card.data.date}
               color={card.data.color}
               link_text={card.data.link_text} 
               id={`${'big' + i}`}
               isCaseStudy={true}
               articleId={card.id}
+              // content={card.post_content[0].text.substring(0, 100)}
             />)}            
           }
           ).reverse()}
-
+            {/* <Card1 
+              key={Math.random()} 
+              id="big"
+              title={new_pub[0].pub_title[0].text} 
+              articleId='asdf'
+              date={new_pub[0].pub_date} 
+              content={new_pub[0].pub_content[0].text} 
+              link_text={new_pub[0].link_text} 
+              img={new_pub[0].pub_image.url} 
+              color={new_pub[0].color}
+              articleId={'asdf'} 
+              isCaseStudy={true}
+            /> */}
           </div>
           <div className="three">
             <div className="four">
+              {/* <Card1 
+                key={Math.random()} 
+                title={new_pub[1].pub_title[0].text} 
+                articleId='asdf'
+                date={new_pub[1].pub_date} 
+                content={new_pub[1].pub_content[0].text} 
+                link_text={new_pub[1].link_text} 
+                img={new_pub[1].pub_image.url} 
+                color={new_pub[1].color}
+              /> */}
             </div>
             <div className="five">
+              {/* <Card1 
+                key={Math.random()} 
+                title={new_pub[2].pub_title[0].text} 
+                articleId='asdf' 
+                date={new_pub[2].pub_date} 
+                content={new_pub[2].pub_content[0].text} 
+                link_text={new_pub[2].link_text} 
+                img={new_pub[2].pub_image.url} 
+                color={new_pub[2].color}
+              /> */}
             </div>
           </div>
           </div>
@@ -79,17 +112,21 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
               key={Math.random()} 
               content={card.data.post_content[0].text}
               img={card.data.post_image.url} 
-              date={card.data.pub_date}
+              date={card.data.date}
               color={card.data.color}
               link_text={card.data.link_text} 
               isCaseStudy={true}
               articleId={card.id}
+              // content={card.post_content[0].text.substring(0, 100)}
             />)}            
           }
           )}
+        
+            {/* {other_pub.map(card => <Card1 key={Math.random()}  articleId='asdf' title={card.pub_title[0].text}  */}
+            {/* date={card.pub_date} content={card.pub_content[0].text} link_text={card.link_text} img={other_pub[2].pub_image.url} color={card.color}/>)}          */}
             <div className="article">
             <div className="toparticlelist">
-            <h3 className="h3-2">Top 3 articles</h3>
+            <Heading title="Top 3 articles"/>
                 {
                 pub.map((card, i) => { 
                   if(pub.indexOf(card) < 3)
@@ -98,9 +135,10 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
                 key={Math.random()} 
                 number={i + 1} 
                 title={card.data.title[0].text}  
-                date={card.data.pub_date}
+                date={card.data.date}
                 />)}})}
         </div>
+        {/* <TopArticleList title= {card.data.title[0].text}/> */}
                </div>     
           </div>
         </div>
@@ -148,16 +186,6 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
             letter-spacing: 0.01em;
             color: #38465E;
           }
-          .h3-2{
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: bold;
-            font-size: 36px !important;
-            line-height: 152.6%;
-            letter-spacing: 0.01em;
-            color: #38465E;
-            padding-right: 8rem;
-          }
           .publication {
             display: flex;
             flex-direction: row;
@@ -172,17 +200,19 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 94%;
+            width: 100%;
             padding: 15px;
             margin-top: 34px
           }
           .other {
             display: grid;
             grid-template-columns: 50% 50%;
+            place-items:center;
           }
           .other1 {
             display: grid;
-            grid-template-columns: 55% 45%;
+            grid-template-columns: 60% 40%;
+            grid-template-rows:;
           }
           .column {
             display: flex;
@@ -230,9 +260,14 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
         Prismic.Predicates.at("my.post.destination_page", "Publications & News")
     )
 
+    console.log(publications.results[0].data)
+
     return {
         props: {
           pub: publications.results,
+          // new_pub: publications.results[0].data.body[0].items,
+          // other_pub: publications.results[0].data.body[1].items,
+          // top_3_article: publications.results[0].data.body[2].items 
         }
     }
 }

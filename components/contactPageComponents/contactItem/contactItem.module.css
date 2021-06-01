@@ -1,0 +1,24 @@
+.contact_item {}
+
+.contact_item h3 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 151%;
+    /* or 30px */
+    letter-spacing: 0.01em;
+    color: #38465E;
+    margin-top: 20px;
+}
+
+.contact_item p {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 145%;
+    /* or 26px */
+    letter-spacing: 0.01em;
+    color: #38465E;
+}

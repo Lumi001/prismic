@@ -1,0 +1,60 @@
+.contact_field {
+    width: 100%;
+    max-width: 600px;
+}
+
+
+/* .contact_field:focus-within{
+} */
+
+.contact_field input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0px 0px 5px 60px;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    z-index: 4;
+    margin: 20px 0px;
+    border-bottom: 1px solid #DDDDDD;
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 145%;
+    /* or 23px */
+    color: #38465E;
+}
+
+.contact_field input:focus {
+    border-bottom: 1px solid #313131;
+}
+
+.contact_field label {
+    z-index: 2;
+    width: fit-content;
+    position: relative;
+    top: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    color: #818181;
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 145%;
+    /* or 23px */
+    /* color: #38465E; */
+}
+
+.contact_field:focus-within label {
+    top: -5px;
+    font-size: 12px;
+    transition: 0.3s;
+    color: #313131;
+}
+
+@media screen and (min-width:991px) {}
