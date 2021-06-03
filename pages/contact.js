@@ -53,6 +53,7 @@ const Contact = ({ title, items, setNavbarColour }) => {
 const mapDispatchToProps = dispatch => ({
     setNavbarColour: mode => dispatch(navbarContentAction(mode)),
 })
+
 export default connect(null, mapDispatchToProps)(Contact);
 
 export async function getServerSideProps() {
