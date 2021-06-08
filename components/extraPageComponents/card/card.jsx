@@ -39,7 +39,8 @@ const Card = ({
       : (
         <>
           <p>
-            {content}...
+            {!isCaseStudy&&`${content}...`
+            }
       </p>
           <Button href={`/content/${articleId}`} secondary articleId={articleId} isCaseStudy text={link_text} />
       {/* <Link2 href={`/content/${articleId}`}>

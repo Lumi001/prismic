@@ -156,7 +156,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
             line-height: 152.6%;
             letter-spacing: 0.01em;
             color: #38465E;
-            padding-right: 13rem;
+            padding-right: 8rem;
           }
           .publication {
             display: flex;
@@ -174,8 +174,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
             align-items: center;
             width: 94%;
             padding: 15px;
-            margin-top: 34px;
-            margin-bottom: 100px;
+            margin-top: 34px
           }
           .other {
             display: grid;

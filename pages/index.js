@@ -1,6 +1,5 @@
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
-import { RichText } from 'prismic-reactjs'
 import Link from "next/link"
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'

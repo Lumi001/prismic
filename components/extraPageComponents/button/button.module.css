@@ -1,19 +1,20 @@
-.button{
-  width: 284px;
-  height: 60px;
-  border-radius: 5px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 0.15em;
-  color: #ffffff;
-  background: #313131;
-  border: none;
-  margin: 20px 0px 50px;
+.button {
+    width: 284px;
+    height: 60px;
+    border-radius: 5px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    background: #313131;
+    border: none;
+    margin: 20px 0px 50px;
 }
-.secondary_button{
+
+.secondary_button {
     height: 60px;
     /* border-radius: 5px; */
     font-family: "Inter";
@@ -28,58 +29,69 @@
     background: transparent !important;
     /* border-bottom: 2px solid #313131 !important; */
 }
-.linkWrapper
-.secondary_button ,.linkWrapper .button {
+
+.linkWrapper .secondary_button,
+.linkWrapper .button {
     display: flex;
     align-items: center;
     /* width: 100%; */
-  }
-  
-  .linkWrapper
-  .secondary_button  span {
+}
+
+.linkWrapper .secondary_button span {
     border-bottom: 3px solid #313131;
     padding-bottom: 9px;
     min-width: fit-content;
-  }
-  .linkWrapper:hover 
-  .secondary_button
-  img {
-    transform: translateX(15px);
-  }
-  .linkWrapper
-  .secondary_button img{
-    height: 20px;
-    transform: translateX(0px);
-    width: auto;
-    transition: transform 1s;
-  }
-  .linkWrapper
-  .button span img {
+}
+
+.linkWrapper .secondary_button img {
     height: 20px;
     transform: translateX(10px);
     width: auto;
-  }
-  
-  .linkWrapper{
+    transition: transform 1s;
+}
+
+.linkWrapper:hover .secondary_button img {
+    transform: translateX(15px);
+}
+
+.button img {
+    transition: transform 1s;
+    height: 35%;
+    transform: translateX(5px);
+    width: auto;
+}
+
+.button:hover {
+    background: #464646 !important;
+}
+
+.button:hover img {
+    transform: translateX(10px);
+}
+
+.linkWrapper {
     width: fit-content;
-  }
-  /* .carousel .secondary_button  img {
+}
+
+
+/* .carousel .secondary_button  img {
     display: block;
   } */
 
 .button span,
 .secondary_button span {
-  margin: 0px 10px 0px 0px;
-  position: relative;
-  top: 2px;
+    /* margin: 0px 0px 0px 10px; */
+    position: relative;
+    top: 2px;
 }
-.linkWrapper:hover .button{
-  background: #464646;
+
+.linkWrapper:hover .button {
+    background: #464646;
 }
 
 @media screen and (max-width: 999px) {
-  .button a,
-  .secondary_button a {
-    font-size: 1rem;
-  }
+    .button a,
+    .secondary_button a {
+        font-size: 1rem;
+    }
 }

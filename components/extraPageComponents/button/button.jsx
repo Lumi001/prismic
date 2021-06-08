@@ -10,11 +10,7 @@ const Button = ({ text, width, height, fontSize, secondary, icon, articleId,href
                 !secondary ?
                     <button className={styles.button} style={{ width: `${width}`, height: `${height}`, fontSize: `${fontSize}` }} onClick={onClick?()=>onClick():null}>
                         {text}
-                        {
-                            icon ?
-                                <span><img src={icon} alt="" /></span>
-                                : null
-                        }
+                                <span><img src={icon||"/white-arrow-right.svg"} alt="" /></span>
                     </button> :
                         <Link href={articleId?isCaseStudy?`/caseStudy/${articleId}`:`/content/${articleId}`:href}>
                             <a className={styles.linkWrapper}>
