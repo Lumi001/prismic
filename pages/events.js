@@ -54,7 +54,7 @@ return (
             position: absolute;
             top: 0;
             left: 0;
-            height: 635px;
+            height: 627px;
             width: 100%;
             background-color: #251861;
             opacity: 0.7;

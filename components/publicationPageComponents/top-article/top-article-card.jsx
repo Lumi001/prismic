@@ -17,7 +17,7 @@ const TopArticleCard = ({number, title, date}) => {
             display: flex;
             align-item: flex-end !important;
             margin: 18px 0px;
-            width: 90%
+            width: 100%
         }
         .toparticlecard-number{
             font-size: 48px;
@@ -27,9 +27,9 @@ const TopArticleCard = ({number, title, date}) => {
         }
         .toparticlecard-title{
             font-size: 30px;
-            width: 70%;
+            width: 80%;
             color: #38465E;
-            
+            margin-top: 8px
         }
          h3{
             margin-bottom: 0; 
