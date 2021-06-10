@@ -206,7 +206,7 @@ export async function getServerSideProps() {
     })
     about = about1;
     const posts = await Client().query(
-        Prismic.Predicates.at('my.post.destination_page', 'Services'),{ pageSize : 4 }
+        Prismic.Predicates.at('my.post.type', true),{ pageSize : 6 }
     )
     let empty = {}
     posts.results.map(article => {
