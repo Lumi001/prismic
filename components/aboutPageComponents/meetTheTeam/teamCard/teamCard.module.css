@@ -5,6 +5,7 @@
 }
 
 .team_card img {
+  border-radius: 10px;
   max-width: 100%;
   /*height: fit-content;*/
   max-height: 449px;
