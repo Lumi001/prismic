@@ -15,6 +15,7 @@ const Event= ({Events,upcomingEvents, recentEvents,setNavbarColour})=> {
   useEffect(()=>{
     setNavbarColour(false)
 })
+
 return (
   <div className={styles.container}>
         <Head>

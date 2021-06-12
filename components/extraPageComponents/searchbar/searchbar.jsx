@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 
-const SearchBar = () => {
-  const [keyword, setKeyword] = useState("");
+const SearchBar = ({setChange, searchTerm}) => {
   const BarStyling = {};
   return (
     <React.Fragment>
@@ -10,9 +9,9 @@ const SearchBar = () => {
       <input
         key="random1"
         className="mainLoginInput"
-        value={keyword}
+        value= {searchTerm}
         placeholder="&#61442;          Search Publications"
-        onChange={(e) => setKeyword(e.target.value)}
+        onChange={setChange}
       />
       <style jsx global>
         {`

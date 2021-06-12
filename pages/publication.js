@@ -6,10 +6,16 @@ import TopArticleCard from '../components/publicationPageComponents/top-article/
 import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
-import React from 'react';
+import React, { useState, useRef } from 'react';
+
 import Heading from '../components/extraPageComponents/heading/heading'
 
+
+
 export default function Publication({pub,new_pub, other_pub, top_3_article}) {
+  const search = useRef(null);
+ 
+  const [searchTerm, setSearchTerm] = useState("");
   // console.log(pub)
     return (
       // <div className={styles.container}>
@@ -31,81 +37,110 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
           <div className="column" >
           <div className="publication">
           <h3 className="h3">New Publications</h3>        
-          <Searchbar />
+          <Searchbar ref={search} setChange={(e) => setSearchTerm(e.target.value)} searchTerm={searchTerm}/>
           </div>
-
+          { searchTerm == "" ? 
+          (
+            <>
         <div className={"one"}>
-          <div className="other1">
-          {  
-          pub.map((card, i) =>{
-            if(pub.indexOf(card) < 3){ return(
-            <Card1 
-              key={Math.random()}   
-              title={card.data.title[0].text}
-              content={card.data.post_content[0].text}
-              img={card.data.post_image.url} 
-              date={card.data.pub_date}
-              color={card.data.color}
-              link_text={card.data.link_text} 
-              id={`${'big' + i}`}
-              isCaseStudy={true}
-              articleId={card.id}
-            />)}            
-          }
-          ).reverse()}
-
-          </div>
-          <div className="three">
-            <div className="four">
-            </div>
-            <div className="five">
-            </div>
-          </div>
-          </div>
-        </div>
+        <div className="other1">
+        {  
         
-              <br/>
-              <br/>
-              <br/>
-        <div className="column">
-          <h3 className="h3-1">Other Publications</h3>
-          <div className="other">
-          {  
-          pub.map(card =>{
-            if(pub.indexOf(card) > 2){ return(
-            <Card1 
-              key={Math.random()}  
-              title={card.data.title[0].text} 
-              key={Math.random()} 
-              content={card.data.post_content[0].text}
-              img={card.data.post_image.url} 
-              date={card.data.pub_date}
-              color={card.data.color}
-              link_text={card.data.link_text} 
-              isCaseStudy={true}
-              articleId={card.id}
-            />)}            
-          }
-          )}
-            <div className="article">
-            <div className="toparticlelist">
-            <h3 className="h3-2">Top 3 articles</h3>
-                {
-                pub.map((card, i) => { 
-                  if(pub.indexOf(card) < 3)
-                { 
-                return( <TopArticleCard 
-                key={Math.random()} 
-                number={i + 1} 
-                title={card.data.title[0].text}  
-                date={card.data.pub_date}
-                />)}})}
+        pub.map((card, i) =>{
+          if(pub.indexOf(card) < 3){ return(
+          <Card1 
+            key={Math.random()}   
+            title={card.data.title[0].text}
+            content={card.data.post_content[0].text}
+            img={card.data.post_image.url} 
+            date={card.data.pub_date}
+            color={card.data.color}
+            link_text={card.data.link_text} 
+            id={`${'big' + i}`}
+            isCaseStudy={true}
+            articleId={card.id}
+          />)}            
+        }
+        ).reverse()}
+
         </div>
-               </div>     
+        <div className="three">
+          <div className="four">
+          </div>
+          <div className="five">
           </div>
         </div>
-
-              </div>
+        </div>
+               <br/>
+               <br/>
+               <br/>
+         <div className="column">
+           <h3 className="h3-1">Other Publications</h3>
+           <div className="other">
+           {  
+           pub.map(card =>{
+             if(pub.indexOf(card) > 2){ return(
+             <Card1 
+               key={Math.random()}  
+               title={card.data.title[0].text} 
+               key={Math.random()} 
+               content={card.data.post_content[0].text}
+               img={card.data.post_image.url} 
+               date={card.data.pub_date}
+               color={card.data.color}
+               link_text={card.data.link_text} 
+               isCaseStudy={true}
+               articleId={card.id}
+             />)}            
+           }
+           )}
+             <div className="article">
+             <div className="toparticlelist">
+             <h3 className="h3-2">Top 3 articles</h3>
+                 {
+                 pub.map((card, i) => { 
+                   if(pub.indexOf(card) < 3)
+                 { 
+                 return( <TopArticleCard 
+                 key={Math.random()} 
+                 number={i + 1} 
+                 title={card.data.title[0].text}  
+                 date={card.data.pub_date}
+                 />)}})}
+         </div>
+                </div>     
+           </div>
+         </div>
+        </> 
+          )
+          
+          : 
+          
+          (      
+             pub.filter((card, i) => {
+            if (searchTerm == '') {
+              return card
+            } else if (card.data.title[0].text.toLowerCase().includes(searchTerm.toLowerCase())) {
+              return card
+            }
+          }).map((card, i) => {
+            return(
+              <Card1 
+                key={Math.random()}   
+                title={card.data.title[0].text}
+                content={card.data.post_content[0].text}
+                img={card.data.post_image.url} 
+                date={card.data.pub_date}
+                color={card.data.color}
+                link_text={card.data.link_text} 
+                id={`${'big' + i}`}
+                isCaseStudy={true}
+                articleId={card.id}
+              />)
+          }))
+          }
+        </div>   
+       </div>
         <style jsx global>
           {`
           .container {
