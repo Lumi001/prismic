@@ -16,7 +16,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
   const search = useRef(null);
  
   const [searchTerm, setSearchTerm] = useState("");
-  // console.log(pub)
+  // console.log(p ub)
     return (
       // <div className={styles.container}>
       <React.Fragment>
@@ -116,7 +116,9 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
           
           : 
           
-          (      
+          (    
+            <div className='other'>   
+              {
              pub.filter((card, i) => {
             if (searchTerm == '') {
               return card
@@ -132,12 +134,14 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
                 img={card.data.post_image.url} 
                 date={card.data.pub_date}
                 color={card.data.color}
-                link_text={card.data.link_text} 
-                id={`${'big' + i}`}
+                link_text={card.data.link_text}
                 isCaseStudy={true}
                 articleId={card.id}
-              />)
-          }))
+              />
+              )
+          })
+        }
+          </div>)
           }
         </div>   
        </div>
