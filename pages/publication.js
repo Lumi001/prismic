@@ -36,7 +36,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
 
           <div className="column" >
           <div className="publication">
-          <h3 className="h3">New Publications</h3>        
+          {searchTerm == "" ? <h3 className="h3">New Publications</h3> : <h3 className="h3">Search Results...</h3>}        
           <Searchbar ref={search} setChange={(e) => setSearchTerm(e.target.value)} searchTerm={searchTerm}/>
           </div>
           { searchTerm == "" ? 
