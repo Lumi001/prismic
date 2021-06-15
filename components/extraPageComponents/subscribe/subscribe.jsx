@@ -104,7 +104,7 @@ const Subscribe = ({ setModalContent }) => {
         // style={{ display: "block" }}
         <div className={styles.subscribe_container}>
             {/* // image */}
-            <button className={styles.exit} onClick={() => setModalContent({ modalIsActive: false })}>x</button>
+            <button className={styles.exit} onClick={() => setModalContent({ modalIsActive: false })}><img src="/subscribe/x.png" alt="close"/></button>
             {/* <img src="/subscribe/paper_plane.png" alt="" /> */}
             {/* // title */}
             <h3>Subscribe to our newsletters</h3>

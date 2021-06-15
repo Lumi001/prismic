@@ -6,16 +6,21 @@ import TopArticleCard from '../components/publicationPageComponents/top-article/
 import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import Heading from '../components/extraPageComponents/heading/heading'
+import { connect } from 'react-redux';
+import { navbarContentAction } from '../redux/navbar/navbar.actions';
 
 
 
-export default function Publication({pub,new_pub, other_pub, top_3_article}) {
+function Publication({pub,new_pub, other_pub, top_3_article,setNavbarColour}) {
   const search = useRef(null);
  
   const [searchTerm, setSearchTerm] = useState("");
+  useEffect(() => {
+    setNavbarColour('third')
+})
   // console.log(p ub)
     return (
       // <div className={styles.container}>
@@ -262,7 +267,11 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
           </style>
           </React.Fragment>
     )
-  } 
+  }
+  const mapDispatchToProps = dispatch => ({
+    setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
+  })
+  export default connect(null,mapDispatchToProps)(Publication)
   
 
   export async function getServerSideProps() {
