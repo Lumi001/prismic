@@ -16,10 +16,9 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
   const search = useRef(null);
  
   const [searchTerm, setSearchTerm] = useState("");
-  // console.log(p ub)
-    return (
-      // <div className={styles.container}>
-      <React.Fragment>
+  return (
+    // <div className={styles.container}>
+    <React.Fragment>
         <Head>
         <title>TruCSR</title>
         <link rel="icon" href="/favicon.ico"/>
@@ -27,8 +26,6 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
-
-
           <div className="container">    
           <br/>
           <br/>      
@@ -269,6 +266,8 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
     const publications = await Client().query(
         Prismic.Predicates.at("my.post.destination_page", "Publications & News")
     )
+
+    console.log(publications.results[0].first_publication_date)
 
     return {
         props: {
