@@ -46,7 +46,7 @@
   letter-spacing: 0.01em;
 
   color: #38465e;
-  margin: 0px 0px 30px;
+  margin: 0px 0px 10px;
 }
 
 .project_card section a,
@@ -113,11 +113,19 @@
 }
 
 @media screen and (max-width: 990px) {
+  .project_card .text .icon,
+  .project_card_flip .text .icon {
+    max-width: 50px;
+    max-height: 50px;
+  }
   .project_card,
   .project_card_flip {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0px 0px 30px;
+  }
+  .container{
     margin: 0px 0px 50px;
   }
   .project_card .images img,
@@ -135,7 +143,7 @@
   .project_card_flip .text {
     max-width: 80vw;
     width: 419px;
-    margin: auto;
+    margin: 30px auto 0px;
   }
   .carousel {
     height: max-content;

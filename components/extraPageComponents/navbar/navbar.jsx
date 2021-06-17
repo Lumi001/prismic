@@ -34,10 +34,11 @@ const Navbar = ({ navigation, links, navbarColour }) => {
     return (
         <div className={styles.navbar} style={{ background: scroll > 70 ? navbarColour? "white" : "#38465e":"transparent" }}>
         {/* <div className={styles.navbar}> */}
+        {console.log(navigation)}
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
-                        <img src={navbarColour?navigation.primary.logo.url:navigation.primary.secondary_logo.url} alt="" />
+                        <img src={navbarColour?navbarColour!=="third"?navigation.primary.logo.url:navigation.primary.third_image.url:navigation.primary.secondary_logo.url} alt="" />
                     </Link>
                 </nav>
                 <nav className={styles.right}>
@@ -48,7 +49,7 @@ const Navbar = ({ navigation, links, navbarColour }) => {
                             </div>
                         )
                     })}
-                    <img src="/navbar/dropdown.png" onClick={() => toggleRightDropdown()} alt="" />
+                    <img src={navbarColour?"/navbar/black-dropdown.png":"/navbar/dropdown.png"} onClick={() => toggleRightDropdown()} alt="" />
                 </nav>
             </section>
             {rightDropdown && <section className={styles.bottom}>
