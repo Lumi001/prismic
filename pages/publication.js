@@ -267,8 +267,6 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
         Prismic.Predicates.at("my.post.destination_page", "Publications & News")
     )
 
-    console.log(publications.results[0].first_publication_date)
-
     return {
         props: {
           pub: publications.results,
