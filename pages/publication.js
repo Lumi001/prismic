@@ -7,7 +7,7 @@ import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
 import React, { useState, useRef } from 'react';
-
+import moment from 'moment'
 import Heading from '../components/extraPageComponents/heading/heading'
 
 
@@ -50,7 +50,8 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
             title={card.data.title[0].text}
             content={card.data.post_content[0].text}
             img={card.data.post_image.url} 
-            date={card.data.pub_date}
+            date={moment().format("D MMM, YYYY")}
+            // date={card.data.pub_date}
             color={card.data.color}
             link_text={card.data.link_text} 
             id={`${'big' + i}`}
@@ -83,7 +84,8 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
                key={Math.random()} 
                content={card.data.post_content[0].text}
                img={card.data.post_image.url} 
-               date={card.data.pub_date}
+               date={moment().format("D MMM, YYYY")}
+              //  date={card.data.pub_date}
                color={card.data.color}
                link_text={card.data.link_text} 
                isCaseStudy={true}
@@ -102,7 +104,8 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
                  key={Math.random()} 
                  number={i + 1} 
                  title={card.data.title[0].text}  
-                 date={card.data.pub_date}
+                 date={moment().format("D MMM, YYYY")}
+                //  date={card.data.pub_date}
                  />)}})}
          </div>
                 </div>     
@@ -129,7 +132,8 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
                 title={card.data.title[0].text}
                 content={card.data.post_content[0].text}
                 img={card.data.post_image.url} 
-                date={card.data.pub_date}
+                date={moment().format("D MMM, YYYY")}
+                // date={card.data.pub_date}
                 color={card.data.color}
                 link_text={card.data.link_text}
                 isCaseStudy={true}
@@ -266,7 +270,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
     const publications = await Client().query(
         Prismic.Predicates.at("my.post.destination_page", "Publications & News")
     )
-
+ console.log()
     return {
         props: {
           pub: publications.results,
