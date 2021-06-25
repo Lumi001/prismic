@@ -6,25 +6,19 @@ import TopArticleCard from '../components/publicationPageComponents/top-article/
 import Searchbar from '../components/extraPageComponents/searchbar/searchbar';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
-import React, { useState, useRef, useEffect } from 'react';
-
+import React, { useState, useRef } from 'react';
+import moment from 'moment'
 import Heading from '../components/extraPageComponents/heading/heading'
-import { connect } from 'react-redux';
-import { navbarContentAction } from '../redux/navbar/navbar.actions';
 
 
 
-function Publication({pub,new_pub, other_pub, top_3_article,setNavbarColour}) {
+export default function Publication({pub,new_pub, other_pub, top_3_article}) {
   const search = useRef(null);
  
   const [searchTerm, setSearchTerm] = useState("");
-  useEffect(() => {
-    setNavbarColour('third')
-})
-  // console.log(p ub)
-    return (
-      // <div className={styles.container}>
-      <React.Fragment>
+  return (
+    // <div className={styles.container}>
+    <React.Fragment>
         <Head>
         <title>TruCSR</title>
         <link rel="icon" href="/favicon.ico"/>
@@ -32,8 +26,6 @@ function Publication({pub,new_pub, other_pub, top_3_article,setNavbarColour}) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Avenir:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
       </Head>
-
-
           <div className="container">    
           <br/>
           <br/>      
@@ -58,7 +50,8 @@ function Publication({pub,new_pub, other_pub, top_3_article,setNavbarColour}) {
             title={card.data.title[0].text}
             content={card.data.post_content[0].text}
             img={card.data.post_image.url} 
-            date={card.data.pub_date}
+            date={moment().format("D MMM, YYYY")}
+            // date={card.data.pub_date}
             color={card.data.color}
             link_text={card.data.link_text} 
             id={`${'big' + i}`}
@@ -91,7 +84,8 @@ function Publication({pub,new_pub, other_pub, top_3_article,setNavbarColour}) {
                key={Math.random()} 
                content={card.data.post_content[0].text}
                img={card.data.post_image.url} 
-               date={card.data.pub_date}
+               date={moment().format("D MMM, YYYY")}
+              //  date={card.data.pub_date}
                color={card.data.color}
                link_text={card.data.link_text} 
                isCaseStudy={true}
@@ -110,7 +104,8 @@ function Publication({pub,new_pub, other_pub, top_3_article,setNavbarColour}) {
                  key={Math.random()} 
                  number={i + 1} 
                  title={card.data.title[0].text}  
-                 date={card.data.pub_date}
+                 date={moment().format("D MMM, YYYY")}
+                //  date={card.data.pub_date}
                  />)}})}
          </div>
                 </div>     
@@ -137,7 +132,8 @@ function Publication({pub,new_pub, other_pub, top_3_article,setNavbarColour}) {
                 title={card.data.title[0].text}
                 content={card.data.post_content[0].text}
                 img={card.data.post_image.url} 
-                date={card.data.pub_date}
+                date={moment().format("D MMM, YYYY")}
+                // date={card.data.pub_date}
                 color={card.data.color}
                 link_text={card.data.link_text}
                 isCaseStudy={true}
@@ -267,18 +263,14 @@ function Publication({pub,new_pub, other_pub, top_3_article,setNavbarColour}) {
           </style>
           </React.Fragment>
     )
-  }
-  const mapDispatchToProps = dispatch => ({
-    setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
-  })
-  export default connect(null,mapDispatchToProps)(Publication)
+  } 
   
 
   export async function getServerSideProps() {
     const publications = await Client().query(
         Prismic.Predicates.at("my.post.destination_page", "Publications & News")
     )
-
+ console.log()
     return {
         props: {
           pub: publications.results,

@@ -10,7 +10,7 @@ const Card1 = ({isCaseStudy,title,tag,content,link_text,articleId,img,date,link,
 return(
   <React.Fragment>
     <div className={styles.card1}>
-      <div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`, borderRadius: "10px"}}> </div>
+      <div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`, borderRadius: "10px"}}> </div>
      { date ?
       <div className={styles.date}>{date}</div> :
       <small>{tag}</small>

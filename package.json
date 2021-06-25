@@ -8,6 +8,7 @@
     "start": "next start -p 5500"
   },
   "dependencies": {
+    "moment": "^2.29.1",
     "next": "^10.2.2",
     "nprogress": "^0.2.0",
     "prismic-javascript": "^3.0.2",
