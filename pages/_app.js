@@ -20,7 +20,7 @@ import Head from 'next/head'
 import NProgress from 'nprogress'
 
 Router.events.on('routeChangeStart', (url) => {
-  console.log(`Loading: ${url}`)
+  // console.log(`Loading: ${url}`)
   NProgress.start()
 })
 Router.events.on('routeChangeComplete', () => NProgress.done())
@@ -44,15 +44,15 @@ function MyApp({ Component, pageProps, navigation, footer_items,socials }) {
     };
 
     store = createStore(
-      persistReducer(persistConfig, rootReducer),
-      applyMiddleware(logger)
+      persistReducer(persistConfig, rootReducer)
+      // ,applyMiddleware(logger)
     );
 
     store.__PERSISTOR = persistStore(store);
   } else {
     store = createStore(
-      rootReducer,
-      applyMiddleware(logger)
+      rootReducer
+      // ,applyMiddleware(logger)
     );
   }
   // return store;

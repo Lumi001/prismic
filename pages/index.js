@@ -28,16 +28,19 @@ function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles,
     setModalContent({ modalIsActive: false })
     if (!subscribed) {
       setModalContent({ modalHasBeenShown: false })
+      if (!cookies.get('hasSubscribed')) {
       if (!cookies.get('timeLastShown')) {
-        if (!modalHasBeenShown) {
+        // if (!modalHasBeenShown) {
           setTimeout(() => {
             var now = Date.now();
-            cookies.set('timeLastShown', now, { maxAge: 86400 });
-            console.log(cookies.get('timeLastShown'), cookies.get('leggo'))
-            setModalContent({ modalIsActive: true, modalHasBeenShown: true })
+            // cookies.set('timeLastShown', now, { maxAge: 86400 });
+            cookies.set('timeLastShown', now, { maxAge: 8 });
+            // console.log(cookies.get('timeLastShown'), cookies.get('leggo'))
+            setModalContent({ modalIsActive: true })
           }, 25000);
-        }
+        // }
       }
+    }
     }
     return function cleanup() {
       setModalContent({ modalIsActive: false })

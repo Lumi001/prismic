@@ -34,7 +34,7 @@ const Navbar = ({ navigation, links, navbarColour }) => {
     return (
         <div className={styles.navbar} style={{ background: scroll > 70 ? navbarColour? "white" : "#38465e":"transparent" }}>
         {/* <div className={styles.navbar}> */}
-        {console.log(navigation)}
+        {/* {console.log(navigation)} */}
             <section className={styles.top}>
                 <nav className={styles.left}>
                     <Link href="/">
