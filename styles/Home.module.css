@@ -130,7 +130,7 @@
 .content h4,
 .content h5,
 .content h6 {
-    line-height: 80px;
+    line-height: 40px;
     font-weight: 700;
     color: #313131;
     font-family: Inter;
@@ -256,11 +256,12 @@
     }
     .content .layout_right>h1,
     .content .layout_case_study>h1 {
-        font-size: 36px;
+        font-size: 24px;
     }
-    .content .layout_right>p,
-    .content .layout_case_study>p {
+    .content .layout_right p,
+    .content .layout_case_study p {
         font-size: 16px;
+        margin: 0px auto;
     }
     .content .layout_case_study>h1,
     .content .layout_case_study>p {
@@ -275,6 +276,10 @@
     .content .layout_case_study,
     .content .layout {
         padding-top: 100px;
+    }
+    .content .layout_case_study>p,
+    .content .layout>p {
+        padding-top: 50px;
     }
     .content>img {
         display: none;
