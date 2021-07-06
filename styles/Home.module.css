@@ -73,8 +73,8 @@
 .content .layout_case_study {
     /* justify-content: center; */
     max-width: 1200px;
-    padding: 0px 20px;
-    margin: 100px 0px 50px;
+    padding: 20px;
+    /* margin: 100px 0px 50px; */
 }
 
 
@@ -88,27 +88,25 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 100px 0px 50px;
-    padding: 0px 20px;
+    padding: 0px 10px;
 }
 
 .content .layout_right {
     width: 100%;
 }
 
-.content .layout_right>p img,
-.content .layout_case_study>p img {
+.content .layout_right>div img,
+.content .layout_case_study>div img {
     width: 100%;
 }
 
-.content .layout_right>p {
+.content .layout_right>div {
     max-width: 1200px;
     background: #f5f5f5;
     padding: 10px 50px;
     width: 100%;
     margin: 0px auto;
 }
-
 .content>img {
     width: 100%;
     height: fit-content;
@@ -156,14 +154,14 @@
     font-size: 44px;
 }
 
-.content p {
+.content p, .content div {
     font-family: Avenir;
     font-style: normal;
     font-weight: 500;
     font-size: 28px;
     line-height: 199.5%;
     /* or 56px */
-    color: #313131;
+    color: #313131 !important;
 }
 
 .main {
@@ -245,6 +243,10 @@
     .contact section {
         min-width: 600px;
     }
+    .content .layout_case_study, .content .layout {
+        margin: 100px 0px 50px;
+        
+    }
 }
 
 @media screen and (max-width: 990px) {
@@ -256,16 +258,16 @@
     }
     .content .layout_right>h1,
     .content .layout_case_study>h1 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     .content .layout_right p,
     .content .layout_case_study p {
-        font-size: 16px;
+        font-size: 1rem;
         margin: 0px auto;
     }
     .content .layout_case_study>h1,
-    .content .layout_case_study>p {
-        width: 80%;
+    .content .layout_case_study>div {
+        width: 100%;
         margin: auto;
     }
     .content .layout_right,
@@ -277,8 +279,8 @@
     .content .layout {
         padding-top: 100px;
     }
-    .content .layout_case_study>p,
-    .content .layout>p {
+    .content .layout_case_study>div,
+    .content .layout>div {
         padding-top: 50px;
     }
     .content>img {
@@ -307,6 +309,9 @@
     height: 1em;
 }
 
+.content .layout_right>div {
+    padding: 20px;
+}
 @media (max-width: 600px) {
     .grid {
         width: 100%;

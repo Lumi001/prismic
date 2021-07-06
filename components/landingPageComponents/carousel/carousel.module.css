@@ -91,10 +91,10 @@
     /* width: 629px; */
     width: 419px;
   }
-  .carousel p {
-    /* font-size: 20px; */
-    /* height: 144px; */
-  }
+  /* .carousel p {
+    font-size: 20px;
+    height: 144px;
+  } */
 }
 @media screen and (max-width: 999px) {
   .carousel h1 {
@@ -129,14 +129,16 @@
     /* min-width: 100%; */
     flex-direction: column;
     display: flex;
-    width: 100%;
+    width: 95%;
+    margin: auto;
     align-items: center;
     max-width: 419px;
   }
   .carousel .right {
+    margin: auto;
     /* display: none; */
     max-width: 419px;
-    width: 100%;
+    width: 95%;
   }
   .carousel .buttonleft,
   .carousel .buttonright {

@@ -23,7 +23,7 @@ const FooterOption = ({ text, href, address, last, socials }) => {
                             <address>{text}</address>
                             <section className={styles.buttons}>
                                 {socials.map(item => (
-                                    <Link href={item.link_address ? item.link_address.url : "/error"}>
+                                    <Link key={Math.random()} href={item.link_address ? item.link_address.url : "/error"}>
                                         <a target="_blank">
                                             <SocialButton key={Math.random()} img={`/footer/${item.select_social_type ? item.select_social_type.toLowerCase() : ""}.png`} />
                                         </a>
