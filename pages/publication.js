@@ -122,7 +122,11 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
              pub.filter((card, i) => {
             if (searchTerm == '') {
               return card
-            } else if (card.data.title[0].text.toLowerCase().includes(searchTerm.toLowerCase())) {
+            } else if (
+              card.data.title[0].text.toLowerCase().startsWith(searchTerm.toLowerCase())
+              // card.data.title[0].text.toLowerCase().includes(searchTerm.toLowerCase())
+              // return card
+            ) {
               return card
             }
           }).map((card, i) => {
@@ -131,7 +135,7 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
                 key={Math.random()}   
                 title={card.data.title[0].text}
                 content={card.data.post_content[0].text}
-                img={card.data.post_image.url} 
+                img={card.data.post_image.url}
                 date={moment().format("D MMM, YYYY")}
                 // date={card.data.pub_date}
                 color={card.data.color}
