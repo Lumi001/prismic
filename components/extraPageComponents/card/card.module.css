@@ -74,7 +74,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 181.6%;
   /* or 44px */
   letter-spacing: 0.01em;
@@ -123,9 +123,9 @@
 
   height: 410px;
 }
-.card .case {
-  /* box-shadow: 30.634117px 25.9874px 10px rgba(141, 138, 138, 0.8); */
-}
+/* .card .case {
+  box-shadow: 30.634117px 25.9874px 10px rgba(141, 138, 138, 0.8);
+} */
 .card .images .case,
 .card .images .backdrop {
   object-fit: cover;
@@ -199,6 +199,6 @@
   .card {
     margin: 0px 0px 20px;
     max-width: 450px;
-    width: 80vw;
+    width: 85vw;
   }
 }

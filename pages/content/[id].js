@@ -27,9 +27,9 @@ const Content = ({ title, image, content, host }) => {
                         <section className={styles.layout_right}>
                             <RichText render={title} />
                             {/* <h3>{title.text}</h3> */}
-                            <p>
+                            <div>
                             <RichText render={content} />
-                            </p>
+                            </div>
                         </section>
                     </section>
                 </div>
