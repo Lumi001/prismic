@@ -2,6 +2,7 @@ import { Link } from "prismic-reactjs";
 import styles from "./card.module.css";
 import Link2 from "next/link";
 import Button from "../button/button";
+import HoverText from "../HoverText/HoverText";
 
 const Card = ({
   title,
@@ -21,16 +22,19 @@ const Card = ({
       <img src={img} alt="" className={link_text ? styles.case : styles.large} />
       {link_text ? <img src="projectCard/backdrop.png" alt="" className={styles.backdrop} /> : null}
     </section>
-    {date ? <div className={styles.date}>{date}</div> : !link_text ? 
-    <small style={tag.toLowerCase()==="academic"?{color:"#3546AC", background:"#CFD2E6"}:tag.toLowerCase()==="events"?{color:"#965DEC", background:"#C9BED8"}:null}>{tag}</small> : null}
-    <h3>{title}</h3>
+    {date ? <div className={styles.date}>{date}</div> : !link_text ?
+      <small style={tag.toLowerCase() === "academic" ? { color: "#3546AC", background: "#CFD2E6" } : tag.toLowerCase() === "events" ? { color: "#965DEC", background: "#C9BED8" } : null}>{tag}</small> : null}
+    {/* <h3>{title.length>=48?title.slice(0,title.slice(0,48).lastIndexOf(" "))+" [...]":title}</h3> */}
+    <HoverText
+      text={title}
+    />
     {!link_text ? (
       <p>
-        {content}...
+        {content.slice(0, 100)}...
         <span>
           <Link2 href={`/content/${articleId}`}>
             <a className={styles.continue_reading}>
-            continue reading
+              continue reading
             </a>
           </Link2>
         </span>
@@ -38,12 +42,15 @@ const Card = ({
     )
       : (
         <>
-          <p>
-            {!isCaseStudy&&`${content}...`
-            }
-      </p>
+
+          {!isCaseStudy &&
+            <p>
+              `${content}...`
+
+            </p>
+          }
           <Button href={`/content/${articleId}`} secondary articleId={articleId} isCaseStudy text={link_text} />
-      {/* <Link2 href={`/content/${articleId}`}>
+          {/* <Link2 href={`/content/${articleId}`}>
          </Link2> */}
         </>
       )}

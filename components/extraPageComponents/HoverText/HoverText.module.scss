@@ -1,0 +1,58 @@
+.hover_text {
+    h3 {
+        position: relative;
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    .spill_over {
+        position: relative;
+        // margin-bottom: 30px;
+        padding: 0px;
+        height: fit-content;
+
+        &::after {
+            content: attr(content);
+            box-shadow: 0px 0px 6px -3.8px;
+            font-weight: 700;
+            line-height: 1.5rem;
+            box-sizing: border-box;
+            padding: 2px 5px 2px 10px;
+            position: absolute;
+            width: auto;
+            left: 100px;
+            top: 30px;
+            border-radius: 10px;
+            z-index: 10;
+
+            @media screen and (max-width:991px) {
+                height: fit-content;
+                font-size: 1.2rem;
+                overflow: hidden;
+                left: 0px;
+                top: 0px;
+            }
+
+            // width: min-content;
+            min-width: 120px;
+            // padding: 5px;
+            // height: 14px;
+            margin: 5px 0px 0px;
+
+            background: white;
+            border-radius: 3px;
+            /* Cheese and camelot beef steaks */
+
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 0.9rem;
+            // line-height: 7px;
+            /* identical to box height */
+
+            // color: #3E3E3E;
+        }
+    }
+}

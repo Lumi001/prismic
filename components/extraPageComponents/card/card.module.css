@@ -18,7 +18,6 @@
 }
 .linktext {
   border-bottom: 1px solid black;
-  width: 181px;
   padding-right: 5px;
   font-size: 20px;
 }
@@ -40,12 +39,13 @@
 
 .card h3 {
   /* Save the Children Initiative powered by Chevron */
-  margin: 5px 0px 0px;
+  margin: 15px 0px 10px;
+  cursor: pointer;
   /* height: 102px; */
   font-family: "Inter";
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 1.65rem;
   line-height: 152.6%;
   /* or 46px */
   letter-spacing: 0.01em;
@@ -57,11 +57,11 @@
 .card p {
   /* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit... */
 
-  margin: 15px 0px;
+  margin: 0px 0px 15px 0px;
   font-family: "Avenir";
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 1.3rem;
   line-height: 181.6%;
   /* or 44px */
   letter-spacing: 0.01em;
@@ -98,7 +98,7 @@
 .card small {
   margin: 20px 0px;
   /* Event */
-  width: 82px;
+  
   height: 29px;
   font-family: "Avenir";
   font-style: normal;
@@ -111,6 +111,7 @@
   background: rgba(221, 55, 55, 0.3);
   border-radius: 5px;
   text-align: center;
+  display: none;
 }
 
 .card img {
@@ -120,8 +121,7 @@
   border-radius: 15px;
   object-fit: cover;
   width: 100%;
-
-  height: 410px;
+  height: 250px;
 }
 /* .card .case {
   box-shadow: 30.634117px 25.9874px 10px rgba(141, 138, 138, 0.8);
@@ -131,7 +131,7 @@
   object-fit: cover;
   width: 100%;
   margin-bottom: 30px;
-  height: 344.59px;
+  height: 250.59px;
   image-rendering: -moz-crisp-edges;         /* Firefox */
   image-rendering:   -o-crisp-edges;         /* Opera */
   image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
@@ -160,19 +160,18 @@
     width: 100%px !important;
   }
   .card h3 {
-    width: 469px;
   }
   .card p {
     /* font-size: 3rem; */
-    width: 419px;
+  
     /* height: 88px; */
   }
   .img {
-    height: 350px;
-    width: 450px;
+    height: 250px;
+    
   }
   .card {
-    width: 450px;
+    width: 350px;
   }
 }
 @media screen and (max-width: 999px) {
