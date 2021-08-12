@@ -80,7 +80,7 @@ function MyApp({ Component, pageProps, navigation, footer_items,socials }) {
           <Component {...pageProps} />
         </PersistGate>
       </Provider>
-      <Social text="CONNECT WITH US" items={socials.items} />
+      <Social text="WE ARE SOCIAL" items={socials.items} />
       <Footer footer_items={footer_items} socials={socials.items} />
       {/* {console.log(footer_items)} */}
       {/* {console.log(navigation,'navigation')} */}
