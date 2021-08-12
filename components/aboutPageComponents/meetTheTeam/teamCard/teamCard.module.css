@@ -1,14 +1,14 @@
 .team_card {
-  width: 355px;
+  /* width: 355px; */
   margin: 0px 10px 100px;
   /* margin-bottom: 100px; */
 }
 
 .team_card img {
   border-radius: 10px;
-  max-width: 100%;
+  max-width: 300px;
   /*height: fit-content;*/
-  max-height: 449px;
+  max-height:355px;
   /*object-fit: cover;  */
   width: fit-content;
   image-rendering: -moz-crisp-edges;         /* Firefox */

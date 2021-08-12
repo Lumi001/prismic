@@ -64,6 +64,7 @@
   color: #fcfcfc;
   /* border-bottom: 1px solid; */
   padding-bottom: 9px;
+  width: fit-content;
 }
 .intro a span img {
   margin: 0px 10px;

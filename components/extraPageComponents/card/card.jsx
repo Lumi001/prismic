@@ -27,6 +27,7 @@ const Card = ({
     {/* <h3>{title.length>=48?title.slice(0,title.slice(0,48).lastIndexOf(" "))+" [...]":title}</h3> */}
     <HoverText
       text={title}
+      length={60}
     />
     {!link_text ? (
       <p>
