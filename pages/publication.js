@@ -273,7 +273,8 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
               grid-template-columns: 100%;
             }
             .other1{
-              grid-template-columns: 100%;
+              display: block;
+              margin: auto;
             }
             #big{
               height: 100%;
