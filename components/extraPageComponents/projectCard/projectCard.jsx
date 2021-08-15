@@ -1,6 +1,7 @@
 import styles from './projectCard.module.css';
 import Link from 'next/link'
 import Button from '../button/button';
+import HoverText from '../HoverText/HoverText';
 
 
 
@@ -14,8 +15,16 @@ const ProjectCard = ({ image, title, content, id, link, flip, icon, isCaseStudy,
                 </section>
                 <section className={styles.text}>
                     {icon ? <img src={icon} alt="icon" className={styles.icon} /> : null}
-                    <h3>{title}</h3>
-                    {isNotShort&&<p>{content.length>250?content.substring(0,250):content}</p>}
+                    <HoverText
+                    text={title}
+                    length={60}
+                    />
+                    {isNotShort&&
+                    <HoverText
+                    text={content}
+                    length={100}
+                    isP={true}
+                    />}
                     <Button secondary href={href} articleId={id} text={link} isCaseStudy={isCaseStudy} />
                 </section>
             </div>

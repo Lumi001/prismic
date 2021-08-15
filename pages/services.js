@@ -23,7 +23,7 @@ const Services = ({ cards, intro, ourServices,setNavbarColour }) => {
                 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
             </Head>
             <main className={styles.main}>
-                <Intro background={'#252efe'} title={intro.primary.heading&&intro.primary.heading[0]?intro.primary.heading[0].text:""} content={intro.primary.text&&intro.primary.text[0]?intro.primary.text[0].text:""} link={intro.primary.link_text?intro.primary.link_text:""} image1={intro.primary.image?intro.primary.image.url : '/introAbout/image1.png'} href={intro.primary.link_address?intro.primary.link_address:"/error"} />
+                <Intro background={'#252efe'} title={intro.primary.heading&&intro.primary.heading[0]?intro.primary.heading[0].text:""} content={intro.primary.text&&intro.primary.text[0]?intro.primary.text[0].text:""} link={intro.primary.link_text?intro.primary.link_text:""} image1={intro.primary.image?intro.primary.image.url : '/introAbout/image1.png'} href={intro.primary.link_address?intro.primary.link_address.url:"/error"} />
                 <OurServices heading={ourServices&&ourServices.primary&&ourServices.primary.heading&&ourServices.primary.heading[0]?ourServices.primary.heading[0].text:""} items={cards?cards:[]} />
             </main>
         </div>

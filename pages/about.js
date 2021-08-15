@@ -149,7 +149,7 @@ const About = ({ about, intro, cards, ourStory, meetTheTeam, whatWeDo, beenUpTo,
                 image1={intro.items&&intro.items[0]?intro.items[0].image.url : '/introAbout/image1.png'} 
                 image2={intro.items&&intro.items[1]?intro.items[1].image.url : '/introAbout/image1.png'} 
                 image3={intro.items&&intro.items[2]?intro.items[2].image.url : '/introAbout/image1.png'} 
-                href={intro.primary.link_address?intro.primary.link_address:"/error"} 
+                href={intro.primary.link_address?intro.primary.link_address.url:"/error"} 
                 />
 
                 <OurStory 
