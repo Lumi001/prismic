@@ -20,7 +20,7 @@ import Cookies from 'universal-cookie';
 
 
 function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed, setNavbarColour }) {
-
+console.log(featuredArticles)
   // const [modalStatus, setModalStatus] = useState(false)
   useEffect(() => {
     setNavbarColour(true);
@@ -102,7 +102,10 @@ const mapDispatchToProps = dispatch => ({
   setNavbarColour: mode => dispatch(navbarContentAction(mode)),
   setModalContent: modal => dispatch(modalStatusAction(modal))
 })
+
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
+
+
 // export async function getServerSideProps() {
 //   const landing = await Client().query(
 //     Prismic.Predicates.at("document.type", 'landing_page')
@@ -122,6 +125,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Home);
 //     }
 //   }
 // }
+
 
 export async function getServerSideProps() {
   const landing = await Client().query(
@@ -144,6 +148,7 @@ export async function getServerSideProps() {
   // console.log(landing.results[0].data.body,"body body body")
   // console.log(Object.values(empty)
   // console.log(empty1)
+  
   return {
     props: {
       carousel: landing.results[0].data.body[0].items,

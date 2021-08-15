@@ -12,7 +12,8 @@ import Heading from '../components/extraPageComponents/heading/heading'
 
 
 
-export default function Publication({pub,new_pub, other_pub, top_3_article}) {
+export default function Publication({pub, cards, new_pub, other_pub, top_3_article}) {
+  console.log(cards)
   const search = useRef(null);
  
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,17 +44,17 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
         <div className="other1">
         {  
         
-        pub.map((card, i) =>{
-          if(pub.indexOf(card) < 3){ return(
+        cards.map((card, i) =>{
+          if(cards.indexOf(card) < 3){ return(
           <Card1 
             key={Math.random()}   
-            title={card.data.title[0].text}
-            content={card.data.post_content[0].text}
-            img={card.data.post_image.url} 
+            title={card.title[0].text}
+            content={card.article_content[0].text.substring(0,100)}
+            img={card.article_image.url} 
             date={moment().format("D MMM, YYYY")}
             // date={card.data.pub_date}
-            color={card.data.color}
-            link_text={card.data.link_text} 
+            // color={card.data.color}
+            link_text={'READ PUBLICATION'} 
             id={`${'big' + i}`}
             isCaseStudy={true}
             articleId={card.id}
@@ -76,18 +77,18 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
            <h3 className="h3-1">Other Publications</h3>
            <div className="other">
            {  
-           pub.map(card =>{
-             if(pub.indexOf(card) > 2){ return(
+           cards.map(card =>{
+             if(cards.indexOf(card) > 2){ return(
              <Card1 
                key={Math.random()}  
-               title={card.data.title[0].text} 
+               title={card.title[0].text}
                key={Math.random()} 
-               content={card.data.post_content[0].text}
-               img={card.data.post_image.url} 
+               content={card.article_content[0].text.substring(0,100)}
+               img={card.article_image.url} 
                date={moment().format("D MMM, YYYY")}
               //  date={card.data.pub_date}
-               color={card.data.color}
-               link_text={card.data.link_text} 
+              //  color={card.data.color}
+               link_text={'READ PUBLICATION'} 
                isCaseStudy={true}
                articleId={card.id}
              />)}            
@@ -97,13 +98,13 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
              <div className="toparticlelist">
              <h3 className="h3-2">Top 3 articles</h3>
                  {
-                 pub.map((card, i) => { 
-                   if(pub.indexOf(card) < 3)
+                 cards.map((card, i) => { 
+                   if(cards.indexOf(card) < 3)
                  { 
                  return( <TopArticleCard 
                  key={Math.random()} 
                  number={i + 1} 
-                 title={card.data.title[0].text}  
+                 title={card.title[0].text}  
                  date={moment().format("D MMM, YYYY")}
                 //  date={card.data.pub_date}
                  />)}})}
@@ -119,11 +120,11 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
           (    
             <div className='other'>   
               {
-             pub.filter((card, i) => {
+             cards.filter((card, i) => {
             if (searchTerm == '') {
               return card
             } else if (
-              card.data.title[0].text.toLowerCase().startsWith(searchTerm.toLowerCase())
+              card.title[0].text.toLowerCase().startsWith(searchTerm.toLowerCase())
               // card.data.title[0].text.toLowerCase().includes(searchTerm.toLowerCase())
               // return card
             ) {
@@ -133,13 +134,13 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
             return(
               <Card1 
                 key={Math.random()}   
-                title={card.data.title[0].text}
-                content={card.data.post_content[0].text}
+                title={card.title[0].text}
+                content={card.article_content[0].text.substring(0,100)}
                 img={card.data.post_image.url}
                 date={moment().format("D MMM, YYYY")}
                 // date={card.data.pub_date}
-                color={card.data.color}
-                link_text={card.data.link_text}
+                // color={card.data.color}
+                link_text={'READ PUBLICATION'}
                 isCaseStudy={true}
                 articleId={card.id}
               />
@@ -227,14 +228,40 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
           }
           .other1 {
             display: grid;
-            grid-template-columns: 55% 45%;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 50%;
+            /*display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: row-reverse;
+            */
+          }
+
           }
           .column {
             display: flex;
             flex-direction: column;
             width: 100%;
           }
-        
+
+          .other1 div:nth-of-type(1) {
+           display: block;
+           grid-column: 1 / 2;
+           grid-row: 1 / 3;
+          }
+          .other1 div:nth-of-type(2) {
+            display: block;
+           grid-column: 2 / 3;
+           grid-row: 1 / 2;
+          }
+          .other1 div:nth-of-type(3) {
+            display: block;
+           grid-column: 2 / 3;
+           grid-row: 2 / 3;
+           
+          }
+                  
           @media only screen and (max-width: 999px) {
             .container{
               width: 90%;
@@ -274,10 +301,19 @@ export default function Publication({pub,new_pub, other_pub, top_3_article}) {
     const publications = await Client().query(
         Prismic.Predicates.at("my.post.destination_page", "Publications & News")
     )
+    const featuredArticlesCards = await Client().query(
+      Prismic.Predicates.at("document.type", "article"), { pageSize: 6 }
+    )
+    let empty = {}
+    featuredArticlesCards.results.map(article => {
+      return empty[`${article.uid}`] = { id: article.id, ...article.data }
+    })
+
  console.log()
     return {
         props: {
           pub: publications.results,
+          cards: Object.values(empty),
         }
     }
 }

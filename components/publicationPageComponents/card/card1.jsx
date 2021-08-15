@@ -55,11 +55,11 @@ return(
        <style jsx global>
           {`
           #big2{
-            height: 700px;
-            width: 570px;
+            height: 750px;
+            width: 520px;
               }
               @media only screen and (max-width: 999px) {
-                #big2{
+                #big1{
                     height: 700px;
                     width: 100%;
               }
