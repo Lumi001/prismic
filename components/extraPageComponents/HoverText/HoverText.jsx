@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './HoverText.module.scss';
+// import styles from './HoverText.module.scss';
 
 const HoverText = ({ text, length, isP, ...rest }) => {
     const [textHover, setTextHover] = useState(false);

@@ -136,7 +136,7 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
                 key={Math.random()}   
                 title={card.title[0].text}
                 content={card.article_content[0].text.substring(0,100)}
-                img={card.data.post_image.url}
+                img={card.article_image.url} 
                 date={moment().format("D MMM, YYYY")}
                 // date={card.data.pub_date}
                 // color={card.data.color}
