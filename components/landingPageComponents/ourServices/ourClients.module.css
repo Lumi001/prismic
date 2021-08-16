@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 900px;
   background: #f5f5f5;
   position: relative;
   top: -100px;
@@ -8,7 +8,7 @@
   padding: 10px 20px 60px;
   min-height: 284px;
   border-radius: 23px;
-  box-shadow: -0.634117px 1.6874px 28px rgb(0 0 0 / 25%);
+  box-shadow: -0.634117px 1.6874px 28px rgb(0 0 0 / 10%);
 }
 .container section {
   display: flex;
@@ -17,6 +17,8 @@
 }
 .container img {
   object-fit: cover;
+  width: 80px;
+  height: 80px;
 }
 .container h2 {
   text-align: center;

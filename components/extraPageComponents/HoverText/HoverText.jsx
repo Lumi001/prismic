@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-// import styles from './HoverText.module.scss';
+import styles from './HoverText.module.scss';
+import { RichText } from 'prismic-reactjs';
 
 const HoverText = ({ text, length, isP, ...rest }) => {
     const [textHover, setTextHover] = useState(false);

@@ -89,6 +89,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 0px 10px;
+    max-width: 1200px;
 }
 
 .content .layout_right {
@@ -100,10 +101,16 @@
     width: 100%;
 }
 
-.content .layout_right>div {
-    max-width: 1200px;
+.content .layout_right>div{
+    max-width: 1000px;
     background: #f5f5f5;
-    padding: 10px 50px;
+    padding: 10px 65px;
+    width: 100%;
+    margin: 0px auto;
+}
+.content .layout_case_study>div {
+    max-width: 1000px;
+    padding: 10px 65px;
     width: 100%;
     margin: 0px auto;
 }
@@ -114,12 +121,22 @@
     display: none;
 }
 
-.content h1 {
+.content .layout_right>h1,.content .layout_case_study>h1 {
     font-family: Inter;
-    font-size: 48px;
+    font-size: 2.5rem;
     font-style: normal;
     letter-spacing: 0.01em;
     text-align: left;
+    font-weight: bold;
+    margin: 0px 45px 45px;
+    line-height: 152.6%;
+    /* or 73px */
+
+    letter-spacing: 0.01em;
+
+    color: #313131;
+    max-width: 900px;
+
 }
 
 .content h1,
@@ -128,7 +145,7 @@
 .content h4,
 .content h5,
 .content h6 {
-    line-height: 40px;
+    line-height: 152.6%;
     font-weight: 700;
     color: #313131;
     font-family: Inter;
@@ -154,13 +171,16 @@
     font-size: 44px;
 }
 
-.content p, .content div {
+.content p,
+.content div {
     font-family: Avenir;
     font-style: normal;
     font-weight: 500;
     font-size: 28px;
-    line-height: 199.5%;
-    /* or 56px */
+    line-height: 198.1%;
+    /* or 55px */
+
+    letter-spacing: 0.01em;
     color: #313131 !important;
 }
 
@@ -243,9 +263,11 @@
     .contact section {
         min-width: 600px;
     }
-    .content .layout_case_study, .content .layout {
+
+    .content .layout_case_study,
+    .content .layout {
         margin: 100px 0px 50px;
-        
+
     }
 }
 
@@ -253,46 +275,58 @@
     .carousel_main {
         height: max-content;
     }
+
     .content_case_study .social {
         display: none;
     }
+
     .content .layout_right>h1,
     .content .layout_case_study>h1 {
         font-size: 1.5rem;
     }
+
     .content .layout_right p,
     .content .layout_case_study p {
         font-size: 1rem;
         margin: 0px auto;
     }
+
     .content .layout_case_study>h1,
     .content .layout_case_study>div {
         width: 100%;
         margin: auto;
     }
+
     .content .layout_right,
     .content .layout_case_study {
         max-width: 500px;
         margin: auto;
     }
+
     .content .layout_case_study,
     .content .layout {
         padding-top: 100px;
     }
+
     .content .layout_case_study>div,
     .content .layout>div {
         padding-top: 50px;
     }
+
     .content>img {
         display: none;
     }
+
     .content {
         background: #ffffff;
     }
-    .contact{
+
+    .contact {
         margin: 30px 0px;
     }
-    .contact .right, .contact .left{
+
+    .contact .right,
+    .contact .left {
         margin: 30px 15px;
     }
 }
@@ -310,8 +344,9 @@
 }
 
 .content .layout_right>div {
-    padding: 20px;
+    padding: 20px 70px;
 }
+
 @media (max-width: 600px) {
     .grid {
         width: 100%;
