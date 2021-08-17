@@ -56,7 +56,7 @@
 
 .card p {
   /* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit... */
-
+  
   margin: 0px 0px 15px 0px;
   font-family: "Avenir";
   font-style: normal;
@@ -122,7 +122,6 @@
   object-fit: cover;
   width: 100%;
   height: 250px;
-  box-shadow: 0px 0px 1px 0px;
 }
 /* .card .case {
   box-shadow: 30.634117px 25.9874px 10px rgba(141, 138, 138, 0.8);
@@ -149,6 +148,7 @@
   top: 0;
   left: 0;
   z-index: 1;
+  box-shadow: 0px 0px 1px 0px;
 }
 .card .images .backdrop {
   position: absolute;
@@ -156,15 +156,16 @@
   left: 5%;
   z-index: 0;
 }
+.card .images .large{
+  width: 100% !important;
+  box-shadow: 0px 0px 1px 0px;
+}
 @media screen and (min-width: 999px) {
-  .card .images .large{
-    width: 100%px !important;
-  }
   .card h3 {
   }
   .card p {
     /* font-size: 3rem; */
-  
+    
     /* height: 88px; */
   }
   .img {
