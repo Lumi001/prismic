@@ -47,11 +47,11 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
         cards.map((card, i) =>{
           if(cards.indexOf(card) < 3){ return(
           <Card1 
-            key={Math.random()}   
+            key={i}   
             title={card.title[0].text}
             content={card.article_content[0].text.substring(0,100)}
             img={card.article_image.url} 
-            date={moment().format("D MMM, YYYY")}
+            date={moment().format("D MMM, YYYY").fromNow()}
             // date={card.data.pub_date}
             // color={card.data.color}
             link_text={'READ PUBLICATION'} 
@@ -77,15 +77,15 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
            <h3 className="h3-1">Other Publications</h3>
            <div className="other">
            {  
-           cards.map(card =>{
+           cards.map((card,i) =>{
              if(cards.indexOf(card) > 2){ return(
              <Card1 
-               key={Math.random()}  
+               key={i}  
                title={card.title[0].text}
                key={Math.random()} 
                content={card.article_content[0].text.substring(0,100)}
                img={card.article_image.url} 
-               date={moment().format("D MMM, YYYY")}
+               date={moment().format("D MMM, YYYY").fromNow()}
               //  date={card.data.pub_date}
               //  color={card.data.color}
                link_text={'READ PUBLICATION'} 
@@ -102,10 +102,10 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
                    if(cards.indexOf(card) < 3)
                  { 
                  return( <TopArticleCard 
-                 key={Math.random()} 
+                 key={i} 
                  number={i + 1} 
                  title={card.title[0].text}  
-                 date={moment().format("D MMM, YYYY")}
+                 date={moment().format("D MMM, YYYY").fromNow()}
                 //  date={card.data.pub_date}
                  />)}})}
          </div>
@@ -133,11 +133,11 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
           }).map((card, i) => {
             return(
               <Card1 
-                key={Math.random()}   
+                key={i}   
                 title={card.title[0].text}
                 content={card.article_content[0].text.substring(0,100)}
                 img={card.article_image.url} 
-                date={moment().format("D MMM, YYYY")}
+                date={moment().format("D MMM, YYYY").fromNow()}
                 // date={card.data.pub_date}
                 // color={card.data.color}
                 link_text={'READ PUBLICATION'}
