@@ -49,14 +49,14 @@
   line-height: 152.6%;
   /* or 46px */
   letter-spacing: 0.01em;
-
+  
   color: #38465e;
   /* min-height: 150px; */
 }
 
 .card p {
   /* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sit... */
-
+  
   margin: 0px 0px 15px 0px;
   font-family: "Avenir";
   font-style: normal;
@@ -66,7 +66,7 @@
   /* or 44px */
   letter-spacing: 0.01em;
   /* min-height: 150px; */
-
+  
   color: #38465e;
 }
 
@@ -88,7 +88,7 @@
   line-height: 181.6%;
   /* or 44px */
   letter-spacing: 0.01em;
-
+  
   color: #38465e;
 }
 .card p span {
@@ -116,7 +116,7 @@
 
 .card img {
   /* Rectangle 84 */
-
+  
   /* background: #c4c4c4; */
   border-radius: 15px;
   object-fit: cover;
@@ -148,6 +148,7 @@
   top: 0;
   left: 0;
   z-index: 1;
+  box-shadow: 0px 0px 1px 0px;
 }
 .card .images .backdrop {
   position: absolute;
@@ -155,15 +156,16 @@
   left: 5%;
   z-index: 0;
 }
+.card .images .large{
+  width: 100% !important;
+  box-shadow: 0px 0px 1px 0px;
+}
 @media screen and (min-width: 999px) {
-  .card .images .large{
-    width: 100%px !important;
-  }
   .card h3 {
   }
   .card p {
     /* font-size: 3rem; */
-  
+    
     /* height: 88px; */
   }
   .img {
