@@ -9,6 +9,7 @@ import { RichText } from 'prismic-reactjs';
 import ContactItems from '../components/contactPageComponents/contactItem/contactItem';
 import ContactField from '../components/contactPageComponents/contactField/contactField';
 import Button from '../components/extraPageComponents/button/button';
+import ContactSelect from '../components/contactPageComponents/contactSelect/contactSelect';
 
 
 const Contact = ({ title, items, setNavbarColour }) => {
@@ -40,7 +41,8 @@ const Contact = ({ title, items, setNavbarColour }) => {
                         <ContactField name="email" placeholder="Email" onChange={setEmail} />
                         <ContactField name="number" placeholder="Mobile Number" onChange={setNumber} />
                         <ContactField name="company_name" placeholder="Company Name" onChange={setCompanyName} />
-                        <ContactField name="message" placeholder="Message" onChange={setMessage} />
+                        {/* <ContactField name="message" placeholder="Message" onChange={setMessage} /> */}
+                        <ContactSelect name="message" placeholder="Message" onChange={setMessage}/>
                         <button type="submit">
                             <Button text="SEND MESSAGE" />
                         </button>

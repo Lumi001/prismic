@@ -1,6 +1,5 @@
 .button {
-    width: 284px;
-    height: 60px;
+    padding: 12px 22px !important;
     border-radius: 5px;
     font-family: "Inter";
     font-style: normal;
@@ -90,6 +89,7 @@
 }
 
 @media screen and (max-width: 999px) {
+
     .button a,
     .secondary_button a {
         font-size: 1rem;
