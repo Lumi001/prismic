@@ -10,7 +10,7 @@ const TeamCard = ({ image, title, content, services }) => {
             <h3 className={services?styles.services_h3:null}>{title}</h3>
             <HoverText
             text={content}
-            length={80}
+            length={70}
             isP={true}
             />
         </div>

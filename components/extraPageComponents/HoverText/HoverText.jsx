@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs';
 
 const HoverText = ({ text, length, isP, ...rest }) => {
     const [textHover, setTextHover] = useState(false);
+    const mediaQuery = window.matchMedia('(min-width: 992px)')
     return (
         <section className={styles.hover_text} {...rest}>
             {text.length>=length?
@@ -11,6 +12,7 @@ const HoverText = ({ text, length, isP, ...rest }) => {
                 <h3
                     onMouseOver={() => setTextHover(true)}
                     onMouseOut={() => setTextHover(false)}
+                    onTouch={()=>setTextHover(!textHover)}
                     style={{ cursor: "pointer" }}
                     className={`${textHover && styles.spill_over}`}
                     content={text}
@@ -26,14 +28,16 @@ const HoverText = ({ text, length, isP, ...rest }) => {
                 </h3>
                 :
                 <p
-                    onMouseOver={() => setTextHover(true)}
-                    onMouseOut={() => setTextHover(false)}
+                    onMouseOver={() => mediaQuery.matches&&setTextHover(true)}
+                    onMouseOut={() => mediaQuery.matches&&setTextHover(false)}
+                    onClick={()=>setTextHover(!textHover)}
                     style={{ cursor: "pointer" }}
-                    className={`${textHover && styles.spill_over}`}
-                    content={text}
+                    className={`${textHover && styles.spill_over} ${styles.isP}`}
+                    content={mediaQuery.matches && text}
                 >
 
-                    {text.slice(0,text.slice(0,length).lastIndexOf(" "))}
+                    {/* {mediaQuery.matches&&text.slice(0,text.slice(0,length).lastIndexOf(" "))} */}
+                    {!mediaQuery.matches?!textHover?text.slice(0,text.slice(0,length).lastIndexOf(" ")):text:text.slice(0,text.slice(0,length).lastIndexOf(" "))}
                     <span>
                     {` [...]`}
                     </span>
