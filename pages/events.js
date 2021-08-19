@@ -56,7 +56,7 @@ return (
             z-index: 1;
             top: 0;
             left: 0;
-            height: 627px;
+            height: 100%;
             width: 100%;
             background-color: #251861;
             opacity: 0.7;

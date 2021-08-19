@@ -20,27 +20,27 @@ import Cookies from 'universal-cookie';
 
 
 function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed, setNavbarColour }) {
-console.log(featuredArticles)
+  console.log(featuredArticles)
   // const [modalStatus, setModalStatus] = useState(false)
   useEffect(() => {
     setNavbarColour(true);
     const cookies = new Cookies();
     setModalContent({ modalIsActive: false })
     if (!subscribed) {
-      setModalContent({ modalHasBeenShown: false })
+      // setModalContent({ modalHasBeenShown: false })
       if (!cookies.get('hasSubscribed')) {
-      if (!cookies.get('timeLastShown')) {
-        // if (!modalHasBeenShown) {
+        if (!cookies.get('timeLastShown')) {
+          // if (!modalHasBeenShown) {
           setTimeout(() => {
             var now = Date.now();
-            // cookies.set('timeLastShown', now, { maxAge: 86400 });
-            cookies.set('timeLastShown', now, { maxAge: 8 });
+            // cookies.set('timeLastShown', now, { maxAge: 8 });
+            cookies.set('timeLastShown', now, { maxAge: 86400 });
             // console.log(cookies.get('timeLastShown'), cookies.get('leggo'))
             setModalContent({ modalIsActive: true })
           }, 25000);
-        // }
+          // }
+        }
       }
-    }
     }
     return function cleanup() {
       setModalContent({ modalIsActive: false })
@@ -139,7 +139,7 @@ export async function getServerSideProps() {
     return empty[`${article.uid}`] = { id: article.id, ...article.data }
   })
   const featuredPostsCards = await Client().query(
-    Prismic.Predicates.at("my.post.type", true), { orderings: '[document.last_publication_date desc]',pageSize: 6,  }
+    Prismic.Predicates.at("my.post.type", true), { orderings: '[document.last_publication_date desc]', pageSize: 6, }
   )
   let empty1 = {}
   featuredPostsCards.results.map(post => {
@@ -148,7 +148,7 @@ export async function getServerSideProps() {
   // console.log(landing.results[0].data.body,"body body body")
   // console.log(Object.values(empty)
   // console.log(empty1)
-  
+
   return {
     props: {
       carousel: landing.results[0].data.body[0].items,
