@@ -25,13 +25,13 @@
     padding: 0px !important;
     outline: none;
     border: none;
-    width: 195px;
-    height: 44px;
+    /* width: 195px;
+    height: 44px; */
 }
 
 .contact .right>button>button {
     margin: 0px !important;
-    padding: 0px !important;
+    /* padding: 0px !important; */
     font-style: normal;
     font-weight: bold;
     font-size: 14px;

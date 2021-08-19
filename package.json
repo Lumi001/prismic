@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start -p 5500"
   },
@@ -21,7 +21,7 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "sass": "^1.38.0",
+    "sass": "^1.37.5",
     "slick-carousel": "^1.8.1",
     "universal-cookie": "^4.0.4"
   }
