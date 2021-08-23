@@ -6,8 +6,11 @@
 
 /* .contact_field:focus-within{
 } */
-
-.contact_field input {
+.contact_field textarea{
+    text-align: left !important;
+    padding: 0px 0px 5px 20px !important;
+}
+.contact_field .input {
     width: 100%;
     outline: none;
     border: none;
@@ -29,7 +32,7 @@
     color: #38465E;
 }
 
-.contact_field input:focus {
+.contact_field .input:focus {
     border-bottom: 1px solid #313131;
 }
 

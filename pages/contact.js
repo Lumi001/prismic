@@ -6,10 +6,12 @@ import Head from 'next/head';
 import { navbarContentAction } from '../redux/navbar/navbar.actions';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
+import { Form, Formik } from 'formik';
 import ContactItems from '../components/contactPageComponents/contactItem/contactItem';
-import ContactField from '../components/contactPageComponents/contactField/contactField';
+import {ContactField} from '../components/contactPageComponents/contactField/contactField';
 import Button from '../components/extraPageComponents/button/button';
 import ContactSelect from '../components/contactPageComponents/contactSelect/contactSelect';
+import ContactSchema from '../validation/contact'
 
 
 const Contact = ({ title, items, setNavbarColour }) => {
@@ -21,6 +23,7 @@ const Contact = ({ title, items, setNavbarColour }) => {
     const [number, setNumber] = useState("");
     const [companyName, setCompanyName] = useState("");
     const [message, setMessage] = useState("");
+    const [additionalMessage, setAdditionalMessage] = useState("");
     return (
         <div className={styles.container}>
             <Head>
@@ -37,15 +40,33 @@ const Contact = ({ title, items, setNavbarColour }) => {
                         <ContactItems items={items} />
                     </section>
                     <section className={styles.right}>
-                        <ContactField name="name" placeholder="Name" onChange={setName} />
-                        <ContactField name="email" placeholder="Email" onChange={setEmail} />
-                        <ContactField name="number" placeholder="Mobile Number" onChange={setNumber} />
-                        <ContactField name="company_name" placeholder="Company Name" onChange={setCompanyName} />
-                        {/* <ContactField name="message" placeholder="Message" onChange={setMessage} /> */}
-                        <ContactSelect name="message" placeholder="Message" onChange={setMessage}/>
-                        <button type="submit">
-                            <Button text="SEND MESSAGE" />
-                        </button>
+                        <Formik
+                            initialValues={{
+                                email: '',
+                                name: '',
+                                companyName: '',
+                                additionalMessage: '',
+                                number: ''
+                            }}
+                            validationSchema={ContactSchema}
+                            validateOnBlur
+                            validateOnChange
+                        >
+                            {({ handleSubmit, handleChange, errors, values }) => (
+                            <Form>
+                                <ContactField name="name" value={values.name} error={errors.name} placeholder="Name" onChange={handleChange}/>
+                                <ContactField name="email" value={values.email} error={errors.email} placeholder="Email" onChange={handleChange}/>
+                                <ContactField name="number" value={values.number} error={errors.number} placeholder="Mobile Number" onChange={handleChange}/>
+                                <ContactField name="companyName" value={values.companyName} error={errors.companyName} placeholder="Company Name" onChange={handleChange}/>
+                                {/* <ContactField name="message" value={values.} error={errors.} placeholder="Message" onChange={handleChange}/>*/}
+                                <ContactSelect name="message" placeholder="Message" onChange={handleChange}/>
+                                <ContactField type="textarea" name="additionalMessage" value={values.additionalMessage} error={errors.additionalMessage} placeholder="Additional Message" onChange={handleChange}/>
+                                <button type="submit" onClick={handleSubmit}>
+                                    <Button text="SEND MESSAGE" />
+                                </button>
+                            </Form>
+                            )}
+                        </Formik>
                     </section>
                 </div>
             </main>
@@ -62,12 +83,12 @@ export async function getServerSideProps() {
     const contactObject = await Client().query(
         Prismic.Predicates.at("document.type", "contact"), { pageSize: 1 }
     )
-    const contact= contactObject.results[0].data
+    const contact = contactObject.results[0].data
     // console.log(contact)
     return {
         props: {
-            title:contact.title&&contact.title[0]?contact.title[0].text:"Contact.",
-            items:contact.body
+            title: contact.title && contact.title[0] ? contact.title[0].text : "Contact.",
+            items: contact.body
         }
     }
 }
