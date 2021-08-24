@@ -3,12 +3,12 @@ import React, { Fragment } from 'react';
 import styles from './button.module.css';
 // import './button.scss';
 
-const Button = ({ text, width, height, fontSize, secondary, icon, articleId,href,isCaseStudy,onClick }) => {
+const Button = ({ text, width, height, fontSize, secondary, icon, articleId,href,isCaseStudy,onClick,...rest }) => {
     return (
         <Fragment>
             {
                 !secondary ?
-                    <button className={styles.button} style={{ width: `${width}`, height: `${height}`, fontSize: `${fontSize}` }} onClick={onClick?()=>onClick():null}>
+                    <button {...rest} className={styles.button} style={{ width: `${width}`, height: `${height}`, fontSize: `${fontSize}` }} onClick={onClick?()=>onClick():null}>
                         {text}
                                 <span><img src={icon||"/white-arrow-right.svg"} alt="" /></span>
                     </button> :

@@ -6,10 +6,10 @@ const ContactItems = ({ items }) => {
         <div className={styles.contact_item}>
             {
                 items.map(item =>
-                    <div>
+                    <div key={Math.random()}>
                         {/* {console.log(item)} */}
                         <h3>{item.primary&&item.primary.heading?item.primary.heading:""}</h3>
-                        {item.items.map(each => <p>{Object.values(each)[0]}</p>)}
+                        {item.items.map(each => <p key={Math.random()}>{Object.values(each)[0]}</p>)}
                     </div>
                 )
             }

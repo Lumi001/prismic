@@ -5,13 +5,12 @@ const ContactSchema = Yup.object({
     name: Yup.string()
     .min(3, 'must be 3 characters or more')
     .required('Required'),
-    company_name: Yup.string()
+    companyName: Yup.string()
     .min(3, 'must be 3 characters or more')
     .required('Required'),
-    additional_message: Yup.string()
+    additionalMessage: Yup.string()
     .min(2, 'Too Short!')
-    .max(160, 'Too Long!')
-    .required('City is required'),
+    .max(160, 'Too Long!'),
     email: Yup.string()
     .email('Email is Invalid')
     .required('Required'),

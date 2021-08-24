@@ -12,9 +12,9 @@ import {ContactField} from '../components/contactPageComponents/contactField/con
 import Button from '../components/extraPageComponents/button/button';
 import ContactSelect from '../components/contactPageComponents/contactSelect/contactSelect';
 import ContactSchema from '../validation/contact'
+import router from'next/router';
 
-
-const Contact = ({ title, items, setNavbarColour }) => {
+const Contact = ({ title,recipientEmail, items, setNavbarColour }) => {
     useEffect(() => {
         setNavbarColour(true)
     })
@@ -48,12 +48,24 @@ const Contact = ({ title, items, setNavbarColour }) => {
                                 additionalMessage: '',
                                 number: ''
                             }}
+                            onSubmit={()=>{
+                                console.log(recipientEmail)
+                                fetch(`${router.basePath}/api/sendToEmail`,{
+                                    body:JSON.stringify({email:recipientEmail}),
+                                    headers:{
+                                        'Content-Type':'application/json',
+                                    },
+                                    method: "Post"
+                                })
+                                .then(data=>data.json())
+                                .then(data=>console.log(data))
+                            }}
                             validationSchema={ContactSchema}
                             validateOnBlur
                             validateOnChange
                         >
                             {({ handleSubmit, handleChange, errors, values }) => (
-                            <Form>
+                            <Form onSubmit={handleSubmit}>
                                 <ContactField name="name" value={values.name} error={errors.name} placeholder="Name" onChange={handleChange}/>
                                 <ContactField name="email" value={values.email} error={errors.email} placeholder="Email" onChange={handleChange}/>
                                 <ContactField name="number" value={values.number} error={errors.number} placeholder="Mobile Number" onChange={handleChange}/>
@@ -61,9 +73,7 @@ const Contact = ({ title, items, setNavbarColour }) => {
                                 {/* <ContactField name="message" value={values.} error={errors.} placeholder="Message" onChange={handleChange}/>*/}
                                 <ContactSelect name="message" placeholder="Message" onChange={handleChange}/>
                                 <ContactField type="textarea" name="additionalMessage" value={values.additionalMessage} error={errors.additionalMessage} placeholder="Additional Message" onChange={handleChange}/>
-                                <button type="submit" onClick={handleSubmit}>
-                                    <Button text="SEND MESSAGE" />
-                                </button>
+                                    <Button type="submit" onClick={()=>handleSubmit} text="SEND MESSAGE" />
                             </Form>
                             )}
                         </Formik>
@@ -88,6 +98,7 @@ export async function getServerSideProps() {
     return {
         props: {
             title: contact.title && contact.title[0] ? contact.title[0].text : "Contact.",
+            recipientEmail:contact.email&&contact.email[0]?contact.email[0].text:"",
             items: contact.body
         }
     }

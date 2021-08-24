@@ -2,15 +2,17 @@ import styles from './contactField.module.css';
 import { ErrorMessage, useField } from 'formik';
 
 
-export const ContactField = ({ name, placeholder, onChange, type,...rest }) => {
-    const [field, meta, helpers] = useField({ name, placeholder,...rest });
+export const ContactField = (props) => {
+    const { name, placeholder, onChange = () => { }, type,...rest } = props;
+    const [field, meta, helpers] = useField(props);
+    console.log(meta)
     return (
         <div className={styles.contact_field}>
             <label htmlFor={name}>{placeholder}</label>
             {type ?
-                <textarea required={true} maxLength={160} className={styles.input} name={name} id={name} cols="30" rows="5" onChange={onChange}></textarea>
+                <textarea required={true} maxLength={160} className={`${styles.input} ${meta.touched && meta.error&&styles.error}`} name={name} id={name} cols="30" rows="5" {...field} {...props.rest} onChange={(e)=>field.onChange(e)}></textarea>
                 :
-                <input aria-required='true' className={styles.input} type="text" name={name} required={true} id={name} onChange={onChange} />
+                <input aria-required='true' className={`${styles.input} ${meta.touched && meta.error&&styles.error}`} type="text" name={name} required={true} id={name} {...field} {...props.rest} onChange={(e)=>field.onChange(e)} />
             }
             {/* <h3>{title}</h3>
             {items.map(item=><p>{item}</p>)} */}

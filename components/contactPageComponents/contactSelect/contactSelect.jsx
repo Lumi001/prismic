@@ -10,7 +10,7 @@ const ContactSelect = ({ name, placeholder,onChange }) => {
             <label htmlFor={name}>{placeholder}</label>
             {/* <input type="text" name={name} required id={name} onChange={onChange}/> */}
             <select name={name} onChange={(e)=>onChange(e.target.value)}>
-                {options.map(option=><option>{option.text}</option>)}
+                {options.map(option=><option key={Math.random()}>{option.text}</option>)}
             </select>
             {/* <h3>{title}</h3>
             {items.map(item=><p>{item}</p>)} */}

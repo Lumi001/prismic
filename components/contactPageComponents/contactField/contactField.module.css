@@ -10,6 +10,21 @@
     text-align: left !important;
     padding: 0px 0px 5px 20px !important;
 }
+.contact_field .error{
+    border-bottom: 1px solid red !important;
+}
+
+.hint small{
+    color:red;
+}
+.hint img{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
 .contact_field .input {
     width: 100%;
     outline: none;
