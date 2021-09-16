@@ -3,14 +3,14 @@ import { ErrorMessage, useField } from 'formik';
 
 
 export const ContactField = (props) => {
-    const { name, placeholder, onChange = () => { }, type,...rest } = props;
+    const { name, placeholder, isNotRequired, onChange = () => { }, type,...rest } = props;
     const [field, meta, helpers] = useField(props);
     console.log(meta)
     return (
         <div className={styles.contact_field}>
             <label htmlFor={name}>{placeholder}</label>
             {type ?
-                <textarea required={true} maxLength={160} className={`${styles.input} ${meta.touched && meta.error&&styles.error}`} name={name} id={name} cols="30" rows="5" {...field} {...props.rest} onChange={(e)=>field.onChange(e)}></textarea>
+                <textarea required={!isNotRequired} maxLength={160} className={`${styles.input} ${meta.touched && meta.error&&styles.error}`} name={name} id={name} cols="30" rows="5" {...field} {...props.rest} onChange={(e)=>field.onChange(e)}></textarea>
                 :
                 <input aria-required='true' className={`${styles.input} ${meta.touched && meta.error&&styles.error}`} type="text" name={name} required={true} id={name} {...field} {...props.rest} onChange={(e)=>field.onChange(e)} />
             }

@@ -72,7 +72,7 @@ const Contact = ({ title,recipientEmail, items, setNavbarColour }) => {
                                 <ContactField name="companyName" value={values.companyName} error={errors.companyName} placeholder="Company Name" onChange={handleChange}/>
                                 {/* <ContactField name="message" value={values.} error={errors.} placeholder="Message" onChange={handleChange}/>*/}
                                 <ContactSelect name="message" placeholder="Message" onChange={handleChange}/>
-                                <ContactField type="textarea" name="additionalMessage" value={values.additionalMessage} error={errors.additionalMessage} placeholder="Additional Message" onChange={handleChange}/>
+                                <ContactField isNotRequired={true} type="textarea" name="additionalMessage" value={values.additionalMessage} error={errors.additionalMessage} placeholder="Additional Message" onChange={handleChange}/>
                                     <Button type="submit" onClick={()=>handleSubmit} text="SEND MESSAGE" />
                             </Form>
                             )}
