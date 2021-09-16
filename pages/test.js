@@ -6,7 +6,7 @@ import Share from "../components/contentPageComponents/share/share";
 import { useRouter } from "next/router";
 import { RichText } from "prismic-reactjs";
 import Card from "../components/extraPageComponents/card/card";
-import { PRISMIC_heading, PRISMIC_image, PRISMIC_link, PRISMIC_link_text, PRISMIC_text, PRISMIC_title } from "../../projectos/prismic-configuration";
+import { PRISMIC_heading, PRISMIC_image, PRISMIC_link, PRISMIC_link_text, PRISMIC_text, PRISMIC_title } from "../prismic-configuration";
 import { useState } from "react";
 import Button from "../components/extraPageComponents/button/button";
 import ProjectCard from "../components/extraPageComponents/projectCard/projectCard";
