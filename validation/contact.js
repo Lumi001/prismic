@@ -15,8 +15,7 @@ const ContactSchema = Yup.object({
     .email('Email is Invalid')
     .required('Required'),
     number: Yup.string()
-    .min(10, 'must be a valid phone number')
-    .max(11, 'must be a valid phone number')
+    .min(7, 'must be a valid phone number')
     .required('Required')
     .matches(phoneRegExp,'must be a valid phone number')    
 })
