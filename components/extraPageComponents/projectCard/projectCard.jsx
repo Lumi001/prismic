@@ -25,7 +25,7 @@ const ProjectCard = ({ image, title, content, id, link, flip, icon, isCaseStudy,
                     length={100}
                     isP={true}
                     />}
-                    <Button secondary href={href} articleId={id} text={link} isCaseStudy={isCaseStudy} />
+                    <Button secondary href={href??"#"} articleId={id} text={link} isCaseStudy={isCaseStudy} />
                 </section>
             </div>
         </div>

@@ -12,7 +12,7 @@ const Social = ({ text,items }) => {
             <h1>{text}</h1>
             <section className={styles.buttons}>
                 {items.map(item=>(
-                    <section>
+                    <section key={Math.random()}>
                     <Link key={Math.random()} href={item.link_address?.url?item.link_address?.url:"/404"}>
                         <a target="_blank">
                     <SocialButton key={Math.random()}  img={`/socials/${item.select_social_type?item.select_social_type.toLowerCase():""}.png`}/>

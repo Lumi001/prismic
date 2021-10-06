@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const NavbarItem = ({ href, text, type,navbarColour }) => {
     return (
-        <Link href={href}>
+        <Link href={href??"#"}>
             {type === "link" ?
                 <a className={navbarColour?styles.primary_item:styles.secondary_item}>
                     {text}

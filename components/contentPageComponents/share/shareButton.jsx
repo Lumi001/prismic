@@ -5,7 +5,7 @@ import React from 'react';
 const ShareButton = ({ img, href }) => {
     return (
         <React.Fragment>
-            <Link href={href}>
+            <Link href={href??"#"}>
                 <a target="_blank">
                     {
                         <img

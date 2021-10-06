@@ -12,7 +12,7 @@ const HoverText = ({ text, length, isP, ...rest }) => {
                 <h3
                     onMouseOver={() => setTextHover(true)}
                     onMouseOut={() => setTextHover(false)}
-                    onTouch={()=>setTextHover(!textHover)}
+                    onClick={()=>setTextHover(!textHover)}
                     style={{ cursor: "pointer" }}
                     className={`${textHover && styles.spill_over}`}
                     content={text}

@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Button = ({ href, text, type, fill }) => {
 
     return (
-        <Link href={href}>
+        <Link href={href??"#"}>
             {type === "fill" ?
                 <button className={styles.button}>
                     <span>{text}</span>

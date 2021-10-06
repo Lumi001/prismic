@@ -16,7 +16,7 @@ const CarouselItem = ({title, content, link, image,href }) => {
     <section className={styles.left}>
       <h1>{title}</h1>
       <p>{content}</p>
-        <Button text={link} secondary href={href} />
+        <Button text={link} secondary href={href??"#"} />
       {/* <a>{link}<span><img src="/carousel/Arrow.png" alt="" /></span></a> */}
       {/* <span>
         </span> */}

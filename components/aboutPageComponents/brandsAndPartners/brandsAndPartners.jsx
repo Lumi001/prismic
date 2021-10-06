@@ -31,8 +31,8 @@ const BrandsAndPartners = ({heading, subHeading, items1,items2,link, href}) => {
                         })}
                     </section>
                 </section>
-                {/* <Link href={href}><a>{link}<span><img src="/button/arrow.png" alt=""/></span></a></Link> */}
-                <Button href={href} text={link} secondary/>
+                {/* <Link href={href??"#"}><a>{link}<span><img src="/button/arrow.png" alt=""/></span></a></Link> */}
+                <Button href={href??"#"} text={link} secondary/>
             </div>
         </div>
     );

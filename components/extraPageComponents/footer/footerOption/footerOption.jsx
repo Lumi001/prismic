@@ -12,7 +12,7 @@ const FooterOption = ({ text, href, address, last, socials }) => {
         <div className={styles.option}>
             {
                 href ?
-                    <Link href={href}>
+                    <Link href={href??"#"}>
                         <p className={styles.option_text}>{text}</p>
                     </Link>
                     :
