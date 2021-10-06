@@ -45,7 +45,7 @@ const Navbar = ({ navigation, links, navbarColour }) => {
                     {linksTemp.map(link => {
                         return (
                             <div className={styles.pc} key={Math.random()} >
-                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address} type="button" key={Math.random()} text={link.link_text[0].text} /> : <NavbarItem key={Math.random()} href={link.link_address} type="link" text={link.link_text[0].text} />}
+                                {link === linksTemp[linksTemp.length - 1] ? <NavbarItem href={link.link_address} type="button" key={Math.random()} text={link?.link_text[0]?.text} /> : <NavbarItem key={Math.random()} href={link.link_address} type="link" text={link?.link_text[0]?.text} />}
                             </div>
                         )
                     })}
