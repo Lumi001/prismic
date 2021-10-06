@@ -20,7 +20,7 @@ import Cookies from 'universal-cookie';
 
 
 function Home({ scroll_data, partners, cards, posts, carousel, featuredArticles, featuredPosts, isActive, modalContent, modalType, setModalContent, modalHasBeenShown, timeLastShown, subscribed, setNavbarColour }) {
-  console.log(featuredArticles)
+  // console.log(featuredArticles)
   // const [modalStatus, setModalStatus] = useState(false)
   useEffect(() => {
     setNavbarColour(true);

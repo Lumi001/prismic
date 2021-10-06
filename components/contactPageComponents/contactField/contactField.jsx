@@ -5,7 +5,7 @@ import { ErrorMessage, useField } from 'formik';
 export const ContactField = (props) => {
     const { name, placeholder, isNotRequired, onChange = () => { }, type,...rest } = props;
     const [field, meta, helpers] = useField(props);
-    console.log(meta)
+    // console.log(meta)
     return (
         <div className={styles.contact_field}>
             <label htmlFor={name}>{placeholder}</label>

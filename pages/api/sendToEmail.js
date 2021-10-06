@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 export default async(req, res) => {
   // return res.send({answer:"in"})
   if (req.body.email) {
-    console.log(req.body,"body")
+    // console.log(req.body,"body")
     const email = req.body.email;
     let transport = nodemailer.createTransport({
       host: "smtp-mail.outlook.com", // hostname
@@ -32,10 +32,10 @@ export default async(req, res) => {
 
     transport.sendMail(message, function (err, info) {
       if (err) {
-        console.log(err)
+        // console.log(err)
         return res.status(404).json({ body: 'Damn!!' + `${err}` })
       } else {
-        console.log(info);
+        // console.log(info);
         return res.status(200).json({ body: 'Success!' })
       }
     });

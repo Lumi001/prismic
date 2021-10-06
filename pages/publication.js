@@ -13,7 +13,7 @@ import Heading from '../components/extraPageComponents/heading/heading'
 
 
 export default function Publication({pub, cards, new_pub, other_pub, top_3_article}) {
-  console.log(cards)
+  // console.log(cards)
   const search = useRef(null);
  
   const [searchTerm, setSearchTerm] = useState("");

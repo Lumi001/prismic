@@ -111,9 +111,6 @@ const Subscribe = ({ setModalContent }) => {
                 // setModalContent({ subscribed: true })
             }
             )
-            .catch(error => 
-                console.log(error)
-                )
     }
     return (
         // style={{ display: "block" }}
