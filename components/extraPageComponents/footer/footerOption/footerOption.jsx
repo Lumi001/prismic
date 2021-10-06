@@ -13,7 +13,9 @@ const FooterOption = ({ text, href, address, last, socials }) => {
             {
                 href ?
                     <Link href={href??"#"}>
+                        <a>
                         <p className={styles.option_text}>{text}</p>
+                        </a>
                     </Link>
                     :
                     !last ?
