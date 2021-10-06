@@ -179,15 +179,14 @@
 
 .content p,
 .content div {
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 198.1%;
-  /* or 55px */
-
-  letter-spacing: 0.01em;
-  color: #313131 !important;
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 178.1%;
+    letter-spacing: 0.01em;
+    color: #313131 !important;
+    margin: 0px 0px 30px;
 }
 
 .main {

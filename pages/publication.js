@@ -21,7 +21,7 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
     // <div className={styles.container}>
     <React.Fragment>
         <Head>
-        <title>TruCSR</title>
+        <title>TruCSR - Publications</title>
         <link rel="icon" href="/favicon.ico"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
