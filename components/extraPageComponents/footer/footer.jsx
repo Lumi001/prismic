@@ -84,7 +84,7 @@ const Footer = ({ links, footer_items,socials }) => {
                                 <FooterTitle text={link.primary.footer_section_title[0]?link.primary.footer_section_title[0].text:null} />
                                 {
                                     link.items.map(each => {
-                                        console.log(each)
+                                        // console.log(each)
                                         return <div key={Math.random()}>
                                             <FooterOption address={true} socials={socials} text={each.link_text} last={link.items.indexOf(each) === link.items.length - 1} href={footer_items.indexOf(link) !== footer_items.length - 1 ? each.link_address?.url ? each.link_address?.url : "#" : null} />
                                         </div>
