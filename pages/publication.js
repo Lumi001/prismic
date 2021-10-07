@@ -307,7 +307,7 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
       return empty[`${article.uid}`] = { id: article.id, ...article.data }
     })
 
- console.log()
+//  console.log()
     return {
         props: {
           pub: publications.results,

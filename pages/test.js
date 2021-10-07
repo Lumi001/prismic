@@ -76,7 +76,7 @@ export async function getServerSideProps(context) {
   let subpage = await Client().query(
     Prismic.Predicates.at("my.test.uid", `${title}`)
   );
-  console.log(subpage)
+  // console.log(subpage)
   // console.log("leggo")
   let carousel = subpage.results[0].data.body.filter(
     (item) => item.slice_type === "carousel"
