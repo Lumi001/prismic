@@ -7,11 +7,11 @@ import { useEffect, useState } from 'react';
 const Navbar = ({ navigation, links, navbarColour }) => {
     const [rightDropdown, setRightDropdown] = useState(false);
     const [scroll, setScroll] = useState(0);
-    const handleScroll = () => {
-        setScroll(window.scrollY);
-        // console.log(window.scrollY, window.screenY, window.pageYOffset);
-    }
     useEffect(() => {
+        const handleScroll = () => {
+            setScroll(window.scrollY);
+            // console.log(window.scrollY, window.screenY, window.pageYOffset);
+        }
         window.addEventListener('scroll', handleScroll, { capture: true, passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     });

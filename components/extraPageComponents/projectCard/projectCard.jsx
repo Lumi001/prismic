@@ -1,8 +1,13 @@
 import styles from './projectCard.module.css';
 import Link from 'next/link'
 import Button from '../button/button';
-import HoverText from '../HoverText/HoverText';
-
+import dynamic from 'next/dynamic'
+const HoverText = dynamic(
+  () => import("../HoverText/HoverText"),
+  {
+    ssr: false,
+  }
+);
 
 
 const ProjectCard = ({ image, title, content, id, link, flip, icon, isCaseStudy,href,isNotShort }) => {

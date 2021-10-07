@@ -24,8 +24,6 @@ const About = ({
   setNavbarColour,
 }) => {
   const info = intro?.primary;
-  console.log(about);
-
   useEffect(() => {
     setNavbarColour(false);
   });
@@ -37,37 +35,15 @@ const About = ({
 
       <main className={styles.main}>
         {/* {console.log(about)} */}
-        {/* <Intro
-          title={
-            info?.heading && intro?.primary?.heading[0]
-              ? intro.primary.heading[0].text
-              : ""
-          }
-          content={
-            intro.primary.text && intro.primary.text[0]
-              ? intro.primary.text[0].text
-              : ""
-          }
-          link={intro.primary.link_text ? intro.primary.link_text : ""}
-          image1={
-            intro.items && intro.items[0]
-              ? intro.items[0].image.url
-              : "/introAbout/image1.png"
-          }
-          image2={
-            intro.items && intro.items[1]
-              ? intro.items[1].image.url
-              : "/introAbout/image1.png"
-          }
-          image3={
-            intro.items && intro.items[2]
-              ? intro.items[2].image.url
-              : "/introAbout/image1.png"
-          }
-          href={
-            intro.primary.link_address ? intro.primary.link_address.url : "/404"
-          }
-        /> */}
+        <Intro
+          title={intro?.primary?.heading[0]?.text}
+          content={intro?.primary?.text[0]?.text}
+          link={intro?.primary?.link_text}
+          image1={intro?.items[0]?.image?.url || "/introAbout/image1.png"}
+          image2={intro?.items[1]?.image?.url || "/introAbout/image1.png"}
+          image3={intro?.items[2]?.image?.url || "/introAbout/image1.png"}
+          href={intro?.primary?.link_address?.url || "/404"}
+        />
 
         <OurStory
           title={ourStory?.primary?.heading[0]?.text}
@@ -76,7 +52,7 @@ const About = ({
           content2={ourStory?.primary?.member_role[0]?.text}
           title2={ourStory?.primary?.member_name[0]?.text}
         />
-        {/* 
+        
         <MeetTheTeam
           title={
             meetTheTeam.primary &&
@@ -157,7 +133,7 @@ const About = ({
               ? brandsAndPartners.bottom.primary.link_address["url"]
               : "/404"
           }
-        /> */}
+        />
       </main>
     </div>
   );

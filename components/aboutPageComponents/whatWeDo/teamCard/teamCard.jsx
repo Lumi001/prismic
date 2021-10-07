@@ -1,4 +1,11 @@
-import HoverText from '../../../extraPageComponents/HoverText/HoverText';
+
+import dynamic from 'next/dynamic'
+const HoverText = dynamic(
+  () => import("../../../extraPageComponents/HoverText/HoverText"),
+  {
+    ssr: false,
+  }
+);
 import styles from './teamCard.module.css';
 
 

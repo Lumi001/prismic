@@ -2,8 +2,13 @@ import { Link } from "prismic-reactjs";
 import styles from "./card.module.css";
 import Link2 from "next/link";
 import Button from "../button/button";
-import HoverText from "../HoverText/HoverText";
-
+import dynamic from 'next/dynamic'
+const HoverText = dynamic(
+  () => import("../HoverText/HoverText"),
+  {
+    ssr: false,
+  }
+);
 const Card = ({
   title,
   tag,
