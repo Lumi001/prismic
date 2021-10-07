@@ -71,10 +71,10 @@ function MyApp({ Component, pageProps, navigation, footer_items,socials }) {
   return (
     <React.Fragment>
       <Provider store={store} >
-        <PersistGate loading={null} persistor={store.__PERSISTOR}>
+        {/* <PersistGate loading={null} persistor={store.__PERSISTOR}>
+        </PersistGate> */}
       <Navbar navigation={navigation} />
           <Component {...pageProps} />
-        </PersistGate>
       <Social text="WE ARE SOCIAL" items={socials.items} />
       <Footer footer_items={footer_items} socials={socials.items} />
       </Provider>
