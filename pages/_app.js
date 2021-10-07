@@ -18,6 +18,7 @@ import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
 import Router from 'next/router'
 import Head from 'next/head'
 import NProgress from 'nprogress'
+import 'nprogress/nprogress.css';
 
 Router.events.on('routeChangeStart', (url) => {
   // console.log(`Loading: ${url}`)
@@ -69,19 +70,14 @@ function MyApp({ Component, pageProps, navigation, footer_items,socials }) {
   // const persistor = persistStore(store);
   return (
     <React.Fragment>
-       <Head>
-        {/* Import CSS for nprogress */}
-        <link rel="stylesheet" type="text/css" href="/nprogress.css" />
-      </Head>
       <Provider store={store} >
-      {/* <Navbar navigation={navigation} /> */}
         <PersistGate loading={null} persistor={store.__PERSISTOR}>
       <Navbar navigation={navigation} />
           <Component {...pageProps} />
         </PersistGate>
-      </Provider>
       <Social text="WE ARE SOCIAL" items={socials.items} />
       <Footer footer_items={footer_items} socials={socials.items} />
+      </Provider>
       {/* {console.log(footer_items)} */}
       {/* {console.log(navigation,'navigation')} */}
     </React.Fragment>
