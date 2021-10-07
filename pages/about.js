@@ -24,7 +24,7 @@ const About = ({
   setNavbarColour,
 }) => {
 
-console.log(ourStory)
+console.log(about)
 
   useEffect(() => {
     setNavbarColour(false);
