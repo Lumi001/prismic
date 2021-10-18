@@ -157,7 +157,7 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
             align-content: center;
             justify-content: center;
             padding-top: 50px;
-            width: 1200px;
+            width: 1440px;
           }
           .container #h2{
             width: 935px;

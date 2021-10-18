@@ -2,8 +2,9 @@
 }
 .our_story {
   width: 100%;
-  max-width: 1200px;
-  display: flex;
+  max-width: 1440px;
+padding-left: 25px;
+padding-right: 25px;  display: flex;
   padding: 30px 0px;
 }
 @media screen and (max-width: 999px) {

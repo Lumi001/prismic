@@ -7,8 +7,9 @@
     place-items: center;
 }
 .container .brands_and_partners .cards {
-    max-width: 1200px;
-    width: fit-content;
+    max-width: 1440px;
+padding-left: 25px;
+padding-right: 25px;    width: fit-content;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
@@ -42,7 +43,7 @@
 .container .brands_and_partners .cards .bottom {
     width: 100%;
     justify-content: space-evenly;
-    padding: 65px 0px;
+    padding: 20px 0px;
 }
 .container .brands_and_partners .cards .bottom section {
     flex-direction: column;
@@ -54,7 +55,7 @@
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 56px;
+    font-size: 2.5rem;
     line-height: 152.6%;
     /* or 85px */
     
@@ -69,7 +70,7 @@
     font-size: 18px;
     line-height: 152.6%;
     /* or 27px */
-    
+    margin: 0px;
     color: #38465e;
 }
 

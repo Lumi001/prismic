@@ -7,7 +7,9 @@
   /*  */
   display: flex;
   /* justify-content: center; */
-  max-width: 1200px;
+  max-width: 1440px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .posts {
   display: flex;
@@ -16,15 +18,15 @@
 }
 
 @media screen and (min-width: 1000px) {
-.posts >div{
-  margin: 1rem 70px !important;
-}
+  .posts > div {
+    margin: 1rem 55px !important;
+  }
 }
 @media screen and (max-width: 999px) {
-  .posts{
-    flex-direction: column;    
+  .posts {
+    flex-direction: column;
   }
-  .featured_posts h2{
+  .featured_posts h2 {
     font-size: 36px;
   }
 }

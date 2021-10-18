@@ -68,7 +68,7 @@ return (
           .wrapper2 {
             margin-top: 5%;
            text-align: left;
-           width: 1200px;
+           width: 1440px;
            margin: auto;
           }
           .grid {

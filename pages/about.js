@@ -1,5 +1,5 @@
 import Prismic from "prismic-javascript";
-import { Client } from "../prismic-configuration";
+import { Client, PRISMIC_heading, PRISMIC_heading2, PRISMIC_internal_link, PRISMIC_link, PRISMIC_link_text } from "../prismic-configuration";
 import Head from "next/head";
 import Intro from "../components/extraPageComponents/intro/intro";
 import OurStory from "../components/aboutPageComponents/ourStory/ourStory";
@@ -55,83 +55,47 @@ const About = ({
         
         <MeetTheTeam
           title={
-            meetTheTeam.primary &&
-            meetTheTeam.primary.heading &&
-            meetTheTeam.primary.heading[0]
-              ? meetTheTeam.primary.heading[0].text
-              : ""
+            PRISMIC_heading(meetTheTeam?.primary)
           }
           items={meetTheTeam.items ? meetTheTeam.items : []}
         />
 
         <WhatWeDo
           heading={
-            whatWeDo.primary &&
-            whatWeDo.primary.heading &&
-            whatWeDo.primary.heading[0]
-              ? whatWeDo.primary.heading[0].text
-              : ""
+            PRISMIC_heading(whatWeDo?.primary)
           }
           subHeading={
-            whatWeDo.primary &&
-            whatWeDo.primary["sub-heading"] &&
-            whatWeDo.primary["sub-heading"][0]
-              ? whatWeDo.primary["sub-heading"][0].text
-              : ""
+            PRISMIC_heading2(whatWeDo?.primary)
           }
           items={whatWeDo.items ? whatWeDo.items : []}
         />
 
         <BeenUpTo
           heading={
-            beenUpTo.primary &&
-            beenUpTo.primary.heading &&
-            beenUpTo.primary.heading[0]
-              ? beenUpTo.primary.heading[0].text
-              : ""
+            PRISMIC_heading(beenUpTo?.primary)
           }
           subHeading={
-            beenUpTo.primary &&
-            beenUpTo.primary["sub-heading"] &&
-            beenUpTo.primary["sub-heading"][0]
-              ? beenUpTo.primary["sub-heading"][0].text
-              : ""
+            PRISMIC_heading2(beenUpTo?.primary)
           }
           items={cards ? cards : []}
         />
 
         <BrandsAndPartners
           heading={
-            brandsAndPartners.top &&
-            brandsAndPartners.top.primary &&
-            brandsAndPartners.top.primary.heading &&
-            brandsAndPartners.top.primary.heading[0]
-              ? brandsAndPartners.top.primary.heading[0].text
-              : ""
+            PRISMIC_heading(brandsAndPartners.top.primary)
           }
           subHeading={
-            brandsAndPartners.top &&
-            brandsAndPartners.top.primary &&
-            brandsAndPartners.top.primary["sub-heading"] &&
-            brandsAndPartners.top.primary["sub-heading"][0]
-              ? brandsAndPartners.top.primary["sub-heading"][0].text
-              : ""
+            PRISMIC_heading2(brandsAndPartners.top.primary)
           }
           items1={brandsAndPartners.top ? brandsAndPartners.top.items : []}
           items2={
             brandsAndPartners.bottom ? brandsAndPartners.bottom.items : []
           }
           link={
-            brandsAndPartners.bottom && brandsAndPartners.bottom.primary
-              ? brandsAndPartners.bottom.primary.link_text
-              : ""
+            PRISMIC_link_text(brandsAndPartners.bottom.primary)
           }
           href={
-            brandsAndPartners.bottom &&
-            brandsAndPartners.bottom.primary &&
-            brandsAndPartners.bottom.primary.link_address
-              ? brandsAndPartners.bottom.primary.link_address["url"]
-              : "/404"
+            PRISMIC_internal_link(brandsAndPartners.bottom.primary)
           }
         />
       </main>

@@ -6,15 +6,16 @@
 }
 .container .what_we_do .card_list {
     max-width: 1200px;
-    width: 100%;
+padding-left: 25px;
+padding-right: 25px;    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 44px auto;
-    padding: 44px 0px;
+    margin: 22px auto;
+    padding: 11px 0px;
 }
 .container .what_we_do .card_list div {
-    margin: 44px auto;
+    margin: 30px auto 10px;
 }
 .container .what_we_do .card_list_container {
     background: #d2dae2;

@@ -48,6 +48,9 @@ export const PRISMIC_link_text = (item, index) => {
 export const PRISMIC_role = (item, index) => {
     return item?.role || " "
 }
+export const PRISMIC_internal_link = (item, index) => {
+    return item?.internal_link || " "
+}
 export const PRISMIC_link = (item, index) => {
     return item?.link?.url || " "
 }
