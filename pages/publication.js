@@ -157,7 +157,7 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
             align-content: center;
             justify-content: center;
             padding-top: 50px;
-            width: 1440px;
+     
           }
           .container #h2{
             width: 935px;
@@ -179,7 +179,7 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
             line-height: 152.6%;
             letter-spacing: 0.01em;
             color: #38465E;
-            padding: 0 13px;
+            padding: 0 80px;
           }
           .h3-1{
             font-family: 'Inter';
@@ -189,6 +189,7 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
             line-height: 152.6%;
             letter-spacing: 0.01em;
             color: #38465E;
+            padding: 0 80px;
           }
           .h3-2{
             font-family: 'Inter';
@@ -207,7 +208,7 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
             justify-content: space-between;
             width: 100%;
             align-items: center;
-            padding: 0 17px;
+            padding: 0 80px;
           }
           .toparticlelist {
             background-color: #E5E5E5;
@@ -221,12 +222,17 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
           }
           .other {
             display: grid;
-            grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 40%;
+    place-content: space-around;
           }
           .other1 {
-            display: grid;
+            /* display: grid;
             grid-template-columns: 50% 50%;
-            grid-template-rows: 50% 50%;
+            grid-template-rows: 50% 50%; */
+            display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 40% 40%;
+    place-content: space-around;
             /*display: flex;
             flex-wrap: wrap;
             justify-content: space-between;

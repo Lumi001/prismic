@@ -11,8 +11,8 @@
   width: 475px;
 }
 .img {
-  min-height: 288px;
- width: 100%;
+  min-height: 250px;
+ width: 350px;
 }
 .link {
   display: flex;
@@ -35,27 +35,28 @@
   padding: 20px 0px;
 }
 .card1 h3 {
-  margin: 0px;
-  padding: 5px 0px;
+  margin: 15px 0px 10px;
+  cursor: pointer;
+  /* height: 102px; */
   font-family: "Inter";
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 1.65rem;
   line-height: 152.6%;
   letter-spacing: 0.01em;
   color: #38465e;
 }
 
 .card1 p {
-  padding: 5px 0px;
-  margin: 0px;
-  font-family: "Avenir";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 181.6%;
-  letter-spacing: 0.01em;
-  color: #38465e;
+  margin: 0px 0px 15px 0px;
+    font-family: "Avenir";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 181.6%;
+    letter-spacing: 0.01em;
+    /* min-height: 150px; */
+    color: #38465e;
 }
 .card1 span b {
   font-family: "Avenir";

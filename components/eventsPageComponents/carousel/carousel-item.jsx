@@ -98,7 +98,7 @@ const CarouselItem = ({ date, title, location, link, img }) => {
               display: flex;
               align-items: flex-start;
               justify-content: space-between;
-              width: 1440px;
+              width: 1200px;
               color: #FCFCFC;
               margin: auto;
               align-items: center;

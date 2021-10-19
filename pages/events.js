@@ -73,7 +73,8 @@ return (
           }
           .grid {
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: 40% 40%;
+            place-content: space-around
           }
           .title {
             font-family: Inter;
