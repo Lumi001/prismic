@@ -23,7 +23,7 @@
     width: 100% !important;
   }
   .our_story .left p {
-    font-size: 1.15rem;
+    font-size: 1.15rem !important;
   }
 }
 .our_story .right {
