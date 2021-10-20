@@ -4,22 +4,37 @@
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 24px;
     letter-spacing: 0.15em;
     color: #ffffff;
     background: #313131;
     border: none;
-    margin: 20px 0px 50px;
+    /* margin: 20px 0px 50px; */
 }
 
 .secondary_button {
-    height: 60px;
+    /* height: 60px; */
+    border-radius: 5px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    background: #313131;
+    border: none;
+    /* margin: 20px 0px 50px; */
+}
+
+.secondary_button {
+    /* height: 60px; */
     /* border-radius: 5px; */
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 24px;
     letter-spacing: 0.15em;
     color: #313131;
@@ -38,15 +53,16 @@
 
 .linkWrapper .secondary_button span {
     border-bottom: 3px solid #313131;
-    padding-bottom: 9px;
+    padding-bottom: 4px;
     min-width: fit-content;
 }
 
 .linkWrapper .secondary_button img {
-    height: 20px;
+    height: 18px;
     transform: translateX(10px);
     width: auto;
     transition: transform 1s;
+    margin-bottom: 4px;
 }
 
 .linkWrapper:hover .secondary_button img {

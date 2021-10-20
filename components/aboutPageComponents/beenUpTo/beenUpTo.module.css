@@ -45,4 +45,14 @@ padding: 20px;
     margin: auto;
     width: fit-content;
   }
+  .been_up_to_container > div > section > div section img {
+    max-width: 350px !important;
+    width: 100% !important;
+    /* max-height: 150px !important; */
+  }
+  .been_up_to_container > div > section > div {
+    max-width: 500px !important;
+    width: 100% !important;
+    margin: 0px 20px 30px !important;
+  }
 }

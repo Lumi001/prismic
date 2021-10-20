@@ -294,7 +294,10 @@
     font-size: 1rem;
     margin: 0px auto;
   }
+  .content .layout_right > div ,
+  .content .layout_case_study > div {
 
+  }
   .content .layout_case_study > h1,
   .content .layout_case_study > div {
     width: 100%;
@@ -303,7 +306,7 @@
 
   .content .layout_right,
   .content .layout_case_study {
-    max-width: 500px;
+    max-width: 700px;
     margin: auto;
   }
 
@@ -314,7 +317,7 @@
 
   .content .layout_case_study > div,
   .content .layout > div {
-    padding-top: 50px;
+    padding: 25px 0px 0px 0px;
   }
 
   .content > img {
