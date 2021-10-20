@@ -6,9 +6,8 @@
   width: 100%;
   /* width: fit-content; */
   margin: auto;
-  max-width: 1440px;
-padding-left: 25px;
-padding-right: 25px;}
+  max-width: 1200px;
+}
 .been_up_to_container > div > div {
   padding: 25px 0px;
 }
