@@ -22,6 +22,9 @@
   .our_story .left {
     width: 100% !important;
   }
+  .our_story .left p {
+    font-size: 1.15rem;
+  }
 }
 .our_story .right {
   display: flex;
@@ -49,7 +52,7 @@
   font-family: "Avenir";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   line-height: 170.6%;
   /* or 36px */
   letter-spacing: 0.01em;
