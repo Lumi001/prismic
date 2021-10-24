@@ -2,11 +2,26 @@
 import styles from './card.module.css';
 import Link from 'next/link';
 import Button from "../../../components/eventsPageComponents/button-card/button";
+import CarouselC from '../carousel-card/carousel';
+
+const items = [
+  "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+  "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+  "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"
+]
+
 
 
 const EventCard = ({articleId, link_text,title,tag,content,img,date,link,id, color}) => (
+
+
+
+
     <div className={styles.event_card}>
-       <Link href="/"><div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`}}> </div></Link>
+       <Link href="/">
+       <CarouselC items= {items}/>
+         {/* <div id={id} className={styles.img} style={{backgroundColor:`${color}`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat:"no-repeat", backgroundImage:`url(${img})`}}> </div> */}
+         </Link>
      { date ?
       <div className={styles.date}>{date}</div> :
       <small>{tag}</small>

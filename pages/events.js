@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import EventCard from '../components/eventsPageComponents/card/event-card';
-import Carousel from '../components/eventsPageComponents/carousel/carousel-item'
+import Carousel from '../components/eventsPageComponents/carousel/carousel-item';
+import CarouselC from '../components/eventsPageComponents/carousel-card/carousel';
 import Heading from '../components/extraPageComponents/heading/heading';
 import Prismic from 'prismic-javascript';
 import { Client } from '../prismic-configuration';
@@ -15,6 +16,57 @@ const Event= ({Events,upcomingEvents, recentEvents,setNavbarColour})=> {
   useEffect(()=>{
     setNavbarColour(false)
 })
+
+const items = [
+  {
+    img: 
+    ["https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"],
+    date: 'March 28, 2021',
+    title: 'The SERAS 2018 Awards',
+    link: 'EVENT DETAILS',
+    id: 4
+
+  },
+  {
+    img:
+     ["https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"],
+    date: 'March 28, 2021',
+    title: 'The SERAS 2018 Awards',
+    link: 'EVENT DETAILS',
+    id: 3
+  }, 
+   {
+      img:
+       ["https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"],
+    date: 'March 28, 2021',
+    title: 'The SERAS 2018 Awards',
+    link: 'EVENT DETAILS',
+    id: 2
+},
+  {
+    img:
+    [ "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"],
+    date: 'March 28, 2021',
+    title: 'The SERAS 2018 Awards',
+    link: 'EVENT DETAILS',
+    id: 1
+  }
+]
+
+// const items = [
+//   "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+//   "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
+//   "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"
+// ]
+
 
 return (
   <div className={styles.container}>
@@ -39,9 +91,22 @@ return (
            articleId={event.id} 
           //  link_text={event.data.link_text} 
           />)}
+          {/* {
+            items.map((item, i) => 
+            // console.log(img)
+            <CarouselC items={item.img}
+            key={Math.random()}
+           date={item.date} 
+           title={item.title} 
+           link_text={item.link} 
+           articleId={item.id} 
+            
+              //  link_text={event.data.link_text} 
+              />)
+          } */}
           </div>
-          
-          </div>
+        
+            </div>
            
         </main>
         
