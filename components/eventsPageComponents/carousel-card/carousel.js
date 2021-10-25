@@ -30,7 +30,7 @@ function SamplePrevArrow(props) {
 }
 
 const SimpleSlider = ({items, date, title, link_text, articleId}) => {
-  console.log(date)
+  // console.log(date)
   const settings = {
     dots: true,
     infinite: true,
@@ -50,9 +50,11 @@ const SimpleSlider = ({items, date, title, link_text, articleId}) => {
         {items.map((item, index) => (
           <div key={index}>
             <CarouselItem
-              image={item}
+            key={index}
+              image={item.patner_img.url}
             />
           </div>
+        
         ))}
       </Slider>
       

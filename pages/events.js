@@ -16,56 +16,10 @@ const Event= ({Events,upcomingEvents, recentEvents,setNavbarColour})=> {
   useEffect(()=>{
     setNavbarColour(false)
 })
+const imgs = Events.map(item=>{        
+  return {...item.data.body[0].items}
+  })
 
-const items = [
-  {
-    img: 
-    ["https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"],
-    date: 'March 28, 2021',
-    title: 'The SERAS 2018 Awards',
-    link: 'EVENT DETAILS',
-    id: 4
-
-  },
-  {
-    img:
-     ["https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"],
-    date: 'March 28, 2021',
-    title: 'The SERAS 2018 Awards',
-    link: 'EVENT DETAILS',
-    id: 3
-  }, 
-   {
-      img:
-       ["https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"],
-    date: 'March 28, 2021',
-    title: 'The SERAS 2018 Awards',
-    link: 'EVENT DETAILS',
-    id: 2
-},
-  {
-    img:
-    [ "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-    "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"],
-    date: 'March 28, 2021',
-    title: 'The SERAS 2018 Awards',
-    link: 'EVENT DETAILS',
-    id: 1
-  }
-]
-
-// const items = [
-//   "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-//   "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png",
-//   "https://i.ibb.co/SNZdSsX/df348c43-2661-481f-bdcc-6169ddbc750a-Rectangle-350.png"
-// ]
 
 
 return (
@@ -81,16 +35,21 @@ return (
           <div className="wrapper2">
           <h3 className="title">Previous Events</h3>
           <div className="grid">
-          {Events.map( event => 
+          {Events.map( (event, i) => 
+          
           <EventCard
-           img={event.data.post_image.url} 
+           img={event.data.body[0].items} 
            key={Math.random()}
-           date={event.data.date} 
+           date={event.data.pub_date} 
            title={event.data.title[0].text} 
            link_text={event.data.link_text} 
            articleId={event.id} 
+          
           //  link_text={event.data.link_text} 
-          />)}
+          />)
+         
+          }
+           
           {/* {
             items.map((item, i) => 
             // console.log(img)
@@ -183,8 +142,18 @@ return (
     const Events = await Client().query(
       Prismic.Predicates.at("my.post.destination_page", "Events")
       )
+
+      const imgs = Events.results.map(item=>{        
+      return {...item.data.body[0].items[0]}
+      })
+
+      // let imgs = Events.results.filter(
+      //   (item) => item.data.body[0].slice_type === "patner_list_images"
+      // );
+
+  //  console.log(imgs)
+      // console.log(Events.results[0].data)
       
-      // console.log(Events)
       return {
         props: {
         Events: Events.results,
