@@ -1,106 +1,113 @@
 .container {
-    width: 100%;
-    background: #d2dae2;
+  width: 100%;
+  background: #d2dae2;
 }
-.container .brands_and_partners{
-    display: grid;
-    place-items: center;
+.container .brands_and_partners {
+  display: grid;
+  place-items: center;
 }
 .container .brands_and_partners .cards {
-    max-width: 1440px;
-padding-left: 25px;
-padding-right: 25px;    width: fit-content;
-    margin: 0px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1200px;
+  width: fit-content;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .container .brands_and_partners a {
-    font-family: "Inter", sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.15em;
-    /* text-align: center; */
-    color: #313131;
-    /* border-bottom: 1px solid; */
-    padding-bottom: 9px;
-    margin: 0px 0px 40px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15em;
+  /* text-align: center; */
+  color: #313131;
+  /* border-bottom: 1px solid; */
+  padding-bottom: 9px;
+  margin: 0px 0px 40px;
 }
 .container .brands_and_partners a span {
-    margin: 0px 10px;
+  margin: 0px 10px;
 }
 
 .container .brands_and_partners .cards section {
-    display: flex;
+  display: flex;
 }
 .container .brands_and_partners .cards .top {
-    border-bottom: 1px solid #112538;
+  border-bottom: 1px solid #112538;
 }
 .container .brands_and_partners .cards .top,
 .container .brands_and_partners .cards .bottom {
-    width: 100%;
-    justify-content: space-evenly;
-    padding: 20px 0px;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 20px 0px;
 }
 .container .brands_and_partners .cards .bottom section {
-    flex-direction: column;
-    text-align: center;
-    width: 200px;
-    /* height: 200px; */
+  flex-direction: column;
+  text-align: center;
+  width: 200px;
+  /* height: 200px; */
 }
 .container .brands_and_partners .cards .bottom section h3 {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: bold;
-    font-size: 2.5rem;
-    line-height: 152.6%;
-    /* or 85px */
-    
-    color: #112538;
-    margin: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 152.6%;
+  /* or 85px */
+
+  color: #112538;
+  margin: 0px;
 }
 
 .container .brands_and_partners .cards .bottom section p {
-    font-family: "Avenir";
-    font-style: normal;
-    font-weight: 800;
-    font-size: 18px;
-    line-height: 152.6%;
-    /* or 27px */
-    margin: 0px;
-    color: #38465e;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 152.6%;
+  /* or 27px */
+  margin: 0px;
+  color: #38465e;
 }
 
 .container .brands_and_partners .cards .top section {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .container .brands_and_partners .cards .top section img {
-    width: 75px;
-    margin: 0px 50px;
-    height: fit-content;
-    image-rendering: -moz-crisp-edges;         /* Firefox */
-  image-rendering:   -o-crisp-edges;         /* Opera */
-  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  width: 75px;
+  margin: 0px 50px;
+  height: fit-content;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
 }
 @media screen and (max-width: 999px) {
-    .container .brands_and_partners .cards .top section img {
-        margin: 20px;
-    }
-    .container .brands_and_partners .cards .top section {
-        justify-content: center;
-    }
-    .container .brands_and_partners .cards section {
-        flex-wrap: wrap;
-        display: flex;
-    }
-    
-    .container .brands_and_partners a {
-        font-size: 1rem;
-    }
+  .container .brands_and_partners .cards .top section img {
+    margin: 20px;
+  }
+  .container .brands_and_partners .cards .top,
+  .container .brands_and_partners .cards .bottom {
+    width: 90%;
+    margin: 0px 10px;
+  }
+  .container .brands_and_partners .cards .top section {
+    justify-content: center;
+  }
+  .container .brands_and_partners .cards section {
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .container .brands_and_partners .cards .bottom section h3 {
+    margin: 15px 0px 0px 0px;
+  }
+
+  .container .brands_and_partners a {
+    font-size: 1rem;
+  }
 }

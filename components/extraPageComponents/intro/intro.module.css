@@ -8,15 +8,14 @@
 .intro {
   /* background-color: red; */
   width: 100%;
-  max-width: 1440px;
-padding-left: 25px;
-padding-right: 25px;  /* height: 800px; */
+  max-width: 1200px;
+  /* height: 800px; */
   display: flex;
   /* padding: 80px 30px 50px; */
   align-items: center;
   margin-bottom: 10px;
   border: none;
-  min-height: 725px;
+  /* min-height: 725px; */
 }
 .intro .left {
   /* background-color: green !important; */
@@ -25,7 +24,7 @@ padding-right: 25px;  /* height: 800px; */
   /* display: grid; */
   /* grid-template-rows: 200px 100px 100px; */
   /* place-items: center; */
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
 }
 
 .intro .right {
@@ -53,6 +52,7 @@ padding-right: 25px;  /* height: 800px; */
   letter-spacing: 0.01em;
   text-align: left;
   color: #fcfcfc;
+  margin: 0px;
 }
 .intro a {
   font-family: "Inter", sans-serif;

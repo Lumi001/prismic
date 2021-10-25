@@ -78,9 +78,8 @@
 
 .content .layout_case_study {
   /* justify-content: center; */
-  max-width: 1440px;
-padding-left: 25px;
-padding-right: 25px;  padding: 20px;
+  max-width: 1200px;
+  padding: 20px;
   /* margin: 100px 0px 50px; */
 }
 
@@ -95,9 +94,8 @@ padding-right: 25px;  padding: 20px;
   justify-content: space-between;
   align-items: flex-start;
   padding: 0px 10px;
-  max-width: 1440px;
-padding-left: 25px;
-padding-right: 25px;}
+  max-width: 1200px;
+}
 
 .content .layout_right {
   width: 100%;
@@ -116,7 +114,7 @@ padding-right: 25px;}
   margin: 0px auto;
 }
 .content .layout_case_study > div {
-  max-width: 1000px;
+  /* max-width: 1000px; */
   padding: 10px 65px;
   width: 100%;
   margin: 0px auto;
@@ -180,14 +178,14 @@ padding-right: 25px;}
 
 .content p,
 .content div {
-    font-family: Avenir;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.3rem;
-    line-height: 178.1%;
-    letter-spacing: 0.01em;
-    color: #313131 !important;
-    margin: 0px 0px 30px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 178.1%;
+  letter-spacing: 0.01em;
+  color: #313131 !important;
+  margin: 0px 0px 30px;
 }
 
 .main {
@@ -296,7 +294,10 @@ padding-right: 25px;}
     font-size: 1rem;
     margin: 0px auto;
   }
+  .content .layout_right > div ,
+  .content .layout_case_study > div {
 
+  }
   .content .layout_case_study > h1,
   .content .layout_case_study > div {
     width: 100%;
@@ -305,7 +306,7 @@ padding-right: 25px;}
 
   .content .layout_right,
   .content .layout_case_study {
-    max-width: 500px;
+    max-width: 700px;
     margin: auto;
   }
 
@@ -316,7 +317,7 @@ padding-right: 25px;}
 
   .content .layout_case_study > div,
   .content .layout > div {
-    padding-top: 50px;
+    padding: 25px 0px 0px 0px;
   }
 
   .content > img {

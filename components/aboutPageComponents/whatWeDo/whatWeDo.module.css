@@ -6,8 +6,7 @@
 }
 .container .what_we_do .card_list {
     max-width: 1200px;
-padding-left: 25px;
-padding-right: 25px;    width: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -15,7 +14,7 @@ padding-right: 25px;    width: 100%;
     padding: 11px 0px;
 }
 .container .what_we_do .card_list div {
-    margin: 30px auto 10px;
+    margin: 30px 0px 10px;
 }
 .container .what_we_do .card_list_container {
     background: #d2dae2;
@@ -31,5 +30,7 @@ padding-right: 25px;    width: 100%;
 }
 
 @media screen and (max-width: 999px) {
-    
+    .container .what_we_do .card_list {
+        justify-content: center;
+    }
 }

@@ -19,6 +19,9 @@ margin-bottom: 60px;
   width: fit-content;
 }
 
+.services_container div .card_list > div > div > section{
+box-shadow: 0px 0px 0px 0px !important;
+}
 .services_container div .card_list > div > div > section > p{
   font-size: 20px !important;
 }
