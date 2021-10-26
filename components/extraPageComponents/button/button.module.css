@@ -58,7 +58,7 @@
 }
 
 .linkWrapper .secondary_button img {
-    height: 18px;
+    height: 14px;
     transform: translateX(5px);
     width: auto;
     transition: transform 1s;

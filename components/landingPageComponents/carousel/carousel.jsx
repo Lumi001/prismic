@@ -107,7 +107,7 @@ export default class Carousel extends Component {
   
   .circle-opt {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 0;
     display: flex;
     flex-direction: row;

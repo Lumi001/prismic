@@ -10,7 +10,6 @@
 }
 .container > main,
 .container > div {
-  max-width: 1440px !important;
   margin: 0px auto;
   overflow: hidden;
 }
@@ -341,7 +340,8 @@
 .carousel_main {
   /* padding-top: 120px; */
   background: #ffc017;
-  max-width: 100%;
+  width: 100%;
+  position: relative;
   padding-bottom: 160px;
   overflow-x: hidden;
 }
