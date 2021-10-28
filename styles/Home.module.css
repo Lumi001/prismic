@@ -95,6 +95,12 @@
   padding: 0px 10px;
   max-width: 1200px;
 }
+@media screen and (min-width: 1754px) {
+  .content .layout_case_study,
+  .content .layout {
+    max-width: 1440px;
+  }
+}
 
 .content .layout_right {
   width: 100%;
@@ -293,9 +299,8 @@
     font-size: 1rem;
     margin: 0px auto;
   }
-  .content .layout_right > div ,
+  .content .layout_right > div,
   .content .layout_case_study > div {
-
   }
   .content .layout_case_study > h1,
   .content .layout_case_study > div {

@@ -1,56 +1,54 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import EventCard from '../components/eventsPageComponents/card/event-card';
-import Carousel from '../components/eventsPageComponents/carousel/carousel-item';
-import CarouselC from '../components/eventsPageComponents/carousel-card/carousel';
-import Heading from '../components/extraPageComponents/heading/heading';
-import Prismic from 'prismic-javascript';
-import { Client } from '../prismic-configuration';
-import { useEffect } from 'react';
-import { navbarContentAction } from '../redux/navbar/navbar.actions';
-import { connect } from 'react-redux';
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import EventCard from "../components/eventsPageComponents/card/event-card";
+import Carousel from "../components/eventsPageComponents/carousel/carousel-item";
+import CarouselC from "../components/eventsPageComponents/carousel-card/carousel";
+import Heading from "../components/extraPageComponents/heading/heading";
+import Prismic from "prismic-javascript";
+import { Client } from "../prismic-configuration";
+import { useEffect } from "react";
+import { navbarContentAction } from "../redux/navbar/navbar.actions";
+import { connect } from "react-redux";
 
-
-const Event= ({Events,upcomingEvents, recentEvents,setNavbarColour})=> {
+const Event = ({ Events, upcomingEvents, recentEvents, setNavbarColour }) => {
   // console.log(recentEvents)
-  useEffect(()=>{
-    setNavbarColour(false)
-})
-const imgs = Events.map(item=>{        
-  return {...item.data.body[0].items}
-  })
+  useEffect(() => {
+    setNavbarColour(false);
+  });
+  const imgs = Events.map((item) => {
+    return { ...item.data.body[0].items };
+  });
 
-
-
-return (
-  <div className={styles.container}>
-        <Head>
+  return (
+    <div className={styles.container}>
+      <Head>
         <title>TruCSR - Events</title>
       </Head>
-        <main className={styles.main}>
-          <div className="wrapper1" style={{backgroundImage:`url(${Events[0].data.post_image.url})`}}>
-            <div className="overlay"></div>
+      <main className={styles.main}>
+        <div
+          className="wrapper1"
+          style={{ backgroundImage: `url(${Events[0].data.post_image.url})` }}
+        >
+          <div className="overlay"></div>
           <Carousel />
-          </div>
-          <div className="wrapper2">
+        </div>
+        <div className="wrapper2">
           <h3 className="title">Previous Events</h3>
           <div className="grid">
-          {Events.map( (event, i) => 
-          
-          <EventCard
-           img={event.data.body[0].items} 
-           key={Math.random()}
-           date={event.data.pub_date} 
-           title={event.data.title[0].text} 
-           link_text={event.data.link_text} 
-           articleId={event.id} 
-          
-          //  link_text={event.data.link_text} 
-          />)
-         
-          }
-           
-          {/* {
+            {Events.map((event, i) => (
+              <EventCard
+                img={event.data.body[0].items}
+                key={Math.random()}
+                date={event.data.pub_date}
+                title={event.data.title[0].text}
+                link_text={event.data.link_text}
+                articleId={event.id}
+
+                //  link_text={event.data.link_text}
+              />
+            ))}
+
+            {/* {
             items.map((item, i) => 
             // console.log(img)
             <CarouselC items={item.img}
@@ -64,14 +62,12 @@ return (
               />)
           } */}
           </div>
-        
-            </div>
-           
-        </main>
-        
-        <style jsx global>
-          {`
-          .overlay{
+        </div>
+      </main>
+
+      <style jsx global>
+        {`
+          .overlay {
             position: absolute;
             z-index: 1;
             top: 0;
@@ -83,22 +79,27 @@ return (
           }
           .wrapper1 {
             text-align: left;
-            width: 100%; 
-           height: 100%; 
-           padding-top: 4%;
-           position:relative;
-           
+            width: 100%;
+            height: 100%;
+            padding-top: 4%;
+            position: relative;
           }
           .wrapper2 {
             margin-top: 5%;
-           text-align: left;
-           width: 1440px;
-           margin: auto;
+            text-align: left;
+            max-width: 1200px;
+            margin: auto;
+            width: 100%;
+          }
+          @media screen and (min-width: 1754px) {
+            .wrapper2 {
+              max-width: 1440px;
+            }
           }
           .grid {
-            display: grid;
-            grid-template-columns: 40% 40%;
-            place-content: space-around
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
           }
           .title {
             font-family: Inter;
@@ -111,54 +112,54 @@ return (
           }
           @media only screen and (max-width: 768px) {
             .grid {
-              grid-template-columns: 100%; 
-              justify-items: center;           
+              grid-template-columns: 100%;
+              justify-items: center;
             }
-          .carousel-text {
-            width: 100%;
+            .carousel-text {
+              width: 100%;
+            }
+            .video-container {
+              margin-top: 50px;
+              width: 90%;
+            }
+            .wrapper1 {
+              width: 100%;
+            }
+            .wrapper2 {
+              width: 100%;
+            }
           }
-          .video-container {
-            margin-top: 50px;
-            width: 90%;
-          }
-          .wrapper1 {
-            width: 100%
-          }
-        .wrapper2 {
-          width: 100%
-        }
-      }
-      `}
-          </style>
-          </div>
-    )
-  }
-  const mapDispatchToProps = dispatch => ({
-    setNavbarColour:mode=>dispatch(navbarContentAction(mode)),
-  })
-  export default connect(null, mapDispatchToProps)(Event)
-  
-  export async function getServerSideProps() {
-    const Events = await Client().query(
-      Prismic.Predicates.at("my.post.destination_page", "Events")
-      )
+        `}
+      </style>
+    </div>
+  );
+};
+const mapDispatchToProps = (dispatch) => ({
+  setNavbarColour: (mode) => dispatch(navbarContentAction(mode)),
+});
+export default connect(null, mapDispatchToProps)(Event);
 
-      const imgs = Events.results.map(item=>{        
-      return {...item.data.body[0].items[0]}
-      })
+export async function getServerSideProps() {
+  const Events = await Client().query(
+    Prismic.Predicates.at("my.post.destination_page", "Events")
+  );
 
-      // let imgs = Events.results.filter(
-      //   (item) => item.data.body[0].slice_type === "patner_list_images"
-      // );
+  const imgs = Events.results.map((item) => {
+    return { ...item.data.body[0].items[0] };
+  });
+
+  // let imgs = Events.results.filter(
+  //   (item) => item.data.body[0].slice_type === "patner_list_images"
+  // );
 
   //  console.log(imgs)
-      // console.log(Events.results[0].data)
-      
-      return {
-        props: {
-        Events: Events.results,
-        // upcomingEvents: events.results[0].data.body[0].items,
-        // recentEvents: events.results[0].data.body[1].items
-      }
-  }
+  // console.log(Events.results[0].data)
+
+  return {
+    props: {
+      Events: Events.results,
+      // upcomingEvents: events.results[0].data.body[0].items,
+      // recentEvents: events.results[0].data.body[1].items
+    },
+  };
 }

@@ -8,12 +8,18 @@
 }
 .container .brands_and_partners .cards {
   max-width: 1200px;
+  width: 100%;
   width: fit-content;
   margin: 0px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (min-width: 1754px) {
+  .container .brands_and_partners .cards {
+    max-width: 1440px;
+  }
 }
 .container .brands_and_partners a {
   font-family: "Inter", sans-serif;

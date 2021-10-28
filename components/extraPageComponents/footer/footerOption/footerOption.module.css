@@ -44,6 +44,6 @@
     }
 
     .option address {
-        text-align: center;
+        text-align: left !important;
     }
 }

@@ -18,6 +18,11 @@
   -ms-interpolation-mode: nearest-neighbor;
   /* min-height: 449px; */
 }
+@media screen and (min-width: 1754px) {
+    .team_card img {
+    max-width: 300px;
+  }
+}
 
 .team_card h3 {
   margin: 10px 0px;

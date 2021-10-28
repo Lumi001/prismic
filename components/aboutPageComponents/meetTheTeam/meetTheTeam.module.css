@@ -1,40 +1,47 @@
 .container {
-    width: 100%;
-    display: grid;
-    place-items: center;
+  width: 100%;
+  display: grid;
+  place-items: center;
 }
 
 .meet_the_team {
-    max-width: 1200px;
-    /* display: flex;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  /* display: flex;
     justify-content: center; */
+}
+@media screen and (min-width: 1754px) {
+  .meet_the_team {
+    max-width: 1440px;
+  }
 }
 
 .meet_the_team .title {
-    font-family: "Inter";
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 55px;
-    letter-spacing: 0.01em;
-    text-align: center;
-    color: #38465e;
+  font-family: "Inter";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 55px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #38465e;
 }
 
 .meet_the_team section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .meet_the_team section h3,
 .meet_the_team section p {
-    color: #38465e;
+  color: #38465e;
 }
 
 @media screen and (max-width: 999px) {
-    .meet_the_team {
-        /* max-width: 90vw !important; */
-        margin: auto;
-    }
+  .meet_the_team {
+    /* max-width: 90vw !important; */
+    margin: auto;
+  }
 }

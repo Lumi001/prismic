@@ -14,12 +14,12 @@
   margin: 20px 0px 50px;
 }
 .secondary_button{
-    height: 60px;
+    height: 40px;
     /* border-radius: 5px; */
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.15em;
     color: #313131;
@@ -36,17 +36,18 @@
   
   .secondary_button .linkWrapper span {
     /* border-bottom: 3px solid #313131; */
-    padding-bottom: 9px;
+    margin-bottom: 9px;
     min-width: fit-content;
   }
   .secondary_button .linkWrapper:hover > img {
     transform: translateX(15px);
   }
   .secondary_button .linkWrapper > img {
-    height: 20px;
+    height: 14px;
     transform: translateX(0px);
     width: auto;
     transition: transform 1s;
+    margin-bottom: 7px;
   }
   
   .carousel .secondary_button .linkWrapper img {
