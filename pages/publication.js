@@ -12,8 +12,9 @@ import Heading from '../components/extraPageComponents/heading/heading'
 
 
 
+
 export default function Publication({pub, cards, new_pub, other_pub, top_3_article}) {
-  // console.log(cards)
+  console.log()
   const search = useRef(null);
  
   const [searchTerm, setSearchTerm] = useState("");
@@ -42,14 +43,15 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
         {  
         
         cards.map((card, i) =>{
-          if(cards.indexOf(card) < 3){ return(
+          if(cards.indexOf(card) < 3){
+          return(
           <Card1 
             key={i}   
             title={card.title[0].text}
             content={card.article_content[0].text.substring(0,100)}
             img={card.article_image.url} 
-            date={moment().format("D MMM, YYYY")}
-            // date={card.data.pub_date}
+            // date={moment().format("D MMM, YYYY")}
+            date={new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(new Date(card.date))}
             // color={card.data.color}
             link_text={'READ PUBLICATION'} 
             id={`${'big' + i}`}
@@ -82,9 +84,9 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
                key={Math.random()} 
                content={card.article_content[0].text.substring(0,100)}
                img={card.article_image.url} 
-               date={moment().format("D MMM, YYYY")}
-              //  date={card.data.pub_date}
-              //  color={card.data.color}
+              //  date={moment().format("D MMM, YYYY")}
+               date={new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(new Date(card.date))}
+               //  color={card.data.color}
                link_text={'READ PUBLICATION'} 
                isCaseStudy={true}
                articleId={card.id}
@@ -102,8 +104,8 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
                  key={i} 
                  number={i + 1} 
                  title={card.title[0].text}  
-                 date={moment().format("D MMM, YYYY")}
-                //  date={card.data.pub_date}
+                //  date={moment().format("D MMM, YYYY")}
+                 date={new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(new Date(card.date))}
                  />)}})}
          </div>
                 </div>     
@@ -134,8 +136,8 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
                 title={card.title[0].text}
                 content={card.article_content[0].text.substring(0,100)}
                 img={card.article_image.url} 
-                date={moment().format("D MMM, YYYY")}
-                // date={card.data.pub_date}
+                // date={moment().format("D MMM, YYYY")}
+                date={new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(new Date(card.date))}
                 // color={card.data.color}
                 link_text={'READ PUBLICATION'}
                 isCaseStudy={true}
@@ -310,10 +312,10 @@ export default function Publication({pub, cards, new_pub, other_pub, top_3_artic
     )
     let empty = {}
     featuredArticlesCards.results.map(article => {
-      return empty[`${article.uid}`] = { id: article.id, ...article.data }
+      return empty[`${article.uid}`] = { id: article.id, ...article.data, date: article.first_publication_date }
     })
 
-//  console.log()
+//  console.log(publications.results[0].first_publication_date)
     return {
         props: {
           pub: publications.results,

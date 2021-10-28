@@ -35,18 +35,19 @@ return (
           <div className="wrapper2">
           <h3 className="title">Previous Events</h3>
           <div className="grid">
-          {Events.map( (event, i) => 
-          
+          {Events.map( (event, i) => {
+          return(          
           <EventCard
            img={event.data.body[0].items} 
            key={Math.random()}
-           date={event.data.pub_date} 
+           date={new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(new Date(event.first_publication_date))}
+          //  date={event.data.pub_date} 
            title={event.data.title[0].text} 
            link_text={event.data.link_text} 
-           articleId={event.id} 
-          
+           articleId={event.id}           
           //  link_text={event.data.link_text} 
-          />)
+          />)}
+          )
          
           }
            
@@ -144,14 +145,14 @@ return (
       )
 
       const imgs = Events.results.map(item=>{        
-      return {...item.data.body[0].items[0]}
+      return {...item.data.body[0].items[0], date: item.first_publication_date}
       })
 
       // let imgs = Events.results.filter(
       //   (item) => item.data.body[0].slice_type === "patner_list_images"
       // );
 
-  //  console.log(imgs)
+   console.log(imgs[0].date)
       // console.log(Events.results[0].data)
       
       return {
