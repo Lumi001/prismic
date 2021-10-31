@@ -10,7 +10,6 @@
 }
 .container > main,
 .container > div {
-  max-width: 1440px !important;
   margin: 0px auto;
   overflow: hidden;
 }
@@ -95,6 +94,12 @@
   align-items: flex-start;
   padding: 0px 10px;
   max-width: 1200px;
+}
+@media screen and (min-width: 1754px) {
+  .content .layout_case_study,
+  .content .layout {
+    max-width: 1440px;
+  }
 }
 
 .content .layout_right {
@@ -294,9 +299,8 @@
     font-size: 1rem;
     margin: 0px auto;
   }
-  .content .layout_right > div ,
+  .content .layout_right > div,
   .content .layout_case_study > div {
-
   }
   .content .layout_case_study > h1,
   .content .layout_case_study > div {
@@ -341,7 +345,8 @@
 .carousel_main {
   /* padding-top: 120px; */
   background: #ffc017;
-  max-width: 100%;
+  width: 100%;
+  position: relative;
   padding-bottom: 160px;
   overflow-x: hidden;
 }

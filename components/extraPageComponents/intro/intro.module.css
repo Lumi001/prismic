@@ -13,9 +13,15 @@
   display: flex;
   /* padding: 80px 30px 50px; */
   align-items: center;
+  margin: auto;
   margin-bottom: 10px;
   border: none;
   /* min-height: 725px; */
+}
+@media screen and (min-width: 1754px) {
+  .intro {
+    max-width: 1440px;
+  }
 }
 .intro .left {
   /* background-color: green !important; */
@@ -78,22 +84,22 @@
   max-width: 100%;
   /* background: blue; */
   margin: 17px;
-  image-rendering: -moz-crisp-edges;         /* Firefox */
-  image-rendering:   -o-crisp-edges;         /* Opera */
-  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
 }
 .intro button img {
   margin: 0px 0px 5px;
 }
-.intro button span {
+.intro button {
   border-bottom: 3px solid #fcfcfc !important;
 }
 .intro button {
   /* position: relative; */
   width: 57px;
-  height: 78px;
+  /* height: 78px; */
   background: #313131;
   /* font-size: 34px; */
   color: #ffffff;
@@ -119,12 +125,12 @@
     /* min-width: 300px; */
     font-size: 20px;
   }
-  .intro  .right .img {
+  .intro .right .img {
     /* display: none; */
     max-width: 35vw !important;
   }
-  .intro .big{
-      max-width: 100% !important;
+  .intro .big {
+    max-width: 100% !important;
   }
   .intro a {
     text-align: center;
@@ -138,7 +144,6 @@
     /* max-width: 100%; */
     width: 100%;
     max-width: 90vw;
-
   }
   .intro .left {
     /* min-width: 100%; */

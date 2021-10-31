@@ -1,6 +1,6 @@
 .carousel {
   /* background-color: red; */
-  width: 90%;
+  width: 100%;
   margin: auto;
   /* height: 800px; */
   display: flex;
@@ -11,13 +11,17 @@
   margin-bottom: 10px;
   border: none;
   min-height: 625px;
-  max-width:1440px;
-  
+  max-width: 1200px;
+}
+@media screen and (min-width: 1754px) {
+  .carousel {
+    max-width: 1440px;
+  }
 }
 .carousel .left {
   /* background-color: green !important; */
   margin: 0px;
-  width: 45%;
+  width: 40%;
   /* display: grid; */
   /* grid-template-rows: 200px 100px 100px; */
   /* place-items: center; */
@@ -115,8 +119,8 @@
   .carousel a {
     /* min-width: 300px; */
     font-size: 16px;
-  text-align: center;
-}
+    text-align: center;
+  }
   .carousel {
     /* padding: 0px; */
     margin-bottom: 50px;

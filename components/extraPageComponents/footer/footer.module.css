@@ -6,11 +6,17 @@
   max-width: 1200px;
   width: 100%;
 }
+@media screen and (min-width: 1754px) {
+  .footer section {
+    max-width: 1440px;
+  }
+}
 .footer {
   display: flex;
   justify-content: center;
   background: #3546ac;
   width: 100%;
+  padding: 0px 50px 0px;
 }
 @media screen and (max-width: 999px) {
   .footer section {

@@ -96,7 +96,7 @@ const SimpleSlider = ({items, date, title, link_text, articleId}) => {
   display: block !important;
 }
 .slick-slider{
-  width: 450px;
+  //width: 450px;
   cursor: pointer;
 }
           `}
