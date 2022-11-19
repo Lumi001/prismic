@@ -13,7 +13,7 @@
     "formik": "^2.2.9",
     "jquery": "^3.6.0",
     "moment": "^2.29.1",
-    "next": "^10.2.2",
+    "next": "^13.0.4",
     "nodemailer": "^6.6.3",
     "nprogress": "^0.2.0",
     "prismic-javascript": "^3.0.2",
@@ -29,7 +29,7 @@
     "sass": "^1.37.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.0",
-    "styled-jsx": "^4.0.0",
+    "styled-jsx": "^5.1.0",
     "swr": "^0.5.6",
     "universal-cookie": "^4.0.4",
     "yup": "^0.32.9"
